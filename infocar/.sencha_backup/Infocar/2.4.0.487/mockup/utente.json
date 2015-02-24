@@ -1,0 +1,19 @@
+{
+    "success": true,
+    "message": null,
+    "total": 1,
+    "data": [{
+	"codice": "9876",
+	"nomeUtente": "Paolo",
+	"cognomeUtente": "Rossi",
+	"moduloUsatoFlag": "S",
+	"moduloUsatoMenuLabel": "Preliminare di ritiro",
+	"moduloNuovoFlag": "S",
+	"moduloNuovoMenuLabel": "Preliminare configuratore nuovo",
+	"moduloStockFlag": "S",
+	"moduloStockMenuLabel": "Ricerca stock",
+	"coloreVeicoloFlag": "S"
+        }
+    ]
+}
+

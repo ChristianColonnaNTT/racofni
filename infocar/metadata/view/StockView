@@ -1,0 +1,2126 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "StockView",
+        "designer|userClassName": "StockView",
+        "itemId": "stockView",
+        "layout": "vbox"
+    },
+    "name": "MyContainer85",
+    "designerId": "3f80ef3f-bb37-45ef-98da-9af4ae589d91",
+    "cn": [
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "topbar1",
+            "designerId": "20ecee56-aaba-40f9-a440-800d06d90ca5",
+            "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "container|animation": "slide",
+                "designer|displayName": "BodyStockContainer",
+                "height": null,
+                "itemId": "bodyStockContainer",
+                "layout": "card",
+                "layout|flex": 1
+            },
+            "name": "MyContainer85",
+            "designerId": "fd14de48-57f7-4f1c-98ef-cd2a0581fcc7",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "Titolo": "Stock - Ricerca stock",
+                        "designer|displayName": "RicercaStockContainer",
+                        "html": null,
+                        "id": null,
+                        "itemId": "ricercaStockContainer",
+                        "layout": "vbox"
+                    },
+                    "name": "MyContainer7",
+                    "designerId": "00d39ea1-6a00-4be9-8e84-69fa865ca577",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "Titolo",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.form.Panel",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "ricercaStockFormCls"
+                                ],
+                                "designer|displayName": "RicercaStockForm",
+                                "height": null,
+                                "itemId": "ricercaStockForm",
+                                "layout": "vbox",
+                                "scrollable": "`null`"
+                            },
+                            "name": "MyFormPanel3",
+                            "designerId": "5837b146-0520-42ce-b1e7-52e33913ac65",
+                            "cn": [
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "HBoxContainer",
+                                        "layout": "hbox",
+                                        "layout|flex": 3
+                                    },
+                                    "name": "MyContainer48",
+                                    "designerId": "7499e2ba-8645-4ae4-92fd-d71c8b7c77cf",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.field.Text",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "DescrizioneRicercaStockField",
+                                                "height": null,
+                                                "itemId": "descrizioneRicercaStockField",
+                                                "label": "Targa o Descrizione",
+                                                "labelWidth": 200,
+                                                "margin": null,
+                                                "name": "descrizione",
+                                                "padding": null,
+                                                "width": "60%"
+                                            },
+                                            "name": "MyTextField",
+                                            "designerId": "aa69428f-7c41-48e9-b26b-f472423fa0c0"
+                                        },
+                                        {
+                                            "type": "Ext.Spacer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": null,
+                                                "width": 35
+                                            },
+                                            "name": "MySpacer11",
+                                            "designerId": "d0a308bc-3338-46b2-bfeb-d799d996db3e"
+                                        },
+                                        {
+                                            "type": "Ext.field.Toggle",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "StockUsatoRicercaStockToggle",
+                                                "itemId": "stockUsatoRicercaStockToggle",
+                                                "label": "Stock",
+                                                "labelWidth": "45%",
+                                                "name": null
+                                            },
+                                            "name": "MyToggleField3",
+                                            "designerId": "9b88035e-7824-42bb-a50a-09b773868824"
+                                        },
+                                        {
+                                            "type": "Ext.field.Hidden",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "StockUsatoRicercaStockHiddenField",
+                                                "itemId": "stockUsatoRicercaStockHiddenField",
+                                                "name": "stockUsatoFlag"
+                                            },
+                                            "name": "MyHiddenField7",
+                                            "designerId": "f3ec7899-7c63-4a06-a902-de0deb0bb779"
+                                        },
+                                        {
+                                            "type": "Ext.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": [
+                                                    "stockUsatoRicercaStockLabelCls"
+                                                ],
+                                                "designer|displayName": "StockUsatoRicercaStockLabel",
+                                                "html": "Usato"
+                                            },
+                                            "name": "MyLabel32",
+                                            "designerId": "7409fda7-a2b3-4d69-b662-f7f9e9dadda7"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "HBoxContainer",
+                                        "layout": "hbox",
+                                        "layout|flex": 3
+                                    },
+                                    "name": "MyContainer40",
+                                    "designerId": "b8ec8022-5c0f-4f08-a404-177fed2fbf5d",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.field.Slider",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "component": [
+                                                    "{ allowThumbsOverlapping: true }"
+                                                ],
+                                                "designer|displayName": "PrezzoMinMaxRicercaStockSlider",
+                                                "increment": 1000,
+                                                "itemId": "prezzoMinMaxRicercaStockSlider",
+                                                "label": "Prezzo",
+                                                "labelCls": "prezzoMinMaxRicercaStockSliderLabCls",
+                                                "labelWidth": 80,
+                                                "layout|flex": 1,
+                                                "maxValue": null,
+                                                "minValue": null,
+                                                "name": null
+                                            },
+                                            "name": "MySliderField",
+                                            "designerId": "f4b16505-171f-4605-beba-3c64f89a8471"
+                                        },
+                                        {
+                                            "type": "Ext.field.Hidden",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "PrezzoMinRicercaStockHiddenField",
+                                                "itemId": "prezzoMinRicercaStockHiddenField",
+                                                "name": "minPrezzo"
+                                            },
+                                            "name": "MyHiddenField8",
+                                            "designerId": "673ae20d-dfa4-4f1a-89b2-8a4e0e528c5e"
+                                        },
+                                        {
+                                            "type": "Ext.field.Hidden",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "PrezzoMaxRicercaStockHiddenField",
+                                                "itemId": "prezzoMaxRicercaStockHiddenField",
+                                                "name": "maxPrezzo"
+                                            },
+                                            "name": "MyHiddenField17",
+                                            "designerId": "6ed7d350-8312-4d05-898c-a46417061b66"
+                                        },
+                                        {
+                                            "type": "Ext.Spacer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": null,
+                                                "width": 50
+                                            },
+                                            "name": "MySpacer9",
+                                            "designerId": "b5d9b25d-d811-4133-9087-4cb24331d30c"
+                                        },
+                                        {
+                                            "type": "Ext.field.Slider",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "component": [
+                                                    "{ allowThumbsOverlapping: true }"
+                                                ],
+                                                "designer|displayName": "KmMinMaxRicercaStockSlider",
+                                                "increment": 1000,
+                                                "itemId": "kmMinMaxRicercaStockSlider",
+                                                "label": "KM",
+                                                "labelCls": "kmMinMaxRicercaStockSliderLabCls",
+                                                "labelWidth": 60,
+                                                "layout|flex": 1,
+                                                "maxValue": null,
+                                                "minValue": null,
+                                                "name": null
+                                            },
+                                            "name": "MySliderField1",
+                                            "designerId": "39408c3b-8b27-431f-a2bb-c5d232adcbc2"
+                                        },
+                                        {
+                                            "type": "Ext.field.Hidden",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "KmMinRicercaStockHiddenField",
+                                                "itemId": "kmMinRicercaStockHiddenField",
+                                                "name": "minKm"
+                                            },
+                                            "name": "MyHiddenField18",
+                                            "designerId": "2d51222c-367a-46b3-84eb-3718d4309e3c"
+                                        },
+                                        {
+                                            "type": "Ext.field.Hidden",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "KmMaxRicercaStockHiddenField",
+                                                "itemId": "kmMaxRicercaStockHiddenField",
+                                                "name": "maxKm"
+                                            },
+                                            "name": "MyHiddenField19",
+                                            "designerId": "e097e70c-1ecb-41db-af35-fa2502e703ba"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "HBoxContainer",
+                                        "layout": "hbox",
+                                        "layout|flex": 2
+                                    },
+                                    "name": "MyContainer42",
+                                    "designerId": "a2deac85-5d1e-4e0c-94ed-198558478258",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.Spacer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": null,
+                                                "width": 80
+                                            },
+                                            "name": "MySpacer10",
+                                            "designerId": "5bf8a216-efcd-45ed-9298-9e77858a9e02"
+                                        },
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "HBoxContainer",
+                                                "layout": "hbox",
+                                                "layout|flex": 1
+                                            },
+                                            "name": "MyContainer46",
+                                            "designerId": "7c05351d-03c9-4fa0-927d-3e2b28b7ba9d",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "PrezzoMinRicercaStockLabel",
+                                                        "itemId": "prezzoMinRicercaStockLabel",
+                                                        "layout|flex": 1,
+                                                        "style": null
+                                                    },
+                                                    "name": "MyLabel30",
+                                                    "designerId": "65dbe4fd-7b00-4e0c-bcbb-d724929de593",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "tpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "tpl",
+                                                                "implHandler": [
+                                                                    "{prezzo:this.fmtCurrency} &euro;"
+                                                                ]
+                                                            },
+                                                            "name": "tpl",
+                                                            "designerId": "997d157e-e772-458d-800d-1f075c70baa0",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "templatefunction",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|params": [
+                                                                            "currValue"
+                                                                        ],
+                                                                        "fn": "fmtCurrency",
+                                                                        "implHandler": [
+                                                                            "return Infocar.app.formatCurrency2(currValue);"
+                                                                        ]
+                                                                    },
+                                                                    "name": "fmtCurrency",
+                                                                    "designerId": "75a1b485-6917-4203-ba89-f9428fccc9d1"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "prezzoMaxRicercaStockLabelCls"
+                                                        ],
+                                                        "designer|displayName": "PrezzoMaxRicercaStockLabel",
+                                                        "itemId": "prezzoMaxRicercaStockLabel",
+                                                        "layout|flex": 1,
+                                                        "style": null
+                                                    },
+                                                    "name": "MyLabel31",
+                                                    "designerId": "698aa03a-9251-4c01-a26c-c3cf6c81db55",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "tpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "tpl",
+                                                                "implHandler": [
+                                                                    "{prezzo:this.fmtCurrency} &euro;"
+                                                                ]
+                                                            },
+                                                            "name": "tpl",
+                                                            "designerId": "0f1e8132-7d7c-43b1-8c21-f5078233de73",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "templatefunction",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|params": [
+                                                                            "currValue"
+                                                                        ],
+                                                                        "fn": "fmtCurrency",
+                                                                        "implHandler": [
+                                                                            "return Infocar.app.formatCurrency2(currValue);"
+                                                                        ]
+                                                                    },
+                                                                    "name": "fmtCurrency",
+                                                                    "designerId": "80cf292e-b8d3-4da5-9a0e-d63ac2427dd1"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.Spacer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": null,
+                                                "width": 110
+                                            },
+                                            "name": "MySpacer9",
+                                            "designerId": "c2f435ab-c9fd-4b17-9575-dfdfc47582b8"
+                                        },
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "HBoxContainer",
+                                                "layout": "hbox",
+                                                "layout|flex": 1
+                                            },
+                                            "name": "MyContainer47",
+                                            "designerId": "0e80d1e3-40b1-4433-a4cc-535b02b63a43",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "KmMinRicercaStockLabel",
+                                                        "itemId": "kmMinRicercaStockLabel",
+                                                        "layout|flex": 1
+                                                    },
+                                                    "name": "MyLabel30",
+                                                    "designerId": "0ba9184e-0852-4e3d-b1fc-4436775067d7",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "tpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "tpl",
+                                                                "implHandler": [
+                                                                    "{km:this.fmtInt} Km"
+                                                                ]
+                                                            },
+                                                            "name": "tpl",
+                                                            "designerId": "2edbf605-4424-4804-96cd-7455ccb21468",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "templatefunction",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|params": [
+                                                                            "intValue"
+                                                                        ],
+                                                                        "fn": "fmtInt",
+                                                                        "implHandler": [
+                                                                            "return Infocar.app.formatInt(intValue);"
+                                                                        ]
+                                                                    },
+                                                                    "name": "fmtInt",
+                                                                    "designerId": "0de63ebe-d9de-4603-b6ec-05097dc902ae"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "kmMaxRicercaStockLabelCls"
+                                                        ],
+                                                        "designer|displayName": "KmMaxRicercaStockLabel",
+                                                        "itemId": "kmMaxRicercaStockLabel",
+                                                        "layout|flex": 1,
+                                                        "style": "{text-align:right;}"
+                                                    },
+                                                    "name": "MyLabel31",
+                                                    "designerId": "47a97aed-d1eb-40cd-b3c9-78412799d817",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "tpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "tpl",
+                                                                "implHandler": [
+                                                                    "{km:this.fmtInt} Km"
+                                                                ]
+                                                            },
+                                                            "name": "tpl",
+                                                            "designerId": "7fec7e0e-eccc-4ff6-b9ad-feae2e9af6cb",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "templatefunction",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|params": [
+                                                                            "intValue"
+                                                                        ],
+                                                                        "fn": "fmtInt",
+                                                                        "implHandler": [
+                                                                            "return Infocar.app.formatInt(intValue);"
+                                                                        ]
+                                                                    },
+                                                                    "name": "fmtInt",
+                                                                    "designerId": "d7a35b7f-dc87-4531-af44-555da4dc3403"
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "HBoxContainer",
+                                        "layout": "hbox",
+                                        "layout|flex": 3
+                                    },
+                                    "name": "MyContainer9",
+                                    "designerId": "0d4fcfbc-5b26-4e3a-8041-b675f93769ba",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.field.Select",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "autoSelect": false,
+                                                "designer|displayName": "AlimentazioneComboBox",
+                                                "displayField": "descrizione",
+                                                "label": "Alimentazione",
+                                                "labelWidth": 200,
+                                                "layout|flex": 1,
+                                                "name": "alimentazione_codice",
+                                                "store": "AlimentazioneRicercaStockStore",
+                                                "valueField": "codice"
+                                            },
+                                            "name": "MySelectField",
+                                            "designerId": "d86f90d4-d91b-4814-9bff-ae836ef3afda"
+                                        },
+                                        {
+                                            "type": "Ext.Spacer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": null,
+                                                "width": 50
+                                            },
+                                            "name": "MySpacer",
+                                            "designerId": "6e20bbb4-74b6-4484-9330-e45a842c5f24"
+                                        },
+                                        {
+                                            "type": "Ext.field.Select",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "autoSelect": false,
+                                                "designer|displayName": "CarrozzeriaComboBox",
+                                                "displayField": "descrizione",
+                                                "label": "Carrozzeria",
+                                                "labelWidth": 200,
+                                                "layout|flex": 1,
+                                                "name": "carrozzeria_codice",
+                                                "store": "CarrozzeriaRicercaStockStore",
+                                                "valueField": "codice"
+                                            },
+                                            "name": "MySelectField1",
+                                            "designerId": "ffc6863e-3613-4438-9146-554484bde7e4"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|align": "center",
+                                        "container|pack": "end",
+                                        "designer|displayName": "HBoxContainer",
+                                        "layout": "hbox",
+                                        "layout|flex": 3
+                                    },
+                                    "name": "MyContainer10",
+                                    "designerId": "ea79bfca-d8ef-4cdd-8cc0-9c4c26996266",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.Button",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "baseCls": "cercaRicStockButtonCls",
+                                                "designer|displayName": "CercaRicStockButton",
+                                                "itemId": "cercaRicStockButton",
+                                                "left": null,
+                                                "margin": null,
+                                                "text": "Cerca",
+                                                "width": null
+                                            },
+                                            "name": "MyButton3",
+                                            "designerId": "0942c05e-4966-4d0f-a657-5047e77105f7"
+                                        },
+                                        {
+                                            "type": "Ext.Spacer",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "width": 31
+                                            },
+                                            "name": "MySpacer2",
+                                            "designerId": "a89159ac-c70a-45a2-91a6-08a71cd09b1e"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "container|animation": "slide",
+                                "designer|displayName": "RicercaStockRisultatoContainer",
+                                "itemId": "ricercaStockRisultatoContainer",
+                                "layout": "card",
+                                "layout|flex": 1
+                            },
+                            "name": "MyContainer43",
+                            "designerId": "b6d9ebc8-d58d-4f11-bffa-bd9bf2f1c474",
+                            "cn": [
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "VeicoloRicStockRisultatoContainer",
+                                        "itemId": "veicoloRicStockRisultatoContainer",
+                                        "layout": "vbox"
+                                    },
+                                    "name": "MyContainer49",
+                                    "designerId": "61c68bc4-abc0-463c-856e-16e4adfccfb5",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": [
+                                                    "veicoloRicStockNumRisultatiContainerCls"
+                                                ],
+                                                "container|align": "center",
+                                                "container|pack": "center",
+                                                "designer|displayName": "VeicoloRicStockNumRisultatiContainer",
+                                                "layout": "hbox"
+                                            },
+                                            "name": "MyContainer14",
+                                            "designerId": "97311573-8a10-41ac-a83a-63b96c0e4979",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Component",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "baseCls": "leftVeicoloRicStockNumRisultatiSpacerCls",
+                                                        "designer|displayName": "LeftVeicoloRicStockNumRisultatiSpacer",
+                                                        "hidden": null
+                                                    },
+                                                    "name": "MyComponent2",
+                                                    "designerId": "fba94c5f-fd84-47fb-93f4-3bfae23f04a9"
+                                                },
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "baseCls": "veicoloRicStockNumRisultatiLabelCls",
+                                                        "designer|displayName": "VeicoloRicStockNumRisultatiLabel",
+                                                        "itemId": "veicoloRicStockNumRisultatiLabel",
+                                                        "layout|flex": 1,
+                                                        "width": null
+                                                    },
+                                                    "name": "MyLabel1",
+                                                    "designerId": "8c872d4a-3a67-4ca7-bba1-663d3756278d"
+                                                },
+                                                {
+                                                    "type": "Ext.field.Select",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "autoSelect": false,
+                                                        "cls": [
+                                                            "ordinamentoRicStockComboBoxCls"
+                                                        ],
+                                                        "designer|displayName": "OrdinamentoRicStockComboBox",
+                                                        "displayField": "descrizione",
+                                                        "itemId": "ordinamentoRicStockComboBox",
+                                                        "label": "Ordina per:",
+                                                        "labelWidth": "40%",
+                                                        "name": "ordinamento_codice",
+                                                        "store": "OrdinamentoRicercaStockStore",
+                                                        "valueField": "codice"
+                                                    },
+                                                    "name": "MySelectField6",
+                                                    "designerId": "774d54c0-728f-48fc-b090-3d0ba3af672e"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.dataview.DataView",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": [
+                                                    "veicoloRicStockRisultatoDataViewCls"
+                                                ],
+                                                "defaultType": null,
+                                                "designer|displayName": "VeicoloRicStockRisultatoDataView",
+                                                "itemId": "veicoloRicStockRisultatoDataView",
+                                                "layout|flex": 1,
+                                                "pressedDelay": 10,
+                                                "store": "VeicoloStockStore",
+                                                "useComponents": false
+                                            },
+                                            "name": "MyDataView2",
+                                            "designerId": "34fb135d-0568-4ab3-b2db-2766ee8232b7",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "itemTpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "itemTpl",
+                                                        "implHandler": [
+                                                            "<table class=\"veicoloRicStockRisultatoDataViewTableCls\">",
+                                                            "  <tr>",
+                                                            "    <td class=\"logoVeicoloRicStockRisultatoDataViewTdCls\"><img src=\"{urlImg}\" class=\"logoVeicoloRicStockRisultatoDataViewImgCls\"></td>",
+                                                            "    <td class=\"descrizioneVeicoloRicStockRisultatoDataViewTdCls\">",
+                                                            "        <div class=\"descrizione1VeicoloRicStockRisultatoDataViewDivCls\">{descrizione1}</div>",
+                                                            "        <div class=\"descrizione2VeicoloRicStockRisultatoDataViewDivCls\">{descrizione2}</div>",
+                                                            "        <div class=\"descrizione3VeicoloRicStockRisultatoDataViewDivCls\">{descrizione3}</div>",
+                                                            "        <div class=\"descrizione4VeicoloRicStockRisultatoDataViewDivCls\">{descrizione4}</div>",
+                                                            "    </td>",
+                                                            "    <td class=\"frecciaVeicoloRicStockRisultatoDataViewTdCls\"><img src=\"resources/images/freccia_dx.jpg\" class=\"frecciaVeicoloRicStockRisultatoDataViewImgCls\"></td>",
+                                                            "  </tr>",
+                                                            "</table>",
+                                                            ""
+                                                        ]
+                                                    },
+                                                    "name": "itemTpl",
+                                                    "designerId": "7fc6a71c-54d9-4546-9121-ec1a589e4163"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "Titolo": "Stock - Dettaglio veicolo",
+                        "designer|displayName": "InfoVeicoloStockContainer",
+                        "itemId": "infoVeicoloStockContainer",
+                        "layout": "hbox"
+                    },
+                    "name": "MyContainer67",
+                    "designerId": "f2527183-ae47-44d9-8a93-405cac558947",
+                    "customConfigs": [
+                        {
+                            "group": "(Custom Properties)",
+                            "name": "Titolo",
+                            "type": "string"
+                        }
+                    ],
+                    "cn": [
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "TestataInfoVeicoloStockContainerLandscape",
+                                "hidden": true,
+                                "itemId": "testataInfoVeicoloStockContainerLandscape",
+                                "layout": "vbox"
+                            },
+                            "name": "MyContainer52",
+                            "designerId": "0e379265-8ffa-44b9-87c2-2e631ee58043",
+                            "cn": [
+                                {
+                                    "type": "Ext.Img",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "InfoVeicoloStockMiniImg",
+                                        "height": 50,
+                                        "itemId": "infoVeicoloStockMiniImg",
+                                        "width": 50
+                                    },
+                                    "name": "MyImg1",
+                                    "designerId": "0bb0efa9-3de9-4bb8-9951-76cef73a6cf5"
+                                },
+                                {
+                                    "type": "Ext.Label",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "DescInfoVeicoloStockLabel",
+                                        "html": null,
+                                        "itemId": "descInfoVeicoloStockLabel"
+                                    },
+                                    "name": "MyLabel15",
+                                    "designerId": "46b10fac-78c7-44b4-a5f2-2774da4ced19",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.XTemplate",
+                                            "reference": {
+                                                "name": "tpl",
+                                                "type": "object"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "tpl",
+                                                "implHandler": [
+                                                    "{veicoloStock_descrizione}"
+                                                ]
+                                            },
+                                            "name": "tpl",
+                                            "designerId": "91fd322f-0221-4457-952e-4550a562ef1f"
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "VBoxContainer",
+                                "layout": "vbox",
+                                "layout|flex": 1
+                            },
+                            "name": "MyContainer51",
+                            "designerId": "501320a0-d9b4-4012-a84e-ff788eff5a8b",
+                            "cn": [
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "TestataInfoVeicoloStockContainerPortrait",
+                                        "itemId": "testataInfoVeicoloStockContainerPortrait",
+                                        "layout": "hbox"
+                                    },
+                                    "name": "MyContainer53",
+                                    "designerId": "aed4d4fc-dea2-403d-a6e3-4d906fd22f59",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.Img",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "InfoVeicoloStockMiniImg",
+                                                "height": 50,
+                                                "itemId": "infoVeicoloStockMiniImg",
+                                                "width": 50
+                                            },
+                                            "name": "MyImg1",
+                                            "designerId": "27153248-7c1e-4d87-8315-4661588261bc"
+                                        },
+                                        {
+                                            "type": "Ext.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "DescInfoVeicoloStockLabel",
+                                                "html": null,
+                                                "itemId": "descInfoVeicoloStockLabel"
+                                            },
+                                            "name": "MyLabel15",
+                                            "designerId": "661931ce-60b9-48d5-9b1e-97c70cdc2eae",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "tpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "tpl",
+                                                        "implHandler": [
+                                                            "{veicoloStock_descrizione}"
+                                                        ]
+                                                    },
+                                                    "name": "tpl",
+                                                    "designerId": "6108afac-8b4c-4285-907b-325d52672a7c"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "container|animation": "slide",
+                                        "designer|displayName": "CorpoInfoVeicoloStockContainer",
+                                        "height": null,
+                                        "itemId": "corpoInfoVeicoloStockContainer",
+                                        "layout": "card",
+                                        "layout|flex": 1,
+                                        "scrollable": null
+                                    },
+                                    "name": "MyContainer54",
+                                    "designerId": "5e5c6267-c456-4aa9-ac81-f28ae32d1f48",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "GeneraleInfoVeicoloStockContainer",
+                                                "itemId": "generaleInfoVeicoloStockContainer",
+                                                "layout": "vbox",
+                                                "scrollable": "vertical"
+                                            },
+                                            "name": "MyContainer59",
+                                            "designerId": "974956c4-343c-4a58-b73c-1fa41c683329",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "TestoImgInfoVeicoloStockContainer",
+                                                        "height": null,
+                                                        "layout": "hbox"
+                                                    },
+                                                    "name": "MyContainer55",
+                                                    "designerId": "c439773c-9633-41d0-b96d-99098782a7b9",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.carousel.Carousel",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "InfoVeicoloStockCarousel",
+                                                                "itemId": "infoVeicoloStockCarousel",
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyCarousel",
+                                                            "designerId": "2005f239-9c7a-4af7-80a4-08f22af9b894",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.Container",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "InfoVeicoloStockContainer1",
+                                                                        "layout": "fit"
+                                                                    },
+                                                                    "name": "MyContainer6",
+                                                                    "designerId": "ec9fd2d3-cefe-4bd5-8bc6-bc97eccc1366",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.Img",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "InfoVeicoloStockImg1",
+                                                                                "height": null,
+                                                                                "itemId": "infoVeicoloStockImg1",
+                                                                                "mode": "image",
+                                                                                "width": null
+                                                                            },
+                                                                            "name": "MyImg3",
+                                                                            "designerId": "871730dc-3f2d-440b-949c-bd43a9851601"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "Ext.Container",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "InfoVeicoloStockContainer2",
+                                                                        "layout": "fit"
+                                                                    },
+                                                                    "name": "MyContainer2",
+                                                                    "designerId": "2457ba69-f82c-4e45-83f5-14f9ee06178f",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.Img",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "InfoVeicoloStockImg2",
+                                                                                "height": null,
+                                                                                "itemId": "infoVeicoloStockImg2",
+                                                                                "mode": "image",
+                                                                                "width": null
+                                                                            },
+                                                                            "name": "MyImg4",
+                                                                            "designerId": "eff33239-860b-4f7f-8314-46471968adf0"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "Ext.Container",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "InfoVeicoloStockContainer3",
+                                                                        "layout": "fit"
+                                                                    },
+                                                                    "name": "MyContainer62",
+                                                                    "designerId": "98099826-6db0-4707-82ab-f56b9e7c25b2",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.Img",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "InfoVeicoloStockImg3",
+                                                                                "height": null,
+                                                                                "itemId": "infoVeicoloStockImg3",
+                                                                                "mode": "image",
+                                                                                "width": null
+                                                                            },
+                                                                            "name": "MyImg5",
+                                                                            "designerId": "ed672a8d-4e51-48ec-8b78-1019bdda5ec2"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.Container",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "TestoinfoVeicoloStockContainer",
+                                                                "itemId": "testoinfoVeicoloStockContainer",
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyContainer",
+                                                            "designerId": "dbbe84fb-e517-4ba2-9574-8bae26d82e82",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.Label",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "TestoInfoVeicoloStockLabel",
+                                                                        "itemId": "testoInfoVeicoloStockLabel",
+                                                                        "width": "100%"
+                                                                    },
+                                                                    "name": "MyLabel16",
+                                                                    "designerId": "09b5e89d-1398-4f1b-a76a-4c1dcf73fbd8",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.XTemplate",
+                                                                            "reference": {
+                                                                                "name": "tpl",
+                                                                                "type": "object"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "tpl",
+                                                                                "implHandler": [
+                                                                                    "<div class=\"\">Prezzo di vendita</div>",
+                                                                                    "<div class=\"\">{venditaPrezzo:this.fmtCurrency} &euro;</div>",
+                                                                                    "<br>",
+                                                                                    "<div class=\"\">",
+                                                                                    "Codice infocar: {codiceInfocar}<br>",
+                                                                                    "Codice casa: {codiceCasa}<br>",
+                                                                                    "Codice QUD: {codiceQUD}<br>",
+                                                                                    "Omologazioni: {omologazioni}<br>",
+                                                                                    "</div>"
+                                                                                ]
+                                                                            },
+                                                                            "name": "tpl",
+                                                                            "designerId": "9490febe-5eba-42e0-8a45-9a3fa214dc45",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "templatefunction",
+                                                                                    "reference": {
+                                                                                        "name": "items",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "designer|params": [
+                                                                                            "currValue"
+                                                                                        ],
+                                                                                        "fn": "fmtCurrency",
+                                                                                        "implHandler": [
+                                                                                            "return Infocar.app.formatCurrency(currValue);"
+                                                                                        ]
+                                                                                    },
+                                                                                    "name": "fmtCurrency",
+                                                                                    "designerId": "5ce891b0-488f-49b4-a28e-cf1f48c0857d"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "Ext.Container",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "cls": [
+                                                                            "prezziInfoVeicoloStockOverlayContainerCls"
+                                                                        ],
+                                                                        "designer|displayName": "PrezziInfoVeicoloStockOverlayContainer",
+                                                                        "height": 60,
+                                                                        "hidden": null,
+                                                                        "hideAnimation": null,
+                                                                        "html": null,
+                                                                        "itemId": "prezziInfoVeicoloStockOverlayContainer",
+                                                                        "layout": "hbox",
+                                                                        "left": null,
+                                                                        "right": null,
+                                                                        "scrollable": false,
+                                                                        "showAnimation": null,
+                                                                        "style": "background-color: #cccccc;",
+                                                                        "top": 0,
+                                                                        "width": "100%"
+                                                                    },
+                                                                    "name": "MyContainer41",
+                                                                    "configAlternates": {
+                                                                        "showAnimation": "object",
+                                                                        "hideAnimation": "object"
+                                                                    },
+                                                                    "designerId": "9534d997-51f0-4540-9b4d-3e86e979f946",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.Button",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "FrecciaPrezziInfoVeicoloStockButton",
+                                                                                "height": null,
+                                                                                "iconCls": "arrow_left",
+                                                                                "itemId": "frecciaPrezziInfoVeicoloStockButton",
+                                                                                "text": null,
+                                                                                "width": 60
+                                                                            },
+                                                                            "name": "MyButton17",
+                                                                            "designerId": "95cf5fd3-49d5-401c-a0a4-34d722b5150c"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.Label",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "TestoPrezziInfoVeicoloStockLabel",
+                                                                                "html": null,
+                                                                                "itemId": "testoPrezziInfoVeicoloStockLabel",
+                                                                                "layout|flex": 1,
+                                                                                "width": null
+                                                                            },
+                                                                            "name": "MyLabel39",
+                                                                            "designerId": "2d24ea43-0b4a-40f7-874c-a8da8a9f6754",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "Ext.XTemplate",
+                                                                                    "reference": {
+                                                                                        "name": "tpl",
+                                                                                        "type": "object"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "designer|displayName": "tpl",
+                                                                                        "implHandler": [
+                                                                                            "<div style=\"width: 100%; text-align: right\">",
+                                                                                            "    <p>Prezzo alternativo: {alternativoPrezzo} &euro;</p>",
+                                                                                            "    <p>Prezzo minimo di vendita: {minimoPrezzo} &euro;</p>",
+                                                                                            "</div>"
+                                                                                        ]
+                                                                                    },
+                                                                                    "name": "tpl",
+                                                                                    "designerId": "0a73e4f8-ecea-4d1e-8c7a-5130270c260d"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "start",
+                                                        "designer|displayName": "SintesiEquipInfoVeicoloStockContainer",
+                                                        "height": null,
+                                                        "itemId": "sintesiEquipInfoVeicoloStockContainer",
+                                                        "layout": "hbox"
+                                                    },
+                                                    "name": "MyContainer57",
+                                                    "designerId": "7a11661c-78a5-4e08-9ff1-1f1dd2e8c1bb",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "SintesiEquipInfoVeicoloStockLabel",
+                                                                "itemId": "sintesiEquipInfoVeicoloStockLabel",
+                                                                "width": "80%"
+                                                            },
+                                                            "name": "MyLabel33",
+                                                            "designerId": "d6c288c8-fcf5-4927-873e-781c309212dc",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.XTemplate",
+                                                                    "reference": {
+                                                                        "name": "tpl",
+                                                                        "type": "object"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "tpl",
+                                                                        "implHandler": [
+                                                                            "<div class=\"\">Equipaggiamenti</div>",
+                                                                            "<br>",
+                                                                            "<div class=\"\">",
+                                                                            "Questo allestimento comprende {numEquip} equipaggiamenti",
+                                                                            "</div>"
+                                                                        ]
+                                                                    },
+                                                                    "name": "tpl",
+                                                                    "designerId": "0955921e-1585-4646-bfac-1c2f45bbb811"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "EquipInfoVeicoloStockButton",
+                                                                "hidden": false,
+                                                                "itemId": "equipInfoVeicoloStockButton",
+                                                                "text": "Scopri tutti gli equipaggiamenti",
+                                                                "width": "20%"
+                                                            },
+                                                            "name": "MyButton18",
+                                                            "designerId": "cefd711e-4fa6-4a49-b82c-a65705c13e51"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.tab.Panel",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "SchedaInfoVeicoloStockTabPanel",
+                                                        "height": 200,
+                                                        "layout|flex": null
+                                                    },
+                                                    "name": "MyTabPanel",
+                                                    "designerId": "e7889fb4-ca5b-4f38-8abc-cab0983d2970",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.Container",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "InformAggiuntiveSchedaInfoVeicoloStockTab",
+                                                                "title": "Informazioni aggiuntive"
+                                                            },
+                                                            "name": "MyContainer70",
+                                                            "designerId": "150f7101-1a08-4f51-84ce-59937541cfee",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.Label",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "InformAggiuntiveSchedaInfoVeicoloStockLabel",
+                                                                        "itemId": "informAggiuntiveSchedaInfoVeicoloStockLabel",
+                                                                        "width": null
+                                                                    },
+                                                                    "name": "MyLabel36",
+                                                                    "designerId": "9796c2c8-21c1-48b0-be6f-b94c93288073",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.XTemplate",
+                                                                            "reference": {
+                                                                                "name": "tpl",
+                                                                                "type": "object"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "tpl",
+                                                                                "implHandler": [
+                                                                                    "{infoAggiuntiveSchedaVeicolo}"
+                                                                                ]
+                                                                            },
+                                                                            "name": "tpl",
+                                                                            "designerId": "3d870e14-31b5-4a5b-b652-50bcd77396f2"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.Container",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "StatoUsoSchedaInfoVeicoloStockTab",
+                                                                "title": "Stato uso"
+                                                            },
+                                                            "name": "MyContainer69",
+                                                            "designerId": "b6722428-d95d-4a4e-93e4-513e227eb381",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.Label",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "StatoUsoSchedaInfoVeicoloStockLabel",
+                                                                        "height": "100%",
+                                                                        "itemId": "statoUsoSchedaInfoVeicoloStockLabel",
+                                                                        "width": null
+                                                                    },
+                                                                    "name": "MyLabel33",
+                                                                    "designerId": "e395ae16-41a3-4988-b2bc-317ae4325e94",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.XTemplate",
+                                                                            "reference": {
+                                                                                "name": "tpl",
+                                                                                "type": "object"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "tpl",
+                                                                                "implHandler": [
+                                                                                    "{statoUsoSchedaVeicolo}"
+                                                                                ]
+                                                                            },
+                                                                            "name": "tpl",
+                                                                            "designerId": "bc52bcc0-1471-42e8-97ed-51d7e9295d8b"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.tab.Bar",
+                                                            "reference": {
+                                                                "name": "tabBar",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "docked": "top"
+                                                            },
+                                                            "name": "MyTabBar",
+                                                            "designerId": "ff42c543-c216-4c4e-ae59-0e557ce30a0e"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "container|align": "start",
+                                                        "designer|displayName": "SintesiDatiTecniciInfoVeicoloStockContainer",
+                                                        "itemId": "sintesiDatiTecniciInfoVeicoloStockContainer",
+                                                        "layout": "hbox"
+                                                    },
+                                                    "name": "MyContainer56",
+                                                    "designerId": "735a2333-7e98-4f06-97d1-ef5368897ba4",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "SintesiDatiTecniciInfoVeicoloStockLabel",
+                                                                "itemId": "sintesiDatiTecniciInfoVeicoloStockLabel",
+                                                                "width": "80%"
+                                                            },
+                                                            "name": "MyLabel33",
+                                                            "designerId": "dfadd775-5cd2-46ab-9a89-6f3456babe4b",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.XTemplate",
+                                                                    "reference": {
+                                                                        "name": "tpl",
+                                                                        "type": "object"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "tpl",
+                                                                        "implHandler": [
+                                                                            "<div class=\"\">Dati tecnici</div>",
+                                                                            "<br>",
+                                                                            "<div class=\"\">",
+                                                                            "Alimentazione: {alimentazione_descrizione}&nbsp;&nbsp;",
+                                                                            "Cilindrata cm<sup>3</sup>: {cilindrata}&nbsp;&nbsp;",
+                                                                            "Potenza kW/CV: {potenza}<br>",
+                                                                            "Carrozzeria: {carrozzeria_descrizione}&nbsp;&nbsp;",
+                                                                            "Normativa: {normativa}",
+                                                                            "</div>"
+                                                                        ]
+                                                                    },
+                                                                    "name": "tpl",
+                                                                    "designerId": "7b5c6dea-6a5c-4c84-bff5-43f5535abefd"
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "DatiTecniciInfoVeicoloStockButton",
+                                                                "hidden": false,
+                                                                "itemId": "datiTecniciInfoVeicoloStockButton",
+                                                                "text": "Scopri tutti i dati tecnici",
+                                                                "width": "20%"
+                                                            },
+                                                            "name": "MyButton18",
+                                                            "designerId": "45cc87e5-dd5a-4256-88ff-5b9911c41381"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "SintesiSituazioneStockVeicoloStockContainer",
+                                                        "height": null,
+                                                        "itemId": "sintesiSituazioneStockVeicoloStockContainer",
+                                                        "layout": "hbox"
+                                                    },
+                                                    "name": "MyContainer58",
+                                                    "designerId": "9421c132-80e8-466d-963d-81d4caa4107e",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "SintesiDatiPrevisiviInfoVeicoloStockLabel",
+                                                                "itemId": "sintesiDatiPrevisiviInfoVeicoloStockLabel",
+                                                                "layout|flex": null,
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyLabel37",
+                                                            "designerId": "bb55996d-2092-4351-91f1-4f083478aa63",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.XTemplate",
+                                                                    "reference": {
+                                                                        "name": "tpl",
+                                                                        "type": "object"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "tpl",
+                                                                        "implHandler": [
+                                                                            "<table border=\"0\" cellspacing=\"4\" cellpadding=\"4\">",
+                                                                            "    <tr>",
+                                                                            "        <td align=\"left\"></td>",
+                                                                            "        <td>Valore previsivo a 3 mesi</td>",
+                                                                            "        <td>Valore previsivo a 6 mesi</td>",
+                                                                            "    </tr>",
+                                                                            "    <tr>",
+                                                                            "        <td align=\"left\">Vendita</td>",
+                                                                            "        <td>{venditaValoreMesi3:this.fmtInt}</td>",
+                                                                            "        <td>{venditaValoreMesi6:this.fmtInt}</td>",
+                                                                            "    </tr>",
+                                                                            "    <tr>",
+                                                                            "        <td align=\"left\">Ritiro</td>",
+                                                                            "        <td>{ritiroValoreMesi3:this.fmtInt}</td>",
+                                                                            "        <td>{ritiroValoreMesi6:this.fmtInt}</td>",
+                                                                            "    </tr>",
+                                                                            "</table>"
+                                                                        ]
+                                                                    },
+                                                                    "name": "tpl",
+                                                                    "designerId": "94002add-0ad8-400b-b584-cc3e04d14f77",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "templatefunction",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|params": [
+                                                                                    "intValue"
+                                                                                ],
+                                                                                "fn": "fmtInt",
+                                                                                "implHandler": [
+                                                                                    "return Infocar.app.formatInt(intValue);"
+                                                                                ]
+                                                                            },
+                                                                            "name": "fmtInt",
+                                                                            "designerId": "0db698f1-03f4-420f-9e05-71bf15492fa7"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "type": "Ext.Label",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "SintesiDatiStockInfoVeicoloStockLabel",
+                                                                "itemId": "sintesiDatiStockInfoVeicoloStockLabel",
+                                                                "layout|flex": null,
+                                                                "width": "50%"
+                                                            },
+                                                            "name": "MyLabel16",
+                                                            "designerId": "43e06cf1-5734-48f6-af6c-ffc7d1e7b03d",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.XTemplate",
+                                                                    "reference": {
+                                                                        "name": "tpl",
+                                                                        "type": "object"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "tpl",
+                                                                        "implHandler": [
+                                                                            "<table border=\"0\" cellspacing=\"4\" cellpadding=\"4\">",
+                                                                            "    <tr>",
+                                                                            "        <td align=\"left\">In stock</td>",
+                                                                            "        <td>Fisico</td>",
+                                                                            "        <td>Virtuale</td>",
+                                                                            "        <td>Giacenza media</td>",
+                                                                            "        <td>Giacenza modello</td>",
+                                                                            "    </tr>",
+                                                                            "    <tr>",
+                                                                            "        <td align=\"left\">Allestimento</td>",
+                                                                            "        <td>{allestimentoFisicoStock:this.fmtInt}</td>",
+                                                                            "        <td>{allestimentoVirtualeStock:this.fmtInt}</td>",
+                                                                            "        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>",
+                                                                            "        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{allestimentoGiacenzaStockUrlImg}\"></td>",
+                                                                            "    </tr>",
+                                                                            "    <tr>",
+                                                                            "        <td align=\"left\">Modello</td>",
+                                                                            "        <td>{modelloFisicoStock:this.fmtInt}</td>",
+                                                                            "        <td>{modelloVirtualeStock:this.fmtInt}</td>",
+                                                                            "        <td>{modelloGiacenzaStock:this.fmtInt}</td>",
+                                                                            "        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{modelloGiacenzaStockUrlImg}\"></td>",
+                                                                            "    </tr>",
+                                                                            "</table>"
+                                                                        ]
+                                                                    },
+                                                                    "name": "tpl",
+                                                                    "designerId": "063111ab-ead0-40b0-9ea4-59a5d5ec896d",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "templatefunction",
+                                                                            "reference": {
+                                                                                "name": "items",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|params": [
+                                                                                    "intValue"
+                                                                                ],
+                                                                                "fn": "fmtInt",
+                                                                                "implHandler": [
+                                                                                    "return Infocar.app.formatInt(intValue);"
+                                                                                ]
+                                                                            },
+                                                                            "name": "fmtInt",
+                                                                            "designerId": "191be0cb-ad05-4e46-8379-1bd13de82894"
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "DatiTecniciInfoVeicoloStockContainer",
+                                                "itemId": "datiTecniciInfoVeicoloStockContainer",
+                                                "layout": "vbox"
+                                            },
+                                            "name": "MyContainer60",
+                                            "designerId": "8cb4651a-711b-49af-9dd3-557b6b4948a8",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "TitoloDatiTecniciInfoVeicoloStockLabel",
+                                                        "html": "Dati tecnici"
+                                                    },
+                                                    "name": "MyLabel35",
+                                                    "designerId": "98afb606-3b8a-4d25-bf07-e5a7eb609bd2"
+                                                },
+                                                {
+                                                    "type": "Ext.dataview.List",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "DatiTecniciInfoVeicoloStockListView",
+                                                        "disableSelection": true,
+                                                        "grouped": true,
+                                                        "layout|flex": 1,
+                                                        "store": "DatiTecniciInfoVeicoloStockStore"
+                                                    },
+                                                    "name": "MyList",
+                                                    "designerId": "69ea1ac2-a52d-4865-be54-0a51fd2367f6",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "itemTpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "itemTpl",
+                                                                "implHandler": [
+                                                                    "<table border=\"0\">",
+                                                                    "  <tr>",
+                                                                    "    <td style=\"width: 200px\">{nomeAttributo}:</td>",
+                                                                    "    <td>{valoreAttributo}</td>",
+                                                                    "  </tr>",
+                                                                    "</table>",
+                                                                    ""
+                                                                ]
+                                                            },
+                                                            "name": "itemTpl",
+                                                            "designerId": "fdff215a-89bb-4848-8a66-07a908045712"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "designer|displayName": "EquipInfoVeicoloStockContainer",
+                                                "itemId": "equipInfoVeicoloStockContainer",
+                                                "layout": "vbox"
+                                            },
+                                            "name": "MyContainer61",
+                                            "designerId": "a45011da-f29f-40c4-8b8b-a84b0c20c2e3",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "TitoloEquipSerieInfoVeicoloStockLabel",
+                                                        "html": "Equipaggiamenti di serie"
+                                                    },
+                                                    "name": "MyLabel34",
+                                                    "designerId": "f63e70ab-96a3-46c8-8fbe-2c98492b4c68"
+                                                },
+                                                {
+                                                    "type": "Ext.dataview.DataView",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "EquipSerieInfoVeicoloStockDataview",
+                                                        "layout|flex": 1,
+                                                        "store": "EquipSerieInfoVeicoloStockStore"
+                                                    },
+                                                    "name": "MyDataView4",
+                                                    "designerId": "68b0d012-037a-4d5a-996c-9de40e05b07a",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "itemTpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "itemTpl",
+                                                                "disableFormats": true,
+                                                                "implHandler": [
+                                                                    "<div> - {descrizione}</div>"
+                                                                ]
+                                                            },
+                                                            "name": "itemTpl",
+                                                            "designerId": "c82dd0bf-08a4-40e1-b0db-f225e2746662"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "TitoloEquipMontatiInfoVeicoloStockLabel",
+                                                        "html": "Equipaggiamenti montati"
+                                                    },
+                                                    "name": "MyLabel2",
+                                                    "designerId": "308bb767-3d36-4839-9447-92981359d00a"
+                                                },
+                                                {
+                                                    "type": "Ext.dataview.DataView",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "EquipMontatiInfoVeicoloStockDataview",
+                                                        "layout|flex": 1,
+                                                        "store": "EquipMontatiInfoVeicoloStockStore"
+                                                    },
+                                                    "name": "MyDataView",
+                                                    "designerId": "b4eb9f4b-74e2-4ff0-8be9-0a1de51050ec",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "itemTpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "itemTpl",
+                                                                "disableFormats": true,
+                                                                "implHandler": [
+                                                                    "<div> - {descrizione}</div>"
+                                                                ]
+                                                            },
+                                                            "name": "itemTpl",
+                                                            "designerId": "502a017a-b34a-4827-9b4e-b42d76e1cbee"
+                                                        }
+                                                    ]
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "type": "Ext.Toolbar",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "designer|displayName": "InfoVeicoloStockToolbar",
+                                "docked": "bottom",
+                                "hidden": false
+                            },
+                            "name": "MyToolbar2",
+                            "designerId": "a7c6ee0d-294d-4e22-adc6-ae6549224423",
+                            "cn": [
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "IndietroInfoVeicoloStockButton",
+                                        "itemId": "indietroInfoVeicoloStockButton",
+                                        "text": "Indietro"
+                                    },
+                                    "name": "MyButton12",
+                                    "designerId": "e450a423-9d23-4dc0-9960-487ca3e7b588"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "designer|displayName": "StampaInfoVeicoloStockButton",
+                                        "itemId": "stampaInfoVeicoloStockButton",
+                                        "text": "Stampa"
+                                    },
+                                    "name": "MyButton29",
+                                    "designerId": "5461e853-32a6-4547-a751-a169897e01de"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "success": true,
+    "message": null,
+    "total": 4,
+    "data": [{
+            "codice": "1",
+            "descrizione": "Logica 1"
+        },
+        {
+            "codice": "2",
+            "descrizione": "Logica 2"
+        },
+        {
+            "codice": "3",
+            "descrizione": "Logica 3"
+        },
+        {
+            "codice": "4",
+            "descrizione": "Logica 4"
+        }
+    ]
+}
+

@@ -1,0 +1,23 @@
+{
+    "success": true,
+    "message": null,
+    "total": 3,
+    "data": [{
+            "codice": "0",
+            "descrizione": "tutti"
+        },
+	{
+            "codice": "1",
+            "descrizione": "Anno"
+        },
+        {
+            "codice": "2",
+            "descrizione": "Alimentazione"
+        },
+        {
+            "codice": "3",
+            "descrizione": "Carrozzeria"
+        }
+    ]
+}
+

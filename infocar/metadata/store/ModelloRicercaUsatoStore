@@ -1,0 +1,56 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "[",
+            " {codice:1, descrizione:'modello 1'},",
+            " {codice:2, descrizione:'modello 2'},",
+            " {codice:3, descrizione:'modello 3'},",
+            " {codice:4, descrizione:'modello 4'}",
+            "]"
+        ],
+        "designer|userClassName": "ModelloRicercaUsatoStore",
+        "model": "ModelloModel",
+        "storeId": "ModelloRicercaUsatoStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "85b52f2b-1170-44a2-8cc6-b1c5ff3df15f",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "ModelloRicercaUsatoProxy",
+                "url": "/usato/modello"
+            },
+            "name": "MyRestProxy10",
+            "designerId": "7ce56cc6-a3bf-4eea-9454-d1ab708c2e64",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "ModelloRicercaUsatoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader4",
+                    "designerId": "b6790f14-e67c-4070-9002-da94dc477314"
+                }
+            ]
+        }
+    ]
+}

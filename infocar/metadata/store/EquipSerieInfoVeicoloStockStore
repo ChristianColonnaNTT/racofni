@@ -1,0 +1,49 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "EquipSerieInfoVeicoloStockStore",
+        "model": "StringModel",
+        "storeId": "EquipSerieInfoVeicoloStockStore"
+    },
+    "name": "EquipInfoVeicoloNuovoStore1",
+    "designerId": "71491ccd-906f-493b-9c5d-6394d1bd7e93",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "EquipInfoVeicoloStockProxy",
+                "url": "/stock/equipSerieInfoVeicolo"
+            },
+            "name": "MyRestProxy5",
+            "designerId": "a86d0917-8dc7-49ee-a480-7b5b6ecd8ef3",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "EquipInfoVeicoloStockJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader5",
+                    "designerId": "daa1faeb-fa76-4540-8b0f-a2c9cfde5211"
+                }
+            ]
+        }
+    ]
+}

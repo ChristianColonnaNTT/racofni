@@ -1,0 +1,151 @@
+{
+    "success": true,
+    "message": null,
+    "total": 12,
+    "data": [{
+            "codice": "10",
+            "descrizione": "equip 1",
+            "equipPrezzo": "330,93",
+            "cluster_codice": "TVEI_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Zeta",
+            "infoFlag": "N",
+            "stato": "2",
+            "abbinamentoFlag": "N",
+            "order": 400
+        },
+        {
+            "codice": "20",
+            "descrizione": "equip 2",
+            "equipPrezzo": "330,93",
+            "cluster_codice": "TVEI_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Zeta",
+            "infoFlag": "N",
+            "stato": "2",
+            "abbinamentoFlag": "N",
+            "order": 300
+        },
+        {
+            "codice": "blanditiis",
+            "descrizione": "iste",
+            "equipPrezzo": "756,88",
+            "cluster_codice": "TVEI_ESTE_SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "N",
+            "stato": "0",
+            "abbinamentoFlag": "N",
+            "order": 600
+        },
+        {
+            "codice": "quibusdam",
+            "descrizione": "in",
+            "equipPrezzo": "818,92",
+            "cluster_codice": "TVEI_INTE_SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "S",
+            "stato": "1",
+            "abbinamentoFlag": "S",
+            "order": 500
+        },
+        {
+            "codice": "dolorum",
+            "descrizione": "distinctio",
+            "equipPrezzo": "330,93",
+            "cluster_codice": "TVEI_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "N",
+            "stato": "2",
+            "abbinamentoFlag": "N",
+            "order": 100
+        },
+        {
+            "codice": "totam",
+            "descrizione": "non",
+            "equipPrezzo": "16,28",
+            "cluster_codice": "TVEI_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "S",
+            "stato": "0",
+            "abbinamentoFlag": "N",
+            "order": 200
+        },
+        {
+            "codice": "numquam",
+            "descrizione": "illo",
+            "equipPrezzo": "402,07",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "N",
+            "stato": "4",
+            "abbinamentoFlag": "S",
+            "order": 700
+        },
+        {
+            "codice": "perspiciatis",
+            "descrizione": "eaque",
+            "equipPrezzo": "849,02",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "N",
+            "stato": "1",
+            "abbinamentoFlag": "S",
+            "order": 800
+        },
+        {
+            "codice": "et",
+            "descrizione": "officiis",
+            "equipPrezzo": "564,43",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "N",
+            "stato": "2",
+            "abbinamentoFlag": "N",
+            "order": 900
+        },
+        {
+            "codice": "quas",
+            "descrizione": "necessitatibus",
+            "equipPrezzo": "821,77",
+            "cluster_codice": "INTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "N",
+            "stato": "0",
+            "abbinamentoFlag": "N",
+            "order": 1000
+        },
+        {
+            "codice": "velit",
+            "descrizione": "ipsa",
+            "equipPrezzo": "377,42",
+            "cluster_codice": "INTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "N",
+            "stato": "7",
+            "abbinamentoFlag": "N",
+            "order": 1100
+        },
+        {
+            "codice": "ipsum",
+            "descrizione": "aut",
+            "equipPrezzo": "380,04",
+            "cluster_codice": "SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "N",
+            "stato": "7",
+            "abbinamentoFlag": "N",
+            "order": 1200
+        }
+    ]
+}
+

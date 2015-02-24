@@ -1,0 +1,23 @@
+{
+    "success": true,
+    "message": null,
+    "total": 1,
+    "data": [{
+        "codice": "10",
+        "marca_codice": "1",
+        "marca_descrizione": "Opel",
+        "modello_codice": "2",
+        "modello_descrizione": "Opel Corsa",
+        "allestimento_codice": "3",
+        "allestimento_descrizione": "Opel Corsa GT",
+        "alimentazione_codice": "1",
+        "alimentazione_descrizione": "Benzina",
+        "carrozzeria_codice": "2",
+        "carrozzeria_descrizione": "Berlina 2 volumi",
+        "veicoloBasePrezzo": "1.234,56",
+        "equipaggiamentiPrezzo": "400,00",
+        "totalePrezzo": "6.543,21",
+        "urlImg": "../resources/images/ferrari1.jpg"
+    }]
+}
+

@@ -1,0 +1,127 @@
+{
+    "success": true,
+    "message": null,
+    "total": 10,
+    "data": [{
+            "codice": "perspiciatis",
+            "descrizione": "eaque",
+            "equipPrezzo": "849,02",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "N",
+            "stato": "1",
+            "abbinamentoFlag": "S",
+            "order": 4
+        },
+        {
+            "codice": "ipsum",
+            "descrizione": "aut",
+            "equipPrezzo": "380,04",
+            "cluster_codice": "SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "N",
+            "stato": "7",
+            "abbinamentoFlag": "N",
+            "order": 5
+        },
+        {
+            "codice": "dolorum",
+            "descrizione": "distinctio",
+            "equipPrezzo": "330,93",
+            "cluster_codice": "TVEI_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "N",
+            "stato": "2",
+            "abbinamentoFlag": "N",
+            "order": 6
+        },
+        {
+            "codice": "blanditiis",
+            "descrizione": "iste",
+            "equipPrezzo": "756,88",
+            "cluster_codice": "TVEI_ESTE_SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "N",
+            "stato": "0",
+            "abbinamentoFlag": "N",
+            "order": 1
+        },
+        {
+            "codice": "quibusdam",
+            "descrizione": "in",
+            "equipPrezzo": "818,92",
+            "cluster_codice": "TVEI_INTE_SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "S",
+            "stato": "1",
+            "abbinamentoFlag": "S",
+            "order": 2
+        },
+        {
+            "codice": "numquam",
+            "descrizione": "illo",
+            "equipPrezzo": "402,07",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "infoFlag": "N",
+            "stato": "4",
+            "abbinamentoFlag": "S",
+            "order": 3
+        },
+        {
+            "codice": "totam",
+            "descrizione": "non",
+            "equipPrezzo": "16,28",
+            "cluster_codice": "TVEI_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "S",
+            "stato": "0",
+            "abbinamentoFlag": "N",
+            "order": 7
+        },
+        {
+            "codice": "et",
+            "descrizione": "officiis",
+            "equipPrezzo": "564,43",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "N",
+            "stato": "2",
+            "abbinamentoFlag": "N",
+            "order": 8
+        },
+        {
+            "codice": "quas",
+            "descrizione": "necessitatibus",
+            "equipPrezzo": "821,77",
+            "cluster_codice": "INTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "N",
+            "stato": "0",
+            "abbinamentoFlag": "N",
+            "order": 9
+        },
+        {
+            "codice": "velit",
+            "descrizione": "ipsa",
+            "equipPrezzo": "377,42",
+            "cluster_codice": "INTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 2",
+            "infoFlag": "N",
+            "stato": "7",
+            "abbinamentoFlag": "N",
+            "order": 10
+        }
+    ]
+}
+

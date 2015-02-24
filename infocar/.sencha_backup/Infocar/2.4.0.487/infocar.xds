@@ -1,0 +1,139 @@
+{
+    "name": "infocar",
+    "settings": {
+        "cmd": {
+            "license": "custom",
+            "cmdVersion": "5.0.3.324",
+            "frameworkVersion": "2.4.0.482"
+        },
+        "canvasControls": {
+            "viewportSize": {
+                "name": "iPad",
+                "builtIn": true,
+                "height": 1024,
+                "width": 768
+            },
+            "viewportOrientation": "portrait"
+        },
+        "urlPrefix": "http://localhost:1841",
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true,
+        "projectHasEnabledWebServer": true,
+        "lockUrlPrefix": true,
+        "installStatus": "Not Installed",
+        "lastBuildSelection": {
+            "value": "webBuild",
+            "display": "Build web app"
+        }
+    },
+    "xdsVersion": "3.2.0",
+    "xdsBuild": 75,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "touch24",
+    "viewOrderMap": {
+        "view": [
+            "17257ca4-eebf-4ff0-9181-e99ed20340ca",
+            "e84b0271-5dd2-4565-ab08-51a43d51da91",
+            "30f3c213-d4a6-46de-b586-27f35f267716",
+            "022aec9a-4988-4e0c-89f2-42fb516b6b5e",
+            "993a1790-e07d-4208-994c-8b2cef7a3a08",
+            "d63e5e1d-360c-42a7-a807-1cc2b1f50570",
+            "3f80ef3f-bb37-45ef-98da-9af4ae589d91",
+            "2610f0c8-5f9e-4138-9d64-29572915df12",
+            "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
+        ],
+        "store": [
+            "9eef2ba5-a5c3-4b7e-92a7-54ce45226c5e",
+            "3130760e-a40e-42ba-a88c-159b18700acd",
+            "8f82615b-57bb-43c5-bcd3-01b16e6b564d",
+            "654c864d-7b37-4951-bc1e-1cfbbffa05f3",
+            "22cc28cd-3540-4ffc-a6b4-6c8c31337555",
+            "fd29d149-7c35-4631-8504-634f7e4b45d7",
+            "31be69b8-6ae6-4969-b67c-959e73104f75",
+            "85b52f2b-1170-44a2-8cc6-b1c5ff3df15f",
+            "efd5bad6-827e-457c-9a41-8970a9adf865",
+            "596813f6-bd4f-47e6-ab3a-0b8e02a8cfa2",
+            "dadd4a17-0478-4254-ae0c-4dc88613982a",
+            "71491ccd-906f-493b-9c5d-6394d1bd7e93",
+            "b9714ecf-17c4-415d-ae53-da74ba3c562a",
+            "9cbc476e-a877-4a37-b70d-f0a4788a1466",
+            "cda52bce-7908-4f6b-a68f-e9caca94daa3",
+            "5423538d-e1e8-4d65-aa35-6e77542e5cb4",
+            "7b7c8a40-b5b2-4bd5-bdc1-b6538cec54e4",
+            "89a70775-98fd-4ad7-9a76-d28a6f8e7f8c",
+            "07927980-a11b-4dd7-b5a1-d48785f6a187",
+            "b77b1f66-0060-4d1d-90cc-973bf791ad68",
+            "a8078ec7-8bf8-431c-9d5f-316f69c0e51d",
+            "d60373e3-7efd-4774-a552-61ee6acad458",
+            "4410a3e0-d6cb-41d1-9f24-bda5c443a747",
+            "752e7266-1052-4d80-aef7-dc84dcb7c8eb",
+            "14251158-f2c8-4204-bd69-061340ea07c7",
+            "e7d0eefb-18b5-4297-8417-d2b4df509229",
+            "06fc4cf8-857e-4f94-b8e7-11683651e093",
+            "01233004-b612-4c01-90f4-96956c876fda",
+            "c05954d5-d351-4bb8-9056-c8a576ab4619",
+            "bd4671e9-bb53-443c-bb21-913a842e1d12",
+            "28b9fc00-c6e4-424c-8dd3-f4a1392e5a12",
+            "0ebf9d88-e304-4744-b924-8c40612c5edf",
+            "9aaf429b-6000-4dc8-afac-4192ba29c59f",
+            "cfc65df6-7014-4266-8c38-b6198bf91502",
+            "a309b08e-5173-48c2-ba43-15ea7ee88dd8",
+            "aad9045d-a550-4c3c-bc21-593b73a2bbf5",
+            "14fc2da2-d935-4703-8324-3743174abc4a",
+            "6d4f14ad-ccd6-4813-9c53-a0484d69ccaf"
+        ],
+        "controller": [
+            "ece5805e-3cb5-49f7-bc08-be606e74971f",
+            "c5ee5339-1d16-42b4-b7cb-1a150ecdcd85",
+            "c38f1fc9-0517-465c-a707-90703de6f407",
+            "f8e5bd15-54a1-4ede-b877-c078bf4316f3",
+            "301b5ece-13b4-4801-b8b0-2176e57ac126",
+            "2ac8d8b3-5df7-4e1e-88f0-139b8ca5ac1b",
+            "150b0812-73c6-46a4-b465-7af8cd1c7bc6",
+            "9f630343-3aa7-4e5f-9d4b-31402a0f709c"
+        ],
+        "model": [
+            "fa7f6494-6084-4ba6-9308-09b35f5f6c48",
+            "0887ce0f-2c11-4f0e-998e-f115ee693e28",
+            "f2983e65-0523-44da-b711-a5980e3c0990",
+            "26ddeee3-564c-40f9-ac12-b9ce5afb7736",
+            "f105b31a-4c9b-4c87-89f0-0a402f1d5f0b",
+            "bb03428a-de82-458e-99db-93a71e06317f",
+            "ec66472a-9b3d-4580-9a66-b6d6869a9c8c",
+            "82f1e3a5-6f73-49a0-adb9-a1e814d402bf",
+            "b0e2d957-afe1-4c52-880c-8b85bd619e61",
+            "376e4b28-6a37-47ca-a461-2f36e84a9b6d",
+            "53e03f25-c2b4-43b0-b87b-895b5eb7f5ad",
+            "d15c072b-d1ce-4eaf-a4c6-a54c023a5fac",
+            "ef3e7549-e334-43f4-8ddc-41f8eee931e6",
+            "26cd172e-5ec1-4f74-baee-4464a69ed37e",
+            "8a33d73d-a7f2-483c-8731-f6577c17a958",
+            "1b4d5207-a332-48ed-95ce-67ce18c014af",
+            "cc1d62bb-d16b-46cc-99c3-1616479111e1",
+            "0c02ec32-0eb9-456f-8f02-152ec2117e59",
+            "e08d2d90-e6b5-4ac5-8d6b-7795d719ac8a",
+            "3e1a75a0-c331-4c84-bdd7-91bd63292dfd",
+            "ad8dd206-f4a5-4698-a600-9d3334abff25",
+            "0888b7ed-3ff0-46dd-bf12-d2160419e62a",
+            "8bb63511-1075-4466-8c1c-37bb9a969d16",
+            "7108de95-a169-4be5-af44-d2a40779b314",
+            "17d8acc9-269a-4677-a029-47d7febdf9ff",
+            "9d56c4ee-0014-443b-9607-9d85a881fa91"
+        ],
+        "resource": [
+            "0f9d4b63-763d-4e58-b32a-8513a6f5c6c7",
+            "bec738e8-fd8c-40e5-822f-bef560220f64",
+            "8c7228aa-9744-4d6a-8915-5b5085f4d2d5"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

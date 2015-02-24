@@ -1,0 +1,227 @@
+{
+    "success": true,
+    "message": null,
+    "total": 4,
+    "data": [{
+            "codice": "blanditiis",
+            "descrizione": "iste",
+            "equipPrezzo": "756,88",
+            "cluster_codice": "TVEI_ESTE_SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "info": "ut",
+            "stato": "DIS",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "quibusdam",
+            "descrizione": "in",
+            "equipPrezzo": "818,92",
+            "cluster_codice": "TVEI_INTE_SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "info": "ipsa",
+            "stato": "DIS",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "dolorum",
+            "descrizione": "distinctio",
+            "equipPrezzo": "330,93",
+            "cluster_codice": "TVEI_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "aliquid",
+            "info": "adipisci",
+            "stato": "ATT",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "totam",
+            "descrizione": "non",
+            "equipPrezzo": "16,28",
+            "cluster_codice": "TVEI_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "non",
+            "info": "sit",
+            "stato": "INC",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "numquam",
+            "descrizione": "illo",
+            "equipPrezzo": "402,07",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "explicabo",
+            "info": "et",
+            "stato": "ESC",
+            "abbinamentoFlag": "S"
+        },
+        {
+            "codice": "perspiciatis",
+            "descrizione": "eaque",
+            "equipPrezzo": "849,02",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "eveniet",
+            "info": "non",
+            "stato": "DIS",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "et",
+            "descrizione": "officiis",
+            "equipPrezzo": "564,43",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "facilis",
+            "info": "est",
+            "stato": "ATT",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "quas",
+            "descrizione": "necessitatibus",
+            "equipPrezzo": "821,77",
+            "cluster_codice": "INTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "vel",
+            "info": "suscipit",
+            "stato": "ATT",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "velit",
+            "descrizione": "ipsa",
+            "equipPrezzo": "377,42",
+            "cluster_codice": "INTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "voluptatibus",
+            "info": "iusto",
+            "stato": "DIS",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "ipsum",
+            "descrizione": "aut",
+            "equipPrezzo": "380,04",
+            "cluster_codice": "SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "omnis",
+            "info": "enim",
+            "stato": "DIS",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "quia",
+            "descrizione": "omnis",
+            "equipPrezzo": "479,55",
+            "cluster_codice": "SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "aliquid",
+            "info": "perspiciatis",
+            "stato": "OBB",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "consequatur",
+            "descrizione": "reiciendis",
+            "equipPrezzo": "709,8",
+            "cluster_codice": "SICU_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "dolor",
+            "info": "blanditiis",
+            "stato": "OBB",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "quod",
+            "descrizione": "illo",
+            "equipPrezzo": "110,67",
+            "cluster_codice": "COMF_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "similique",
+            "info": "voluptas",
+            "stato": "ESC",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "esse",
+            "descrizione": "maxime",
+            "equipPrezzo": "164,69",
+            "cluster_codice": "COMF_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "placeat",
+            "info": "nisi",
+            "stato": "DIS",
+            "abbinamentoFlag": "S"
+        },
+        {
+            "codice": "itaque",
+            "descrizione": "veniam",
+            "equipPrezzo": "154,71",
+            "cluster_codice": "COMF_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "est",
+            "info": "iusto",
+            "stato": "INC",
+            "abbinamentoFlag": "S"
+        },
+        {
+            "codice": "quod",
+            "descrizione": "ea",
+            "equipPrezzo": "120,17",
+            "cluster_codice": "SERV_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "rem",
+            "info": "tempore",
+            "stato": "INC",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "possimus",
+            "descrizione": "consectetur",
+            "equipPrezzo": "253,25",
+            "cluster_codice": "SERV_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "fuga",
+            "info": "facilis",
+            "stato": "ATT",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "voluptatem",
+            "descrizione": "et",
+            "equipPrezzo": "800,05",
+            "cluster_codice": "SERV_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "molestiae",
+            "info": "consequatur",
+            "stato": "DIS",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "ipsum",
+            "descrizione": "atque",
+            "equipPrezzo": "651,01",
+            "cluster_codice": "SERV_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "info": "sequi",
+            "stato": "DIS",
+            "abbinamentoFlag": "N"
+        },
+        {
+            "codice": "tempore",
+            "descrizione": "voluptas",
+            "equipPrezzo": "733,6",
+            "cluster_codice": "ESTE_",
+            "clusterImg": "http://www.edidomus.it/images/img1.jpg",
+            "gruppoDesc": "Gruppo 1",
+            "info": "ea",
+            "stato": "DIS",
+            "abbinamentoFlag": "N"
+        }
+    ]
+}
+

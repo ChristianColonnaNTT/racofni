@@ -1,0 +1,58 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MarcaModel",
+        "idProperty": "codice"
+    },
+    "name": "MyModel",
+    "designerId": "0887ce0f-2c11-4f0e-998e-f115ee693e28",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codice",
+                "type": "string"
+            },
+            "name": "field2",
+            "designerId": "67c701d2-4e7c-42ab-bc05-c91803fd49ee"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione",
+                "type": "string"
+            },
+            "name": "field3",
+            "designerId": "c98a078e-fcbd-4a32-93c2-8e68c31de13d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "urlImg",
+                "type": "string"
+            },
+            "name": "field4",
+            "designerId": "6dc3a15d-ca66-436a-85c1-4cae4140ac87"
+        }
+    ]
+}

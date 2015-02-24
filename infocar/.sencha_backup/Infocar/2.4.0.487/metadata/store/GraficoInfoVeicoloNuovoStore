@@ -1,0 +1,47 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "GraficoInfoVeicoloNuovoStore",
+        "model": "GraficoInfoVeicoloModel",
+        "storeId": "GraficoInfoVeicoloNuovoStore"
+    },
+    "name": "GraficoInfoVeicoloUsatoStore1",
+    "designerId": "14fc2da2-d935-4703-8324-3743174abc4a",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "GraficoInfoVeicoloNuovoProxy",
+                "url": "/nuovo/graficoInfoVeicolo"
+            },
+            "name": "MyRestProxy20",
+            "designerId": "cc7f62e8-2df9-4eb4-bd19-cf9510f95680",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "GraficoInfoVeicoloNuovoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader13",
+                    "designerId": "1580c68a-45a6-4264-ad0b-fe4077426f01"
+                }
+            ]
+        }
+    ]
+}

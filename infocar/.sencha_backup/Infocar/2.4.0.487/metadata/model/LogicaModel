@@ -1,0 +1,44 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LogicaModel",
+        "idProperty": "codice"
+    },
+    "name": "MyModel",
+    "designerId": "53e03f25-c2b4-43b0-b87b-895b5eb7f5ad",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codice",
+                "type": "string"
+            },
+            "name": "field73",
+            "designerId": "74e2be21-3dda-466c-9a7f-d3f29a2321bd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione",
+                "type": "string"
+            },
+            "name": "field74",
+            "designerId": "5554e154-2462-4d20-a855-e804e3f4a751"
+        }
+    ]
+}

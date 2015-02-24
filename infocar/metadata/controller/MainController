@@ -1,0 +1,113 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "MainController",
+        "requires": [
+            "Infocar.view.MainView"
+        ]
+    },
+    "name": "MyController1",
+    "designerId": "c38f1fc9-0517-465c-a707-90703de6f407",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#stampaButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onStampaButtonTap",
+                "implHandler": [
+                    "window.print();"
+                ],
+                "name": "tap"
+            },
+            "name": "onStampaButtonTap",
+            "designerId": "453c539e-4530-47ae-bc94-e1ec6f83f6f9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "container#bodyContainer",
+                "designer|targetType": "Ext.Container",
+                "fn": "onContainerActiveItemChange",
+                "implHandler": [
+                    "/* TODO",
+                    "if (value && value.Titolo) {",
+                    "    var titoloSezioneLabel = Ext.ComponentQuery.query('#titoloSezioneTopBarLabel')[0];",
+                    "    titoloSezioneLabel.setHtml(value.Titolo);",
+                    "}",
+                    "*/"
+                ],
+                "name": "activeitemchange"
+            },
+            "name": "onContainerActiveItemChange",
+            "designerId": "e72645cb-2e08-497a-be6f-009e04171538"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "/* Spostati nel launch dell'application",
+                    "Infocar.app.localize();",
+                    "",
+                    "Ext.defer(Infocar.app.checkSession, 2 * 60 * 1000, this);",
+                    "",
+                    "// Carico da back-end le informazioni relative all'utente",
+                    "Infocar.app.loadUtente();",
+                    "",
+                    "// Controllo l'orientamento del device in uso dall'utente e",
+                    "// riadatto la disposizione dei componenti.",
+                    "Infocar.app.checkOrientation();",
+                    "*/"
+                ]
+            },
+            "name": "launch",
+            "designerId": "0ec593b7-869e-4b93-b2cf-50eff2b4e4fc"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#esciTopBarButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onEsciTopBarButtonTap",
+                "implHandler": [
+                    "Ext.Msg.confirm('Uscita', 'Desideri uscire dalla sessione di lavoro?',",
+                    "                function (buttonId, value, opt) {",
+                    "                    if (buttonId === 'yes') {",
+                    "                        window.location = Infocar.app.loginPageUrl;",
+                    "                    }",
+                    "                }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onEsciTopBarButtonTap",
+            "designerId": "d1a13fae-7512-4e06-b7f6-7f068294b3be"
+        }
+    ]
+}

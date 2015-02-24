@@ -1,0 +1,44 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "AlimentazioneModel",
+        "idProperty": "codice"
+    },
+    "name": "MyModel",
+    "designerId": "fa7f6494-6084-4ba6-9308-09b35f5f6c48",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codice",
+                "type": "string"
+            },
+            "name": "field",
+            "designerId": "4739f49a-7c3d-4088-a0ef-54df876e84f7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione",
+                "type": "string"
+            },
+            "name": "field1",
+            "designerId": "deec07de-7c5e-4053-8818-74b381460e4d"
+        }
+    ]
+}

@@ -1,0 +1,48 @@
+{
+    "success": true,
+    "message": null,
+    "total": 7,
+    "data": [{
+        "codice": "1",
+        "nomeAttributo": "Carrozzeria",
+        "valoreAttributo": "berlina 2 volumi",
+        "gruppoDesc": "ZETA"
+    },
+    {
+        "codice": "10",
+        "nomeAttributo": "Porte",
+        "valoreAttributo": "5",
+        "gruppoDesc": "ZETA"
+    },
+    {
+        "codice": "3",
+        "nomeAttributo": "Posti",
+        "valoreAttributo": "5",
+        "gruppoDesc": "CORPO VETTURA"
+    },
+    {
+        "codice": "4",
+        "nomeAttributo": "Lunghezza",
+        "valoreAttributo": "4,530 m",
+        "gruppoDesc": "CORPO VETTURA"
+    },
+    {
+        "codice": "5",
+        "nomeAttributo": "Larghezza",
+        "valoreAttributo": "1,871 m",
+        "gruppoDesc": "DIMENSIONI"
+    },
+    {
+        "codice": "6",
+        "nomeAttributo": "Altezza",
+        "valoreAttributo": "1,5 m",
+        "gruppoDesc": "DIMENSIONI"
+    },
+    {
+        "codice": "7",
+        "nomeAttributo": "Passo",
+        "valoreAttributo": "2,700 m",
+        "gruppoDesc": "DIMENSIONI"
+    }]
+}
+

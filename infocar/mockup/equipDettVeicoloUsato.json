@@ -1,0 +1,184 @@
+{
+    "success": true,
+    "message": null,
+    "total": 4,
+    "data": [
+    {
+        "codice": "1",
+        "descrizione": "Cerchi in lega",
+        "equipPrezzo": "250,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "2",
+        "descrizione": "Climatizzatore",
+        "equipPrezzo": "210,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "ATT",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "3",
+        "descrizione": "Fendinebbia",
+        "equipPrezzo": "180,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "4",
+        "descrizione": "Air bag",
+        "equipPrezzo": "150,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    }
+    ,{
+        "codice": "5",
+        "descrizione": "Cerchi in lega",
+        "equipPrezzo": "250,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "6",
+        "descrizione": "Climatizzatore",
+        "equipPrezzo": "210,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "ATT",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "7",
+        "descrizione": "Fendinebbia",
+        "equipPrezzo": "180,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "8",
+        "descrizione": "Air bag",
+        "equipPrezzo": "150,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    }
+    ,{
+        "codice": "9",
+        "descrizione": "Cerchi in lega",
+        "equipPrezzo": "250,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "10",
+        "descrizione": "Climatizzatore",
+        "equipPrezzo": "210,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "ATT",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "11",
+        "descrizione": "Fendinebbia",
+        "equipPrezzo": "180,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "12",
+        "descrizione": "Air bag",
+        "equipPrezzo": "150,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    }
+    ,{
+        "codice": "13",
+        "descrizione": "Cerchi in lega",
+        "equipPrezzo": "250,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "14",
+        "descrizione": "Climatizzatore",
+        "equipPrezzo": "210,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "ATT",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "15",
+        "descrizione": "Fendinebbia",
+        "equipPrezzo": "180,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "16",
+        "descrizione": "Air bag",
+        "equipPrezzo": "150,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "infoFlag": "N",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    }
+    ]
+}
+

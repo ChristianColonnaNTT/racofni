@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "message": null,
+    "total": 4,
+    "data": [{
+            "codice": "0",
+            "descrizione": "tutte"
+        },
+        {
+            "codice": "1",
+            "descrizione": "Benzina"
+        },
+        {
+            "codice": "2",
+            "descrizione": "Diesel"
+        },
+        {
+            "codice": "3",
+            "descrizione": "Metano"
+        },
+        {
+            "codice": "4",
+            "descrizione": "GPL"
+        }
+    ]
+}
+

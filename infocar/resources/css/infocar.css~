@@ -1,0 +1,327 @@
+.evidenzaBtnClusterDettVeicoloNuovo {
+  background-image: none !important;
+  background-color: red !important;
+}
+
+table.testoLegendaEquipDettVeicoloNuovoTableStyle td {
+  padding: 4px !important;
+  height: 20px !important;
+}
+
+.statoLiberoEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/stato_libero.jpg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.statoSelezEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/stato_selez.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.statoInclusoEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/stato_incluso.jpg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.statoNonDispEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/stato_non_disp.jpg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.statoUndefinedEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: none;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.infoEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/info.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+
+.photoFullscreenImgCls img {
+  max-height: 100% !important;
+  max-width: 100% !important;
+}
+
+
+/* Marche ricerca usato */
+table.marcaRicUsatoRisultatoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.logoMarcaRicUsatoRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+td.descrizioneMarcaRicUsatoRisultatoDataViewTdCls {
+  width: 90% !important;
+  height: 50px !important;
+  text-align: left !important;
+}
+
+td.frecciaMarcaRicUsatoRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+
+/* Modelli ricerca usato */
+table.modelloRicUsatoRisultatoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.descrizioneModelloRicUsatoRisultatoDataViewTdCls {
+  width: 90% !important;
+  height: 50px !important;
+  text-align: left !important;
+}
+
+td.frecciaModelloRicUsatoRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+
+/* Allestimenti ricerca usato */
+table.allestimentoRicUsatoRisultatoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.descrizioneAllestimentoRicUsatoRisultatoDataViewTdCls {
+  width: 90% !important;
+  height: 50px !important;
+  text-align: left !important;
+}
+
+td.frecciaAllestimentoRicUsatoRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+
+/* Marche ricerca nuovo preventivo */
+table.marcaRicNuovoRisultatoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.logoMarcaRicNuovoRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+td.descrizioneMarcaRicNuovoRisultatoDataViewTdCls {
+  width: 90% !important;
+  height: 50px !important;
+  text-align: left !important;
+}
+
+td.frecciaMarcaRicNuovoRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+
+/* Modelli ricerca nuovo preventivo */
+table.modelloRicNuovoRisultatoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.descrizioneModelloRicNuovoRisultatoDataViewTdCls {
+  width: 90% !important;
+  height: 50px !important;
+  text-align: left !important;
+}
+
+td.frecciaModelloRicNuovoRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+
+/* Allestimenti ricerca nuovo preventivo */
+table.allestimentoRicNuovoRisultatoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.descrizioneAllestimentoRicNuovoRisultatoDataViewTdCls {
+  width: 90% !important;
+  height: 50px !important;
+  text-align: left !important;
+}
+
+td.frecciaAllestimentoRicNuovoRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+
+/* Veicoli ricerca stock */
+table.veicoloRicStockRisultatoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.logoVeicoloRicStockRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+td.descrizioneVeicoloRicStockRisultatoDataViewTdCls {
+  width: 90% !important;
+  height: 50px !important;
+  text-align: left !important;
+}
+
+td.frecciaVeicoloRicStockRisultatoDataViewTdCls {
+  width: 5% !important;
+  height: 50px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+div.descrizione1VeicoloRicStockRisultatoDataViewDivCls {
+  font-weight: bold !important;
+  font-size: 110% !important;
+}
+
+div.descrizione2VeicoloRicStockRisultatoDataViewDivCls {
+}
+
+div.descrizione3VeicoloRicStockRisultatoDataViewDivCls {
+}
+
+div.descrizione4VeicoloRicStockRisultatoDataViewDivCls {
+  font-weight: bold !important;
+}
+
+
+/* Popup equipaggiamenti dettaglio veicolo usato */
+table.equipDettVeicoloUsatoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.chkboxEquipDettVeicoloUsatoDataViewTdCls {
+  width: 10% !important;
+  height: 30px !important;
+  background-image: url(../images/stato_libero.jpg) !important;
+  background-size: 25px 25px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+td.descrizioneEquipDettVeicoloUsatoDataViewTdCls {
+  width: 75% !important;
+  height: 30px !important;
+  text-align: left !important;
+}
+
+td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
+  width: 15% !important;
+  height: 30px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+.selezioneEquipDettVeicoloUsatoDataViewSelectedCls {
+  background-image: none !important;
+  background-color: #cccccc !important;
+}
+
+.selezioneEquipDettVeicoloUsatoDataViewSelectedCls td.chkboxEquipDettVeicoloUsatoDataViewTdCls {
+  background-image: url(../images/stato_selez.png) !important;
+  background-size: 25px 25px !important;
+  background-repeat: no-repeat  !important;
+  background-position: center center !important;
+}
+
+
+
+/* Popup equipaggiamenti ricorsivi dettaglio veicolo nuovo */
+table.equipPopupDettVeicoloNuovoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.chkboxPopupEquipDettVeicoloNuovoDataViewTdCls {
+  width: 10% !important;
+  height: 30px !important;
+  background-image: url(../images/stato_libero.jpg) !important;
+  background-size: 25px 25px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+td.descrizionePopupEquipDettVeicoloNuovoDataViewTdCls {
+  width: 75% !important;
+  height: 30px !important;
+  text-align: left !important;
+}
+
+td.prezzoPopupEquipDettVeicoloNuovoDataViewTdCls {
+  width: 15% !important;
+  height: 30px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+.selezionePopupEquipDettVeicoloNuovoDataViewSelectedCls {
+  background-image: none !important;
+  background-color: #cccccc !important;
+}
+
+.selezionePopupEquipDettVeicoloNuovoDataViewSelectedCls td.chkboxPopupEquipDettVeicoloNuovoDataViewTdCls {
+  background-image: url(../images/stato_selez.png) !important;
+  background-size: 25px 25px !important;
+  background-repeat: no-repeat  !important;
+  background-position: center center !important;
+}
+
+.prezziInfoVeicoloStockOverlayContainerCls {
+  /* right: -92% */
+}

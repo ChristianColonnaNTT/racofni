@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "ListinoStore",
+        "model": "ListinoModel",
+        "storeId": "ListinoStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "a8078ec7-8bf8-431c-9d5f-316f69c0e51d",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "ListinoProxy",
+                "url": "/nuovo/listino"
+            },
+            "name": "MyRestProxy7",
+            "designerId": "8f065e24-29a3-4147-8e25-a2b1397add76",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "ListinoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "1b6a0a76-cd03-4524-9521-57505e422354"
+                }
+            ]
+        }
+    ]
+}

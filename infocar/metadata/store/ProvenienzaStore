@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "ProvenienzaStore",
+        "model": "ProvenienzaModel",
+        "storeId": "ProvenienzaStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "07927980-a11b-4dd7-b5a1-d48785f6a187",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "ProvenienzaProxy",
+                "url": "/usato/provenienzaDettVeicolo"
+            },
+            "name": "MyRestProxy12",
+            "designerId": "a1bb668e-3d64-44dc-b397-dd34d39ce5dc",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "ProvenienzaJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader6",
+                    "designerId": "84548817-b094-41f5-87ff-b95e1dabab8e"
+                }
+            ]
+        }
+    ]
+}

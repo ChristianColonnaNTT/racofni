@@ -1,0 +1,23 @@
+{
+    "success": true,
+    "message": null,
+    "total": 4,
+    "data": [{
+            "codice": "1",
+            "descrizione": "modello 1"
+        },
+        {
+            "codice": "2",
+            "descrizione": "modello 2"
+        },
+        {
+            "codice": "3",
+            "descrizione": "modello 3"
+        },
+        {
+            "codice": "4",
+            "descrizione": "modello 4"
+        }
+    ],
+}
+

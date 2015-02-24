@@ -1,0 +1,67 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "container|animation": "slide",
+        "designer|userClassName": "MainView",
+        "fullscreen": true,
+        "itemId": "mainView",
+        "layout": "card"
+    },
+    "name": "MyContainer40",
+    "designerId": "e84b0271-5dd2-4565-ab08-51a43d51da91",
+    "cn": [
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "MainContainer",
+                "itemId": "mainContainer",
+                "layout": "vbox",
+                "margin": null
+            },
+            "name": "MyContainer",
+            "designerId": "c2280308-fc2a-48ef-aab8-c4c5996aa4f7",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "topbar",
+                    "designerId": "516ffdd9-f687-4171-b474-d0531e135733",
+                    "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
+                },
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "container|animation": "slide",
+                        "designer|displayName": "BodyContainer",
+                        "height": "100%",
+                        "id": null,
+                        "itemId": "bodyContainer",
+                        "layout": "card",
+                        "scrollable": null
+                    },
+                    "name": "MyContainer2",
+                    "designerId": "6f85122c-621f-4810-8912-3062e1db7186"
+                }
+            ]
+        }
+    ]
+}

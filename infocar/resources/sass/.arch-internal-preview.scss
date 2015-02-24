@@ -1,0 +1,1561 @@
+/* _arch-vars-start */
+/* Variabili Infocar */
+$infocar-border-color: #333344;
+
+$infocar-button-color: #fff;
+$infocar-button-bg-color: #333344;
+$infocar-button-highlight-color: #999;
+$infocar-button-border-color: $infocar-button-bg-color;
+$infocar-button-border-radius: 0.2em;
+$infocar-button-font-size: 16px;
+$infocar-button-height: 60px;
+$infocar-button-width: 176px;
+
+$infocar-button-red-width: 14vw;
+$infocar-button-red-min-width: 120px;
+
+$infocar-menu-left-bg-color: #f2f2f2;
+$infocar-menu-left-color: #292b37;
+$infocar-menu-left-highlight-color: #999;
+
+$infocar-form-border-radius: 0.4em;
+
+
+$infocar-risultato-ricerca-item-height: 50px;
+$infocar-risultato-ricerca-stock-item-height: 102px;
+$infocar-risultato-ricerca-item-bg-color: #fff;
+$infocar-risultato-ricerca-item-highlight-color: #999;
+$infocar-risultato-ricerca-item-font: 0.75em;
+
+$infocar-form-label-margin-top: 7px;
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Open Sans Light'), local('OpenSans-Light'), url(../font/opensans/OpenSans-Light.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(../font/opensans/OpenSans-Regular.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans Semibold'), local('OpenSans-Semibold'), url(../font/opensans/OpenSans-Semibold.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'), url(../font/opensans/OpenSans-Bold.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Open Sans Extrabold'), local('OpenSans-Extrabold'), url(../font/opensans/OpenSans-ExtraBold.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 300;
+  src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'), url(../font/opensans/OpenSans-LightItalic.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'), url(../font/opensans/OpenSans-Italic.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 600;
+  src: local('Open Sans Semibold Italic'), local('OpenSans-SemiboldItalic'), url(../font/opensans/OpenSans-SemiboldItalic.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'), url(../font/opensans/OpenSans-BoldItalic.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 800;
+  src: local('Open Sans Extrabold Italic'), local('OpenSans-ExtraboldItalic'), url(../font/opensans/OpenSans-ExtraBoldItalic.ttf) format('truetype');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+$font-family: 'Open Sans';
+$page-bg-color: #fff;
+$form-bg-color: #fff;
+$sheet-bg-color: #f2f2f2;
+$sheet-bg-gradient: flat;
+$toolbar-base-color: $infocar-border-color;
+$toolbar-gradient: flat;
+$toolbar-input-border-color: $infocar-border-color;
+$toolbar-input-color: $infocar-border-color;
+
+@import 'sencha-touch/default';
+@import 'sencha-touch/default/all';
+
+
+/* _arch-other-start */
+
+/* Font */
+body.x-desktop {
+  font-size: 1em !important;
+}
+
+body.x-tablet {
+  font-size: 1em !important;
+}
+
+
+.x-form-label {
+  font-size: 0.75em;
+}
+
+.x-form-label {
+  font-size: 0.75em;
+}
+
+.x-field-select .x-input-el {
+  border: 1px solid #999;
+  border-radius: 0.4em;
+  height: 80%;
+  min-height: 80%;
+  font-size: 0.75em;
+}
+
+.x-field-textarea .x-input-el,
+.x-field-text .x-input-el {
+  border: 1px solid #999;
+  border-radius: 0.4em;
+  height: 80%;
+  min-height: 80%;
+  font-size: 0.75em;
+}
+
+.infocar-bold {
+  font-weight: bold;
+}
+
+
+
+/* Bottoni */
+@mixin infocar-button($param-color: $infocar-button-color,
+                      $param-bg-color: $infocar-button-bg-color,
+                      $param-highlight-color: $infocar-button-highlight-color,
+                      $param-font-size: $infocar-button-font-size) {
+    -webkit-background-clip: padding-box;
+    -webkit-tap-highlight-color: $param-highlight-color;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+
+    @include infocar-align(center);
+
+    background-clip: padding-box;
+    background-color: $param-bg-color;
+    background-image: none;
+    border: 0;
+    border-bottom-left-radius: $infocar-button-border-radius;
+    border-bottom-right-radius: $infocar-button-border-radius;
+    border-top-left-radius: $infocar-button-border-radius;
+    border-top-right-radius: $infocar-button-border-radius;
+    color: $param-color;
+    font-size: $param-font-size;
+    font-weight: normal !important;
+    height: 3vh;
+    min-height: 30px;
+
+    &.x-button-pressing {
+        background-color: $param-highlight-color !important;
+        background-clip: padding-box !important;
+        background-image: none !important;
+    }
+}
+
+/*
+@mixin infocar-button($param-color: $infocar-button-color, $param-bg-color: $infocar-button-bg-color, $param-font-size: $infocar-button-font-size) {
+    -webkit-background-clip: padding-box;
+    -webkit-box-align: center;
+    -webkit-tap-highlight-color: #000;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    align-items: center;
+    background-clip: padding-box;
+    background-color: $param-bg-color;
+    background-image: none;
+    border: 1px solid $param-bg-color;
+    border-bottom-left-radius: $infocar-button-border-radius;
+    border-bottom-right-radius: $infocar-button-border-radius;
+    border-top-left-radius: $infocar-button-border-radius;
+    border-top-right-radius: $infocar-button-border-radius;
+    color: $param-color;
+    font-size: $param-font-size;
+}
+*/
+
+@mixin infocar-button-red() {
+    @include infocar-button($param-color: #db021f,
+                            $param-bg-color: #ffffff,
+                            $param-highlight-color: #333344);
+    width: $infocar-button-red-width;
+    min-width: $infocar-button-red-min-width;
+}
+
+
+@mixin infocar-button-icona(
+    $param-img-url: none,
+    $param-img-size: 24px 24px,
+    $param-highlight-color: $infocar-button-highlight-color,
+    $param-padding: 0,
+    $param-margin: 0)
+{
+    -webkit-background-clip: padding-box;
+    -webkit-tap-highlight-color: $param-highlight-color;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+
+    @include infocar-align(center);
+
+    background-clip: padding-box;
+
+    background-image: $param-img-url !important;
+    background-size: $param-img-size !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+
+    border: 0 !important;
+    color: #fff;
+    padding: $param-padding;
+    margin: $param-margin;
+    border-radius: 0;
+
+    &.x-button-pressing {
+        background-color: $param-highlight-color !important;
+        background-clip: padding-box !important;
+        background-image: param-img-url !important;
+        background-size: $param-img-size !important;
+    }
+}
+
+/*
+@mixin infocar-button-icona(
+    $param-highlight-color: $infocar-button-highlight-color,
+    $param-padding: 0,
+    $param-margin: 0)
+{
+    -webkit-background-clip: padding-box;
+    -webkit-tap-highlight-color: $param-highlight-color;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+
+    @include infocar-align(center);
+
+    background-clip: padding-box;
+    background: none;
+    border: 0 !important;
+    color: #fff;
+    padding: $param-padding;
+    margin: $param-margin;
+    border-radius: 0;
+
+    &.x-button-pressing {
+        background-color: $param-highlight-color !important;
+        background-clip: padding-box !important;
+        background-image: none !important;
+    }
+}
+*/
+
+
+
+@mixin infocar-align($param-align) {
+    -webkit-box-align: $param-align !important;
+    -ms-flex-align: $param-align !important;
+    align-items: $param-align !important;
+    text-align: $param-align !important;
+}
+
+@mixin vertical-align-middle {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin infocar-flex($param-flex) {
+  -webkit-box-flex: $param-flex;
+  -ms-flex: $param-flex;
+  flex: $param-flex;
+}
+
+@mixin infocar-box-orient($param-orient) {
+  -webkit-box-orient: $param-orient !important;
+  -moz-box-orient: $param-orient !important;
+  box-orient: $param-orient !important;
+}
+
+
+/* Menu generale di sinistra */
+/* .infocar-menu-left, .infocar-menu-left .x-body, .infocar-menu-left .x-docked-top { */
+.titoloMenuLeftContainerCls {
+    background-color: $infocar-menu-left-bg-color !important;
+    background-image: none !important;
+    border: 0 !important;
+    padding: 7% 0 7% 0 !important;
+}
+
+.titoloMenuLeftLabelCls {
+    text-align: center;
+    font-weight: bold;
+    background-color: $infocar-menu-left-bg-color !important;
+    background-image: none !important;
+    border: 0;
+}
+
+.MenuLeftButtonCls {
+    -webkit-background-clip: padding-box;
+/*
+    -webkit-box-align: left !important;
+    -ms-flex-align:left !important;
+    align-items: left !important;
+    text-align: left !important;
+*/
+    @include infocar-align(left);
+
+    -webkit-tap-highlight-color: $infocar-menu-left-highlight-color;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    height: 7%;
+    min-height: 60px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-clip: padding-box;
+    background-color: $infocar-menu-left-bg-color;
+    background-image: none;
+    border-top: 0;
+    border-bottom: 2px dotted #92969f;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0 !important;
+    color: $infocar-menu-left-color;
+    font-size: $infocar-button-font-size;
+}
+
+.HomeMenuLeftButtonCls {
+
+    @extend .MenuLeftButtonCls;
+
+    border-top: 2px dotted #92969f !important;
+}
+
+.MenuLeftButtonCls .x-button-label {
+    @include infocar-align(left);
+    font-weight: normal !important;
+    border-radius: 0 !important;
+}
+
+/*
+.x-badge, .x-button-icon, .x-shown, .home, .x-button-label,
+.x-button-normal, .x-button, .x-iconalign-left,
+.x-unsized.x-button-normal.x-button.x-iconalign-left.infocar-menu-left-button {
+    border-top: 1px dotted #92969f;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0 !important;
+}
+*/
+
+
+/* Barra utente di testata (TopBar) */
+.upTopBarContainerCls {
+    background-color: #fff;
+}
+
+.downTopBarContainerCls {
+    background-color: #333344;
+    color: #fff;
+}
+
+.showMainMenuLeftButtonCls {
+    margin-left: 24px;
+}
+
+.userNameTopBarLabelCls {
+    text-align: right !important;
+    margin-right: 26px;
+}
+
+.esciTopBarButtonCls {
+    margin-right: 40px;
+}
+
+.titoloSezioneTopBarLabelCls {
+    font-size: 1.3em !important;
+    margin-left: 48px;
+}
+
+
+/* Form ricerca usato/nuovo/stock */
+.ricercaUsatoFormCls, .ricercaNuovoFormCls {
+    border-style: solid;
+    border-color: $infocar-border-color;
+    border-top-width: 0;
+    border-bottom-width: 1vh;
+    border-left-width: 1vw;
+    border-right-width: 1vw;
+    height: 13vh;
+    min-height: 150px;
+}
+
+.ricercaStockFormCls {
+    border-style: solid;
+    border-color: $infocar-border-color;
+    border-top-width: 0;
+    border-bottom-width: 1vh;
+    border-left-width: 1vw;
+    border-right-width: 1vw;
+    height: 18vh;
+    min-height: 200px;
+}
+
+
+
+.ricercaUsatoFormCls .x-form-label,
+.ricercaNuovoFormCls .x-form-label,
+.ricercaStockFormCls .x-form-label,
+.ricercaUsatoFormCls .x-field-select .x-input-el,
+.ricercaNuovoFormCls .x-field-select .x-input-el,
+.ricercaStockFormCls .x-field-select .x-input-el,
+.ricercaUsatoFormCls .x-field-text .x-input-el,
+.ricercaNuovoFormCls .x-field-text .x-input-el,
+.ricercaStockFormCls .x-field-text .x-input-el
+{
+    font-size: 1em;
+}
+
+
+
+
+.cercaRicUsatoButtonCls, .cercaRicNuovoButtonCls, .cercaRicStockButtonCls {
+    @include infocar-button();
+    width: 220px;
+}
+
+.azzeraRicUsatoButtonCls, .azzeraRicNuovoButtonCls {
+    @include infocar-button();
+    width: 220px;
+}
+
+
+.prezzoMaxRicercaStockLabelCls, .kmMaxRicercaStockLabelCls {
+    @include infocar-align(right);
+}
+
+.stockUsatoRicercaStockLabelCls {
+    font-weight: bold;
+    padding: 0.65em;
+    /* height: 45px !important; */
+    /* line-height: 45px !important; */ /* $form-thumb-size */
+    /* vertical-align: middle !important; */
+    /* border: 1px solid black; */
+}
+
+
+/* Risultato ricerca usato/nuovo/stock */
+.marcaNumRisultatiContainerCls, .modelloNumRisultatiContainerCls, .allestimentoNumRisultatiContainerCls,
+.marcaRicNuovoNumRisultatiContainerCls, .modelloRicNuovoNumRisultatiContainerCls, .allestimentoRicNuovoNumRisultatiContainerCls,
+.veicoloRicStockNumRisultatiContainerCls {
+    color: #fff;
+    background-color: #a0a0a5;
+    height: 4vh;
+    min-height: 45px;
+}
+
+.indietroModelloRicUsatoButtonCls, .indietroAllestimentoRicUsatoButtonCls,
+.indietroModelloRicNuovoButtonCls, .indietroAllestimentoRicNuovoButtonCls {
+    @include infocar-button-red();
+    margin-left: 26px;
+}
+
+.marcaNumRisultatiLabelCls, .modelloNumRisultatiLabelCls, .allestimentoNumRisultatiLabelCls,
+.marcaRicNuovoNumRisultatiLabelCls, .modelloRicNuovoNumRisultatiLabelCls, .allestimentoRicNuovoNumRisultatiLabelCls,
+.veicoloRicStockNumRisultatiLabelCls {
+    text-align: center;
+}
+
+.rightModelloNumRisultatiSpacerCls,
+.rightModelloRicNuovoNumRisultatiSpacerCls { /* Spacer usato per centrare la label del numero risultati ricerca */
+    width: $infocar-button-red-width;
+    min-width: $infocar-button-red-min-width;
+    margin-right: 26px;
+}
+
+.leftVeicoloRicStockNumRisultatiSpacerCls {
+    width: 303px;
+}
+
+.ordinamentoRicUsatoComboBoxCls, .ordinamentoRicUsatoComboBoxCls .x-form-label,
+.ordinamentoRicNuovoComboBoxCls, .ordinamentoRicNuovoComboBoxCls .x-form-label,
+.ordinamentoRicStockComboBoxCls, .ordinamentoRicStockComboBoxCls .x-form-label
+/* .ordinamentoRicUsatoComboBoxCls .x-field-mask */
+{
+    border: 0;
+    color: #fff !important;
+    background-color: #a0a0a5;
+    height: 4vh;
+    min-height: 45px;
+}
+
+/* .x-spinner .x-input-el, .x-field-select .x-input-el { */
+/* TODO DA CANCELLARE
+.ordinamentoRicUsatoComboBoxCls .x-input-el, .ordinamentoRicUsatoComboBoxCls .x-field-mask {
+    -webkit-text-fill-color: #000;
+    -webkit-opacity: 1;
+    color: #000 !important;
+    height: 20px;
+    border: 1px solid #000;
+    background-color: #fff;
+}
+*/
+
+/* TODO DA CANCELLARE
+.ordinamentoRicUsatoComboBoxCls .x-input-el,
+.ordinamentoRicNuovoComboBoxCls .x-input-el,
+.ordinamentoRicStockComboBoxCls .x-input-el
+{
+    -webkit-text-fill-color: #fff;
+    -webkit-opacity: 1;
+    background-color: #a0a0a5;
+    height: 4vh;
+    min-height: 45px;
+}
+*/
+
+
+/* Liste risultato ricerca usato/nuovo */
+
+@mixin infocar-liste-ris-ricerca($tipoRicerca) {
+
+    .marcaRic#{$tipoRicerca}RisultatoDataViewCls,
+    .modelloRic#{$tipoRicerca}RisultatoDataViewCls,
+    .allestimentoRic#{$tipoRicerca}RisultatoDataViewCls,
+    {
+      font-size: $infocar-risultato-ricerca-item-font;
+    }
+
+    .marcaRic#{$tipoRicerca}RisultatoDataViewCls .x-dataview-item,
+    .modelloRic#{$tipoRicerca}RisultatoDataViewCls .x-dataview-item,
+    .allestimentoRic#{$tipoRicerca}RisultatoDataViewCls .x-dataview-item,
+    {
+      background-color: $infocar-risultato-ricerca-item-bg-color;
+      height: $infocar-risultato-ricerca-item-height;
+      min-height: $infocar-risultato-ricerca-item-height;
+    }
+
+    .marcaRic#{$tipoRicerca}RisultatoDataViewCls .x-item-pressed,
+    .modelloRic#{$tipoRicerca}RisultatoDataViewCls .x-item-pressed,
+    .allestimentoRic#{$tipoRicerca}RisultatoDataViewCls .x-item-pressed,
+    {
+      background-color: $infocar-risultato-ricerca-item-highlight-color;
+    }
+
+    table.marcaRic#{$tipoRicerca}RisultatoDataViewTableCls,
+    table.modelloRic#{$tipoRicerca}RisultatoDataViewTableCls,
+    table.allestimentoRic#{$tipoRicerca}RisultatoDataViewTableCls,
+    {
+      width: 100% !important;
+      height: $infocar-risultato-ricerca-item-height;
+      border-bottom: 2px solid #f8f8f8;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+
+    td.logoMarcaRic#{$tipoRicerca}RisultatoDataViewTdCls {
+      width: 5% !important;
+      padding: 0px 0px 0px 15px !important;
+      text-align: center !important;
+    }
+
+    img.logoMarcaRic#{$tipoRicerca}RisultatoDataViewImgCls {
+      height: 40px;
+      vertical-align: middle !important;
+    }
+
+    td.descrizioneMarcaRic#{$tipoRicerca}RisultatoDataViewTdCls {
+      width: 90% !important;
+      padding: 0px 0px 0px 15px !important;
+      text-align: left !important;
+    }
+
+    td.descrizioneModelloRic#{$tipoRicerca}RisultatoDataViewTdCls,
+    td.descrizioneAllestimentoRic#{$tipoRicerca}RisultatoDataViewTdCls {
+      width: 95% !important;
+      padding: 0px 0px 0px 15px !important;
+      text-align: left !important;
+    }
+
+    td.frecciaMarcaRic#{$tipoRicerca}RisultatoDataViewTdCls,
+    td.frecciaModelloRic#{$tipoRicerca}RisultatoDataViewTdCls,
+    td.frecciaAllestimentoRic#{$tipoRicerca}RisultatoDataViewTdCls
+    {
+      width: 5% !important;
+      padding: 0px 15px 0px 15px !important;
+      text-align: center !important;
+    }
+
+    img.frecciaMarcaRic#{$tipoRicerca}RisultatoDataViewImgCls,
+    img.frecciaModelloRic#{$tipoRicerca}RisultatoDataViewImgCls,
+    img.frecciaAllestimentoRic#{$tipoRicerca}RisultatoDataViewImgCls {
+      height: 40px;
+      vertical-align: middle !important;
+    }
+}
+
+
+@include infocar-liste-ris-ricerca(Usato);
+
+@include infocar-liste-ris-ricerca(Nuovo);
+
+
+/* Veicoli ricerca stock */
+.veicoloRicStockRisultatoDataViewCls
+{
+  font-size: $infocar-risultato-ricerca-item-font;
+}
+
+.veicoloRicStockRisultatoDataViewCls .x-dataview-item
+{
+  background-color: $infocar-risultato-ricerca-item-bg-color;
+  height: $infocar-risultato-ricerca-stock-item-height;
+  min-height: $infocar-risultato-ricerca-item-height;
+}
+
+.veicoloRicStockRisultatoDataViewCls .x-item-pressed
+{
+  background-color: $infocar-risultato-ricerca-item-highlight-color;
+}
+
+table.veicoloRicStockRisultatoDataViewTableCls {
+  width: 100% !important;
+  height: $infocar-risultato-ricerca-stock-item-height;
+  border-bottom: 2px solid #f8f8f8;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+td.logoVeicoloRicStockRisultatoDataViewTdCls {
+  width: 5% !important;
+  padding: 0px 0px 0px 15px !important;
+  text-align: center !important;
+}
+
+img.logoVeicoloRicStockRisultatoDataViewImgCls {
+  height: 40px;
+  vertical-align: middle !important;
+}
+
+td.descrizioneVeicoloRicStockRisultatoDataViewTdCls {
+  width: 90% !important;
+  padding: 0px 0px 0px 15px !important;
+  text-align: left !important;
+}
+
+td.frecciaVeicoloRicStockRisultatoDataViewTdCls {
+  width: 5% !important;
+  padding: 0px 15px 0px 15px !important;
+  text-align: center !important;
+}
+
+img.frecciaVeicoloRicStockRisultatoDataViewImgCls {
+  height: 40px;
+  vertical-align: middle !important;
+}
+
+div.descrizione1VeicoloRicStockRisultatoDataViewDivCls {
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+}
+
+div.descrizione2VeicoloRicStockRisultatoDataViewDivCls {
+}
+
+div.descrizione3VeicoloRicStockRisultatoDataViewDivCls {
+}
+
+div.descrizione4VeicoloRicStockRisultatoDataViewDivCls {
+  font-weight: bold !important;
+}
+
+
+/***************************/
+/* Dettaglio Veicolo Usato */
+/***************************/
+.rightDettaglioVeicoloUsatoContainerCls {
+  margin: 0;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 8px solid $infocar-border-color;
+  border-right: 8px solid $infocar-border-color;
+}
+
+/* Testata landscape Dettaglio Veicolo Usato */
+.testataDettVeicoloUsatoContainerLandscapeCls {
+  background-color: #f8f8f8;
+  width: 256px;
+  padding: 20px;
+  margin: 0;
+}
+
+.descDettVeicoloUsatoLabelLandscapeCls {
+  font-weight: bold;
+  padding: 0px 0px 22px 0px !important;
+  margin: 0;
+  font-size: 1em;
+}
+
+.prezzoDettVeicoloUsatoLabelLandscapeCls {
+  padding: 0px 0px 50px 0px !important;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.datiTecniciDettVeicoloUsatoLabelLandscapeCls {
+  font-size: 1em;
+}
+
+/* Testata Portrait Dettaglio Veicolo Usato */
+.testataDettVeicoloUsatoContainerPortraitCls {
+  height: 100px;
+  padding: 5px 0px 5px 0px;
+  margin: 0px 5px 0px 5px;
+  border-bottom: 1px solid #db021f;
+}
+
+.descTestataDettVeicoloUsatoContainerPortraitCls {
+  background-color: #f8f8f8;
+  padding: 10px 20px 0px 20px !important;
+  margin: 0;
+}
+
+.descDettVeicoloUsatoLabelCls {
+  font-weight: bold;
+  /* font-size: 1em; */
+}
+
+.datiTecniciDettVeicoloUsatoLabelCls {
+  font-size: 0.75em;
+}
+
+.prezzoDettVeicoloUsatoLabelCls {
+  background-color: #f8f8f8;
+  padding: 32px 20px 0px 0px !important;
+  @include infocar-align(right);
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+.dettaglioVeicoloUsatoImgCls img, .infoVeicoloUsatoMiniImgCls img {
+  max-height: 90px;
+  max-width: 134px;
+  width: auto;
+  height: auto;
+}
+
+/* Form Dettaglio Veicolo Usato */
+.dettaglioVeicoloUsatoFormCls {
+  margin: 19px 13px 5px 10px !important;
+}
+
+.dettaglioVeicoloUsatoFormCls .x-form-label {
+  padding: 0.6em 0em;
+}
+
+.dettaglioVeicoloUsatoFormCls .x-toggle-field .x-form-label {
+  padding: 16px 0px;
+}
+
+.dettaglioVeicoloUsatoFormCls .x-label {
+  font-size: 0.75em;
+}
+
+.titoloValutazionePersVeicoloUsatoLabelCls,
+.titoloDatiVeicoloUsatoLabelCls,
+.titoloNoteVeicoloUsatoLabelCls,
+.titoloRiepilogoVeicoloUsatoLabelCls
+{
+  font-size: 1em !important;
+  font-weight: bold;
+  color: #db021f;
+  padding-bottom: 20px;
+}
+
+
+.titoloRiepilogoVeicoloUsatoLabelCls {
+  padding-top: 40px;
+}
+
+.immatricPrezzoDettVeicoloUsatoLabelCls,
+.kmPercorsiPrezzoDettVeicoloUsatoLabelCls,
+.equipagPrezzoDettVeicoloUsatoLabelCls,
+.immatricAutocarroPrezzoVeicoloUsatoLabelCls,
+.speseGestionePrezzoVeicoloUsatoLabelCls
+{
+  @include infocar-align(right);
+  padding-top: $infocar-form-label-margin-top;
+}
+
+.ripristinoPrezzoDettVeicoloUsatoFieldCls {
+  padding-top: $infocar-form-label-margin-top;
+}
+
+.ripristinoPrezzoDettVeicoloUsatoFieldCls .x-input-el {
+  @include infocar-align(right);
+}
+
+.ripristinoPrezzoDettVeicoloUsatoFieldCls {
+  font-weight: bold;
+}
+
+.kmTeoriciDettVeicoloUsatoLabelCls {
+  font-weight: bold;
+  padding-top: $infocar-form-label-margin-top;
+  margin-left: 12px;
+}
+
+.equipDettVeicoloUsatoButtonCls {
+  @include infocar-button();
+}
+
+.equipDettVeicoloUsatoLabelCls {
+  font-weight: bold;
+  padding-top: $infocar-form-label-margin-top;
+}
+
+.numEquipDettVeicoloUsatoLabelCls {
+  font-weight: bold;
+  padding-top: $infocar-form-label-margin-top;
+  padding-left: 12px;
+}
+
+.immatricAutocarroDettVeicoloUsatoLabelCls {
+  font-weight: bold;
+  padding-top: 16px;
+  padding-left: 12px;
+}
+
+.ripristinoPrezzoDettVeicoloUsatoLabelCls {
+  font-weight: bold;
+  padding-top: $infocar-form-label-margin-top;
+}
+
+.speseGestioneDettVeicoloUsatoLabelCls {
+  font-weight: bold;
+  padding-top: 16px;
+  padding-left: 12px;
+}
+
+.targaDettVeicoloUsatoFieldCls,
+.coloreEsternoDettVeicoloUsatoComboboxCls,
+.bolloDettVeicoloUsatoDatepickerFieldCls,
+.provenienzaDettVeicoloUsatoFieldCls
+{
+    padding-right: 4%;
+}
+
+.telaioDettVeicoloUsatoFieldCls,
+.coloreInternoDettVeicoloUsatoComboboxCls,
+.revisioneDettVeicoloUsatoDatepickerFieldCls,
+.destinazioneDettVeicoloUsatoFieldCls
+{
+    padding-left: 4%;
+}
+
+/*
+.librettoDettVeicoloUsatoLabelCls,
+.tagliandiDettVeicoloUsatoLabelCls,
+.fatturabileDettVeicoloUsatoLabelCls
+{
+    padding-right: 4%;
+}
+*/
+
+.certificatoDettVeicoloUsatoCheckboxCls,
+.ipotecataDettVeicoloUsatoCheckboxCls,
+.leasingDettVeicoloUsatoCheckboxCls
+{
+    margin-left: 4%;
+}
+
+.librettoDettVeicoloUsatoLabelCls,
+.tagliandiDettVeicoloUsatoLabelCls,
+.fatturabileDettVeicoloUsatoLabelCls,
+.certificatoDettVeicoloUsatoLabelCls,
+.ipotecataDettVeicoloUsatoLabelCls,
+.leasingDettVeicoloUsatoLabelCls
+{
+  font-weight: bold;
+  padding-top: 16px;
+  padding-left: 12px;
+}
+
+.varConcessionarioPrezzoDettVeicoloUsatoFieldCls,
+.varConcordataPrezzoDettVeicoloUsatoFieldCls
+{
+    padding-right: 4%;
+}
+
+.totaleConcordatoPrezzoDettVeicoloUsatoFieldCls {
+    padding-left: 4%;
+}
+
+/* Toolbar a Pie Pagina Dettaglio Veicolo Usato */
+.indietroDettaglioVeicoloUsatoButtonCls,
+.stampaEsitoVeicoloUsatoButtonCls,
+.salvaDettaglioVeicoloUsatoButtonCls
+{
+    @include infocar-button-red();
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+.indietroDettaglioVeicoloUsatoButtonCls {
+    margin-left: 10px;
+}
+
+.indietroDettaglioVeicoloUsatoButtonCls.x-dock-item.x-unsized,
+.stampaEsitoVeicoloUsatoButtonCls.x-dock-item.x-unsized,
+.salvaDettaglioVeicoloUsatoButtonCls.x-dock-item.x-unsized
+{
+  @include infocar-box-orient(horizontal);
+}
+
+
+/* Popup Equipaggiamenti Dettaglio Veicolo Usato */
+/*
+.equipDettVeicoloUsatoPanelCls {
+  height: 56%;
+  min-height: 400px;
+  width: 642px;
+//  width: 84%;
+//  min-width: 600px;
+}
+*/
+
+.titoloEquipDettVeicoloUsatoLabelCls
+{
+  background-color: #f8f8f8;
+  width: 100%;
+  font-size: 22px;
+  font-weight: normal;
+  padding: 10px 0px 0px 32px;
+  margin: 0;
+  color: #db021f;
+  border-top: 0;
+  border-bottom: 2px solid #c4c6cb;
+  border-left: 0;
+  border-right: 0;
+}
+
+.intestazioneEquipDettVeicoloContainerCls {
+  background-color: #a0a0a5;
+  border-radius: 0.2em;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.descIntestazioneEquipDettVeicoloLabelCls {
+  text-align: left;
+  color: #fff;
+  font-size: 1em;
+  margin-left: 20px;
+}
+
+.prezzoIntestazioneEquipDettVeicoloLabelCls {
+  text-align: right;
+  color: #fff;
+  font-size: 1em;
+  margin-right: 20px;
+}
+
+.equipDettVeicoloUsatoDataViewCls {
+}
+
+.equipDettVeicoloUsatoDataViewItemCls:nth-child(odd) {
+    background-color: #f4f4f4;
+}
+
+.equipDettVeicoloUsatoDataViewItemCls:nth-child(even) {
+    background-color: #fff;
+}
+
+table.equipDettVeicoloUsatoDataViewTableCls {
+  width: 100% !important;
+  font-size: 1em;
+}
+
+td.chkboxEquipDettVeicoloUsatoDataViewTdCls {
+  width: 10% !important;
+  height: 30px !important;
+  background-image: url(../images/stato_libero.jpg) !important;
+  background-size: 25px 25px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+td.descrizioneEquipDettVeicoloUsatoDataViewTdCls {
+  width: 75% !important;
+  height: 30px !important;
+  text-align: left !important;
+}
+
+td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
+  width: 15% !important;
+  height: 30px !important;
+  padding: 0px 5px 0px 5px !important;
+  border-left: 1px solid #eaeaea;
+  text-align: center !important;
+}
+
+/*
+.selezioneEquipDettVeicoloUsatoDataViewSelectedCls {
+  background-image: none !important;
+  background-color: #cccccc !important;
+}
+*/
+
+.selezioneEquipDettVeicoloUsatoDataViewSelectedCls td.chkboxEquipDettVeicoloUsatoDataViewTdCls {
+  background-image: url(../images/stato_selez.png) !important;
+  background-size: 25px 25px !important;
+  background-repeat: no-repeat  !important;
+  background-position: center center !important;
+}
+
+.equipDettVeicoloUsatoToolbarCls {
+  background-color: $infocar-border-color;
+}
+
+.annullaEquipVeicoloUsatoButtonCls
+{
+  @include infocar-button-red();
+  margin-top: 15px;
+  margin-left: 10px;
+}
+
+.confermaEquipVeicoloUsatoButtonCls
+{
+  @include infocar-button-red();
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.annullaEquipVeicoloUsatoButtonCls.x-dock-item.x-unsized,
+.confermaEquipVeicoloUsatoButtonCls.x-dock-item.x-unsized
+{
+  @include infocar-box-orient(horizontal);
+}
+
+
+
+/***************************/
+/* Dettaglio Veicolo Nuovo */
+/***************************/
+
+.rightDettaglioVeicoloNuovoContainerCls {
+  margin: 0;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 8px solid $infocar-border-color;
+  border-right: 8px solid $infocar-border-color;
+}
+
+
+/* Testata Landscape Dettaglio Veicolo Nuovo */
+.testataDettVeicoloNuovoContainerLandscapeCls {
+  background-color: #f8f8f8;
+  width: 256px;
+  padding: 20px;
+  margin: 0;
+}
+
+.infoVeicoloNuovoButtonLandscapeCls {
+  @include infocar-button-icona($param-margin: 5px 0px 5px 0px);
+  width: 24px;
+  height: 24px;
+}
+
+.descDettVeicoloNuovoLabelLandscapeCls {
+  font-weight: bold;
+  padding: 0px 0px 10px 0px !important;
+  margin: 0;
+  font-size: 1em;
+}
+
+.prezzoBaseDettVeicoloNuovoLabelLandscapeCls {
+  padding: 0px 0px 22px 0px !important;
+  font-size: 1em;
+}
+
+.totaleDettVeicoloNuovoLabelLandscapeCls {
+  padding: 0px 0px 50px 0px !important;
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+/* Testata Portrait Dettaglio Veicolo Usato */
+.dettaglioVeicoloNuovoImgCls img, .infoVeicoloNuovoMiniImgCls img {
+  max-height: 90px;
+  max-width: 134px;
+  width: auto;
+  height: auto;
+}
+
+
+/* Clusters Dettaglio Veicolo Nuovo  */
+.clustersDettVeicoloNuovoButtonsCls {
+  margin: 0px 5px 0px 5px;
+  padding: 0;
+}
+
+@mixin infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls,
+    $param-button-pressed-cls,
+    $param-button-badge-cls,
+    $param-bg-img-depressed,
+    $param-bg-img-pressed,
+    $param-bg-img-size,
+    $param-padding-left
+    )
+{
+  .#{$param-button-cls} {
+    background-color: #fff;
+    background-image: $param-bg-img-depressed;
+    background-size: $param-bg-img-size;
+    background-repeat: no-repeat;
+    background-position: 8px center;
+    padding-top: 15px;
+    padding-left: $param-padding-left;
+    border-right: 1px solid #f2f2f2;
+    border-bottom: 1px solid #de0323;
+  }
+
+  .#{$param-button-cls} .x-button-label {
+    font-size: 0.75em;
+    font-weight: 600 !important;
+    color: #333344;
+    text-align: left;
+  }
+
+  .#{$param-button-cls}.x-button-pressed,
+  .#{$param-button-pressed-cls} {
+    background-color: #de0323;
+    background-image: $param-bg-img-pressed;
+    border-right: 1px solid #de0323;
+    border-bottom: 1px solid #de0323;
+    border-top-left-radius: $infocar-button-border-radius;
+    border-top-right-radius: $infocar-button-border-radius;
+  }
+
+  .#{$param-button-cls}.x-button-pressed .x-button-label,
+  .#{$param-button-pressed-cls} .x-button-label {
+    font-size: 0.75em;
+    font-weight: 600 !important;
+    color: #fff;
+  }
+
+  .#{$param-button-badge-cls} {
+    background-color: #fff;
+    border: 1px solid #d6d6dc;
+    border-radius: 0.8em;
+    padding: 0px 2px 0px 2px;
+    @include infocar-align(center);
+    min-width: 20px;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #de0323;
+    position: absolute;
+    top: 0px;
+    right: 7px;
+  }
+}
+
+
+/* Bottoni Clusters Dettaglio Veicolo Nuovo */
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: tipoVeicoloClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: tipoVeicoloClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: tipoVeicoloClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_18.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_18.png),
+    $param-bg-img-size: 16px 20px,
+    $param-padding-left: 28px
+);
+
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: esterniClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: esterniClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: esterniClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_20.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_20.png),
+    $param-bg-img-size: 12px 19px,
+    $param-padding-left: 24px
+);
+
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: interniClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: interniClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: interniClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_06.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_06.png),
+    $param-bg-img-size: 14px 20px,
+    $param-padding-left: 26px
+);
+
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: sicurezzaClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: sicurezzaClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: sicurezzaClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_23.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_23.png),
+    $param-bg-img-size: 12px 17px,
+    $param-padding-left: 24px
+);
+
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: comfortClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: comfortClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: comfortClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_08.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_08.png),
+    $param-bg-img-size: 18px 18px,
+    $param-padding-left: 30px
+);
+
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: serviziClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: serviziClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: serviziClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_03.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_03.png),
+    $param-bg-img-size: 11px 22px,
+    $param-padding-left: 23px
+);
+
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: tuttiClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: tuttiClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: tuttiClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_11.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_11.png),
+    $param-bg-img-size: 11px 19px,
+    $param-padding-left: 23px
+);
+
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: pacchettiClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: pacchettiClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: pacchettiClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_13.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_13.png),
+    $param-bg-img-size: 11px 19px,
+    $param-padding-left: 23px
+);
+
+@include infocar-button-cluster-dett-veicolo-nuovo(
+    $param-button-cls: riepilogoClusterDettVeicoloNuovoButtonCls,
+    $param-button-pressed-cls: riepilogoClusterDettVeicoloNuovoButtonPressedCls,
+    $param-button-badge-cls: riepilogoClusterDettVeicoloNuovoButtonBadgeCls,
+    $param-bg-img-depressed: url(../images/35-ipad_infocar_done_15.png),
+    $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_15.png),
+    $param-bg-img-size: 9px 19px,
+    $param-padding-left: 21px
+);
+
+
+/* Texbox Cerca e Combobox Logica Dettaglio Veicolo Nuovo */
+.cercaLogicaDettVeicoloNuovoContainerCls {
+  margin: 0px 5px 0px 5px;
+  padding: 0;
+}
+
+.cercaLogicaDettVeicoloNuovoContainerCls .x-form-label {
+  text-align: right;
+}
+
+.evidenzaBtnClusterDettVeicoloNuovo {
+  background-color: #d6d6dc !important;
+  border-right: 1px solid #d6d6dc !important;
+}
+
+
+/* Equipaggiamenti Dettaglio Veicolo Nuovo */
+
+.headerEquipDettVeicoloNuovoContainerCls {
+  background-color: #a0a0a5;
+  border-radius: 0.2em;
+  margin: 0px 5px 0px 5px;
+  padding: 0;
+  color: #fff;
+}
+
+.legendaHeaderEquipDettVeicoloNuovoButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/punto_domanda_01.png),
+    $param-img-size: 18px 18px);
+  width: 18px;
+  height: 18px;
+}
+
+.descrizioneHeaderEquipDettVeicoloNuovoButtonCls {
+  height: 26px;
+  line-height: 26px;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+  padding-right: 0;
+  margin: 0;
+}
+
+.prezzoHeaderEquipDettVeicoloNuovoButtonCls {
+  height: 26px;
+  line-height: 26px;
+  text-align: right;
+  margin: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 17px;
+}
+
+.equipDettVeicoloNuovoListCls {
+  margin: 0px 5px 0px 5px;
+}
+
+.equipDettVeicoloNuovoListCls .x-list-item.x-list-item-tpl .x-innerhtml {
+  padding: 0;
+  margin: 0;
+}
+
+.equipDettVeicoloNuovoListCls .x-list-header { /* Sottogruppi */
+  height: 49px;
+  line-height: 49px;
+  background-color: #fff;
+  background-image: none;
+  border: 0;
+  color: #e30613;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.equipDettVeicoloNuovoTableCls {
+  font-size: 0.75em;
+}
+
+.statoEquipDettVeicoloNuovoTdCls {
+  width: 47px;
+}
+
+.statoEquipDettVeicoloNuovoImgCls {
+  height: 24px;
+  width: 24px;
+  margin-left: 19px;
+  vertical-align: middle !important;
+}
+
+.infoEquipDettVeicoloNuovoTdCls {
+  width: 47px;
+}
+
+.infoEquipDettVeicoloNuovoImgCls {
+  height: 24px;
+  width: 24px;
+  margin-left: 4px;
+  vertical-align: middle !important;
+}
+
+.descEquipDettVeicoloNuovoTdCls {
+  @include infocar-flex(1);
+}
+
+.descEquipDettVeicoloNuovoSpanCls {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  margin: 0;
+  border-left: 1px solid #ccc;
+  line-height: 50px;
+}
+
+.prezzoEquipDettVeicoloNuovoTdCls {
+  width: 95px;
+  padding-right: 17px;
+  border-left: 1px solid #ccc;
+  text-align: right;
+}
+
+
+/* Legenda Equipaggiamenti Dettaglio Veicolo Nuovo */
+
+table.testoLegendaEquipDettVeicoloNuovoTableStyle td {
+  padding: 4px !important;
+  height: 20px !important;
+}
+
+.statoLiberoEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/stato_libero.jpg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.statoSelezEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/stato_selez.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.statoInclusoEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/stato_incluso.jpg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.statoNonDispEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/stato_non_disp.jpg);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.statoUndefinedEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: none;
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+.infoEquipDettVeicoloNuovoDataItemButtonCls {
+  background-image: url(../images/info.png);
+  background-size: 25px 25px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 35px;
+  height: 35px;
+}
+
+
+/* View con carousel immagini fullscreen */
+
+.photoFullscreenImgCls img {
+  max-height: 100% !important;
+  max-width: 100% !important;
+}
+
+
+/* Popup equipaggiamenti ricorsivi dettaglio veicolo nuovo */
+table.equipPopupDettVeicoloNuovoDataViewTableCls {
+  width: 100% !important;
+}
+
+td.chkboxPopupEquipDettVeicoloNuovoDataViewTdCls {
+  width: 10% !important;
+  height: 30px !important;
+  background-image: url(../images/stato_libero.jpg) !important;
+  background-size: 25px 25px !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+td.descrizionePopupEquipDettVeicoloNuovoDataViewTdCls {
+  width: 75% !important;
+  height: 30px !important;
+  text-align: left !important;
+}
+
+td.prezzoPopupEquipDettVeicoloNuovoDataViewTdCls {
+  width: 15% !important;
+  height: 30px !important;
+  padding: 0px 5px 0px 5px !important;
+  text-align: center !important;
+}
+
+.selezionePopupEquipDettVeicoloNuovoDataViewSelectedCls {
+  background-image: none !important;
+  background-color: #cccccc !important;
+}
+
+.selezionePopupEquipDettVeicoloNuovoDataViewSelectedCls td.chkboxPopupEquipDettVeicoloNuovoDataViewTdCls {
+  background-image: url(../images/stato_selez.png) !important;
+  background-size: 25px 25px !important;
+  background-repeat: no-repeat  !important;
+  background-position: center center !important;
+}
+
+.prezziInfoVeicoloStockOverlayContainerCls {
+  /* right: -92% */
+}
+/* ui mixin: infocar-toolbar for of type: sencha-toolbar-ui */
+
+@include sencha-toolbar-ui(
+  $ui-label:"infocar-toolbar",
+    $color: $infocar-border-color,
+    $gradient: $toolbar-gradient
+);

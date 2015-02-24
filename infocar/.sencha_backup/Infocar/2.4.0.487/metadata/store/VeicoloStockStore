@@ -1,0 +1,49 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "VeicoloStockStore",
+        "model": "VeicoloStockModel",
+        "storeId": "VeicoloStockStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "bd4671e9-bb53-443c-bb21-913a842e1d12",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "VeicoloStockProxy",
+                "url": "/stock/veicoloStock"
+            },
+            "name": "MyRestProxy14",
+            "designerId": "84aad82e-ae2a-4000-b3ec-84e375003da6",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "VeicoloStockJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader11",
+                    "designerId": "a6773bcd-6949-47dd-8d01-378c181de952"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,44 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "ColoreInternoModel",
+        "idProperty": "codice"
+    },
+    "name": "ColoreCarrozzeriaModel1",
+    "designerId": "376e4b28-6a37-47ca-a461-2f36e84a9b6d",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codice",
+                "type": "string"
+            },
+            "name": "field71",
+            "designerId": "235b55a2-d8f5-44ac-a1ce-d60206c11c36"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione",
+                "type": "string"
+            },
+            "name": "field72",
+            "designerId": "8bb235bd-16fc-4a73-8768-98715fd505fe"
+        }
+    ]
+}

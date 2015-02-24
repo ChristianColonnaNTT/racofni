@@ -1,0 +1,77 @@
+{
+    "success": true,
+    "message": null,
+    "total": 1,
+    "data": [{
+        "items": [{
+            "codice": "10",
+            "descrizione": "Primo livello: equipaggiamento 1",
+            "eivUrlImg": "http://www.edidomus.it/images/eiv1.jpg",
+            "items": null
+        },
+        {
+            "codice": "20",
+            "descrizione": "Primo livello: equipaggiamento 2",
+            "eivUrlImg": "http://www.edidomus.it/images/eiv2.jpg",
+            "items": null
+        },
+        {
+            "codice": "30",
+            "descrizione": "Primo livello: equipaggiamento 3",
+            "eivUrlImg": "http://www.edidomus.it/images/eiv3.jpg",
+            "items": null
+        },
+        {
+            "codice": "40",
+            "descrizione": "Primo livello: equipaggiamento 4",
+            "eivUrlImg": "http://www.edidomus.it/images/eiv4.jpg",
+            "items": null
+        },
+        {
+            "codice": "50",
+            "descrizione": "Pacchetto di navigazione [PNU]",
+            "eivUrlImg": null,
+            "items": [{
+                "codice": "60",
+                "descrizione": "Display a colori",
+                "eivUrlImg": null
+             },
+             {
+                "codice": "70",
+                "descrizione": "Pacchetto connectivity [PNV]",
+                "eivUrlImg": null
+             },
+             {
+                "codice": "80",
+                "descrizione": "Audio music interface",
+                "eivUrlImg": null
+             },
+             {
+                "codice": "90",
+                "descrizione": "Audio Streaming Bluetooth",
+                "eivUrlImg": null
+             },
+             {
+                "codice": "100",
+                "descrizione": "Pacchetto 2",
+                "eivUrlImg": null,
+                "items": [{
+                    "codice": "110",
+                    "descrizione": "Altro equipaggiamento annidato 1",
+                    "eivUrlImg": null
+                },
+                {
+                    "codice": "120",
+                    "descrizione": "Altro equipaggiamento annidato 2",
+                    "eivUrlImg": null
+                }]
+             },
+             {
+                "codice": "130",
+                "descrizione": "Interfaccia bluetooth [9ZX]",
+                "eivUrlImg": null
+             }]
+        }]
+    }]
+}
+

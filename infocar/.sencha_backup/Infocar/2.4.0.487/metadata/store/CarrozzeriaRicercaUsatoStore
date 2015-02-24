@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "CarrozzeriaRicercaUsatoStore",
+        "model": "CarrozzeriaModel",
+        "storeId": "CarrozzeriaRicercaUsatoStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "4410a3e0-d6cb-41d1-9f24-bda5c443a747",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "CarrozzeriaRicercaUsatoProxy",
+                "url": "/usato/carrozzeria"
+            },
+            "name": "MyRestProxy3",
+            "designerId": "9b100b3f-f736-49d2-ac45-5854e55de545",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "CarrozzeriaRicercaUsatoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "ce9c9983-cacd-4218-a6c5-36e06353f2fe"
+                }
+            ]
+        }
+    ]
+}

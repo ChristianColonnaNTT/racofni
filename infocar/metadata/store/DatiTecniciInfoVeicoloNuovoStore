@@ -1,0 +1,138 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "DatiTecniciInfoVeicoloNuovoStore",
+        "groupField": null,
+        "model": "DatiTecniciModel",
+        "storeId": "DatiTecniciInfoVeicoloNuovoStore"
+    },
+    "name": "DatiTecniciVeicoloUsatoStore1",
+    "designerId": "0ebf9d88-e304-4744-b924-8c40612c5edf",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "DatiTecniciInfoVeicoloNuovoProxy",
+                "url": "/nuovo/datiTecniciInfoVeicolo"
+            },
+            "name": "MyRestProxy16",
+            "designerId": "2624490b-7772-4bc2-83a7-c8e75cb3bec9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "DatiTecniciInfoVeicoloNuovoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader10",
+                    "designerId": "fa47b7cb-a110-4cda-be5f-fb354152802c"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "codice"
+            },
+            "name": "MySorter1",
+            "designerId": "6b19d80e-171d-4108-a959-56d881a2c693",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item"
+                        ],
+                        "fn": "transform",
+                        "implHandler": [
+                            "return parseInt(item, 10);"
+                        ]
+                    },
+                    "name": "transform",
+                    "designerId": "260f0e7b-f1d0-4e0f-bf8b-557c4c01f33b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "grouper",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": null,
+                "sortProperty": "codice"
+            },
+            "name": "MyGrouper1",
+            "designerId": "99463da0-ba0d-4093-9172-113deb071ebb",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item"
+                        ],
+                        "fn": "groupFn",
+                        "implHandler": [
+                            "return item.get('gruppoDesc');"
+                        ]
+                    },
+                    "name": "groupFn",
+                    "designerId": "08241cd4-7b2b-4433-9f89-d95bde58f05c"
+                },
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item"
+                        ],
+                        "fn": "transform",
+                        "implHandler": [
+                            "return parseInt(item, 10);"
+                        ]
+                    },
+                    "name": "transform",
+                    "designerId": "114d429c-7bbc-4e88-b6ad-48015518e9ad"
+                }
+            ]
+        }
+    ]
+}

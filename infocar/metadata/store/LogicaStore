@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "LogicaStore",
+        "model": "LogicaModel",
+        "storeId": "LogicaStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "d60373e3-7efd-4774-a552-61ee6acad458",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "LogicaProxy",
+                "url": "/nuovo/logica"
+            },
+            "name": "MyRestProxy8",
+            "designerId": "3206db0d-95b1-4abd-af89-9cb7780c9978",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "LogicaJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "45240548-884e-4829-a106-dfe27e738297"
+                }
+            ]
+        }
+    ]
+}

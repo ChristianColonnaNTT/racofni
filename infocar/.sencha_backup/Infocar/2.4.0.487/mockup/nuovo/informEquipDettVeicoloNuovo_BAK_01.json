@@ -1,0 +1,35 @@
+{
+    "success": true,
+    "message": null,
+    "total": 1,
+    "items": [{
+        "descrizione" : "Naomi White",
+        "leaf": true
+     },
+     {
+        "descrizione" : "Yoko Ono",
+        "leaf": true
+     },
+     {
+        "descrizione" : "John Smith",
+        "items" : [{
+            "descrizione" : "Michael (Johns son)",
+            "items" : [{
+                "descrizione" : "Brad (Michaels son,Johns grand son)",
+                "leaf": true
+            },
+            {
+                "descrizione" : "Brid (Michaels son,Johns grand son)",
+                "items" : [{
+                    "descrizione" : "Buddy (Brids son,Michaels grand son)",
+                    "leaf": true
+                }]
+            },
+            {
+                "descrizione" : "Brud (Michaels son,Johns grand son)",
+                "leaf": true
+            }]
+        }]
+    }]
+}
+

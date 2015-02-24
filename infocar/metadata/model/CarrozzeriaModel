@@ -1,0 +1,44 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "CarrozzeriaModel",
+        "idProperty": "codice"
+    },
+    "name": "MyModel",
+    "designerId": "8a33d73d-a7f2-483c-8731-f6577c17a958",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codice",
+                "type": "string"
+            },
+            "name": "field5",
+            "designerId": "84d59bc5-223c-4d7a-9ff8-1f3f75902021"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione",
+                "type": "string"
+            },
+            "name": "field6",
+            "designerId": "5f680bf8-a9e4-4793-9222-230fa1be2e73"
+        }
+    ]
+}

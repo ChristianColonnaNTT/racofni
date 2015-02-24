@@ -1,0 +1,72 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DatiTecniciModel",
+        "idProperty": "codice"
+    },
+    "name": "MyModel",
+    "designerId": "ad8dd206-f4a5-4698-a600-9d3334abff25",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codice",
+                "type": "string"
+            },
+            "name": "field126",
+            "designerId": "8c88f1f7-907f-4a03-bc45-125487ef11ca"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "nomeAttributo",
+                "type": "string"
+            },
+            "name": "field127",
+            "designerId": "a55f5b55-042f-4f94-b162-8e4856074119"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "valoreAttributo",
+                "type": "string"
+            },
+            "name": "field8",
+            "designerId": "82a24cb5-bd8a-47de-983b-3a9df7bf7af9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "gruppoDesc",
+                "type": "string"
+            },
+            "name": "field129",
+            "designerId": "38184e4b-f119-4e87-9286-8869f32ac236"
+        }
+    ]
+}

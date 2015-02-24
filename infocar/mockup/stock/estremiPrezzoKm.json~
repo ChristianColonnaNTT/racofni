@@ -1,0 +1,12 @@
+{
+    "success": true,
+    "message": null,
+    "total": 1,
+    "data": [{
+        "minPrezzo": 8700,
+        "maxPrezzo": 16800,
+        "minKm": 5000,
+        "maxKm": 250000
+    }]
+}
+

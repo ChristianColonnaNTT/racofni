@@ -1,0 +1,112 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "EquipDettVeicoloNuovoStore",
+        "groupField": null,
+        "model": "EquipaggiamentoModel",
+        "storeId": "EquipDettVeicoloNuovoStore"
+    },
+    "name": "EquipDettVeicoloUsatoStore1",
+    "designerId": "cda52bce-7908-4f6b-a68f-e9caca94daa3",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "batchActions": true,
+                "designer|displayName": "EquipDettVeicoloNuovoProxy",
+                "url": "/nuovo/equipDettaglioVeicolo"
+            },
+            "name": "MyRestProxy5",
+            "designerId": "9d31ef35-ccd8-4231-86e2-ffc7ad14f0c7",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "EquipDettVeicoloNuovoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader5",
+                    "designerId": "59ec2442-2c4d-433f-b012-428a29304b78"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowSingle": false,
+                        "designer|displayName": "EquipDettVeicoloNuovoJsonWriter"
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "297ae99c-89d1-4703-928e-a9f8b1672944"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Grouper",
+            "reference": {
+                "name": "grouper",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "sortProperty": "order"
+            },
+            "name": "MyGrouper3",
+            "designerId": "e0998dfb-5719-4ae3-8ef9-56aa48fc3299",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "item"
+                        ],
+                        "fn": "groupFn",
+                        "implHandler": [
+                            "return item.get('gruppoDesc');"
+                        ]
+                    },
+                    "name": "groupFn",
+                    "designerId": "a845f64d-0d3c-429d-8e83-24aba44c2093"
+                }
+            ]
+        },
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "order"
+            },
+            "name": "MySorter",
+            "designerId": "d35532ef-05f4-4b6c-b8fd-c9cf6e98a810"
+        }
+    ]
+}

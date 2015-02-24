@@ -1,0 +1,2593 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RicercaUsatoController",
+        "requires": [
+            "Ext.MessageBox",
+            "Infocar.view.UsatoView"
+        ]
+    },
+    "name": "MyController1",
+    "designerId": "ece5805e-3cb5-49f7-bc08-be606e74971f",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#cercaRicUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onCercaButtonTap",
+                "implHandler": [
+                    "//var button = Ext.ComponentQuery.query('#cercaRicUsatoButton')[0];",
+                    "button.setText('AGGIORNA RICERCA');",
+                    "",
+                    "var descrizioneRicField = Ext.ComponentQuery.query('#descrizioneRicercaUsatoField')[0];",
+                    "var descRic = descrizioneRicField.getValue();",
+                    "",
+                    "var ricercaTargaFlag = false;",
+                    "",
+                    "var patterns = Infocar.app.patternsRicercaTarga;",
+                    "for(var i=0; i<patterns.length; i++) {",
+                    "    var patternRegExp = new RegExp(patterns[i]);",
+                    "    if (patternRegExp.test(descRic)) {",
+                    "        ricercaTargaFlag = true;",
+                    "        break;",
+                    "    }",
+                    "}",
+                    "",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaUsatoForm')[0];",
+                    "",
+                    "if (ricercaTargaFlag) {",
+                    "    // L'utente ha inserito una targa nella textbox descrizione.",
+                    "    // Salto direttamente all'elenco allestimenti.",
+                    "",
+                    "    ricercaForm.ricercaTargaFlag = 'S';",
+                    "",
+                    "    //var indietroAllestimentoButton = Ext.ComponentQuery.query('#indietroAllestimentoRicUsatoButton')[0];",
+                    "    //indietroAllestimentoButton.setHidden(true);",
+                    "",
+                    "    var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaUsatoHidden')[0];",
+                    "    marcaHidden.setValue('');",
+                    "",
+                    "    var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaUsatoHidden')[0];",
+                    "    modelloHidden.setValue('');",
+                    "",
+                    "    var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaUsatoHidden')[0];",
+                    "    allestimentoHidden.setValue('');",
+                    "",
+                    "    this.loadAllestimenti();",
+                    "} else {",
+                    "    //ricercaForm.ricercaTargaFlag = 'N';",
+                    "",
+                    "    var ricUsatoRisultatoContainer = Ext.ComponentQuery.query('#ricercaUsatoRisultatoContainer')[0];",
+                    "    var activeRisultatoRicItem = ricUsatoRisultatoContainer.getActiveItem();",
+                    "    var tipoRisultatoRic = activeRisultatoRicItem.getItemId();",
+                    "",
+                    "    if (tipoRisultatoRic === 'marcaRicUsatoRisultatoContainer') {",
+                    "        this.loadMarche();",
+                    "    } else if (tipoRisultatoRic === 'modelloRicUsatoRisultatoContainer') {",
+                    "        this.loadModelli();",
+                    "    } else if (tipoRisultatoRic === 'allestimentoRicUsatoRisultatoContainer') {",
+                    "        this.loadAllestimenti();",
+                    "    }",
+                    "}",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onCercaButtonTap",
+            "designerId": "49dbf2e0-20fb-43c8-8ee1-32d63d4885c5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#azzeraRicUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onAzzeraButtonTap",
+                "implHandler": [
+                    "this.resetRicerca();",
+                    "",
+                    "this.loadMarche();",
+                    "",
+                    "// Visualizzo la schermata della lista marche",
+                    "var ricUsatoRisultatoContainer = Ext.ComponentQuery.query('#ricercaUsatoRisultatoContainer')[0];",
+                    "ricUsatoRisultatoContainer.animateActiveItem(",
+                    "    '#marcaRicUsatoRisultatoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'right'",
+                    "    }",
+                    ");",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onAzzeraButtonTap",
+            "designerId": "965034e4-2dfa-40f3-8955-aba8507ba888"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetRicerca",
+                "implHandler": [
+                    "// Reset form",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaUsatoForm')[0];",
+                    "ricercaForm.reset();",
+                    "",
+                    "ricercaForm.setValues({",
+                    "    anno_codice: '0',",
+                    "    alimentazione_codice: '0',",
+                    "    carrozzeria_codice: '0'",
+                    "});",
+                    "",
+                    "// Reset marche",
+                    "var marcaStore = Ext.data.StoreManager.lookup('MarcaRicercaUsatoStore');",
+                    "marcaStore.removeAll();",
+                    "",
+                    "var marcaCount = marcaStore.getCount();",
+                    "this.showMarcaNumRisultati(marcaCount);",
+                    "",
+                    "// Reset modelli",
+                    "var modelloStore = Ext.data.StoreManager.lookup('ModelloRicercaUsatoStore');",
+                    "modelloStore.removeAll();",
+                    "",
+                    "var modelloCount = modelloStore.getCount();",
+                    "this.showModelloNumRisultati(modelloCount);",
+                    "",
+                    "// Reset allestimenti",
+                    "var allestimentoStore = Ext.data.StoreManager.lookup('AllestimentoRicercaUsatoStore');",
+                    "allestimentoStore.removeAll();",
+                    "",
+                    "var allestimentoCount = allestimentoStore.getCount();",
+                    "this.showAllestimentoNumRisultati(allestimentoCount);",
+                    "",
+                    "// Aggiorno la label del bottone \"cerca\"",
+                    "var cercaButton = Ext.ComponentQuery.query('#cercaRicUsatoButton')[0];",
+                    "cercaButton.setText('CERCA');",
+                    "",
+                    "// Abbasso il flag della ricerca per targa",
+                    "ricercaForm.ricercaTargaFlag = 'N';",
+                    ""
+                ]
+            },
+            "name": "resetRicerca",
+            "designerId": "0f9c71fb-faea-4ddd-9bcf-9855f210345f"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "numRisultati"
+                ],
+                "fn": "showMarcaNumRisultati",
+                "implHandler": [
+                    "var marcaNumRisultatiLabel = Ext.ComponentQuery.query('#marcaNumRisultatiLabel')[0];",
+                    "marcaNumRisultatiLabel.setHtml(numRisultati + ' Marche');"
+                ]
+            },
+            "name": "showMarcaNumRisultati",
+            "designerId": "14517e15-5117-448e-9470-62303570026e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#marcaRicUsatoRisultatoDataView",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onMarcaRisultatoItemTap",
+                "implHandler": [
+                    "var marcaModel = record;",
+                    "",
+                    "var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaUsatoHidden')[0];",
+                    "marcaHidden.setValue(marcaModel.get('codice'));",
+                    "",
+                    "this.loadModelli();"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onMarcaRisultatoItemTap",
+            "designerId": "880de8c4-eb45-4609-b92e-96d98ba98f11"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#indietroModelloRicUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onIndietroModelloButtonTap",
+                "implHandler": [
+                    "var ricUsatoRisultatoContainer = Ext.ComponentQuery.query('#ricercaUsatoRisultatoContainer')[0];",
+                    "ricUsatoRisultatoContainer.animateActiveItem(",
+                    "    '#marcaRicUsatoRisultatoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction: 'right'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onIndietroModelloButtonTap",
+            "designerId": "45091dc5-1af4-4f22-a97c-57d59ecb3afd"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "numRisultati"
+                ],
+                "fn": "showModelloNumRisultati",
+                "implHandler": [
+                    "var modelloNumRisultatiLabel = Ext.ComponentQuery.query('#modelloNumRisultatiLabel')[0];",
+                    "modelloNumRisultatiLabel.setHtml(numRisultati + ' Modelli');"
+                ]
+            },
+            "name": "showModelloNumRisultati",
+            "designerId": "49a8801a-6fa7-426f-a701-fb00f5439eac"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#modelloRicUsatoRisultatoDataView",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onModelloRisultatoItemTap",
+                "implHandler": [
+                    "var modelloModel = record;",
+                    "",
+                    "var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaUsatoHidden')[0];",
+                    "modelloHidden.setValue(modelloModel.get('codice'));",
+                    "",
+                    "this.resetOrdinamentoCombobox();",
+                    "",
+                    "this.loadAllestimenti();"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onModelloRisultatoItemTap",
+            "designerId": "0b19ca54-8614-49f7-9586-011352815e48"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "numRisultati"
+                ],
+                "fn": "showAllestimentoNumRisultati",
+                "implHandler": [
+                    "var allestimentoNumRisultatiLabel = Ext.ComponentQuery.query('#allestimentoNumRisultatiLabel')[0];",
+                    "allestimentoNumRisultatiLabel.setHtml(numRisultati + ' Allestimenti');"
+                ]
+            },
+            "name": "showAllestimentoNumRisultati",
+            "designerId": "02ba6aa3-cf06-4913-bb52-693d8ace8a22"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#indietroAllestimentoRicUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onIndietroAllestimentoButtonTap",
+                "implHandler": [
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaUsatoForm')[0];",
+                    "",
+                    "if (ricercaForm.ricercaTargaFlag === 'S') {",
+                    "    // Si e' giunti alla lista allestimento attraverso",
+                    "    // una ricerca per targa.",
+                    "    // Premendo il bottone indietro si torna direttamente",
+                    "    // alla lista marche.",
+                    "    this.resetRicerca();",
+                    "",
+                    "    this.loadMarche();",
+                    "",
+                    "    // Visualizzo la schermata della lista marche",
+                    "    var ricUsatoRisultatoContainer = Ext.ComponentQuery.query('#ricercaUsatoRisultatoContainer')[0];",
+                    "    ricUsatoRisultatoContainer.animateActiveItem(",
+                    "        '#marcaRicUsatoRisultatoContainer',",
+                    "        {",
+                    "            type: 'slide',",
+                    "            direction:'right'",
+                    "        }",
+                    "    );",
+                    "",
+                    "    ricercaForm.ricercaTargaFlag = 'N';",
+                    "",
+                    "} else {",
+                    "",
+                    "    var ricUsatoRisultatoContainer = Ext.ComponentQuery.query('#ricercaUsatoRisultatoContainer')[0];",
+                    "    ricUsatoRisultatoContainer.animateActiveItem(",
+                    "        '#modelloRicUsatoRisultatoContainer',",
+                    "        {",
+                    "            type: 'slide',",
+                    "            direction: 'right'",
+                    "        }",
+                    "    );",
+                    "}"
+                ],
+                "name": "tap"
+            },
+            "name": "onIndietroAllestimentoButtonTap",
+            "designerId": "977eec5b-edfe-4e15-88df-76287bab08aa"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#allestimentoRicUsatoRisultatoDataView",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onAllestimentoRisultatoItemTap",
+                "implHandler": [
+                    "var allestimentoModel = record;",
+                    "var allestimentoCodice = allestimentoModel.get('codice');",
+                    "",
+                    "var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaUsatoHidden')[0];",
+                    "var marcaCodice = marcaHidden.getValue();",
+                    "",
+                    "var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaUsatoHidden')[0];",
+                    "var modelloCodice = modelloHidden.getValue();",
+                    "",
+                    "var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaUsatoHidden')[0];",
+                    "allestimentoHidden.setValue(allestimentoCodice);",
+                    "",
+                    "var veicoloUsatoModelClass = Ext.ModelManager.getModel('Infocar.model.DettaglioVeicoloUsatoModel');",
+                    "veicoloUsatoModelClass.load(0, {",
+                    "    params: {",
+                    "        marca_codice: marcaCodice,",
+                    "        modello_codice: modelloCodice,",
+                    "        allestimento_codice: allestimentoCodice",
+                    "    },",
+                    "    scope: this,",
+                    "    success: function(record, operation) {",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        var veicoloUsatoModel = record;",
+                    "",
+                    "        this.initFormDettaglioVeicolo(veicoloUsatoModel);",
+                    "",
+                    "        this.loadColoreEsternoCombobox(veicoloUsatoModel.get('coloreEsterno_codice'));",
+                    "        this.loadColoreInternoCombobox(veicoloUsatoModel.get('coloreInterno_codice'));",
+                    "",
+                    "        // Azzerro la label che visualizza il numero degli equipaggiamenti selezionati",
+                    "        var numEquipLabel = Ext.ComponentQuery.query('#numEquipDettVeicoloUsatoLabel')[0];",
+                    "        numEquipLabel.setData({\"numEquipSelezionati\": 0});",
+                    "",
+                    "        // Visualizzo la schermata di dettaglio veicolo",
+                    "        var bodyContainer = Ext.ComponentQuery.query('#bodyUsatoContainer')[0];",
+                    "",
+                    "        bodyContainer.animateActiveItem(",
+                    "            '#dettaglioVeicoloUsatoContainer',",
+                    "            {",
+                    "                type: 'slide',",
+                    "                direction:'left'",
+                    "            }",
+                    "        );",
+                    "",
+                    "        var dettVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "        if (dettVeicoloUsatoForm.isRendered()) {",
+                    "            dettVeicoloUsatoForm.getScrollable().getScroller().scrollTo(0, 0, false);",
+                    "        }",
+                    "",
+                    "        // Controlli sulla data immatricolazione",
+                    "        var datepickerFlag = false;",
+                    "        var dataImmatricDateField = Ext.ComponentQuery.query('#dataImmatricDettVeicoloUsatoDatepickerField')[0];",
+                    "        if (veicoloUsatoModel.get('dataImmatricolazione')) {",
+                    "            if (veicoloUsatoModel.get('ricercaTargaFlag') === 'N') {",
+                    "                // Non e' una ricerca per targa, datepicker obbligatorio",
+                    "                datepickerFlag = true;",
+                    "            }",
+                    "        } else {",
+                    "            dataImmatricDateField.suspendEvents();",
+                    "            dataImmatricDateField.setValue(new Date());",
+                    "            dataImmatricDateField.resumeEvents(true);",
+                    "",
+                    "            datepickerFlag = true;",
+                    "        }",
+                    "",
+                    "        if (datepickerFlag) {",
+                    "            //dataImmatricDateField.showPicker();",
+                    "",
+                    "            dataImmatricDateField.annullaButtonFlag = 'N';",
+                    "            dataImmatricDateField.focus();",
+                    "        } else {",
+                    "            dataImmatricDateField.annullaButtonFlag = 'S';",
+                    "        }",
+                    "    },",
+                    "    failure: function(record, operation) {",
+                    "        Infocar.app.showLoadErrorMessage(operation);",
+                    "",
+                    "        var salvaButton = Ext.ComponentQuery.query('#salvaDettaglioVeicoloUsatoButton')[0];",
+                    "        salvaButton.disable();",
+                    "    }",
+                    "}, this);",
+                    ""
+                ],
+                "name": "itemtap"
+            },
+            "name": "onAllestimentoRisultatoItemTap",
+            "designerId": "276ad40b-eb78-43c5-a6de-61ce57ee4e56"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#indietroDettaglioVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onIndietroDettaglioVeicoloButtonTap",
+                "implHandler": [
+                    "var bodyContainer = Ext.ComponentQuery.query('#bodyUsatoContainer')[0];",
+                    "",
+                    "bodyContainer.animateActiveItem(",
+                    "    '#ricercaUsatoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'right'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onIndietroDettaglioVeicoloButtonTap",
+            "designerId": "4efe9944-8b86-4faf-b9c9-db474d9c9987"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#equipDettVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onEquipaggiamentiVeicoloButtonTap",
+                "implHandler": [
+                    "var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "var veicoloUsatoModel = dettaglioVeicoloUsatoForm.getRecord();",
+                    "var veicoloCodice = veicoloUsatoModel.get('codice');",
+                    "",
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloUsatoStore');",
+                    "equipStore.load({",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    scope: this,",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var equipDataview = Ext.ComponentQuery.query('#equipDettVeicoloUsatoDataView')[0];",
+                    "            equipDataview.deselectAll();",
+                    "",
+                    "            equipStore.each(function (item, index, length) {",
+                    "                var equipModel = item;",
+                    "                var statoEquip = equipModel.get('stato');",
+                    "",
+                    "                if (statoEquip === 'ATT') {",
+                    "                    equipDataview.select(equipModel, true, true);",
+                    "                }",
+                    "            });",
+                    "",
+                    "            var equipPanel = Ext.ComponentQuery.query('#equipDettVeicoloUsatoPanel')[0];",
+                    "",
+                    "            Ext.Viewport.setMasked(equipPanel);",
+                    "        }",
+                    "    }",
+                    "});",
+                    "",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onEquipaggiamentiVeicoloButtonTap",
+            "designerId": "d46c9b05-06f5-4d58-b376-23f1c8e5072c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#annullaEquipVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onAnnullaEquipVeicoloButtonTap",
+                "implHandler": [
+                    "var equipPanel = button.up('#equipDettVeicoloUsatoPanel');",
+                    "equipPanel.hide();"
+                ],
+                "name": "tap"
+            },
+            "name": "onAnnullaEquipVeicoloButtonTap",
+            "designerId": "214eb026-47d4-4ba7-9b22-13031f53f6ba"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#confermaEquipVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onConfermaEquipVeicoloButtonTap",
+                "implHandler": [
+                    "// Deseleziono tutti i model degli equipaggiamenti dello store",
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloUsatoStore');",
+                    "",
+                    "equipStore.each(function (item, index, length) {",
+                    "    var equipModel = item;",
+                    "    var statoEquip = equipModel.get('stato');",
+                    "",
+                    "    if (statoEquip === 'ATT') {",
+                    "        equipModel.set('stato', 'DIS');",
+                    "    }",
+                    "});",
+                    "",
+                    "// Seleziono i model degli equipaggiamenti selezionati dall'utente nel dataview",
+                    "var equipDataview = Ext.ComponentQuery.query('#equipDettVeicoloUsatoDataView')[0];",
+                    "var aryEquipSelected = equipDataview.getSelection();",
+                    "",
+                    "for(var i=0; i<aryEquipSelected.length; i++) {",
+                    "    var equipModel = aryEquipSelected[i];",
+                    "    var statoEquip = equipModel.get('stato');",
+                    "",
+                    "    if (statoEquip === 'DIS') {",
+                    "        equipModel.set('stato', 'ATT');",
+                    "    }",
+                    "}",
+                    "",
+                    "// Imposto dirty=true in tutti model dello store prima di",
+                    "// eseguire la sync per inviare tutti i record al back-end.",
+                    "equipStore.each(function (item, index, length) {",
+                    "    var equipModel = item;",
+                    "    equipModel.setDirty();",
+                    "});",
+                    "",
+                    "",
+                    "var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "var veicoloUsatoModel = dettaglioVeicoloUsatoForm.getRecord();",
+                    "var veicoloCodice = veicoloUsatoModel.get('codice');",
+                    "",
+                    "/* I params vengono impostati dal syncWithListener",
+                    "var equipProxy = equipStore.getProxy();",
+                    "equipProxy.setExtraParams({",
+                    "    veicolo_codice: veicoloCodice",
+                    "});",
+                    "*/",
+                    "",
+                    "equipStore.syncWithListener({",
+                    "    scope: this,",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    success: function (store, operation) {",
+                    "        // DEBUG",
+                    "        //console.log(\"equipStore.syncWithListener.write: operation[\"+ operation +\"]\");",
+                    "",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        var numEquipSel = 0;",
+                    "        equipStore.each(function (item, index, length) {",
+                    "            var equipModel = item;",
+                    "            var statoEquip = equipModel.get('stato');",
+                    "",
+                    "            if (statoEquip === 'ATT') {",
+                    "                numEquipSel++;",
+                    "            }",
+                    "        });",
+                    "",
+                    "        var numEquipLabel = Ext.ComponentQuery.query('#numEquipDettVeicoloUsatoLabel')[0];",
+                    "        numEquipLabel.setData({\"numEquipSelezionati\": numEquipSel});",
+                    "",
+                    "        this.syncDettaglioVeicolo();",
+                    "    },",
+                    "    failure: function (proxy, response, operation, eOpts) {",
+                    "        // DEBUG",
+                    "        //console.log(\"equipStore.syncWithListener.exception: operation[\"+ operation +\"]\");",
+                    "",
+                    "        Infocar.app.showSyncErrorMessage(response, operation);",
+                    "    }",
+                    "});",
+                    "",
+                    "var equipPanel = button.up('#equipDettVeicoloUsatoPanel');",
+                    "equipPanel.hide();",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onConfermaEquipVeicoloButtonTap",
+            "designerId": "a5497f81-1851-4ba1-97e5-d3b0f3490c5f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#salvaDettaglioVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSalvaDettaglioVeicoloButtonTap",
+                "implHandler": [
+                    "var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "var veicoloUsatoModel = dettaglioVeicoloUsatoForm.getRecord();",
+                    "//var veicoloCodice = veicoloUsatoModel.get('codice');",
+                    "",
+                    "// Alzo il flag nel model da salvare per indicare al",
+                    "// back-end che si tratta dell'ultima save che porta",
+                    "// alla schermata di esito finale.",
+                    "veicoloUsatoModel.set('salvataggioFlag', 'S');",
+                    "",
+                    "// Riverso i dati della form nel suo model",
+                    "dettaglioVeicoloUsatoForm.updateRecord(veicoloUsatoModel);",
+                    "",
+                    "veicoloUsatoModel.save({",
+                    "    scope: this,",
+                    "    success: function(record, operation) {",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        var veicoloUsatoModel = record;",
+                    "",
+                    "        this.showEsitoSalvaDettaglioVeicolo(veicoloUsatoModel);",
+                    "    },",
+                    "    failure: function(record, operation) {",
+                    "        Infocar.app.showLoadErrorMessage(operation);",
+                    "",
+                    "        // TODO",
+                    "        if (Infocar.app.modalitaSviluppoFlag === 'S') {",
+                    "            this.showEsitoSalvaDettaglioVeicolo(veicoloUsatoModel);",
+                    "        }",
+                    "    }",
+                    "}, this);",
+                    "",
+                    "",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onSalvaDettaglioVeicoloButtonTap",
+            "designerId": "e4bbafb1-a034-49a5-80b4-b9478bcd63f5"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#ricercaNuovoEsitoVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRicercaNuovoEsitoVeicoloButtonTap",
+                "implHandler": [
+                    "Infocar.app.showRicercaNuovo();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRicercaNuovoEsitoVeicoloButtonTap",
+            "designerId": "651659b7-6a0d-486e-b993-59348638e494"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#ricercaStockEsitoVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRicercaStockEsitoVeicoloButtonTap",
+                "implHandler": [
+                    "Infocar.app.showRicercaStock();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRicercaStockEsitoVeicoloButtonTap",
+            "designerId": "f70a1342-067d-470f-88d6-2476d8d89d38"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#infoVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onInfoVeicoloButtonTap",
+                "implHandler": [
+                    "var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "var veicoloUsatoModel = dettaglioVeicoloUsatoForm.getRecord();",
+                    "var veicoloCodice = veicoloUsatoModel.get('codice');",
+                    "",
+                    "var infoVeicoloModelClass = Ext.ModelManager.getModel('Infocar.model.InfoVeicoloUsatoModel');",
+                    "infoVeicoloModelClass.load(0, {",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    scope: this,",
+                    "    success: function(record, operation) {",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        var infoVeicoloModel = record;",
+                    "",
+                    "        this.loadDatiTecniciInfoVeicolo(veicoloCodice);",
+                    "",
+                    "        this.loadEquipInfoVeicolo(veicoloCodice);",
+                    "",
+                    "        this.loadGraficoInfoVeicolo(veicoloCodice);",
+                    "",
+                    "        // Dati di testata",
+                    "        var descLabel = Ext.ComponentQuery.query('#descInfoVeicoloUsatoLabel');",
+                    "        Ext.Array.each(descLabel, function(item, index, ary) {",
+                    "            item.setData(infoVeicoloModel.getData());",
+                    "        });",
+                    "",
+                    "        var infoVeicoloMiniImg = Ext.ComponentQuery.query('#infoVeicoloUsatoMiniImg');",
+                    "        Ext.Array.each(infoVeicoloMiniImg, function(item, index, ary) {",
+                    "            item.setSrc(infoVeicoloModel.get('infoMiniUrlImg'));",
+                    "        });",
+                    "",
+                    "        // Dati del corpo",
+                    "        var infoVeicoloImg = Ext.ComponentQuery.query('#infoVeicoloUsatoImg')[0];",
+                    "        infoVeicoloImg.setSrc(infoVeicoloModel.get('infoUrlImg'));",
+                    "",
+                    "        var testoLabel = Ext.ComponentQuery.query('#testoInfoVeicoloUsatoLabel')[0];",
+                    "        testoLabel.setData(infoVeicoloModel.getData());",
+                    "",
+                    "        var datiTecniciLabel = Ext.ComponentQuery.query('#sintesiDatiTecniciInfoVeicoloUsatoLabel')[0];",
+                    "        datiTecniciLabel.setData(infoVeicoloModel.getData());",
+                    "",
+                    "        //var graficoStockImg = Ext.ComponentQuery.query('#sintesiGraficoStockInfoVeicoloUsatoImg')[0];",
+                    "        //graficoStockImg.setSrc(infoVeicoloModel.get('graficoStockUrlImg'));",
+                    "",
+                    "        var datiStockLabel = Ext.ComponentQuery.query('#sintesiDatiStockInfoVeicoloUsatoLabel')[0];",
+                    "        datiStockLabel.setData(infoVeicoloModel.getData());",
+                    "",
+                    "",
+                    "        // Visualizzo la schermata generale info veicolo",
+                    "        var bodyContainer = Ext.ComponentQuery.query('#bodyUsatoContainer')[0];",
+                    "",
+                    "        bodyContainer.animateActiveItem(",
+                    "            '#infoVeicoloUsatoContainer',",
+                    "            {",
+                    "                type: 'slide',",
+                    "                direction:'left'",
+                    "            }",
+                    "        );",
+                    "",
+                    "        var corpoInfoContainer = Ext.ComponentQuery.query('#corpoInfoVeicoloUsatoContainer')[0];",
+                    "        corpoInfoContainer.setActiveItem('#generaleInfoVeicoloUsatoContainer');",
+                    "",
+                    "        var generaleInfoContainer = Ext.ComponentQuery.query('#generaleInfoVeicoloUsatoContainer')[0];",
+                    "        if (generaleInfoContainer.isRendered()) {",
+                    "            generaleInfoContainer.getScrollable().getScroller().scrollTo(0, 0, false);",
+                    "        }",
+                    "    },",
+                    "    failure: function(record, operation) {",
+                    "        Infocar.app.showLoadErrorMessage(operation);",
+                    "    }",
+                    "}, this);",
+                    "",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onInfoVeicoloButtonTap",
+            "designerId": "04cd2be9-f5d9-4aca-bb00-c268aecf817b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#datiTecniciInfoVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onDatiTecniciInfoVeicoloButtonTap",
+                "implHandler": [
+                    "var corpoInfoContainer = Ext.ComponentQuery.query('#corpoInfoVeicoloUsatoContainer')[0];",
+                    "",
+                    "corpoInfoContainer.animateActiveItem(",
+                    "    '#datiTecniciInfoVeicoloUsatoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'left'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onDatiTecniciInfoVeicoloButtonTap",
+            "designerId": "87800f28-738b-4cc7-8108-b28e06c63740"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#equipInfoVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onEquipInfoVeicoloButtonTap",
+                "implHandler": [
+                    "var corpoInfoContainer = Ext.ComponentQuery.query('#corpoInfoVeicoloUsatoContainer')[0];",
+                    "",
+                    "corpoInfoContainer.animateActiveItem(",
+                    "    '#equipInfoVeicoloUsatoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'left'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onEquipInfoVeicoloButtonTap",
+            "designerId": "a1776d45-60cd-4586-a3b0-c3992c624e5e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#indietroInfoVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onIndietroInfoVeicoloButtonTap",
+                "implHandler": [
+                    "var corpoInfoContainer = Ext.ComponentQuery.query('#corpoInfoVeicoloUsatoContainer')[0];",
+                    "activeContainer = corpoInfoContainer.getActiveItem().getItemId();",
+                    "",
+                    "if (activeContainer === 'generaleInfoVeicoloUsatoContainer') {",
+                    "    // Sono nella schermata generale info veicolo, torno al dettaglio",
+                    "    var bodyContainer = Ext.ComponentQuery.query('#bodyUsatoContainer')[0];",
+                    "",
+                    "    bodyContainer.animateActiveItem(",
+                    "        '#dettaglioVeicoloUsatoContainer',",
+                    "        {",
+                    "            type: 'slide',",
+                    "            direction:'right'",
+                    "        }",
+                    "    );",
+                    "} else {",
+                    "    // Sono in una delle due schermate equipaggiamenti info veicolo oppure",
+                    "    // dati tecnici info veicolo, torno alla schermata generale info veicolo.",
+                    "    corpoInfoContainer.animateActiveItem(",
+                    "        '#generaleInfoVeicoloUsatoContainer',",
+                    "        {",
+                    "            type: 'slide',",
+                    "            direction:'right'",
+                    "        }",
+                    "    );",
+                    "}"
+                ],
+                "name": "tap"
+            },
+            "name": "onIndietroInfoVeicoloButtonTap",
+            "designerId": "4428f745-9bb1-417c-bd4a-1183e8fce4f6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#equipDettVeicoloUsatoDataView",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onSelezioneEquipVeicoloDataitemtap",
+                "implHandler": [
+                    "var equipDataitem = target;",
+                    "var equipModel = record;",
+                    "/*",
+                    "",
+                    "var prevDataitem = dataview.itemSelectedDataitem;",
+                    "if (prevDataitem) {",
+                    "    prevDataitem.removeCls('selezioneEquipDettVeicoloUsato');",
+                    "}",
+                    "",
+                    "dataview.itemSelectedDataitem = equipDataitem;",
+                    "dataview.itemSelectedRecord = equipModel;",
+                    "",
+                    "equipDataitem.addCls('selezioneEquipDettVeicoloUsato');",
+                    "*/",
+                    "",
+                    ""
+                ],
+                "name": "itemtap"
+            },
+            "name": "onSelezioneEquipVeicoloDataitemtap",
+            "designerId": "b02a64d2-2e92-4218-98e2-5610c5c6b269"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadMarche",
+                "implHandler": [
+                    "var marcaStore = Ext.data.StoreManager.lookup('MarcaRicercaUsatoStore');",
+                    "",
+                    "var indietroAllestimentoButton = Ext.ComponentQuery.query('#indietroAllestimentoRicUsatoButton')[0];",
+                    "indietroAllestimentoButton.setHidden(false);",
+                    "",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaUsatoForm')[0];",
+                    "",
+                    "var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaUsatoHidden')[0];",
+                    "marcaHidden.setValue('');",
+                    "",
+                    "var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaUsatoHidden')[0];",
+                    "modelloHidden.setValue('');",
+                    "",
+                    "var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaUsatoHidden')[0];",
+                    "allestimentoHidden.setValue('');",
+                    "",
+                    "marcaStore.load({",
+                    "    params: ricercaForm.getValues(),",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "            var marcaCount = marcaStore.getCount();",
+                    "            this.showMarcaNumRisultati(marcaCount);",
+                    "",
+                    "            if (marcaCount == 1) {",
+                    "                var marcaModel = marcaStore.getAt(0);",
+                    "",
+                    "                var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaUsatoHidden')[0];",
+                    "                marcaHidden.setValue(marcaModel.get('codice'));",
+                    "",
+                    "                var marcaDataview = Ext.ComponentQuery.query('#marcaRicUsatoRisultatoDataView')[0];",
+                    "                marcaDataview.select(marcaModel, false);",
+                    "",
+                    "                this.loadModelli();",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "    scope: this",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "loadMarche",
+            "designerId": "cab51ebe-992e-4c66-9e54-cec38877e2b5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadModelli",
+                "implHandler": [
+                    "//var marcaDataview = Ext.ComponentQuery.query('#marcaRicUsatoRisultatoDataView')[0];",
+                    "//var selMarcaModel = marcaDataview.getSelection()[0];",
+                    "//var marcaCodice = selMarcaModel.get('codice');",
+                    "",
+                    "var modelloStore = Ext.data.StoreManager.lookup('ModelloRicercaUsatoStore');",
+                    "",
+                    "var indietroAllestimentoButton = Ext.ComponentQuery.query('#indietroAllestimentoRicUsatoButton')[0];",
+                    "indietroAllestimentoButton.setHidden(false);",
+                    "",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaUsatoForm')[0];",
+                    "",
+                    "var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaUsatoHidden')[0];",
+                    "modelloHidden.setValue('');",
+                    "",
+                    "var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaUsatoHidden')[0];",
+                    "allestimentoHidden.setValue('');",
+                    "",
+                    "modelloStore.load({",
+                    "//    params: Ext.Object.merge(",
+                    "//        {",
+                    "//            marca_codice: marcaCodice,",
+                    "//        },",
+                    "    params: ricercaForm.getValues(),",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            /*",
+                    "            var button = Ext.ComponentQuery.query('#cercaRicUsatoButton')[0];",
+                    "            button.setText('Aggiorna ricerca');",
+                    "            */",
+                    "",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "            var modelloCount = modelloStore.getCount();",
+                    "            this.showModelloNumRisultati(modelloCount);",
+                    "",
+                    "            if (modelloCount == 1) {",
+                    "                var modelloModel = modelloStore.getAt(0);",
+                    "",
+                    "                var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaUsatoHidden')[0];",
+                    "                modelloHidden.setValue(modelloModel.get('codice'));",
+                    "",
+                    "                var modelloDataview = Ext.ComponentQuery.query('#modelloRicUsatoRisultatoDataView')[0];",
+                    "                modelloDataview.select(modelloModel, false);",
+                    "",
+                    "                this.resetOrdinamentoCombobox();",
+                    "",
+                    "                this.loadAllestimenti();",
+                    "",
+                    "            } else {",
+                    "",
+                    "                var ricUsatoRisultatoContainer = Ext.ComponentQuery.query('#ricercaUsatoRisultatoContainer')[0];",
+                    "                ricUsatoRisultatoContainer.animateActiveItem(",
+                    "                    '#modelloRicUsatoRisultatoContainer',",
+                    "                    {",
+                    "                        type: 'slide',",
+                    "                        direction:'left'",
+                    "                    }",
+                    "                );",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "    scope: this",
+                    "});"
+                ]
+            },
+            "name": "loadModelli",
+            "designerId": "6c4aa285-4bb0-4c55-82fd-4cf6b6997780"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadAllestimenti",
+                "implHandler": [
+                    "/*",
+                    "var marcaDataview = Ext.ComponentQuery.query('#marcaRicUsatoRisultatoDataView')[0];",
+                    "var marcaModel = marcaDataview.getSelection()[0];",
+                    "var marcaCodice = marcaModel.get('codice');",
+                    "",
+                    "if (! selModelloModel) {",
+                    "    var modelloDataview = Ext.ComponentQuery.query('#modelloRicUsatoRisultatoDataView')[0];",
+                    "    selModelloModel = modelloDataview.getSelection()[0];",
+                    "}",
+                    "var modelloCodice = selModelloModel.get('codice');",
+                    "*/",
+                    "",
+                    "var allestimentoStore = Ext.data.StoreManager.lookup('AllestimentoRicercaUsatoStore');",
+                    "",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaUsatoForm')[0];",
+                    "",
+                    "var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaUsatoHidden')[0];",
+                    "allestimentoHidden.setValue('');",
+                    "",
+                    "// Leggo il codice del criterio di ordinamento",
+                    "var ordinamentoCombobox = Ext.ComponentQuery.query('#ordinamentoRicUsatoComboBox')[0];",
+                    "var ordinamentoCodice = ordinamentoCombobox.getValue();",
+                    "",
+                    "allestimentoStore.load({",
+                    "    params: Ext.Object.merge(",
+                    "        {",
+                    "            ordinamento_codice: ordinamentoCodice",
+                    "        },",
+                    "        ricercaForm.getValues()",
+                    "    ),",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            /*",
+                    "            var button = Ext.ComponentQuery.query('#cercaRicUsatoButton')[0];",
+                    "            button.setText('Aggiorna ricerca');",
+                    "            */",
+                    "",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var allestimentoCount = allestimentoStore.getCount();",
+                    "            this.showAllestimentoNumRisultati(allestimentoCount);",
+                    "",
+                    "            var ricUsatoRisultatoContainer = Ext.ComponentQuery.query('#ricercaUsatoRisultatoContainer')[0];",
+                    "            ricUsatoRisultatoContainer.animateActiveItem(",
+                    "                '#allestimentoRicUsatoRisultatoContainer',",
+                    "                {",
+                    "                    type: 'slide',",
+                    "                    direction:'left'",
+                    "                }",
+                    "            );",
+                    "        }",
+                    "    },",
+                    "    scope: this",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "loadAllestimenti",
+            "designerId": "6a6727a1-f260-4570-a894-ab74eb76e4e1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "container#datiDettVeicoloUsatoFieldSet checkboxfield",
+                "designer|targetType": "Ext.field.Checkbox",
+                "fn": "onCheckboxFieldDettVeicoloCheck",
+                "implHandler": [
+                    "var toggleCmp = Ext.ComponentQuery.query('#'+checkboxfield.toggleItemId)[0];",
+                    "var labelCmp = Ext.ComponentQuery.query('#'+toggleCmp.valoreLabelItemId)[0];",
+                    "var hiddenCmp = Ext.ComponentQuery.query('#'+toggleCmp.valoreHiddenItemId)[0];",
+                    "",
+                    "toggleCmp.enable();",
+                    "",
+                    "var labelValue = toggleCmp.getValue() ? 'Si' : 'No';",
+                    "var hiddenValue = toggleCmp.getValue() ? 'S' : 'N';",
+                    "",
+                    "labelCmp.setHtml(labelValue);",
+                    "hiddenCmp.setValue(hiddenValue);"
+                ],
+                "name": "check"
+            },
+            "name": "onCheckboxFieldDettVeicoloCheck",
+            "designerId": "0686c63b-4166-44fe-885c-0b3ed99f91f3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "container#datiDettVeicoloUsatoFieldSet checkboxfield",
+                "designer|targetType": "Ext.field.Checkbox",
+                "fn": "onCheckboxFieldDettVeicoloUncheck",
+                "implHandler": [
+                    "var toggleCmp = Ext.ComponentQuery.query('#'+checkboxfield.toggleItemId)[0];",
+                    "var labelCmp = Ext.ComponentQuery.query('#'+toggleCmp.valoreLabelItemId)[0];",
+                    "var hiddenCmp = Ext.ComponentQuery.query('#'+toggleCmp.valoreHiddenItemId)[0];",
+                    "",
+                    "toggleCmp.disable();",
+                    "",
+                    "var labelValue = '';",
+                    "var hiddenValue = '';",
+                    "",
+                    "labelCmp.setHtml(labelValue);",
+                    "hiddenCmp.setValue(hiddenValue);"
+                ],
+                "name": "uncheck"
+            },
+            "name": "onCheckboxFieldDettVeicoloUncheck",
+            "designerId": "2a8fdf47-7b25-4657-9cbc-95bb6ea5caf0"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#dettaglioVeicoloUsatoForm togglefield",
+                "designer|targetType": "Ext.field.Toggle",
+                "fn": "onToggleFieldDettVeicoloChange",
+                "implHandler": [
+                    "// DEBUG",
+                    "//console.log('toggle: itemId['+ togglefield.getItemId() +'] newValue['+ newValue +'] oldValue['+ oldValue +']');",
+                    "",
+                    "if (togglefield.valoreLabelItemId && togglefield.valoreHiddenItemId) {",
+                    "    var labelCmp = Ext.ComponentQuery.query('#'+togglefield.valoreLabelItemId)[0];",
+                    "    var labelValue = newValue ? 'Si' : 'No';",
+                    "    labelCmp.setHtml(labelValue);",
+                    "",
+                    "    var hiddenCmp = Ext.ComponentQuery.query('#'+togglefield.valoreHiddenItemId)[0];",
+                    "    var hiddenValue = newValue ? 'S' : 'N';",
+                    "    hiddenCmp.setValue(hiddenValue);",
+                    "}",
+                    ""
+                ],
+                "name": "change"
+            },
+            "name": "onToggleFieldDettVeicoloChange",
+            "designerId": "4a9df9df-fc86-400a-b05f-3b01897200a4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "formpanel#dettaglioVeicoloUsatoForm [attivaSyncFlag='S']",
+                "designer|params": [
+                    "target"
+                ],
+                "designer|targetType": null,
+                "fn": "onFormDettVeicoloChange",
+                "implHandler": [
+                    "/*",
+                    "var fieldId = target.getItemId();",
+                    "if (fieldId === 'kmPercorsiDettVeicoloUsatoField'  ||",
+                    "    fieldId === 'ripristinoPrezzoDettVeicoloUsatoField') {",
+                    "    target.suspendEvents();",
+                    "    target.setValue(target.getValue().replace(/[^\\d]* /g, \"\"));",
+                    "    target.resumeEvents(true);",
+                    "}",
+                    "*/",
+                    "",
+                    "",
+                    "var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "var syncFlag = dettaglioVeicoloUsatoForm.syncDettaglioVeicoloFlag;",
+                    "",
+                    "// DEBUG",
+                    "//console.log('syncDettaglioVeicolo: syncFlag['+ syncFlag +'] itemId['+ target.getItemId() +'] name['+ target.getName() +'] value['+ target.getValue() +']');",
+                    "",
+                    "//if (syncFlag === 'S') {",
+                    "//}",
+                    "",
+                    "// Eseguo la sync dei dati del dettaglio veicolo",
+                    "this.syncDettaglioVeicolo();",
+                    "",
+                    ""
+                ],
+                "name": "change"
+            },
+            "name": "onFormDettVeicoloChange",
+            "designerId": "b0b1f69c-bc7e-4fe4-b4fc-4010edbe3fad"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "toggleCmp"
+                ],
+                "fn": "initToggle",
+                "implHandler": [
+                    "if (toggleCmp.valoreLabelItemId && toggleCmp.valoreHiddenItemId) {",
+                    "    var labelCmp = Ext.ComponentQuery.query('#'+toggleCmp.valoreLabelItemId)[0];",
+                    "    var hiddenCmp = Ext.ComponentQuery.query('#'+toggleCmp.valoreHiddenItemId)[0];",
+                    "    var hiddenValue = hiddenCmp.getValue();",
+                    "",
+                    "    var toggleValue;",
+                    "    var labelValue;",
+                    "    if (hiddenValue === 'S') {",
+                    "        toggleValue = '1';",
+                    "        labelValue = 'Si';",
+                    "    } else {",
+                    "        toggleValue = '0';",
+                    "        labelValue = 'No';",
+                    "        hiddenValue = 'N';",
+                    "    }",
+                    "",
+                    "    toggleCmp.setValue(toggleValue);",
+                    "    labelCmp.setHtml(labelValue);",
+                    "    hiddenCmp.setValue(hiddenValue);",
+                    "}",
+                    ""
+                ]
+            },
+            "name": "initToggle",
+            "designerId": "b874aa1e-b8f8-44e7-9342-10d622347262"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "checkboxCmp"
+                ],
+                "fn": "initCheckboxToggle",
+                "implHandler": [
+                    "if (checkboxCmp.toggleItemId) {",
+                    "    var toggleCmp = Ext.ComponentQuery.query('#'+checkboxCmp.toggleItemId)[0];",
+                    "    var labelCmp = Ext.ComponentQuery.query('#'+toggleCmp.valoreLabelItemId)[0];",
+                    "    var hiddenCmp = Ext.ComponentQuery.query('#'+toggleCmp.valoreHiddenItemId)[0];",
+                    "",
+                    "    var hiddenValue = hiddenCmp.getValue();",
+                    "",
+                    "    var labelValue;",
+                    "    if (hiddenValue === 'S') {",
+                    "        checkboxCmp.check();",
+                    "        toggleCmp.setValue(1);",
+                    "        toggleCmp.enable();",
+                    "        labelValue = 'Si';",
+                    "    } else if (hiddenValue === 'N') {",
+                    "        checkboxCmp.check();",
+                    "        toggleCmp.setValue(0);",
+                    "        toggleCmp.enable();",
+                    "        labelValue = 'No';",
+                    "    } else {",
+                    "        checkboxCmp.uncheck();",
+                    "        toggleCmp.setValue(0);",
+                    "        toggleCmp.disable();",
+                    "        labelValue = '';",
+                    "        hiddenValue = '';",
+                    "    }",
+                    "",
+                    "    labelCmp.setHtml(labelValue);",
+                    "    hiddenCmp.setValue(hiddenValue);",
+                    "}"
+                ]
+            },
+            "name": "initCheckboxToggle",
+            "designerId": "f2eea4cf-d956-47bd-a163-2a01e936241c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "image#infoVeicoloUsatoImg",
+                "designer|targetType": "Ext.Img",
+                "fn": "onInfoVeicoloImageTap",
+                "implHandler": [
+                    "var photoFullScreenCtrl = Infocar.app.getController('Infocar.controller.PhotoFullScreenController');",
+                    "photoFullScreenCtrl.showPhotoFullScreen([image.getSrc()], 0);"
+                ],
+                "name": "tap"
+            },
+            "name": "onInfoVeicoloImageTap",
+            "designerId": "e4eafe45-4d71-4a00-8686-dace31dd5f63"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "datepickerfield#dataImmatricDettVeicoloUsatoDatepickerField",
+                "designer|targetType": "Ext.field.DatePicker",
+                "fn": "onDataImmatricDatepickerfieldChange",
+                "implHandler": [
+                    "/*",
+                    "//var dataImmatricAnnullaButton = datepickerfield.down('#annullaDataImmatricDettVeicoloUsatoButton');",
+                    "var dataImmatricAnnullaButton = Ext.ComponentQuery.query('#annullaDataImmatricDettVeicoloUsatoButton')[0];",
+                    "if (dataImmatricAnnullaButton) {",
+                    "    dataImmatricAnnullaButton.show();",
+                    "}",
+                    "*/",
+                    "",
+                    "var salvaButton = Ext.ComponentQuery.query('#salvaDettaglioVeicoloUsatoButton')[0];",
+                    "if (newDate) {",
+                    "    salvaButton.enable();",
+                    "} else {",
+                    "    salvaButton.disable();",
+                    "}"
+                ],
+                "name": "change"
+            },
+            "name": "onDataImmatricDatepickerfieldChange",
+            "designerId": "a4e2e1e6-8a5e-43f5-be6f-2861787e331c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "datepicker#dataImmatricDettVeicoloUsatoPicker",
+                "designer|targetType": "Ext.picker.Date",
+                "fn": "onDataImmatricDatepickerShow",
+                "implHandler": [
+                    "var dataImmatricDateField = Ext.ComponentQuery.query('#dataImmatricDettVeicoloUsatoDatepickerField')[0];",
+                    "",
+                    "var dataImmatricAnnullaButton = Ext.ComponentQuery.query('#annullaDataImmatricDettVeicoloUsatoButton')[0];",
+                    "",
+                    "// DEBUG",
+                    "//console.log('datepickerShow: annullaButton['+ dataImmatricAnnullaButton +']');",
+                    "",
+                    "if (dataImmatricDateField.annullaButtonFlag === 'S') {",
+                    "    dataImmatricAnnullaButton.setHidden(false);",
+                    "} else {",
+                    "    dataImmatricAnnullaButton.setHidden(true);",
+                    "    dataImmatricDateField.annullaButtonFlag = 'S';",
+                    "}"
+                ],
+                "name": "show"
+            },
+            "name": "onDataImmatricDatepickerShow",
+            "designerId": "068ec9b8-b16c-405b-9890-77be415d9cf9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "container#coloreEsternoInternoDettVeicoloUsatoContainer selectfield",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onColoreDettVeicoloComboboxChange",
+                "implHandler": [
+                    "",
+                    "// Workaround per attivazione automatica dell'evento onChange su add del colore \"Altro...\" nello store",
+                    "if (newValue === null)  return;",
+                    "",
+                    "var descHiddenCmp = Ext.ComponentQuery.query('#'+selectfield.descrizioneHiddenItemId)[0];",
+                    "",
+                    "if (newValue === 'ALTRO') {",
+                    "",
+                    "    var tipoColore;",
+                    "    if (selectfield.getItemId() === 'coloreEsternoDettVeicoloUsatoCombobox') {",
+                    "        tipoColore = 'esterno';",
+                    "    } else {",
+                    "        tipoColore = 'interno';",
+                    "    }",
+                    "",
+                    "    Ext.Msg.prompt(",
+                    "        'Colore veicolo',",
+                    "        'Prego inserire il colore '+ tipoColore +' desiderato:',",
+                    "        function (buttonId, value) {",
+                    "            if (buttonId === 'ok') {",
+                    "                var coloreCodice = '-1';",
+                    "                var coloreDesc = value;",
+                    "",
+                    "                var coloreCustomModel;",
+                    "",
+                    "                // Rimuovo dalla combobox, se presente, il colore custom",
+                    "                // precedentemente inserito dall'utente.",
+                    "                var coloreStore = selectfield.getStore();",
+                    "                var coloreStoreIdx = coloreStore.find('codice', coloreCodice, 0, false, true, true);",
+                    "                if (coloreStoreIdx !== -1)  coloreStore.removeAt(coloreStoreIdx);",
+                    "",
+                    "                if (selectfield.getItemId() === 'coloreEsternoDettVeicoloUsatoCombobox') {",
+                    "                    coloreCustomModel = Ext.create('Infocar.model.ColoreEsternoModel', {",
+                    "                        \"codice\": coloreCodice,",
+                    "                        \"descrizione\": coloreDesc",
+                    "                    });",
+                    "                } else {",
+                    "                    coloreCustomModel = Ext.create('Infocar.model.ColoreInternoModel', {",
+                    "                        \"codice\": coloreCodice,",
+                    "                        \"descrizione\": coloreDesc",
+                    "                    });",
+                    "                }",
+                    "",
+                    "                // Inserisco nello store della combobox il",
+                    "                // colore custom inserito dall'utente.",
+                    "                coloreStore.add(coloreCustomModel);",
+                    "",
+                    "                // Seleziono nella combobox il colore appena inserito",
+                    "                selectfield.suspendEvents();",
+                    "                selectfield.setValue(coloreCodice);",
+                    "                selectfield.resumeEvents(true);",
+                    "",
+                    "                descHiddenCmp.setValue(coloreDesc);",
+                    "",
+                    "                this.syncDettaglioVeicolo();",
+                    "",
+                    "            } else if (buttonId === 'cancel') {",
+                    "",
+                    "                selectfield.suspendEvents();",
+                    "                selectfield.setValue(oldValue);",
+                    "                selectfield.resumeEvents(true);",
+                    "            }",
+                    "        },",
+                    "        this,  // scope",
+                    "        false, // multiline",
+                    "        null,  // value",
+                    "        {",
+                    "            maxLength: 30",
+                    "        }",
+                    "    );",
+                    "",
+                    "} else {",
+                    "",
+                    "    var coloreModel = selectfield.getRecord();",
+                    "    var coloreDesc = coloreModel.get('descrizione');",
+                    "",
+                    "    descHiddenCmp.setValue(coloreDesc);",
+                    "",
+                    "    this.syncDettaglioVeicolo();",
+                    "}",
+                    "",
+                    ""
+                ],
+                "name": "change"
+            },
+            "name": "onColoreDettVeicoloComboboxChange",
+            "designerId": "93ef0365-1066-4573-9c14-45ed6687bfca"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "selectfield#ordinamentoRicUsatoComboBox",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onOrdinamentoRicercaComboboxChange",
+                "implHandler": [
+                    "this.loadAllestimenti();"
+                ],
+                "name": "change"
+            },
+            "name": "onOrdinamentoRicercaComboboxChange",
+            "designerId": "332e1d94-1457-42d4-ac87-57868cdf3719"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "syncDettaglioVeicolo",
+                "implHandler": [
+                    "var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "var veicoloUsatoModel = dettaglioVeicoloUsatoForm.getRecord();",
+                    "var veicoloCodice = veicoloUsatoModel.get('codice');",
+                    "",
+                    "veicoloUsatoModel.set('salvataggioFlag', 'N');",
+                    "",
+                    "// Riverso i dati della form nel suo model",
+                    "dettaglioVeicoloUsatoForm.updateRecord(veicoloUsatoModel);",
+                    "",
+                    "// Invio a back-end il model del dettaglio veicolo",
+                    "veicoloUsatoModel.save({",
+                    "    scope: this,",
+                    "    success: function(record, operation) {",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        //var veicoloUsatoModel = record;",
+                    "",
+                    "        // Ricarico da back-end il model del dettaglio veicolo per",
+                    "        // ottenere i prezzi aggiornati.",
+                    "        var veicoloUsatoModelClass = Ext.ModelManager.getModel('Infocar.model.DettaglioVeicoloUsatoModel');",
+                    "        veicoloUsatoModelClass.load(0, {",
+                    "            params: {",
+                    "                veicolo_codice: veicoloCodice",
+                    "            },",
+                    "            scope: this,",
+                    "            success: function(record, operation) {",
+                    "                var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "                if(responseData.message !== null){",
+                    "                    Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "                }",
+                    "",
+                    "                var veicoloUsatoModel = record;",
+                    "",
+                    "                this.initFormDettaglioVeicolo(veicoloUsatoModel);",
+                    "            },",
+                    "            failure: function(record, operation) {",
+                    "                Infocar.app.showLoadErrorMessage(operation);",
+                    "",
+                    "                var salvaButton = Ext.ComponentQuery.query('#salvaDettaglioVeicoloUsatoButton')[0];",
+                    "                salvaButton.disable();",
+                    "            }",
+                    "        }, this);",
+                    "",
+                    "    },",
+                    "    failure: function(record, operation) {",
+                    "        Infocar.app.showLoadErrorMessage(operation);",
+                    "",
+                    "        var salvaButton = Ext.ComponentQuery.query('#salvaDettaglioVeicoloUsatoButton')[0];",
+                    "        salvaButton.disable();",
+                    "    }",
+                    "}, this);",
+                    ""
+                ]
+            },
+            "name": "syncDettaglioVeicolo",
+            "designerId": "d44798fd-057e-4d68-9762-716be092b987"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloUsatoModel"
+                ],
+                "fn": "initFormDettaglioVeicolo",
+                "implHandler": [
+                    "var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "",
+                    "// Disabilito temporaneamente la chiamata alla syncDettaglioVeicolo che",
+                    "// avviene ad ogni modifica di un campo della form.",
+                    "// Questo per evitare di eseguire una sync per ogni campo inizializzato qui sotto.",
+                    "this.suspendEventsDettaglioVeicolo();",
+                    "",
+                    "// Dati di testata",
+                    "var descLabel = Ext.ComponentQuery.query('#descDettVeicoloUsatoLabel');",
+                    "Ext.Array.each(descLabel, function(item, index, ary) {",
+                    "    item.setData(veicoloUsatoModel.getData());",
+                    "});",
+                    "",
+                    "var datiTecniciLabel = Ext.ComponentQuery.query('#datiTecniciDettVeicoloUsatoLabel');",
+                    "Ext.Array.each(datiTecniciLabel, function(item, index, ary) {",
+                    "    item.setData(veicoloUsatoModel.getData());",
+                    "});",
+                    "",
+                    "var prezzoLabel = Ext.ComponentQuery.query('#prezzoDettVeicoloUsatoLabel');",
+                    "Ext.Array.each(prezzoLabel, function(item, index, ary) {",
+                    "    item.setData(veicoloUsatoModel.getData());",
+                    "});",
+                    "",
+                    "var descLabel = Ext.ComponentQuery.query('#descDettVeicoloUsatoLabel');",
+                    "Ext.Array.each(descLabel, function(item, index, ary) {",
+                    "    item.setData(veicoloUsatoModel.getData());",
+                    "});",
+                    "",
+                    "var veicoloMiniImg = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoImg');",
+                    "Ext.Array.each(veicoloMiniImg, function(item, index, ary) {",
+                    "    item.setSrc(veicoloUsatoModel.get('urlImg'));",
+                    "});",
+                    "",
+                    "",
+                    "// Dati del corpo",
+                    "dettaglioVeicoloUsatoForm.setRecord(veicoloUsatoModel);",
+                    "",
+                    "// Controlli sulla data immatricolazione",
+                    "var salvaButton = Ext.ComponentQuery.query('#salvaDettaglioVeicoloUsatoButton')[0];",
+                    "if (veicoloUsatoModel.get('dataImmatricolazione')) {",
+                    "    salvaButton.enable();",
+                    "} else {",
+                    "    salvaButton.disable();",
+                    "}",
+                    "",
+                    "var immatricToggle = Ext.ComponentQuery.query('#immatricAutocarroDettVeicoloUsatoToggle')[0];",
+                    "this.initToggle(immatricToggle);",
+                    "",
+                    "var immatricPrezzoLabel = Ext.ComponentQuery.query('#immatricPrezzoDettVeicoloUsatoLabel')[0];",
+                    "immatricPrezzoLabel.setData(veicoloUsatoModel.getData());",
+                    "",
+                    "var kmTeoriciLabel = Ext.ComponentQuery.query('#kmTeoriciDettVeicoloUsatoLabel')[0];",
+                    "kmTeoriciLabel.setData(veicoloUsatoModel.getData());",
+                    "",
+                    "var kmPercorsiPrezzoLabel = Ext.ComponentQuery.query('#kmPercorsiPrezzoDettVeicoloUsatoLabel')[0];",
+                    "kmPercorsiPrezzoLabel.setData(veicoloUsatoModel.getData());",
+                    "",
+                    "var equipPrezzoLabel = Ext.ComponentQuery.query('#equipagPrezzoDettVeicoloUsatoLabel')[0];",
+                    "equipPrezzoLabel.setData(veicoloUsatoModel.getData());",
+                    "",
+                    "//var ripristinoPrezzoLabel = Ext.ComponentQuery.query('#ripristinoPrezzoVeicoloUsatoLabel')[0];",
+                    "//ripristinoPrezzoLabel.setData(veicoloUsatoModel.getData());",
+                    "",
+                    "var immatricAutocarroPrezzoLabel = Ext.ComponentQuery.query('#immatricAutocarroPrezzoVeicoloUsatoLabel')[0];",
+                    "immatricAutocarroPrezzoLabel.setData(veicoloUsatoModel.getData());",
+                    "",
+                    "var speseGestioneToggle = Ext.ComponentQuery.query('#speseGestioneDettVeicoloUsatoToggle')[0];",
+                    "this.initToggle(speseGestioneToggle);",
+                    "",
+                    "var speseGestionePrezzoLabel = Ext.ComponentQuery.query('#speseGestionePrezzoVeicoloUsatoLabel')[0];",
+                    "speseGestionePrezzoLabel.setData(veicoloUsatoModel.getData());",
+                    "",
+                    "var aryDatiVeicoloCheckboxes = Ext.ComponentQuery.query('container#datiDettVeicoloUsatoFieldSet checkboxfield');",
+                    "Ext.Array.each(aryDatiVeicoloCheckboxes,",
+                    "               function(checkboxCmp, index, ary) {",
+                    "                   this.initCheckboxToggle(checkboxCmp);",
+                    "               },",
+                    "               this",
+                    "              );",
+                    "",
+                    "// Riabilito la chiamata alla syncDettaglioVeicolo ad",
+                    "// ogni modifica di un campo della form.",
+                    "this.resumeEventsDettaglioVeicolo(true);",
+                    ""
+                ]
+            },
+            "name": "initFormDettaglioVeicolo",
+            "designerId": "0f7a4a7e-44f0-42e4-9c12-681510634016"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloCodice"
+                ],
+                "fn": "loadDatiTecniciInfoVeicolo",
+                "implHandler": [
+                    "var datiTecniciStore = Ext.data.StoreManager.lookup('DatiTecniciInfoVeicoloUsatoStore');",
+                    "datiTecniciStore.load({",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "}, this);",
+                    ""
+                ]
+            },
+            "name": "loadDatiTecniciInfoVeicolo",
+            "designerId": "2b33862e-4d7d-4ecf-a8a7-ebaf75a1a793"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloCodice"
+                ],
+                "fn": "loadEquipInfoVeicolo",
+                "implHandler": [
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipInfoVeicoloUsatoStore');",
+                    "equipStore.load({",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    callback: function (records, operation, success) {",
+                    "        var equipCount = 0;",
+                    "",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            equipCount = equipStore.getCount();",
+                    "        }",
+                    "",
+                    "        var equipLabel = Ext.ComponentQuery.query('#sintesiEquipInfoVeicoloUsatoLabel')[0];",
+                    "        equipLabel.setData({numEquip: equipCount});",
+                    "    },",
+                    "}, this);",
+                    ""
+                ]
+            },
+            "name": "loadEquipInfoVeicolo",
+            "designerId": "9059664f-cd0a-4550-a589-6efe298b60f3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloCodice"
+                ],
+                "fn": "loadGraficoInfoVeicolo",
+                "implHandler": [
+                    "var graficoStore = Ext.data.StoreManager.lookup('GraficoInfoVeicoloUsatoStore');",
+                    "graficoStore.load({",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var graficoCount = graficoStore.getCount();",
+                    "            var graficoChart = Ext.ComponentQuery.query('#graficoInfoVeicoloUsatoChart')[0];",
+                    "            var msgCortesiaLabel = Ext.ComponentQuery.query('#messaggioGraficoInfoVeicoloUsatoLabel')[0];",
+                    "",
+                    "            if (graficoCount > 0) {",
+                    "                // Visualizzo il grafico",
+                    "                graficoChart.setHidden(false);",
+                    "                msgCortesiaLabel.setHidden(true);",
+                    "            } else {",
+                    "                // Non ci sono valori da rappresentare nel grafico.",
+                    "                // Visualizzo un messaggio di cortesia al posto del grafico.",
+                    "                graficoChart.setHidden(true);",
+                    "                msgCortesiaLabel.setHidden(false);",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "}, this);"
+                ]
+            },
+            "name": "loadGraficoInfoVeicolo",
+            "designerId": "bf98d7c8-ab63-4da6-a4a7-512b4c101952"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "suspendEventsDettaglioVeicolo",
+                "implHandler": [
+                    "//var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "",
+                    "// Disabilito temporaneamente la chiamata alla syncDettaglioVeicolo che",
+                    "// avviene ad ogni modifica di un campo della form.",
+                    "// Questo per evitare di eseguire una sync per ogni campo inizializzato.",
+                    "",
+                    "//dettaglioVeicoloUsatoForm.syncDettaglioVeicoloFlag = 'N';",
+                    "",
+                    "var aryFormFields = Ext.ComponentQuery.query(\"formpanel#dettaglioVeicoloUsatoForm [attivaSyncFlag='S']\");",
+                    "Ext.Array.each(aryFormFields,",
+                    "               function(field, index, ary) {",
+                    "                   // DEBUG",
+                    "                   //console.log(\"suspendEvents: field[\"+ field.getName() +\"]\");",
+                    "",
+                    "                   field.suspendEvents();",
+                    "               },",
+                    "               this",
+                    ");",
+                    "",
+                    "var coloreEsternoComboboxCmp = Ext.ComponentQuery.query('#coloreEsternoDettVeicoloUsatoCombobox')[0];",
+                    "coloreEsternoComboboxCmp.suspendEvents();",
+                    "",
+                    "var coloreInternoComboboxCmp = Ext.ComponentQuery.query('#coloreInternoDettVeicoloUsatoCombobox')[0];",
+                    "coloreInternoComboboxCmp.suspendEvents();"
+                ]
+            },
+            "name": "suspendEventsDettaglioVeicolo",
+            "designerId": "a471ea03-6626-4664-85b5-bbd8c8a9ac1b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "discardQueuedEvents"
+                ],
+                "fn": "resumeEventsDettaglioVeicolo",
+                "implHandler": [
+                    "//var dettaglioVeicoloUsatoForm = Ext.ComponentQuery.query('#dettaglioVeicoloUsatoForm')[0];",
+                    "",
+                    "// Riabilito la chiamata alla syncDettaglioVeicolo ad",
+                    "// ogni modifica di un campo della form.",
+                    "",
+                    "//dettaglioVeicoloUsatoForm.syncDettaglioVeicoloFlag = 'S';",
+                    "",
+                    "var aryFormFields = Ext.ComponentQuery.query(\"formpanel#dettaglioVeicoloUsatoForm [attivaSyncFlag='S']\");",
+                    "Ext.Array.each(aryFormFields,",
+                    "               function(field, index, ary) {",
+                    "                   field.resumeEvents(discardQueuedEvents);",
+                    "               },",
+                    "               this",
+                    ");",
+                    "",
+                    "var coloreEsternoComboboxCmp = Ext.ComponentQuery.query('#coloreEsternoDettVeicoloUsatoCombobox')[0];",
+                    "coloreEsternoComboboxCmp.resumeEvents(discardQueuedEvents);",
+                    "",
+                    "var coloreInternoComboboxCmp = Ext.ComponentQuery.query('#coloreInternoDettVeicoloUsatoCombobox')[0];",
+                    "coloreInternoComboboxCmp.resumeEvents(discardQueuedEvents);"
+                ]
+            },
+            "name": "resumeEventsDettaglioVeicolo",
+            "designerId": "8b4d19b2-90c1-48db-9746-3b8db752c8a7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "coloreCodice"
+                ],
+                "fn": "loadColoreEsternoCombobox",
+                "implHandler": [
+                    "var coloreEsternoComboboxCmp = Ext.ComponentQuery.query('#coloreEsternoDettVeicoloUsatoCombobox')[0];",
+                    "",
+                    "var coloreEsternoStore = Ext.data.StoreManager.lookup('ColoreEsternoDettVeicoloUsatoStore');",
+                    "",
+                    "coloreEsternoStore.load({",
+                    "    // params: {},",
+                    "    scope: this,",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var utenteModel = Infocar.app.utenteModel;",
+                    "",
+                    "            if (utenteModel.get('coloreVeicoloFlag') === 'S') {",
+                    "                var coloreAltro = Ext.create('Infocar.model.ColoreEsternoModel', {",
+                    "                    \"codice\": \"ALTRO\",",
+                    "                    \"descrizione\": \"Altro...\"",
+                    "                });",
+                    "                coloreEsternoStore.add(coloreAltro);",
+                    "",
+                    "                coloreEsternoComboboxCmp.suspendEvents();",
+                    "                coloreEsternoComboboxCmp.setValue(coloreCodice);",
+                    "                coloreEsternoComboboxCmp.resumeEvents(true);",
+                    "            }",
+                    "        }",
+                    "    }",
+                    "});",
+                    "",
+                    ""
+                ]
+            },
+            "name": "loadColoreEsternoCombobox",
+            "designerId": "667fc9a8-8a37-46ff-84a4-2d6602641474"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "coloreCodice"
+                ],
+                "fn": "loadColoreInternoCombobox",
+                "implHandler": [
+                    "var coloreInternoComboboxCmp = Ext.ComponentQuery.query('#coloreInternoDettVeicoloUsatoCombobox')[0];",
+                    "",
+                    "var coloreInternoStore = Ext.data.StoreManager.lookup('ColoreInternoDettVeicoloUsatoStore');",
+                    "",
+                    "coloreInternoStore.load({",
+                    "    // params: {},",
+                    "    scope: this,",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var utenteModel = Infocar.app.utenteModel;",
+                    "            if (utenteModel.get('coloreVeicoloFlag') === 'S') {",
+                    "                var coloreAltro = Ext.create('Infocar.model.ColoreInternoModel', {",
+                    "                    \"codice\": \"ALTRO\",",
+                    "                    \"descrizione\": \"Altro...\"",
+                    "                });",
+                    "                coloreInternoStore.add(coloreAltro);",
+                    "",
+                    "                coloreInternoComboboxCmp.suspendEvents();",
+                    "                coloreInternoComboboxCmp.setValue(coloreCodice);",
+                    "                coloreInternoComboboxCmp.resumeEvents(true);",
+                    "            }",
+                    "        }",
+                    "    }",
+                    "});"
+                ]
+            },
+            "name": "loadColoreInternoCombobox",
+            "designerId": "92a0f91a-bc35-4601-817a-c5dbf5f88c6e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloModel"
+                ],
+                "fn": "showEsitoSalvaDettaglioVeicolo",
+                "implHandler": [
+                    "// Imposto i valori visualizzati nella schermata di esito salvataggio veicolo",
+                    "var testoEsitoLabel = Ext.ComponentQuery.query('#testoEsitoVeicoloUsatoLabel')[0];",
+                    "testoEsitoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var valutazioneQRPrezzoLabel = Ext.ComponentQuery.query('#valutazioneQRPrezzoEsitoVeicoloUsatoLabel2')[0];",
+                    "valutazioneQRPrezzoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var varConcessPrezzoLabel = Ext.ComponentQuery.query('#varConcessPrezzoEsitoVeicoloUsatoLabel2')[0];",
+                    "varConcessPrezzoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var varConcordataPrezzoLabel = Ext.ComponentQuery.query('#varConcorPrezzoEsitoVeicoloUsatoLabel2')[0];",
+                    "varConcordataPrezzoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var totaleConcordatoPrezzoLabel = Ext.ComponentQuery.query('#totaleConcorPrezzoEsitoVeicoloUsatoLabel2')[0];",
+                    "totaleConcordatoPrezzoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var bodyContainer = Ext.ComponentQuery.query('#bodyUsatoContainer')[0];",
+                    "",
+                    "bodyContainer.animateActiveItem(",
+                    "    '#esitoVeicoloUsatoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'left'",
+                    "    }",
+                    ");",
+                    ""
+                ]
+            },
+            "name": "showEsitoSalvaDettaglioVeicolo",
+            "designerId": "d25d0f97-5483-4bac-94c7-5508ba4814be"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetOrdinamentoCombobox",
+                "implHandler": [
+                    "var ordinamentoCombobox = Ext.ComponentQuery.query('#ordinamentoRicUsatoComboBox')[0];",
+                    "ordinamentoCombobox.suspendEvents();",
+                    "ordinamentoCombobox.setValue('0');",
+                    "ordinamentoCombobox.resumeEvents(true);"
+                ]
+            },
+            "name": "resetOrdinamentoCombobox",
+            "designerId": "03699a7e-5f54-42a0-9216-f81453fb2dc7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "datepicker#bolloDettVeicoloUsatoPicker",
+                "designer|targetType": "Ext.picker.Date",
+                "fn": "onBolloDettVeicoloDatepickerShow",
+                "implHandler": [
+                    "var bolloDateField = Ext.ComponentQuery.query('#bolloDettVeicoloUsatoDatepickerField')[0];",
+                    "",
+                    "if (! bolloDateField.getValue()) {",
+                    "    bolloDateField.getPicker().setValue(new Date());",
+                    "}"
+                ],
+                "name": "show"
+            },
+            "name": "onBolloDettVeicoloDatepickerShow",
+            "designerId": "7c3f7837-0ab0-406b-b699-5d179591de9c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "datepicker#revisioneDettVeicoloUsatoPicker",
+                "designer|targetType": "Ext.picker.Date",
+                "fn": "onRevisioneDettVeicoloDatepickerShow",
+                "implHandler": [
+                    "var revisioneDateField = Ext.ComponentQuery.query('#revisioneDettVeicoloUsatoDatepickerField')[0];",
+                    "",
+                    "if (! revisioneDateField.getValue()) {",
+                    "    revisioneDateField.getPicker().setValue(new Date());",
+                    "}"
+                ],
+                "name": "show"
+            },
+            "name": "onRevisioneDettVeicoloDatepickerShow",
+            "designerId": "3b0aef58-5f52-4cbb-8ef1-59f853a166b9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setCustomProperties",
+                "implHandler": [
+                    "var cmp;",
+                    "",
+                    "// Titoli schermate",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#ricercaUsatoContainer\")[0];",
+                    "cmp.Titolo = \"Ritiro - Ricerca ritiro\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoContainer\")[0];",
+                    "cmp.Titolo = \"Ritiro - Dettaglio allestimento\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#infoVeicoloUsatoContainer\")[0];",
+                    "cmp.Titolo = \"Ritiro - Dettaglio del modello\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#esitoVeicoloUsatoContainer\")[0];",
+                    "cmp.Titolo = \"Ritiro - Esito\";",
+                    "",
+                    "",
+                    "// Ricerca Usato",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#ricercaUsatoForm\")[0];",
+                    "cmp.ricercaTargaFlag = \"N\";",
+                    "",
+                    "",
+                    "// Dettaglio Veicolo Usato",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dataImmatricDettVeicoloUsatoDatepickerField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "cmp.annullaButtonFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='kmPercorsi']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#immatricAutocarroDettVeicoloUsatoToggle\")[0];",
+                    "cmp.valoreLabelItemId = \"immatricAutocarroDettVeicoloUsatoLabel\";",
+                    "cmp.valoreHiddenItemId = \"immatricAutocarroDettVeicoloUsatoHiddenField\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#immatricAutocarroDettVeicoloUsatoHiddenField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='ripristinoPrezzo']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#speseGestioneDettVeicoloUsatoToggle\")[0];",
+                    "cmp.valoreLabelItemId = \"speseGestioneDettVeicoloUsatoLabel\";",
+                    "cmp.valoreHiddenItemId = \"speseGestioneDettVeicoloUsatoHiddenField\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#speseGestioneDettVeicoloUsatoHiddenField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='targa']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='telaio']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#coloreEsternoDettVeicoloUsatoCombobox\")[0];",
+                    "cmp.descrizioneHiddenItemId = \"descrizioneColoreEsternoDettVeicoloUsatoHidden\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#coloreInternoDettVeicoloUsatoCombobox\")[0];",
+                    "cmp.descrizioneHiddenItemId = \"descrizioneColoreInternoDettVeicoloUsatoHidden\";",
+                    "",
+                    "/*",
+                    "        cmp = Ext.ComponentQuery.query(\"#descrizioneColoreEsternoDettVeicoloUsatoHidden\")[0];",
+                    "        cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "        cmp = Ext.ComponentQuery.query(\"#descrizioneColoreInternoDettVeicoloUsatoHidden\")[0];",
+                    "        cmp.attivaSyncFlag = \"S\";",
+                    "        */",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='dataBollo']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='dataRevisione']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='provenienza_codice']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='destinazione_codice']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#librettoDettVeicoloUsatoCheckbox\")[0];",
+                    "cmp.toggleItemId = \"librettoDettVeicoloUsatoToggle\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#librettoDettVeicoloUsatoToggle\")[0];",
+                    "cmp.valoreLabelItemId = \"librettoDettVeicoloUsatoLabel\";",
+                    "cmp.valoreHiddenItemId = \"librettoDettVeicoloUsatoHiddenField\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#librettoDettVeicoloUsatoHiddenField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#certificatoDettVeicoloUsatoCheckbox\")[0];",
+                    "cmp.toggleItemId = \"certificatoDettVeicoloUsatoToggle\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#certificatoDettVeicoloUsatoToggle\")[0];",
+                    "cmp.valoreLabelItemId = \"certificatoDettVeicoloUsatoLabel\";",
+                    "cmp.valoreHiddenItemId = \"certificatoDettVeicoloUsatoHiddenField\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#certificatoDettVeicoloUsatoHiddenField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#tagliandiDettVeicoloUsatoCheckbox\")[0];",
+                    "cmp.toggleItemId = \"tagliandiDettVeicoloUsatoToggle\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#tagliandiDettVeicoloUsatoToggle\")[0];",
+                    "cmp.valoreLabelItemId = \"tagliandiDettVeicoloUsatoLabel\";",
+                    "cmp.valoreHiddenItemId = \"tagliandiDettVeicoloUsatoHiddenField\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#tagliandiDettVeicoloUsatoHiddenField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#ipotecataDettVeicoloUsatoCheckbox\")[0];",
+                    "cmp.toggleItemId = \"ipotecataDettVeicoloUsatoToggle\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#ipotecataDettVeicoloUsatoToggle\")[0];",
+                    "cmp.valoreLabelItemId = \"ipotecataDettVeicoloUsatoLabel\";",
+                    "cmp.valoreHiddenItemId = \"ipotecataDettVeicoloUsatoHiddenField\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#ipotecataDettVeicoloUsatoHiddenField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#fatturabileDettVeicoloUsatoCheckbox\")[0];",
+                    "cmp.toggleItemId = \"fatturabileDettVeicoloUsatoToggle\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#fatturabileDettVeicoloUsatoToggle\")[0];",
+                    "cmp.valoreLabelItemId = \"fatturabileDettVeicoloUsatoLabel\";",
+                    "cmp.valoreHiddenItemId = \"fatturabileDettVeicoloUsatoHiddenField\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#fatturabileDettVeicoloUsatoHiddenField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#leasingDettVeicoloUsatoCheckbox\")[0];",
+                    "cmp.toggleItemId = \"leasingDettVeicoloUsatoToggle\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#leasingDettVeicoloUsatoToggle\")[0];",
+                    "cmp.valoreLabelItemId = \"leasingDettVeicoloUsatoLabel\";",
+                    "cmp.valoreHiddenItemId = \"leasingDettVeicoloUsatoHiddenField\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#leasingDettVeicoloUsatoHiddenField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#noteDettVeicoloUsatoField\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloUsatoForm [name='totaleConcordatoPrezzo']\")[0];",
+                    "cmp.attivaSyncFlag = \"S\";",
+                    ""
+                ]
+            },
+            "name": "setCustomProperties",
+            "designerId": "3c69177e-1d24-4236-ab4f-b366550d2314"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "//this.setCustomProperties();"
+                ]
+            },
+            "name": "launch",
+            "designerId": "b6989dee-f757-4119-bedc-dd1b48e7582b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getView",
+                "implHandler": [
+                    "var usatoView = this.getUsatoView();",
+                    "",
+                    "return usatoView;"
+                ]
+            },
+            "name": "getView",
+            "designerId": "da797ec8-f875-46f9-96c9-b1c2129824c2"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "usatoView",
+                "selector": "#usatoView",
+                "xtype": "UsatoView"
+            },
+            "name": "usatoView",
+            "designerId": "0fce41ed-f65e-46b1-ba59-fd08c028d09e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "container#usatoView",
+                "designer|targetType": "Ext.Container",
+                "fn": "onUsatoViewInitialize",
+                "implHandler": [
+                    "var view = component;",
+                    "",
+                    "//var ricUsatoCtrl = this.getController('Infocar.controller.RicercaUsatoController');",
+                    "this.setCustomProperties();",
+                    "",
+                    "this.initTitoloTopBar(view);",
+                    ""
+                ],
+                "name": "initialize"
+            },
+            "name": "onUsatoViewInitialize",
+            "designerId": "b58c578c-4f36-4981-a919-be8eb694e322"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "initTitoloTopBar",
+                "implHandler": [
+                    "var bodyContainer = view.down('#bodyUsatoContainer');",
+                    "var activeBodyItem = bodyContainer.getActiveItem();",
+                    "if (activeBodyItem) {",
+                    "    var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');",
+                    "    topBarCtrl.setTitoloFromContainer(bodyContainer, activeBodyItem);",
+                    "}"
+                ]
+            },
+            "name": "initTitoloTopBar",
+            "designerId": "9c1f4892-701b-4cf2-a90f-c9dac309b256"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "container#bodyUsatoContainer",
+                "designer|targetType": "Ext.Container",
+                "fn": "onBodyContainerActiveItemChange",
+                "implHandler": [
+                    "var item = value;",
+                    "",
+                    "var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');",
+                    "topBarCtrl.setTitoloFromContainer(container, item);"
+                ],
+                "name": "activeitemchange"
+            },
+            "name": "onBodyContainerActiveItemChange",
+            "designerId": "31bc9a48-d217-42c4-a896-1c9095ac8d43"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#stampaEsitoVeicoloUsatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onStampaEsitoVeicoloButtonTap",
+                "implHandler": [
+                    "var urlStampa = Infocar.app.stampaEsitoVeicoloUsatoUrl;",
+                    "",
+                    "window.open(urlStampa, \"stampa\", \"width=600,height=600,location=no\");"
+                ],
+                "name": "tap"
+            },
+            "name": "onStampaEsitoVeicoloButtonTap",
+            "designerId": "25c09051-68e9-428d-887a-c540528d9677"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "textfield#ripristinoPrezzoDettVeicoloUsatoField",
+                "designer|targetType": "Ext.field.Text",
+                "fn": "onRipristinoPrezzoDettVeicoloFieldKeyup",
+                "implHandler": [
+                    "/*",
+                    "console.log(textfield);",
+                    "console.log(e);",
+                    "console.log(eOpts);",
+                    "console.log('getValue['+ textfield.getValue() +'] _value['+ textfield._value +']');",
+                    "*/",
+                    "",
+                    "e.stopPropagation();",
+                    "e.stopEvent();",
+                    "textfield.suspendEvents();",
+                    "textfield.setValue(textfield.getValue().replace(/[^\\d]*/g, \"\"));",
+                    "textfield.resumeEvents(true);",
+                    "",
+                    "return false;"
+                ],
+                "name": "keyup"
+            },
+            "name": "onRipristinoPrezzoDettVeicoloFieldKeyup",
+            "designerId": "12a5b871-348a-41fe-9c73-61211870e7d4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "textfield#kmPercorsiDettVeicoloUsatoField",
+                "designer|targetType": "Ext.field.Text",
+                "fn": "onKmPercorsiDettVeicoloFieldKeyup",
+                "implHandler": [
+                    "e.stopPropagation();",
+                    "e.stopEvent();",
+                    "textfield.suspendEvents();",
+                    "textfield.setValue(textfield.getValue().replace(/[^\\d]*/g, \"\"));",
+                    "textfield.resumeEvents(true);",
+                    "",
+                    "return false;",
+                    ""
+                ],
+                "name": "keyup"
+            },
+            "name": "onKmPercorsiDettVeicoloFieldKeyup",
+            "designerId": "851f390c-b7cf-4bff-bd88-c51f40d84b01"
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "VeicoloStockModel",
+        "idProperty": "codice"
+    },
+    "name": "MyModel",
+    "designerId": "26cd172e-5ec1-4f74-baee-4464a69ed37e",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codice",
+                "type": "string"
+            },
+            "name": "field91",
+            "designerId": "6374bf36-ca2a-4865-96b9-b81a8271285c"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione1",
+                "type": "string"
+            },
+            "name": "field92",
+            "designerId": "3e581e64-13c0-4c0b-bd3b-cb59f465fb7e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione2",
+                "type": "string"
+            },
+            "name": "field16",
+            "designerId": "96c6c0dd-b1b8-46cb-813d-a0240a9c509a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione3",
+                "type": "string"
+            },
+            "name": "field17",
+            "designerId": "76b392c7-bf16-4d6e-afad-98e0546e0410"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "descrizione4",
+                "type": "string"
+            },
+            "name": "field18",
+            "designerId": "2132b783-9643-474d-ac1b-c7f94e3fb5de"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "urlImg",
+                "type": "string"
+            },
+            "name": "field93",
+            "designerId": "abc2a807-6dc1-47f4-afc6-82365f2479f7"
+        }
+    ]
+}

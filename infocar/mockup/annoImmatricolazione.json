@@ -1,0 +1,39 @@
+{
+    "success": true,
+    "message": null,
+    "total": 8,
+    "data": [{
+            "codice": "0",
+            "descrizione": "tutti"
+        },
+	{
+            "codice": "1980",
+            "descrizione": "1980"
+        },
+        {
+            "codice": "1981",
+            "descrizione": "1981"
+        },
+        {
+            "codice": "1982",
+            "descrizione": "1982"
+        },
+        {
+            "codice": "1983",
+            "descrizione": "1983"
+        },
+        {
+            "codice": "1984",
+            "descrizione": "1984"
+        },
+        {
+            "codice": "1985",
+            "descrizione": "1985"
+        },
+        {
+            "codice": "1986",
+            "descrizione": "1986"
+        }
+    ]
+}
+

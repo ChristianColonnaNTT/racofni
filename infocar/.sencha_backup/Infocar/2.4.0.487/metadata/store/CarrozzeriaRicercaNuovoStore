@@ -1,0 +1,51 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "CarrozzeriaRicercaNuovoStore",
+        "model": "CarrozzeriaModel",
+        "storeId": "CarrozzeriaRicercaNuovoStore",
+        "syncRemovedRecords": null
+    },
+    "name": "CarrozzeriaRicercaUsatoStore1",
+    "designerId": "14251158-f2c8-4204-bd69-061340ea07c7",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "CarrozzeriaRicercaNuovoProxy",
+                "url": "/nuovo/carrozzeria"
+            },
+            "name": "MyRestProxy3",
+            "designerId": "97820488-61ea-4f37-9b3f-010df4219c18",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "CarrozzeriaRicercaNuovoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader",
+                    "designerId": "4e4fe444-0287-4e7b-b2f2-107a6c2a5a03"
+                }
+            ]
+        }
+    ]
+}

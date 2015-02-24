@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "message": null,
+    "total": 5,
+    "data": [{
+            "codice": "1",
+            "descrizione": "Blu"
+        },
+        {
+            "codice": "2",
+            "descrizione": "Nero"
+        },
+        {
+            "codice": "3",
+            "descrizione": "Grigio"
+        },
+        {
+            "codice": "4",
+            "descrizione": "Rosso"
+        },
+        {
+            "codice": "5",
+            "descrizione": "Bianco"
+        }
+    ]
+}
+

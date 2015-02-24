@@ -1,0 +1,101 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EstremiPrezzoKmModel"
+    },
+    "name": "MyModel",
+    "designerId": "ef3e7549-e334-43f4-8ddc-41f8eee931e6",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "minPrezzo",
+                "type": "float"
+            },
+            "name": "field87",
+            "designerId": "a69e9830-00d6-454f-9b62-c990e31685af"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "maxPrezzo",
+                "type": "float"
+            },
+            "name": "field88",
+            "designerId": "681404b3-7779-4241-9f13-560dfeb1e2c0"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "minKm",
+                "type": "int"
+            },
+            "name": "field89",
+            "designerId": "c5f92e33-f66b-4dab-8a4a-4f47d1ca75f1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "maxKm",
+                "type": "int"
+            },
+            "name": "field90",
+            "designerId": "bc02cdeb-5ea1-4e09-8adc-ae9105f40dc9"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "EstremiPrezzoKmProxy",
+                "url": "/stock/estremiPrezzoKm"
+            },
+            "name": "MyRestProxy13",
+            "designerId": "d2a0ab6e-4d9d-426a-a955-a3b52a43f927",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "EstremiPrezzoKmJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader10",
+                    "designerId": "9e12fbdf-64a6-4617-b52e-961d9b3e3d29"
+                }
+            ]
+        }
+    ]
+}

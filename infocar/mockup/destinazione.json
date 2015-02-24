@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "message": null,
+    "total": 5,
+    "data": [{
+            "codice": "0",
+            "descrizione": "tutte"
+        },
+	{
+            "codice": "1",
+            "descrizione": "Destinazione 1"
+        },
+        {
+            "codice": "2",
+            "descrizione": "Destinazione 2"
+        },
+        {
+            "codice": "3",
+            "descrizione": "Destinazione 3"
+        },
+        {
+            "codice": "4",
+            "descrizione": "Destinazione 4"
+        }
+    ]
+}
+

@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "message": null,
+    "total": 4,
+    "data": [{
+            "codice": "1",
+            "descrizione": "BMW",
+            "urlImg": "/resources/img/alfa.jpg"
+        },
+        {
+            "codice": "2",
+            "descrizione": "Opel",
+            "urlImg": "/resources/img/alfa.jpg"
+        },
+        {
+            "codice": "3",
+            "descrizione": "Audi",
+            "urlImg": "/resources/img/fiat.jpg"
+        },
+        {
+            "codice": "4",
+            "descrizione": "Alfa Romeo",
+            "urlImg": "/resources/img/fiat.jpg"
+        }
+    ]
+}
+

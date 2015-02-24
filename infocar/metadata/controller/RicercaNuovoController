@@ -1,0 +1,2507 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "RicercaNuovoController"
+    },
+    "name": "MyController1",
+    "designerId": "f8e5bd15-54a1-4ede-b877-c078bf4316f3",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#cercaRicNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onCercaButtonTap",
+                "implHandler": [
+                    "button.setText('AGGIORNA RICERCA');",
+                    "",
+                    "var descrizioneRicField = Ext.ComponentQuery.query('#descrizioneRicercaNuovoField')[0];",
+                    "var descRic = descrizioneRicField.getValue();",
+                    "",
+                    "var ricercaTargaFlag = false;",
+                    "",
+                    "var patterns = Infocar.app.patternsRicercaTarga;",
+                    "for(var i=0; i<patterns.length; i++) {",
+                    "    var patternRegExp = new RegExp(patterns[i]);",
+                    "    if (patternRegExp.test(descRic)) {",
+                    "        ricercaTargaFlag = true;",
+                    "        break;",
+                    "    }",
+                    "}",
+                    "",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaNuovoForm')[0];",
+                    "",
+                    "if (ricercaTargaFlag) {",
+                    "    // L'utente ha inserito una targa nella textbox descrizione.",
+                    "    // Salto direttamente all'elenco allestimenti.",
+                    "",
+                    "    ricercaForm.ricercaTargaFlag = 'S';",
+                    "",
+                    "    //var indietroAllestimentoButton = Ext.ComponentQuery.query('#indietroAllestimentoRicNuovoButton')[0];",
+                    "    //indietroAllestimentoButton.setHidden(true);",
+                    "",
+                    "    var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaNuovoHidden')[0];",
+                    "    marcaHidden.setValue('');",
+                    "",
+                    "    var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaNuovoHidden')[0];",
+                    "    modelloHidden.setValue('');",
+                    "",
+                    "    var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaNuovoHidden')[0];",
+                    "    allestimentoHidden.setValue('');",
+                    "",
+                    "    this.loadAllestimenti();",
+                    "} else {",
+                    "    //ricercaForm.ricercaTargaFlag = 'N';",
+                    "",
+                    "    var ricNuovoRisultatoContainer = Ext.ComponentQuery.query('#ricercaNuovoRisultatoContainer')[0];",
+                    "    var activeRisultatoRicItem = ricNuovoRisultatoContainer.getActiveItem();",
+                    "    var tipoRisultatoRic = activeRisultatoRicItem.getItemId();",
+                    "",
+                    "    if (tipoRisultatoRic === 'marcaRicNuovoRisultatoContainer') {",
+                    "        this.loadMarche();",
+                    "    } else if (tipoRisultatoRic === 'modelloRicNuovoRisultatoContainer') {",
+                    "        this.loadModelli();",
+                    "    } else if (tipoRisultatoRic === 'allestimentoRicNuovoRisultatoContainer') {",
+                    "        this.loadAllestimenti();",
+                    "    }",
+                    "}",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onCercaButtonTap",
+            "designerId": "a4442a41-52b7-4f87-b8e7-deda371ad4c7"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "numRisultati"
+                ],
+                "fn": "showMarcaNumRisultati",
+                "implHandler": [
+                    "var marcaNumRisultatiLabel = Ext.ComponentQuery.query('#marcaRicNuovoNumRisultatiLabel')[0];",
+                    "marcaNumRisultatiLabel.setHtml(numRisultati + ' Marche');"
+                ]
+            },
+            "name": "showMarcaNumRisultati",
+            "designerId": "498335b2-c720-49a3-b0c7-55cf5d862a31"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#marcaRicNuovoRisultatoDataView",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onMarcaRisultatoItemTap",
+                "implHandler": [
+                    "var marcaModel = record;",
+                    "",
+                    "var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaNuovoHidden')[0];",
+                    "marcaHidden.setValue(marcaModel.get('codice'));",
+                    "",
+                    "this.loadModelli();"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onMarcaRisultatoItemTap",
+            "designerId": "78d2ada2-60c6-4e9f-9003-47d2fa3a66a7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#azzeraRicNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onAzzeraButtonTap",
+                "implHandler": [
+                    "this.resetRicerca();",
+                    "",
+                    "this.loadMarche();",
+                    "",
+                    "// Visualizzo la schermata della lista marche",
+                    "var ricNuovoRisultatoContainer = Ext.ComponentQuery.query('#ricercaNuovoRisultatoContainer')[0];",
+                    "ricNuovoRisultatoContainer.animateActiveItem(",
+                    "    '#marcaRicNuovoRisultatoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'right'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onAzzeraButtonTap",
+            "designerId": "7a030b7c-7b7b-4e57-a722-64fa3d09320c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetRicerca",
+                "implHandler": [
+                    "// Reset form",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaNuovoForm')[0];",
+                    "ricercaForm.reset();",
+                    "",
+                    "ricercaForm.setValues({",
+                    "    listino_codice: '0',",
+                    "    alimentazione_codice: '0',",
+                    "    carrozzeria_codice: '0'",
+                    "});",
+                    "",
+                    "// Reset marche",
+                    "var marcaStore = Ext.data.StoreManager.lookup('MarcaRicercaNuovoStore');",
+                    "marcaStore.removeAll();",
+                    "",
+                    "var marcaCount = marcaStore.getCount();",
+                    "this.showMarcaNumRisultati(marcaCount);",
+                    "",
+                    "// Reset modelli",
+                    "var modelloStore = Ext.data.StoreManager.lookup('ModelloRicercaNuovoStore');",
+                    "modelloStore.removeAll();",
+                    "",
+                    "var modelloCount = modelloStore.getCount();",
+                    "this.showModelloNumRisultati(modelloCount);",
+                    "",
+                    "// Reset allestimenti",
+                    "var allestimentoStore = Ext.data.StoreManager.lookup('AllestimentoRicercaNuovoStore');",
+                    "allestimentoStore.removeAll();",
+                    "",
+                    "var allestimentoCount = allestimentoStore.getCount();",
+                    "this.showAllestimentoNumRisultati(allestimentoCount);",
+                    "",
+                    "// Aggiorno la label del bottone \"cerca\"",
+                    "var cercaButton = Ext.ComponentQuery.query('#cercaRicNuovoButton')[0];",
+                    "cercaButton.setText('CERCA');",
+                    "",
+                    "// Abbasso il flag della ricerca per targa",
+                    "ricercaForm.ricercaTargaFlag = 'N';",
+                    ""
+                ]
+            },
+            "name": "resetRicerca",
+            "designerId": "ec36f3a8-8e60-4026-8a01-019fd71bebd4"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "numRisultati"
+                ],
+                "fn": "showModelloNumRisultati",
+                "implHandler": [
+                    "var modelloNumRisultatiLabel = Ext.ComponentQuery.query('#modelloRicNuovoNumRisultatiLabel')[0];",
+                    "modelloNumRisultatiLabel.setHtml(numRisultati + ' Modelli');",
+                    ""
+                ]
+            },
+            "name": "showModelloNumRisultati",
+            "designerId": "05eb05c9-444a-4d3a-9c1d-610ce38b8f9c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#indietroModelloRicNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onIndietroModelloButtonTap",
+                "implHandler": [
+                    "var ricNuovoRisultatoContainer = Ext.ComponentQuery.query('#ricercaNuovoRisultatoContainer')[0];",
+                    "ricNuovoRisultatoContainer.animateActiveItem(",
+                    "    '#marcaRicNuovoRisultatoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction: 'right'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onIndietroModelloButtonTap",
+            "designerId": "929dbdfe-35f9-48ba-8a73-bd60a34ad5d8"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#modelloRicNuovoRisultatoDataView",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onModelloRisultatoItemTap",
+                "implHandler": [
+                    "var modelloModel = record;",
+                    "",
+                    "var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaNuovoHidden')[0];",
+                    "modelloHidden.setValue(modelloModel.get('codice'));",
+                    "",
+                    "this.resetOrdinamentoCombobox();",
+                    "",
+                    "this.loadAllestimenti();"
+                ],
+                "name": "itemtap"
+            },
+            "name": "onModelloRisultatoItemTap",
+            "designerId": "86a8ec27-6b93-4f32-bbb5-d2278ec6f195"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "numRisultati"
+                ],
+                "fn": "showAllestimentoNumRisultati",
+                "implHandler": [
+                    "var allestimentoNumRisultatiLabel = Ext.ComponentQuery.query('#allestimentoRicNuovoNumRisultatiLabel')[0];",
+                    "allestimentoNumRisultatiLabel.setHtml(numRisultati + ' Allestimenti');"
+                ]
+            },
+            "name": "showAllestimentoNumRisultati",
+            "designerId": "38414976-b7fa-4e87-8104-9643c37f51a9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#indietroAllestimentoRicNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onIndietroAllestimentoButtonTap",
+                "implHandler": [
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaNuovoForm')[0];",
+                    "",
+                    "if (ricercaForm.ricercaTargaFlag === 'S') {",
+                    "    this.resetRicerca();",
+                    "",
+                    "    this.loadMarche();",
+                    "",
+                    "    // Visualizzo la schermata della lista marche",
+                    "    var ricNuovoRisultatoContainer = Ext.ComponentQuery.query('#ricercaNuovoRisultatoContainer')[0];",
+                    "    ricNuovoRisultatoContainer.animateActiveItem(",
+                    "        '#marcaRicNuovoRisultatoContainer',",
+                    "        {",
+                    "            type: 'slide',",
+                    "            direction:'right'",
+                    "        }",
+                    "    );",
+                    "",
+                    "    ricercaForm.ricercaTargaFlag = 'N';",
+                    "",
+                    "} else {",
+                    "",
+                    "    var ricNuovoRisultatoContainer = Ext.ComponentQuery.query('#ricercaNuovoRisultatoContainer')[0];",
+                    "    ricNuovoRisultatoContainer.animateActiveItem(",
+                    "        '#modelloRicNuovoRisultatoContainer',",
+                    "        {",
+                    "            type: 'slide',",
+                    "            direction: 'right'",
+                    "        }",
+                    "    );",
+                    "}"
+                ],
+                "name": "tap"
+            },
+            "name": "onIndietroAllestimentoButtonTap",
+            "designerId": "fb49e981-03a0-40fc-bcbf-69e353db816c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "dataview#allestimentoRicNuovoRisultatoDataView",
+                "designer|targetType": "Ext.dataview.DataView",
+                "fn": "onAllestimentoRisultatoItemTap",
+                "implHandler": [
+                    "var allestimentoModel = record;",
+                    "var allestimentoCodice = allestimentoModel.get('codice');",
+                    "",
+                    "var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaNuovoHidden')[0];",
+                    "var marcaCodice = marcaHidden.getValue();",
+                    "",
+                    "var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaNuovoHidden')[0];",
+                    "var modelloCodice = modelloHidden.getValue();",
+                    "",
+                    "var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaNuovoHidden')[0];",
+                    "allestimentoHidden.setValue(allestimentoCodice);",
+                    "",
+                    "this.resetCercaEquipVeicoloTextbox();",
+                    "this.resetLogicaCombobox();",
+                    "",
+                    "var veicoloModelClass = Ext.ModelManager.getModel('Infocar.model.DettaglioVeicoloNuovoModel');",
+                    "veicoloModelClass.load(0, {",
+                    "    params: {",
+                    "        marca_codice: marcaCodice,",
+                    "        modello_codice: modelloCodice,",
+                    "        allestimento_codice: allestimentoCodice",
+                    "    },",
+                    "    scope: this,",
+                    "    success: function(record, operation) {",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        // Salvo il model del veicolo nuovo in una property globale",
+                    "        var veicoloModel = record;",
+                    "        Infocar.app.dettaglioVeicoloNuovoModel = veicoloModel;",
+                    "",
+                    "        this.showTestataDettVeicolo();",
+                    "",
+                    "        this.loadEquipaggiamenti({",
+                    "            clusterCodice: 'tutti',",
+                    "            fnAfterShowEquip: function () {",
+                    "                var clusterIniziale = this.initClusterButtons();",
+                    "",
+                    "                // Visualizzo gli equipaggiamenti del cluster selezionato",
+                    "                this.showEquipaggiamenti(clusterIniziale.clusterCodice);",
+                    "            }",
+                    "        });",
+                    "    },",
+                    "    failure: function(record, operation) {",
+                    "        Infocar.app.showLoadErrorMessage(operation);",
+                    "",
+                    "        var salvaButton = Ext.ComponentQuery.query('#salvaDettaglioVeicoloNuovoButton')[0];",
+                    "        salvaButton.disable();",
+                    "    }",
+                    "}, this);",
+                    ""
+                ],
+                "name": "itemtap"
+            },
+            "name": "onAllestimentoRisultatoItemTap",
+            "designerId": "17efe812-83e0-4c0e-b268-eddf084724da"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#infoVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onInfoVeicoloButtonTap",
+                "implHandler": [
+                    "// Visualizzo la schermata con la schermata generale info veicolo",
+                    "var bodyContainer = Ext.ComponentQuery.query('#bodyNuovoContainer')[0];",
+                    "",
+                    "var infoVeicoloModel = Infocar.app.dettaglioVeicoloNuovoModel;",
+                    "var veicoloCodice = infoVeicoloModel.get('codice');",
+                    "",
+                    "var infoVeicoloModelClass = Ext.ModelManager.getModel('Infocar.model.InfoVeicoloNuovoModel');",
+                    "infoVeicoloModelClass.load(0, {",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    scope: this,",
+                    "    success: function(record, operation) {",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        var infoVeicoloModel = record;",
+                    "",
+                    "",
+                    "        this.loadDatiTecniciInfoVeicolo(veicoloCodice);",
+                    "",
+                    "        this.loadEquipInfoVeicolo(veicoloCodice);",
+                    "",
+                    "        this.loadGraficoInfoVeicolo(veicoloCodice);",
+                    "",
+                    "",
+                    "        // Dati di testata",
+                    "        var infoVeicoloMiniImg = Ext.ComponentQuery.query('#infoVeicoloNuovoMiniImg');",
+                    "        Ext.Array.each(infoVeicoloMiniImg, function(item, index, ary) {",
+                    "            item.setSrc(infoVeicoloModel.get('infoMiniUrlImg'));",
+                    "        });",
+                    "",
+                    "        var descLabel = Ext.ComponentQuery.query('#descInfoVeicoloNuovoLabel');",
+                    "        Ext.Array.each(descLabel, function(item, index, ary) {",
+                    "            item.setData(infoVeicoloModel.getData());",
+                    "        });",
+                    "",
+                    "        // Dati del corpo",
+                    "        var infoVeicoloImg = Ext.ComponentQuery.query('#infoVeicoloNuovoImg')[0];",
+                    "        infoVeicoloImg.setSrc(infoVeicoloModel.get('infoUrlImg'));",
+                    "",
+                    "        var testoLabel = Ext.ComponentQuery.query('#testoInfoVeicoloNuovoLabel')[0];",
+                    "        testoLabel.setData(infoVeicoloModel.getData());",
+                    "",
+                    "        var datiTecniciLabel = Ext.ComponentQuery.query('#sintesiDatiTecniciInfoVeicoloNuovoLabel')[0];",
+                    "        datiTecniciLabel.setData(infoVeicoloModel.getData());",
+                    "",
+                    "        //var equipLabel = Ext.ComponentQuery.query('#sintesiEquipInfoVeicoloNuovoLabel')[0];",
+                    "        //equipLabel.setData({numEquip: equipCount});",
+                    "",
+                    "        var datiStockLabel = Ext.ComponentQuery.query('#sintesiDatiStockInfoVeicoloNuovoLabel')[0];",
+                    "        datiStockLabel.setData(infoVeicoloModel.getData());",
+                    "",
+                    "        // Visualizzo la schermata di info veicolo nuovo",
+                    "        bodyContainer.animateActiveItem(",
+                    "            '#infoVeicoloNuovoContainer',",
+                    "            {",
+                    "                type: 'slide',",
+                    "                direction:'left'",
+                    "            }",
+                    "        );",
+                    "",
+                    "        var corpoInfoContainer = Ext.ComponentQuery.query('#corpoInfoVeicoloNuovoContainer')[0];",
+                    "        corpoInfoContainer.setActiveItem('#generaleInfoVeicoloNuovoContainer');",
+                    "",
+                    "        var generaleInfoContainer = Ext.ComponentQuery.query('#generaleInfoVeicoloNuovoContainer')[0];",
+                    "        if (generaleInfoContainer.isRendered()) {",
+                    "            generaleInfoContainer.getScrollable().getScroller().scrollTo(0, 0, false);",
+                    "        }",
+                    "",
+                    "    },",
+                    "    failure: function(record, operation) {",
+                    "        Infocar.app.showLoadErrorMessage(operation);",
+                    "    }",
+                    "}, this);",
+                    "",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onInfoVeicoloButtonTap",
+            "designerId": "6c9fffbb-8a1d-4d3f-8a12-f2abd46d02cf"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#indietroInfoVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onIndietroInfoVeicoloButtonTap",
+                "implHandler": [
+                    "var corpoInfoContainer = Ext.ComponentQuery.query('#corpoInfoVeicoloNuovoContainer')[0];",
+                    "activeContainer = corpoInfoContainer.getActiveItem().getItemId();",
+                    "",
+                    "if (activeContainer === 'generaleInfoVeicoloNuovoContainer') {",
+                    "    // Sono nella schermata generale info veicolo, torno al dettaglio",
+                    "    var bodyContainer = Ext.ComponentQuery.query('#bodyNuovoContainer')[0];",
+                    "",
+                    "    bodyContainer.animateActiveItem(",
+                    "        '#dettaglioVeicoloNuovoContainer',",
+                    "        {",
+                    "            type: 'slide',",
+                    "            direction:'right'",
+                    "        }",
+                    "    );",
+                    "} else {",
+                    "    // Sono in una delle due schermate equipaggiamenti info veicolo oppure",
+                    "    // dati tecnici info veicolo, torno alla schermata generale info veicolo.",
+                    "    corpoInfoContainer.animateActiveItem(",
+                    "        '#generaleInfoVeicoloNuovoContainer',",
+                    "        {",
+                    "            type: 'slide',",
+                    "            direction:'right'",
+                    "        }",
+                    "    );",
+                    "}"
+                ],
+                "name": "tap"
+            },
+            "name": "onIndietroInfoVeicoloButtonTap",
+            "designerId": "792a75d4-b882-434b-8b4a-0a94c471e6f6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#datiTecniciInfoVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onDatiTecniciInfoVeicoloButtonTap",
+                "implHandler": [
+                    "var corpoInfoContainer = Ext.ComponentQuery.query('#corpoInfoVeicoloNuovoContainer')[0];",
+                    "",
+                    "corpoInfoContainer.animateActiveItem(",
+                    "    '#datiTecniciInfoVeicoloNuovoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'left'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onDatiTecniciInfoVeicoloButtonTap",
+            "designerId": "a51fe4e0-f92f-43ef-8c2e-1cf5d75539d4"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#equipInfoVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onEquipInfoVeicoloButtonTap",
+                "implHandler": [
+                    "var corpoInfoContainer = Ext.ComponentQuery.query('#corpoInfoVeicoloNuovoContainer')[0];",
+                    "",
+                    "corpoInfoContainer.animateActiveItem(",
+                    "    '#equipInfoVeicoloNuovoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'left'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onEquipInfoVeicoloButtonTap",
+            "designerId": "fddd6ef9-a6e9-4ea7-93de-3d29434ff915"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#indietroDettaglioVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onIndietroDettaglioVeicoloButtonTap",
+                "implHandler": [
+                    "var bodyContainer = Ext.ComponentQuery.query('#bodyNuovoContainer')[0];",
+                    "",
+                    "bodyContainer.animateActiveItem(",
+                    "    '#ricercaNuovoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'right'",
+                    "    }",
+                    ");"
+                ],
+                "name": "tap"
+            },
+            "name": "onIndietroDettaglioVeicoloButtonTap",
+            "designerId": "d0d162d2-6c0f-4d17-aa94-be9b970dbd3a"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "segmentedbutton#clustersDettVeicoloNuovoButtons > button",
+                "designer|targetType": "Ext.Button",
+                "fn": "onClusterDettVeicoloButtonTap",
+                "implHandler": [
+                    "this.resetCercaEquipVeicoloTextbox();",
+                    "",
+                    "this.showEquipaggiamenti(button.clusterCodice);"
+                ],
+                "name": "tap"
+            },
+            "name": "onClusterDettVeicoloButtonTap",
+            "designerId": "49430c89-5718-4382-b33a-4b35a0043bb3"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#statoEquipDettVeicoloNuovoDataItemButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onStatoEquipDettVeicoloDataItemButtonTap",
+                "implHandler": [
+                    "this.resetCercaEquipVeicoloTextbox();",
+                    "",
+                    "var listItem = button.up('#equipDettVeicoloNuovoListItem');",
+                    "//var listItem = button.getParent();",
+                    "var equipModel = listItem.getRecord();",
+                    "",
+                    "this.changeStatoEquipDettVeicolo(equipModel);"
+                ],
+                "name": "tap"
+            },
+            "name": "onStatoEquipDettVeicoloDataItemButtonTap",
+            "designerId": "53b63011-c37b-4fd7-b163-1c5e151d27ef"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#descEquipDettVeicoloNuovoDataItemButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onDescEquipDettVeicoloButtonItemTapOLD",
+                "implHandler": [
+                    "this.resetCercaEquipVeicoloTextbox();",
+                    "",
+                    "var listItem = button.up('#equipDettVeicoloNuovoListItem');",
+                    "var equipModel = listItem.getRecord();",
+                    "",
+                    "this.changeStatoEquipDettVeicolo(equipModel);"
+                ],
+                "name": "tap"
+            },
+            "name": "onDescEquipDettVeicoloButtonItemTapOLD",
+            "designerId": "e7ec079d-d2d6-4509-b557-d84be503329f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "textfield#cercaDettVeicoloNuovoTextbox",
+                "designer|targetType": "Ext.field.Text",
+                "fn": "onCercaDettVeicoloTextboxChange",
+                "implHandler": [
+                    "this.showEquipaggiamenti(false);"
+                ],
+                "name": "change"
+            },
+            "name": "onCercaDettVeicoloTextboxChange",
+            "designerId": "47482da1-da8d-4682-b802-1ad9f25c6dca"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "textfield#cercaDettVeicoloNuovoTextbox",
+                "designer|targetType": "Ext.field.Text",
+                "fn": "onCercaDettVeicoloTextboxKeyup",
+                "implHandler": [
+                    "this.showEquipaggiamenti(false);"
+                ],
+                "name": "keyup"
+            },
+            "name": "onCercaDettVeicoloTextboxKeyup",
+            "designerId": "1f2f867d-0392-422b-a5f1-c8c1894a9495"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#infoEquipDettVeicoloNuovoDataItemButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onInformEquipDettVeicoloDataitemButtonTap",
+                "implHandler": [
+                    "var listItem = button.up('#equipDettVeicoloNuovoListItem');",
+                    "var equipModel = listItem.getRecord();",
+                    "var equipCodice = equipModel.get('codice');",
+                    "",
+                    "var informEquipPanel = Ext.ComponentQuery.query('#popupInformEquipDettVeicoloNuovoPanel')[0];",
+                    "",
+                    "var informEquipStore = Ext.data.StoreManager.lookup('InformEquipDettVeicoloNuovoStore');",
+                    "",
+                    "informEquipStore.load({",
+                    "    params: {",
+                    "        equipaggiamento_codice: equipCodice",
+                    "    },",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var informEquipModel = informEquipStore.getAt(0);",
+                    "",
+                    "            var testoInformEquipContainer = informEquipPanel.down('#testoInformEquipDettVeicoloNuovoContainer');",
+                    "            testoInformEquipContainer.getTpl().equipaggiamentoSelez = equipModel.get('descrizione');",
+                    "            testoInformEquipContainer.setData(informEquipModel.raw);",
+                    "",
+                    "            testoInformEquipContainer.getScrollable().getScroller().scrollTo(0, 0, false);",
+                    "",
+                    "            informEquipPanel.show();",
+                    "        }",
+                    "    },",
+                    "    scope: this",
+                    "});",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onInformEquipDettVeicoloDataitemButtonTap",
+            "designerId": "79364f63-8380-4d69-b767-32f1f0a9dae7"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#closeInformEquipDettVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onCloseInformEquipDettVeicoloButtonTap",
+                "implHandler": [
+                    "var informEquipPanel = Ext.ComponentQuery.query('#popupInformEquipDettVeicoloNuovoPanel')[0];",
+                    "informEquipPanel.hide();"
+                ],
+                "name": "tap"
+            },
+            "name": "onCloseInformEquipDettVeicoloButtonTap",
+            "designerId": "acbfec3d-5323-4ebd-bbba-356bdeaf4684"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#legendaHeaderEquipDettVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onLegendaEquipDettVeicoloButtonTap",
+                "implHandler": [
+                    "var legendaEquipPanel = Ext.ComponentQuery.query('#popupLegendaEquipDettVeicoloNuovoPanel')[0];",
+                    "legendaEquipPanel.showBy(button, 'tl-cr');"
+                ],
+                "name": "tap"
+            },
+            "name": "onLegendaEquipDettVeicoloButtonTap",
+            "designerId": "7b8f80ad-9817-41ed-b28e-b53b2aa5a4f9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#closeLegendaEquipDettVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onCloseLegendaEquipDettVeicoloButtonTap",
+                "implHandler": [
+                    "var legendaEquipPanel = Ext.ComponentQuery.query('#popupLegendaEquipDettVeicoloNuovoPanel')[0];",
+                    "legendaEquipPanel.hide();"
+                ],
+                "name": "tap"
+            },
+            "name": "onCloseLegendaEquipDettVeicoloButtonTap",
+            "designerId": "1ae414cf-9369-4440-9688-2e86e4cf8da6"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#ricercaUsatoEsitoVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRicercaUsatoEsitoVeicoloButtonTap",
+                "implHandler": [
+                    "Infocar.app.showRicercaUsato();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRicercaUsatoEsitoVeicoloButtonTap",
+            "designerId": "402c368f-a3f6-4a8a-8df1-aa150034fec1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#ricercaStockEsitoVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRicercaStockEsitoVeicoloButtonTap",
+                "implHandler": [
+                    "Infocar.app.showRicercaStock();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRicercaStockEsitoVeicoloButtonTap",
+            "designerId": "89bc8df9-fffa-4fd6-ade4-bcfa482598ce"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#salvaDettaglioVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSalvaDettaglioVeicoloButtonTap",
+                "implHandler": [
+                    "var veicoloModel = Infocar.app.dettaglioVeicoloNuovoModel;",
+                    "",
+                    "veicoloModel.save({",
+                    "    scope: this,",
+                    "    success: function(record, operation) {",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        var veicoloModel = record;",
+                    "",
+                    "        this.showEsitoSalvaDettaglioVeicolo(veicoloModel);",
+                    "    },",
+                    "    failure: function(record, operation) {",
+                    "        Infocar.app.showLoadErrorMessage(operation);",
+                    "",
+                    "        // DEBUG",
+                    "        if (Infocar.app.modalitaSviluppoFlag === 'S') {",
+                    "            this.showEsitoSalvaDettaglioVeicolo(veicoloModel);",
+                    "        }",
+                    "    }",
+                    "}, this);"
+                ],
+                "name": "tap"
+            },
+            "name": "onSalvaDettaglioVeicoloButtonTap",
+            "designerId": "597f7080-daeb-41de-9e3e-6e93c55903f9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#annullaPopupEquipVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onAnnullaPopupEquipVeicoloButtonTap",
+                "implHandler": [
+                    "var popupEquipPanel = Ext.ComponentQuery.query('#popupEquipDettVeicoloNuovoPanel')[0];",
+                    "popupEquipPanel.hide();",
+                    "",
+                    "this.syncEquipDettVeicolo();"
+                ],
+                "name": "tap"
+            },
+            "name": "onAnnullaPopupEquipVeicoloButtonTap",
+            "designerId": "fb5adeb2-f161-4b52-ae15-ac5c53e8dc11"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#confermaPopupEquipVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onConfermaPopupEquipVeicoloButtonTap",
+                "implHandler": [
+                    "var equipDataview = Ext.ComponentQuery.query('#popupEquipDettVeicoloNuovoDataView')[0];",
+                    "",
+                    "var aryEquipSelected = equipDataview.getSelection();",
+                    "",
+                    "if (aryEquipSelected.length > 0) {",
+                    "    var equipModel = aryEquipSelected[0];",
+                    "",
+                    "    equipModel.set('stato', '3');  // 3=Vincoli Plurimi Selezione",
+                    "",
+                    "    var popupEquipPanel = Ext.ComponentQuery.query('#popupEquipDettVeicoloNuovoPanel')[0];",
+                    "    popupEquipPanel.hide();",
+                    "",
+                    "    this.syncEquipDettVeicolo();",
+                    "}"
+                ],
+                "name": "tap"
+            },
+            "name": "onConfermaPopupEquipVeicoloButtonTap",
+            "designerId": "68dab4c8-3c74-470c-aa41-5a7a18583730"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "selectfield#logicaDettVeicoloNuovoCombobox",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onLogicaDettVeicoloComboboxChange",
+                "implHandler": [
+                    "this.resetCercaEquipVeicoloTextbox();",
+                    "",
+                    "this.loadEquipaggiamenti();"
+                ],
+                "name": "change"
+            },
+            "name": "onLogicaDettVeicoloComboboxChange",
+            "designerId": "7cb2411e-a0df-4c14-8a87-96d84f75767d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "clusterCodice"
+                ],
+                "fn": "showEquipaggiamenti",
+                "implHandler": [
+                    "if (!clusterCodice) {",
+                    "    var clusterButtons = Ext.ComponentQuery.query('#clustersDettVeicoloNuovoButtons')[0];",
+                    "    var activeClusterButton = clusterButtons.getPressedButtons()[0];",
+                    "    clusterCodice = activeClusterButton.clusterCodice;",
+                    "}",
+                    "",
+                    "var equipListView = Ext.ComponentQuery.query('#equipDettVeicoloNuovoList')[0];",
+                    "//equipListView.setGrouped(false);",
+                    "",
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');",
+                    "",
+                    "var cercaTextbox = Ext.ComponentQuery.query('#cercaDettVeicoloNuovoTextbox')[0];",
+                    "var filtroCerca = cercaTextbox.getValue();",
+                    "",
+                    "equipStore.clearFilter(true);",
+                    "/*",
+                    "equipStore.setSorters([]);",
+                    "equipStore.setGrouper(null);",
+                    "*/",
+                    "",
+                    "//var aryEquipStore = equipStore.getRange();",
+                    "var aryEquipStore = equipStore.data.all;",
+                    "/*",
+                    "for(var idx=0, len=aryEquipStore.length; idx<len; idx++) {",
+                    "    aryEquipStore[idx].set('order', idx);",
+                    "}",
+                    "*/",
+                    "",
+                    "var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');",
+                    "equipClustersStore.removeAll(true);",
+                    "equipClustersStore.add(equipStore.getRange());",
+                    "",
+                    "/*",
+                    "equipStore.filter([",
+                    "    {property: 'cluster_codice', value: clusterCodice},",
+                    "    {property: 'descrizione', value: filtroCerca}",
+                    "]);",
+                    "*/",
+                    "",
+                    "equipStore.filter([",
+                    "    {",
+                    "        filterFn: function(equipaggiamento) {",
+                    "            var clustersEquip = equipaggiamento.get(\"cluster_codice\");",
+                    "            var stato = equipaggiamento.get(\"stato\");",
+                    "",
+                    "            var filterFlag;",
+                    "            if (clusterCodice === 'tutti') {",
+                    "                filterFlag = true;",
+                    "            } else if (clusterCodice === 'riepilogo') {",
+                    "                // 1=Selezionato,  4=Incluso,  5=Nuova Selezione",
+                    "                filterFlag = (stato === '1' || stato === '4' || stato === '5') ? true : false;",
+                    "            } else {",
+                    "                filterFlag = (clustersEquip.indexOf(clusterCodice) != -1) ? true : false;",
+                    "            }",
+                    "",
+                    "            return filterFlag;",
+                    "        }",
+                    "    },",
+                    "    {property: 'descrizione', value: filtroCerca}",
+                    "]);",
+                    "",
+                    "",
+                    "/*",
+                    "equipStore.sort([",
+                    "    {property: 'gruppoDesc', direction: 'ASC'},",
+                    "    {property: 'descrizione', direction: 'ASC'}",
+                    "]);",
+                    "*/",
+                    "",
+                    "/*",
+                    "equipStore.sort([",
+                    "    {property: 'order', direction: 'ASC'}",
+                    "]);",
+                    "*/",
+                    "",
+                    "/*",
+                    "equipStore.setGrouper({",
+                    "    groupFn: function(item) {",
+                    "        return item.get('gruppoDesc');",
+                    "    },",
+                    "    sortProperty: 'order'",
+                    "});",
+                    "equipListView.setGrouped(true);",
+                    "*/",
+                    ""
+                ]
+            },
+            "name": "showEquipaggiamenti",
+            "designerId": "9c9b6a9b-0aad-443a-849f-74a2250676c8"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "equipModel"
+                ],
+                "fn": "changeStatoEquipDettVeicolo",
+                "implHandler": [
+                    "var statoEquip = equipModel.get('stato');",
+                    "",
+                    "var changeStatoFlag = false;",
+                    "// 0=Libero,  6=Nuova Deselezione",
+                    "if (!statoEquip || statoEquip === '0' || statoEquip === '6') {",
+                    "    equipModel.set('stato', '5');  // 5=Nuova Selezione",
+                    "    changeStatoFlag = true;",
+                    "// 1=Selezionato,  5=Nuova Selezione",
+                    "} else if (statoEquip === '1' || statoEquip === '5') {",
+                    "    equipModel.set('stato', '6');  // 6=Nuova Deselezione",
+                    "    changeStatoFlag = true;",
+                    "}",
+                    "",
+                    "if (changeStatoFlag) {",
+                    "",
+                    "    this.syncEquipDettVeicolo();",
+                    "}"
+                ]
+            },
+            "name": "changeStatoEquipDettVeicolo",
+            "designerId": "bb032c8f-1adc-4869-ac8b-3394e3142d50"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showInfoSelezioneEquip",
+                "implHandler": [
+                    "this.showHideEquipClustersCount(0, true);",
+                    "this.showPopupSelAutomaticaEquip();",
+                    "//Ext.defer(this.showEquipClustersCount, 5000, this, [1, false]);",
+                    "",
+                    "if (this.timeoutIdHideInfoSelezioneEquip) {",
+                    "    clearTimeout(this.timeoutIdHideInfoSelezioneEquip);",
+                    "}",
+                    "",
+                    "this.timeoutIdHideInfoSelezioneEquip = Ext.defer(this.hideInfoSelezioneEquip, 5000, this);"
+                ]
+            },
+            "name": "showInfoSelezioneEquip",
+            "designerId": "064cd02e-4b2a-4649-b59c-2807a4504a62"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "hideInfoSelezioneEquip",
+                "implHandler": [
+                    "this.showHideEquipClustersCount(1, false);",
+                    "this.hidePopupSelAutomaticaEquip();",
+                    "",
+                    "this.timeoutIdHideInfoSelezioneEquip = null;"
+                ]
+            },
+            "name": "hideInfoSelezioneEquip",
+            "designerId": "ddfdc5de-10df-4a99-83ac-fece0a2e2f12"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "countMin",
+                    "evidenziaAbbFlag"
+                ],
+                "fn": "showHideEquipClustersCount",
+                "implHandler": [
+                    "var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');",
+                    "",
+                    "var buttonsClusters = Ext.ComponentQuery.query('#clustersDettVeicoloNuovoButtons [clusterCodice]');",
+                    "",
+                    "var hashClustersEquip = Ext.create('Ext.util.HashMap');",
+                    "",
+                    "// Colleziono i count di equipaggiamenti per ogni cluster",
+                    "for(var i=0; i<buttonsClusters.length; i++) {",
+                    "",
+                    "    var buttonCluster = buttonsClusters[i];",
+                    "    var buttonClusterCodice = buttonCluster.clusterCodice;",
+                    "",
+                    "    if (buttonClusterCodice !== 'tutti'  &&  buttonClusterCodice !== 'riepilogo') {",
+                    "        var clusterEquip = hashClustersEquip.get(buttonClusterCodice);",
+                    "        if (!clusterEquip) {",
+                    "            clusterEquip = { count: 0, evidenziaFlag: false };",
+                    "        }",
+                    "",
+                    "        var equipaggiamenti = equipClustersStore.getRange();",
+                    "        for(var n=0; n<equipaggiamenti.length; n++) {",
+                    "            var equipModel = equipaggiamenti[n];",
+                    "",
+                    "            var equipClusterCodice = equipModel.get('cluster_codice');",
+                    "            var statoEquip = equipModel.get('stato');",
+                    "            var abbinamentoFlag = equipModel.get('abbinamentoFlag');",
+                    "",
+                    "            if (equipClusterCodice && equipClusterCodice !== '') {",
+                    "",
+                    "                if (equipClusterCodice.indexOf(buttonClusterCodice) != -1) {",
+                    "                    // 1=Selezionato,  4=Incluso,  5=Nuova Selezione",
+                    "                    if (statoEquip === '1' || statoEquip === '4' || statoEquip === '5') {",
+                    "                        clusterEquip.count++;",
+                    "                    }",
+                    "                    if (abbinamentoFlag === 'S') {",
+                    "                        clusterEquip.evidenziaFlag = true;",
+                    "                    }",
+                    "                }",
+                    "            }",
+                    "        }",
+                    "",
+                    "        hashClustersEquip.replace(buttonClusterCodice, clusterEquip);",
+                    "    }",
+                    "}",
+                    "",
+                    "// Visualizzo il count di equipaggiamenti su ogni button dei cluster come badgeText",
+                    "hashClustersEquip.each(function (key, value, length) {",
+                    "    var buttonClusterCodice = key;",
+                    "    var clusterEquip = value;",
+                    "",
+                    "    var buttonsClusters = Ext.ComponentQuery.query('#clustersDettVeicoloNuovoButtons')[0];",
+                    "    var buttonCluster = buttonsClusters.down('[clusterCodice='+ buttonClusterCodice +']');",
+                    "",
+                    "    if (clusterEquip.count > countMin) {",
+                    "        buttonCluster.setBadgeText(clusterEquip.count + '');",
+                    "    } else {",
+                    "        buttonCluster.setBadgeText(null);",
+                    "    }",
+                    "",
+                    "    if (clusterEquip.evidenziaFlag && evidenziaAbbFlag) {",
+                    "        buttonCluster.addCls('evidenzaBtnClusterDettVeicoloNuovo');",
+                    "    } else {",
+                    "        buttonCluster.removeCls('evidenzaBtnClusterDettVeicoloNuovo');",
+                    "    }",
+                    "});",
+                    "",
+                    ""
+                ]
+            },
+            "name": "showHideEquipClustersCount",
+            "designerId": "4fdd2cae-4994-49ad-98a2-b57d195b6493"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "msg"
+                ],
+                "fn": "showPopupSelAutomaticaEquip",
+                "implHandler": [
+                    "var popupEquipSelAutoPanel = Ext.ComponentQuery.query('#popupEquipSelAutomaticaDettVeicoloNuovoPanel')[0];",
+                    "",
+                    "var equipSelAutoStore = Ext.data.StoreManager.lookup('EquipSelAutomaticaDettVeicoloNuovoStore');",
+                    "equipSelAutoStore.removeAll();",
+                    "",
+                    "var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');",
+                    "equipClustersStore.each( function (equipModel, index, length) {",
+                    "",
+                    "    if (equipModel.get('abbinamentoFlag') === 'S') {",
+                    "        equipSelAutoStore.add(equipModel);",
+                    "    }",
+                    "",
+                    "});",
+                    "",
+                    "//var riepilogoButton = Ext.ComponentQuery.query('#riepilogoClusterDettVeicoloNuovoButton')[0];",
+                    "//popupEquipSelAutoPanel.showBy(riepilogoButton, 'tr-br');",
+                    "popupEquipSelAutoPanel.show();",
+                    ""
+                ]
+            },
+            "name": "showPopupSelAutomaticaEquip",
+            "designerId": "a5dcb66a-9dc4-4ae2-b810-554057716444"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "hidePopupSelAutomaticaEquip",
+                "implHandler": [
+                    "var popupEquipSelAutoPanel = Ext.ComponentQuery.query('#popupEquipSelAutomaticaDettVeicoloNuovoPanel')[0];",
+                    "popupEquipSelAutoPanel.hide();"
+                ]
+            },
+            "name": "hidePopupSelAutomaticaEquip",
+            "designerId": "eb7b9523-26ed-4b20-b9d1-eba6f6716e64"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#closeEquipSelAutomaticaDettVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onCloseEquipSelAutomaticaDettVeicoloButtonTap",
+                "implHandler": [
+                    "this.hidePopupSelAutomaticaEquip();"
+                ],
+                "name": "tap"
+            },
+            "name": "onCloseEquipSelAutomaticaDettVeicoloButtonTap",
+            "designerId": "9322a057-ed2e-49b9-a958-24fcf1f5db50"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "descEquipSelezionato"
+                ],
+                "fn": "checkSelEquipRicorsiva",
+                "implHandler": [
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');",
+                    "",
+                    "var popupEquipStore = Ext.data.StoreManager.lookup('PopupEquipDettVeicoloNuovoStore');",
+                    "popupEquipStore.removeAll();",
+                    "",
+                    "var openPopupEquipFlag = false;",
+                    "equipStore.each(function (item, index, length) {",
+                    "    var equipModel = item;",
+                    "    var statoEquip = equipModel.get('stato');",
+                    "",
+                    "    // 7=Selezione Obbligatoria (ricorsiva)",
+                    "    if (statoEquip === '7') {",
+                    "        // E' presente un equipaggiamento a selezione ricorsiva, lo",
+                    "        // aggiungo allo store della popup.",
+                    "        popupEquipStore.add(equipModel);",
+                    "",
+                    "        // A fine iterazione sullo store dovro' aprire la popup per",
+                    "        // permettere all'utente la selezione dell'equipaggiamento.",
+                    "        openPopupEquipFlag = true;",
+                    "    }",
+                    "",
+                    "    return true;",
+                    "});",
+                    "",
+                    "if (openPopupEquipFlag) {",
+                    "    var popupEquipPanel = Ext.ComponentQuery.query('#popupEquipDettVeicoloNuovoPanel')[0];",
+                    "    var popupEquipDataview = Ext.ComponentQuery.query('#popupEquipDettVeicoloNuovoDataView')[0];",
+                    "    popupEquipDataview.deselectAll();",
+                    "",
+                    "    var titoloPopupEquipLabel = Ext.ComponentQuery.query('#titoloPopupEquipVeicoloNuovoLabel')[0];",
+                    "    titoloPopupEquipLabel.setData({\"descEquipSelezionato\": descEquipSelezionato});",
+                    "",
+                    "    Ext.Viewport.setMasked(popupEquipPanel);",
+                    "",
+                    "    return true;",
+                    "} else {",
+                    "    return false;",
+                    "}",
+                    ""
+                ]
+            },
+            "name": "checkSelEquipRicorsiva",
+            "designerId": "0d729b87-9508-418d-a0b0-36f8fc26e4ab"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadMarche",
+                "implHandler": [
+                    "var marcaStore = Ext.data.StoreManager.lookup('MarcaRicercaNuovoStore');",
+                    "",
+                    "var indietroAllestimentoButton = Ext.ComponentQuery.query('#indietroAllestimentoRicNuovoButton')[0];",
+                    "indietroAllestimentoButton.setHidden(false);",
+                    "",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaNuovoForm')[0];",
+                    "",
+                    "var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaNuovoHidden')[0];",
+                    "marcaHidden.setValue('');",
+                    "",
+                    "var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaNuovoHidden')[0];",
+                    "modelloHidden.setValue('');",
+                    "",
+                    "var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaNuovoHidden')[0];",
+                    "allestimentoHidden.setValue('');",
+                    "",
+                    "marcaStore.load({",
+                    "    params: ricercaForm.getValues(),",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            /*",
+                    "            var button = Ext.ComponentQuery.query('#cercaRicNuovoButton')[0];",
+                    "            button.setText('Aggiorna ricerca');",
+                    "            */",
+                    "",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "            var marcaCount = marcaStore.getCount();",
+                    "            this.showMarcaNumRisultati(marcaCount);",
+                    "",
+                    "            if (marcaCount == 1) {",
+                    "                var marcaModel = marcaStore.getAt(0);",
+                    "",
+                    "                var marcaHidden = Ext.ComponentQuery.query('#marcaRicercaNuovoHidden')[0];",
+                    "                marcaHidden.setValue(marcaModel.get('codice'));",
+                    "",
+                    "                var marcaDataview = Ext.ComponentQuery.query('#marcaRicNuovoRisultatoDataView')[0];",
+                    "                marcaDataview.select(marcaModel, false);",
+                    "",
+                    "                this.loadModelli();",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "    scope: this",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "loadMarche",
+            "designerId": "ef4e4b8e-1ab9-475a-a592-d8813b2e854e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadModelli",
+                "implHandler": [
+                    "//var marcaDataview = Ext.ComponentQuery.query('#marcaRicNuovoRisultatoDataView')[0];",
+                    "//var selMarcaModel = marcaDataview.getSelection()[0];",
+                    "//var marcaCodice = selMarcaModel.get('codice');",
+                    "",
+                    "var modelloStore = Ext.data.StoreManager.lookup('ModelloRicercaNuovoStore');",
+                    "",
+                    "var indietroAllestimentoButton = Ext.ComponentQuery.query('#indietroAllestimentoRicNuovoButton')[0];",
+                    "indietroAllestimentoButton.setHidden(false);",
+                    "",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaNuovoForm')[0];",
+                    "",
+                    "var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaNuovoHidden')[0];",
+                    "modelloHidden.setValue('');",
+                    "",
+                    "var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaNuovoHidden')[0];",
+                    "allestimentoHidden.setValue('');",
+                    "",
+                    "modelloStore.load({",
+                    "//    params: Ext.Object.merge(",
+                    "//        {",
+                    "//            marca_codice: marcaCodice,",
+                    "//        },",
+                    "    params: ricercaForm.getValues(),",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            /*",
+                    "            var button = Ext.ComponentQuery.query('#cercaRicNuovoButton')[0];",
+                    "            button.setText('Aggiorna ricerca');",
+                    "            */",
+                    "",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "            var modelloCount = modelloStore.getCount();",
+                    "            this.showModelloNumRisultati(modelloCount);",
+                    "",
+                    "            if (modelloCount == 1) {",
+                    "                var modelloModel = modelloStore.getAt(0);",
+                    "",
+                    "                var modelloHidden = Ext.ComponentQuery.query('#modelloRicercaNuovoHidden')[0];",
+                    "                modelloHidden.setValue(modelloModel.get('codice'));",
+                    "",
+                    "                var modelloDataview = Ext.ComponentQuery.query('#modelloRicNuovoRisultatoDataView')[0];",
+                    "                modelloDataview.select(modelloModel, false);",
+                    "",
+                    "                this.resetOrdinamentoCombobox();",
+                    "",
+                    "                this.loadAllestimenti();",
+                    "",
+                    "            } else {",
+                    "",
+                    "                var ricNuovoRisultatoContainer = Ext.ComponentQuery.query('#ricercaNuovoRisultatoContainer')[0];",
+                    "                ricNuovoRisultatoContainer.animateActiveItem(",
+                    "                    '#modelloRicNuovoRisultatoContainer',",
+                    "                    {",
+                    "                        type: 'slide',",
+                    "                        direction:'left'",
+                    "                    }",
+                    "                );",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "    scope: this",
+                    "});"
+                ]
+            },
+            "name": "loadModelli",
+            "designerId": "47ae5d34-562d-419c-a8c1-7238c66e83be"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadAllestimenti",
+                "implHandler": [
+                    "var allestimentoStore = Ext.data.StoreManager.lookup('AllestimentoRicercaNuovoStore');",
+                    "",
+                    "var ricercaForm = Ext.ComponentQuery.query('#ricercaNuovoForm')[0];",
+                    "",
+                    "var allestimentoHidden = Ext.ComponentQuery.query('#allestimentoRicercaNuovoHidden')[0];",
+                    "allestimentoHidden.setValue('');",
+                    "",
+                    "// Leggo il codice del criterio di ordinamento",
+                    "var ordinamentoCombobox = Ext.ComponentQuery.query('#ordinamentoRicNuovoComboBox')[0];",
+                    "var ordinamentoCodice = ordinamentoCombobox.getValue();",
+                    "",
+                    "allestimentoStore.load({",
+                    "    params: Ext.Object.merge(",
+                    "        {",
+                    "            ordinamento_codice: ordinamentoCodice",
+                    "        },",
+                    "        ricercaForm.getValues()",
+                    "    ),",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            /*",
+                    "            var button = Ext.ComponentQuery.query('#cercaRicNuovoButton')[0];",
+                    "            button.setText('Aggiorna ricerca');",
+                    "            */",
+                    "",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var allestimentoCount = allestimentoStore.getCount();",
+                    "            this.showAllestimentoNumRisultati(allestimentoCount);",
+                    "",
+                    "            var ricNuovoRisultatoContainer = Ext.ComponentQuery.query('#ricercaNuovoRisultatoContainer')[0];",
+                    "            ricNuovoRisultatoContainer.animateActiveItem(",
+                    "                '#allestimentoRicNuovoRisultatoContainer',",
+                    "                {",
+                    "                    type: 'slide',",
+                    "                    direction:'left'",
+                    "                }",
+                    "            );",
+                    "        }",
+                    "    },",
+                    "    scope: this",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "loadAllestimenti",
+            "designerId": "fb8c44fc-cb98-499c-b526-bbada9a4253d"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "selectfield#ordinamentoRicNuovoComboBox",
+                "designer|targetType": "Ext.field.Select",
+                "fn": "onOrdinamentoRicercaComboboxChange",
+                "implHandler": [
+                    "this.loadAllestimenti();"
+                ],
+                "name": "change"
+            },
+            "name": "onOrdinamentoRicercaComboboxChange",
+            "designerId": "ef09aea4-9173-4fc9-81cf-82ac73347555"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "options"
+                ],
+                "fn": "loadEquipaggiamenti",
+                "implHandler": [
+                    "var clusterCodice = null;",
+                    "var fnAfterShowEquip = null;",
+                    "",
+                    "if (options) {",
+                    "    clusterCodice = options.clusterCodice;",
+                    "    fnAfterShowEquip = options.fnAfterShowEquip;",
+                    "}",
+                    "",
+                    "var veicoloModel = Infocar.app.dettaglioVeicoloNuovoModel;",
+                    "var veicoloCodice = veicoloModel.get('codice');",
+                    "",
+                    "var logicaCombobox = Ext.ComponentQuery.query('#logicaDettVeicoloNuovoCombobox')[0];",
+                    "var logicaCodice = logicaCombobox.getValue();",
+                    "",
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');",
+                    "equipStore.load({",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice,",
+                    "        logica_codice: logicaCodice",
+                    "    },",
+                    "    scope: this,",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            this.showEquipaggiamenti(clusterCodice);",
+                    "            this.showHideEquipClustersCount(1, false);",
+                    "",
+                    "            if (fnAfterShowEquip) {",
+                    "                fnAfterShowEquip.apply(this);",
+                    "            }",
+                    "",
+                    "            var bodyContainer = Ext.ComponentQuery.query('#bodyNuovoContainer')[0];",
+                    "",
+                    "            bodyContainer.animateActiveItem(",
+                    "                '#dettaglioVeicoloNuovoContainer',",
+                    "                {",
+                    "                    type: 'slide',",
+                    "                    direction:'left'",
+                    "                }",
+                    "            );",
+                    "        }",
+                    "    }",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "loadEquipaggiamenti",
+            "designerId": "081260f1-e6c6-44e7-8870-4d1864bc16c3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloCodice"
+                ],
+                "fn": "loadDatiTecniciInfoVeicolo",
+                "implHandler": [
+                    "var datiTecniciStore = Ext.data.StoreManager.lookup('DatiTecniciInfoVeicoloNuovoStore');",
+                    "datiTecniciStore.load({",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "}, this);",
+                    ""
+                ]
+            },
+            "name": "loadDatiTecniciInfoVeicolo",
+            "designerId": "2e2cfe3a-bbd1-410c-939e-11525ebf02a3"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloCodice"
+                ],
+                "fn": "loadEquipInfoVeicolo",
+                "implHandler": [
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipInfoVeicoloNuovoStore');",
+                    "equipStore.load({",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    callback: function (records, operation, success) {",
+                    "        var equipCount = 0;",
+                    "",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            equipCount = equipStore.getCount();",
+                    "        }",
+                    "",
+                    "        var equipLabel = Ext.ComponentQuery.query('#sintesiEquipInfoVeicoloNuovoLabel')[0];",
+                    "        equipLabel.setData({numEquip: equipCount});",
+                    "    },",
+                    "}, this);",
+                    ""
+                ]
+            },
+            "name": "loadEquipInfoVeicolo",
+            "designerId": "8a9f6b8f-feaa-4672-b336-8b4199fd1070"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloCodice"
+                ],
+                "fn": "loadGraficoInfoVeicolo",
+                "implHandler": [
+                    "var graficoStore = Ext.data.StoreManager.lookup('GraficoInfoVeicoloNuovoStore');",
+                    "graficoStore.load({",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice",
+                    "    },",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var graficoCount = graficoStore.getCount();",
+                    "            var graficoChart = Ext.ComponentQuery.query('#graficoInfoVeicoloNuovoChart')[0];",
+                    "            var msgCortesiaLabel = Ext.ComponentQuery.query('#messaggioGraficoInfoVeicoloNuovoLabel')[0];",
+                    "",
+                    "            if (graficoCount > 0) {",
+                    "                // Visualizzo il grafico",
+                    "                graficoChart.setHidden(false);",
+                    "                msgCortesiaLabel.setHidden(true);",
+                    "            } else {",
+                    "                // Non ci sono valori da rappresentare nel grafico.",
+                    "                // Visualizzo un messaggio di cortesia al posto del grafico.",
+                    "                graficoChart.setHidden(true);",
+                    "                msgCortesiaLabel.setHidden(false);",
+                    "            }",
+                    "        }",
+                    "    },",
+                    "}, this);"
+                ]
+            },
+            "name": "loadGraficoInfoVeicolo",
+            "designerId": "e97074f4-d699-4e8b-85eb-acc8d8bc4649"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "veicoloModel"
+                ],
+                "fn": "showEsitoSalvaDettaglioVeicolo",
+                "implHandler": [
+                    "var testoEsitoLabel = Ext.ComponentQuery.query('#testoEsitoVeicoloNuovoLabel')[0];",
+                    "testoEsitoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var veicoloBasePrezzoLabel = Ext.ComponentQuery.query('#veicoloBasePrezzoEsitoVeicoloNuovoLabel2')[0];",
+                    "veicoloBasePrezzoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var equipaggiamentiPrezzoLabel = Ext.ComponentQuery.query('#equipaggiamentiPrezzoEsitoVeicoloNuovoLabel2')[0];",
+                    "equipaggiamentiPrezzoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var totalePrezzoLabel = Ext.ComponentQuery.query('#totalePrezzoEsitoVeicoloNuovoLabel2')[0];",
+                    "totalePrezzoLabel.setData(veicoloModel.getData());",
+                    "",
+                    "var bodyContainer = Ext.ComponentQuery.query('#bodyNuovoContainer')[0];",
+                    "",
+                    "bodyContainer.animateActiveItem(",
+                    "    '#esitoVeicoloNuovoContainer',",
+                    "    {",
+                    "        type: 'slide',",
+                    "        direction:'left'",
+                    "    }",
+                    ");"
+                ]
+            },
+            "name": "showEsitoSalvaDettaglioVeicolo",
+            "designerId": "9844713e-cd5f-4e2c-86a7-ea06a2993879"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "syncEquipDettVeicolo",
+                "implHandler": [
+                    "var veicoloModel = Infocar.app.dettaglioVeicoloNuovoModel;",
+                    "var veicoloCodice = veicoloModel.get('codice');",
+                    "",
+                    "var logicaCombobox = Ext.ComponentQuery.query('#logicaDettVeicoloNuovoCombobox')[0];",
+                    "var logicaCodice = logicaCombobox.getValue();",
+                    "",
+                    "var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');",
+                    "equipClustersStore.each(function(record){",
+                    "    record.setDirty();",
+                    "});",
+                    "",
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');",
+                    "equipStore.syncWithListener({",
+                    "    scope: this,",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice,",
+                    "        logica_codice: logicaCodice",
+                    "    },",
+                    "    success: function (store, operation) {",
+                    "        // TODO DEBUG",
+                    "        //console.log(\"equipStore.syncWithListener.write: operation[\"+ operation +\"]\");",
+                    "",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "        /*",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "            */",
+                    "",
+                    "        var descEquipSelezionato = responseData.message;",
+                    "",
+                    "        this.showEquipaggiamenti();",
+                    "",
+                    "        this.loadDettaglioVeicolo();",
+                    "",
+                    "        var esitoChk = this.checkSelEquipRicorsiva(descEquipSelezionato);",
+                    "",
+                    "        if (! esitoChk) {",
+                    "            this.showInfoSelezioneEquip();",
+                    "        }",
+                    "    },",
+                    "    failure: function (proxy, response, operation, eOpts) {",
+                    "        // TODO DEBUG",
+                    "        //console.log(\"equipStore.syncWithListener.exception: operation[\"+ operation +\"]\");",
+                    "",
+                    "        Infocar.app.showSyncErrorMessage(response, operation);",
+                    "    }",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "syncEquipDettVeicolo",
+            "designerId": "4c2529be-f0d8-4ddc-aeaf-2e281d039a02"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showTestataDettVeicolo",
+                "implHandler": [
+                    "var veicoloModel = Infocar.app.dettaglioVeicoloNuovoModel;",
+                    "",
+                    "// Dati di testata",
+                    "var descLabel = Ext.ComponentQuery.query('#descDettVeicoloNuovoLabel');",
+                    "Ext.Array.each(descLabel, function(item, index, ary) {",
+                    "    item.setData(veicoloModel.getData());",
+                    "});",
+                    "",
+                    "var prezzoBaseLabel = Ext.ComponentQuery.query('#prezzoBaseDettVeicoloNuovoLabel');",
+                    "Ext.Array.each(prezzoBaseLabel, function(item, index, ary) {",
+                    "    item.setData(veicoloModel.getData());",
+                    "});",
+                    "",
+                    "var totaleLabel = Ext.ComponentQuery.query('#totaleDettVeicoloNuovoLabel');",
+                    "Ext.Array.each(totaleLabel, function(item, index, ary) {",
+                    "    item.setData(veicoloModel.getData());",
+                    "});",
+                    "",
+                    "var veicoloMiniImg = Ext.ComponentQuery.query('#dettaglioVeicoloNuovoImg');",
+                    "Ext.Array.each(veicoloMiniImg, function(item, index, ary) {",
+                    "    item.setSrc(veicoloModel.get('urlImg'));",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "showTestataDettVeicolo",
+            "designerId": "3961b099-cc6e-4493-af2b-e407425e1027"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loadDettaglioVeicolo",
+                "implHandler": [
+                    "var veicoloModel = Infocar.app.dettaglioVeicoloNuovoModel;",
+                    "var veicoloCodice = veicoloModel.get('codice');",
+                    "",
+                    "var veicoloModelClass = Ext.ModelManager.getModel('Infocar.model.DettaglioVeicoloNuovoModel');",
+                    "veicoloModelClass.load(0, {",
+                    "    params: {",
+                    "        veicolo_codice: veicoloCodice,",
+                    "    },",
+                    "    scope: this,",
+                    "    success: function(record, operation) {",
+                    "        var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "        if(responseData.message !== null){",
+                    "            Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "        }",
+                    "",
+                    "        // Salvo il model del veicolo nuovo in una property globale",
+                    "        var veicoloModel = record;",
+                    "        Infocar.app.dettaglioVeicoloNuovoModel = veicoloModel;",
+                    "",
+                    "        this.showTestataDettVeicolo();",
+                    "    },",
+                    "    failure: function(record, operation) {",
+                    "        Infocar.app.showLoadErrorMessage(operation);",
+                    "",
+                    "        var salvaButton = Ext.ComponentQuery.query('#salvaDettaglioVeicoloNuovoButton')[0];",
+                    "        salvaButton.disable();",
+                    "    }",
+                    "}, this);"
+                ]
+            },
+            "name": "loadDettaglioVeicolo",
+            "designerId": "aec4c6fe-fbd6-4595-bdf9-0805124977fb"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "initClusterButtons",
+                "implHandler": [
+                    "var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');",
+                    "",
+                    "var buttonsClusters = Ext.ComponentQuery.query('#clustersDettVeicoloNuovoButtons [clusterCodice]');",
+                    "",
+                    "var clusterIniziale = null;",
+                    "",
+                    "// Conto il numero di equipaggiamenti di ogni cluster e",
+                    "// disabilito i bottoni dei cluster che non hanno equipaggiamenti.",
+                    "",
+                    "// Scorro i bottoni dei cluster",
+                    "for(var i=0; i<buttonsClusters.length; i++) {",
+                    "",
+                    "    var buttonCluster = buttonsClusters[i];",
+                    "    var buttonClusterCodice = buttonCluster.clusterCodice;",
+                    "",
+                    "    if (buttonClusterCodice !== 'tutti'  &&  buttonClusterCodice !== 'riepilogo') {",
+                    "        var count = 0;",
+                    "",
+                    "        var equipaggiamenti = equipClustersStore.getRange();",
+                    "        for(var n=0; n<equipaggiamenti.length; n++) {",
+                    "            var equipModel = equipaggiamenti[n];",
+                    "            var equipClusterCodice = equipModel.get('cluster_codice');",
+                    "            var statoEquip = equipModel.get('stato');",
+                    "            var abbinamentoFlag = equipModel.get('abbinamentoFlag');",
+                    "",
+                    "            if (equipClusterCodice && equipClusterCodice !== '') {",
+                    "",
+                    "                if (equipClusterCodice.indexOf(buttonClusterCodice) != -1) {",
+                    "                    count++;",
+                    "                }",
+                    "            }",
+                    "        }",
+                    "",
+                    "        if (count > 0) {",
+                    "            buttonsClusters[i].setDisabled(false);",
+                    "",
+                    "            if (! clusterIniziale) {",
+                    "                clusterIniziale = buttonsClusters[i];",
+                    "            }",
+                    "",
+                    "        } else {",
+                    "            buttonsClusters[i].setDisabled(true);",
+                    "        }",
+                    "    }",
+                    "}",
+                    "",
+                    "// Seleziono il bottone del primo cluster con almeno un equipaggiamento",
+                    "var clusterSegmentedButtons = Ext.ComponentQuery.query('#clustersDettVeicoloNuovoButtons')[0];",
+                    "if (! clusterIniziale) {",
+                    "    clusterIniziale = clusterSegmentedButtons.down('#tuttiClusterDettVeicoloNuovoButton');",
+                    "}",
+                    "clusterSegmentedButtons.setPressedButtons([clusterIniziale]);",
+                    "",
+                    "return clusterIniziale;"
+                ]
+            },
+            "name": "initClusterButtons",
+            "designerId": "f5302970-7d81-46ff-bf9a-62e04653aeed"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetLogicaCombobox",
+                "implHandler": [
+                    "var logicaCombobox = Ext.ComponentQuery.query('#logicaDettVeicoloNuovoCombobox')[0];",
+                    "logicaCombobox.suspendEvents();",
+                    "logicaCombobox.setValue('0');",
+                    "logicaCombobox.resumeEvents(true);"
+                ]
+            },
+            "name": "resetLogicaCombobox",
+            "designerId": "cdfcb163-a1f6-42a0-9af3-0ef2b209f42c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetOrdinamentoCombobox",
+                "implHandler": [
+                    "var ordinamentoCombobox = Ext.ComponentQuery.query('#ordinamentoRicNuovoComboBox')[0];",
+                    "ordinamentoCombobox.suspendEvents();",
+                    "ordinamentoCombobox.setValue('0');",
+                    "ordinamentoCombobox.resumeEvents(true);"
+                ]
+            },
+            "name": "resetOrdinamentoCombobox",
+            "designerId": "4af85cd8-e05e-4a8e-8663-5f6cfcfc98bf"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "resetCercaEquipVeicoloTextbox",
+                "implHandler": [
+                    "var cercaTextbox = Ext.ComponentQuery.query('#cercaDettVeicoloNuovoTextbox')[0];",
+                    "cercaTextbox.suspendEvents();",
+                    "cercaTextbox.setValue('');",
+                    "cercaTextbox.resumeEvents(true);"
+                ]
+            },
+            "name": "resetCercaEquipVeicoloTextbox",
+            "designerId": "c47af450-d035-4e9c-b19f-1c875196176e"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "image#infoVeicoloNuovoImg",
+                "designer|targetType": "Ext.Img",
+                "fn": "onInfoVeicoloImageTap",
+                "implHandler": [
+                    "var photoFullScreenCtrl = Infocar.app.getController('Infocar.controller.PhotoFullScreenController');",
+                    "photoFullScreenCtrl.showPhotoFullScreen([image.getSrc()], 0);"
+                ],
+                "name": "tap"
+            },
+            "name": "onInfoVeicoloImageTap",
+            "designerId": "8fb2a479-3ec9-4096-a02d-3693a565dce0"
+        },
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    ""
+                ]
+            },
+            "name": "launch",
+            "designerId": "8dd54fa0-bc19-4c1d-94ad-099bfcf1cea5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setCustomProperties",
+                "implHandler": [
+                    "var cmp;",
+                    "",
+                    "// Titoli schermate",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#ricercaNuovoContainer\")[0];",
+                    "cmp.Titolo = \"Configurazione - Ricerca nuovo\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#dettaglioVeicoloNuovoContainer\")[0];",
+                    "cmp.Titolo = \"Configurazione - Preliminare\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#infoVeicoloNuovoContainer\")[0];",
+                    "cmp.Titolo = \"Configurazione - Dettaglio del modello\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#esitoVeicoloNuovoContainer\")[0];",
+                    "cmp.Titolo = \"Configurazione - Esito\";",
+                    "",
+                    "// Ricerca Nuovo",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#ricercaNuovoForm\")[0];",
+                    "cmp.ricercaTargaFlag = \"N\";",
+                    "",
+                    "",
+                    "// Dettaglio Veicolo Nuovo",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#tipoVeicoloClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"TVEI_\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#esterniClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"ESTE_\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#interniClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"INTE_\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#sicurezzaClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"SICU_\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#comfortClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"COMF_\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#serviziClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"SERV_\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#pacchettiClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"PACK_\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#tuttiClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"tutti\";",
+                    "",
+                    "cmp = Ext.ComponentQuery.query(\"#riepilogoClusterDettVeicoloNuovoButton\")[0];",
+                    "cmp.clusterCodice = \"riepilogo\";",
+                    ""
+                ]
+            },
+            "name": "setCustomProperties",
+            "designerId": "94a32e2b-d0d8-467d-b50a-4ee9ac25a372"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "nuovoView",
+                "selector": "container#nuovoView",
+                "xtype": "NuovoView"
+            },
+            "name": "nuovoView",
+            "designerId": "c26beea8-6aef-4a96-8de2-2d48628f3eac"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getView",
+                "implHandler": [
+                    "var nuovoView = this.getNuovoView();",
+                    "",
+                    "return nuovoView;"
+                ]
+            },
+            "name": "getView",
+            "designerId": "5a75502f-bfb2-4241-b3b0-441ef5c73c00"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "container#nuovoView",
+                "designer|targetType": "Ext.Container",
+                "fn": "onNuovoViewInitialize",
+                "implHandler": [
+                    "var view = component;",
+                    "",
+                    "//var ricNuovoCtrl = this.getController('Infocar.controller.RicercaNuovoController');",
+                    "this.setCustomProperties();",
+                    "",
+                    "this.initTitoloTopBar(view);",
+                    "",
+                    "this.agganciaEventi();"
+                ],
+                "name": "initialize"
+            },
+            "name": "onNuovoViewInitialize",
+            "designerId": "2ff50c39-c511-4676-8f20-65e1342cbed5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "view"
+                ],
+                "fn": "initTitoloTopBar",
+                "implHandler": [
+                    "var bodyContainer = view.down('#bodyNuovoContainer');",
+                    "var activeBodyItem = bodyContainer.getActiveItem();",
+                    "if (activeBodyItem) {",
+                    "    var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');",
+                    "    topBarCtrl.setTitoloFromContainer(bodyContainer, activeBodyItem);",
+                    "}"
+                ]
+            },
+            "name": "initTitoloTopBar",
+            "designerId": "e18e29ec-003a-4e27-8ca5-73e3deb96e2b"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "container#bodyNuovoContainer",
+                "designer|targetType": "Ext.Container",
+                "fn": "onContainerActiveItemChange",
+                "implHandler": [
+                    "var item = value;",
+                    "",
+                    "var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');",
+                    "topBarCtrl.setTitoloFromContainer(container, item);"
+                ],
+                "name": "activeitemchange"
+            },
+            "name": "onContainerActiveItemChange",
+            "designerId": "646f6b6b-d731-4f1a-b79f-e118535834ce"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#stampaEsitoVeicoloNuovoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onStampaEsitoVeicoloButtonTap",
+                "implHandler": [
+                    "var urlStampa = Infocar.app.stampaEsitoVeicoloNuovoUrl;",
+                    "",
+                    "window.open(urlStampa, \"stampa\", \"width=600,height=600,location=no\");",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onStampaEsitoVeicoloButtonTap",
+            "designerId": "c14b2661-31d0-4059-b637-ba0a4c27321e"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "agganciaEventi",
+                "implHandler": [
+                    "// TODO DEBUG",
+                    "//console.log('agganciaEventi');",
+                    "",
+                    "var equipList = Ext.ComponentQuery.query(\"#equipDettVeicoloNuovoList\")[0];",
+                    "",
+                    "equipList.addListener({",
+                    "    tap: {",
+                    "        fn: this.onDescEquipDettVeicoloTap,",
+                    "        element: 'innerElement',",
+                    "        delegate: \"img[class='statoEquipDettVeicoloNuovoImgCls']\",",
+                    "        scope: this",
+                    "    }",
+                    "});",
+                    "equipList.addListener({",
+                    "    tap: {",
+                    "        fn: this.onDescEquipDettVeicoloTap,",
+                    "        element: 'innerElement',",
+                    "        delegate: \"span[class='descEquipDettVeicoloNuovoSpanCls']\",",
+                    "        scope: this",
+                    "    }",
+                    "});",
+                    "",
+                    "/*",
+                    "var list = new Ext.List({",
+                    "    tpl: '<tpl for=\".\"><li><img src=\"{avatar}\" /><h1>{name}</h1></li></tpl>',",
+                    "    listeners: {",
+                    "        el: {",
+                    "            tap: myHandler,",
+                    "            delegate: 'img'",
+                    "        }",
+                    "    }",
+                    "});",
+                    "*/",
+                    "",
+                    "",
+                    "",
+                    ""
+                ]
+            },
+            "name": "agganciaEventi",
+            "designerId": "1b48c9c3-da54-4b95-8d58-bd1a6f1814c2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "e",
+                    "node"
+                ],
+                "fn": "messaggioDebug",
+                "implHandler": [
+                    "// TODO DEBUG",
+                    "",
+                    "var codice = e.target.getAttribute('codice');",
+                    "",
+                    "var model = Ext.ComponentQuery.query(\"#equipDettVeicoloNuovoList\")[0];",
+                    "",
+                    "",
+                    "console.log(this);",
+                    "console.log(e);",
+                    "console.log(node);",
+                    "//console.log(param3);",
+                    "//console.log(param4);",
+                    "",
+                    "alert(codice);"
+                ]
+            },
+            "name": "messaggioDebug",
+            "designerId": "58dd2f48-efeb-422f-8da5-05f185ce5ebe"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "e",
+                    "node"
+                ],
+                "fn": "onDescEquipDettVeicoloTap",
+                "implHandler": [
+                    "// Leggo il codice dell'equipaggiamento valorizzato nel tag all'interno del XTemplate",
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');",
+                    "",
+                    "var equipCodice = e.target.getAttribute('codice');",
+                    "",
+                    "var equipModel = equipStore.findRecord('codice', equipCodice, 0, false, true, true);",
+                    "",
+                    "// TODO DEBUG",
+                    "//console.log(equipModel);",
+                    "",
+                    "this.changeStatoEquipDettVeicolo(equipModel);"
+                ]
+            },
+            "name": "onDescEquipDettVeicoloTap",
+            "designerId": "af12063b-8ee4-4218-83a1-37f04ac06ea1"
+        }
+    ]
+}

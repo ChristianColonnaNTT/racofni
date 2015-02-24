@@ -1,0 +1,778 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "DettaglioVeicoloUsatoModel",
+        "idProperty": "codice"
+    },
+    "name": "MyModel",
+    "designerId": "f105b31a-4c9b-4c87-89f0-0a402f1d5f0b",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "codice",
+                "type": "string"
+            },
+            "name": "field23",
+            "designerId": "1ee03c2f-75d1-445f-aca6-dd9f50a91599"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "marca_codice",
+                "type": "string"
+            },
+            "name": "field13",
+            "designerId": "3e0fb7a4-d9e9-41b5-b020-0180eb375ab3"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "marca_descrizione",
+                "type": "string"
+            },
+            "name": "field14",
+            "designerId": "159bf402-5623-4723-b493-a125dbbd09de"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modello_codice",
+                "type": "string"
+            },
+            "name": "field15",
+            "designerId": "52648f41-77be-480d-98aa-b2b92ccc52aa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "modello_descrizione",
+                "type": "string"
+            },
+            "name": "field16",
+            "designerId": "0275cdfd-d019-489e-8979-c0b5bb8c743a"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "allestimento_codice",
+                "type": "string"
+            },
+            "name": "field51",
+            "designerId": "6f17247d-eacd-466b-9794-2860e94370ed"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "allestimento_descrizione",
+                "type": "string"
+            },
+            "name": "field52",
+            "designerId": "4122073c-646a-40b3-aea4-ba01f3f57568"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "alimentazione_codice",
+                "type": "string"
+            },
+            "name": "field17",
+            "designerId": "ef1d2ee3-cce0-4a6f-8ce8-ef6add166fc6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "alimentazione_descrizione",
+                "type": "string"
+            },
+            "name": "field18",
+            "designerId": "95d0a3d7-9018-4bb8-afe2-634185b7fcdb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "carrozzeria_codice",
+                "type": "string"
+            },
+            "name": "field134",
+            "designerId": "aabf0012-14c1-4ec8-b6ec-c8ac59e5c951"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "carrozzeria_descrizione",
+                "type": "string"
+            },
+            "name": "field21",
+            "designerId": "26e66a59-c36c-4d05-aabb-676e0545f692"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "cilindrata",
+                "type": "string"
+            },
+            "name": "field19",
+            "designerId": "85fa9eb1-d311-4607-98ef-aedb7543665d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "potenza",
+                "type": "string"
+            },
+            "name": "field20",
+            "designerId": "e970fc20-7229-4888-9ba5-34305d5ee721"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "normativa",
+                "type": "string"
+            },
+            "name": "field22",
+            "designerId": "c9dd6cce-59f8-425a-8229-66a9300af524"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "veicoloPrezzo",
+                "type": "string"
+            },
+            "name": "field24",
+            "designerId": "a30b9fdf-a9fe-4e48-a522-a03eb5fcc0c7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "urlImg",
+                "type": "string"
+            },
+            "name": "field25",
+            "designerId": "85a58e0a-0150-4e74-9ac6-f212c62e58eb"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "d/m/Y",
+                "name": "dataImmatricolazione",
+                "type": "date"
+            },
+            "name": "field44",
+            "designerId": "a4d01ca6-ddbd-4569-92ea-c0f54ae2c389"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "immatricolazionePrezzo",
+                "type": "string"
+            },
+            "name": "field45",
+            "designerId": "38e51ec6-d084-4963-9133-379379eeafb8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "kmPercorsi",
+                "type": "string"
+            },
+            "name": "field46",
+            "designerId": "21fb071f-52d0-4c85-9da1-28afaffaa58e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "kmTeorici",
+                "type": "string"
+            },
+            "name": "field8",
+            "designerId": "f0545fa7-a814-404a-86e2-cde52fbe6844"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "kmPercorsiPrezzo",
+                "type": "string"
+            },
+            "name": "field47",
+            "designerId": "1ba3908c-3657-4e35-8477-51d610a419f1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "equipaggiamentiPrezzo",
+                "type": "string"
+            },
+            "name": "field61",
+            "designerId": "c2be6386-27bb-4e7e-9d86-d10343dff44f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ripristino",
+                "type": "string"
+            },
+            "name": "field26",
+            "designerId": "6f91b1ab-5fcd-41a7-8c9e-6334ca3afc2f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ripristinoPrezzo",
+                "type": "string"
+            },
+            "name": "field27",
+            "designerId": "69f4029d-640f-4e45-be61-729a0b3cbc9b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "immatricAutocarroFlag",
+                "type": "string"
+            },
+            "name": "field28",
+            "designerId": "8a77290c-cc8e-447a-83ea-7866f76f5bfd"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "immatricAutocarroPrezzo",
+                "type": "string"
+            },
+            "name": "field29",
+            "designerId": "715caca0-8f4e-432f-9128-b6f045915fba"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "speseGestioneFlag",
+                "type": "string"
+            },
+            "name": "field30",
+            "designerId": "a8d46251-11ff-4de2-9171-b57762d31fac"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "speseGestionePrezzo",
+                "type": "string"
+            },
+            "name": "field31",
+            "designerId": "b7066b9c-702f-4c46-9407-ad2404b84d76"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "targa",
+                "type": "string"
+            },
+            "name": "field32",
+            "designerId": "bf7d066a-10ea-47f5-a4bc-7b06a9c8b0d8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "telaio",
+                "type": "string"
+            },
+            "name": "field33",
+            "designerId": "0532e0f3-4c4f-46c0-b274-85dc49cb2aa9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "coloreEsterno_codice",
+                "type": "string"
+            },
+            "name": "field34",
+            "designerId": "e4d51060-93e4-4e03-a4d7-3fc033e18718"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "coloreEsterno_descrizione",
+                "type": "string"
+            },
+            "name": "field65",
+            "designerId": "21801ebe-c573-42e1-9f8f-8526709da9fc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "coloreInterno_codice",
+                "type": "string"
+            },
+            "name": "field35",
+            "designerId": "6a529899-7f54-433f-9329-dfff7fff77f9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "coloreInterno_descrizione",
+                "type": "string"
+            },
+            "name": "field67",
+            "designerId": "bbe78db1-0486-4720-b7c6-2f39cb2282e7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "d/m/Y",
+                "name": "dataBollo",
+                "type": "date"
+            },
+            "name": "field36",
+            "designerId": "597c1777-2c8f-4f07-826c-f32e5018df8e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateFormat": "d/m/Y",
+                "name": "dataRevisione",
+                "type": "date"
+            },
+            "name": "field37",
+            "designerId": "c69542b9-7d8b-4e2a-abac-6b5aa8a47934"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "provenienza_codice",
+                "type": "string"
+            },
+            "name": "field38",
+            "designerId": "9296ff57-928d-4662-850c-716033cdfad1"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "destinazione_codice",
+                "type": "string"
+            },
+            "name": "field39",
+            "designerId": "a76c268f-3b41-46ab-b0a2-9be8458e9277"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "librettoFlag",
+                "type": "string"
+            },
+            "name": "field40",
+            "designerId": "8f2fdce0-fa16-4ccb-ac09-a0adb9e4d37d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "tagliandiFlag",
+                "type": "string"
+            },
+            "name": "field41",
+            "designerId": "6e6a7ed8-ea8e-4184-9d8d-cd721443e666"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "fatturabileFlag",
+                "type": "string"
+            },
+            "name": "field42",
+            "designerId": "d9838574-3a84-487f-be39-0c3c2d45a75d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "certificatoFlag",
+                "type": "string"
+            },
+            "name": "field12",
+            "designerId": "1f5b93e5-074e-4e24-9bbc-e0a04ff33429"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ipotecataFlag",
+                "type": "string"
+            },
+            "name": "field75",
+            "designerId": "34defc02-b561-400e-aab0-4bb49e65fd6e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "leasingFlag",
+                "type": "string"
+            },
+            "name": "field76",
+            "designerId": "7d18e54d-bbfa-4d13-87a3-6d3dc8954420"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "note",
+                "type": "string"
+            },
+            "name": "field43",
+            "designerId": "567b60f2-4756-456a-a367-9eafa6fcae3d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "valutazioneQRPrezzo",
+                "type": "string"
+            },
+            "name": "field58",
+            "designerId": "9c597795-7235-4f94-a010-320de11ddb05"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "varConcessionarioPrezzo",
+                "type": "string"
+            },
+            "name": "field48",
+            "designerId": "5b7e89ae-f97a-4f32-be9d-1d95ead4c2b8"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "varConcordataPrezzo",
+                "type": "string"
+            },
+            "name": "field49",
+            "designerId": "0544ebc2-0ff4-4976-b56b-b28da3daacec"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "totaleConcordatoPrezzo",
+                "type": "string"
+            },
+            "name": "field50",
+            "designerId": "148973b0-563c-495d-b95f-90d796e6a5aa"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "ricercaTargaFlag",
+                "type": "string"
+            },
+            "name": "field77",
+            "designerId": "3ff16ef4-8ab9-4d1f-8edd-363566ee1153"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "salvataggioFlag",
+                "type": "string"
+            },
+            "name": "field68",
+            "designerId": "bd98e6f3-7fe2-4c72-ad13-5da66edd14c9"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "DettaglioVeicoloUsatoProxy",
+                "url": "/usato/dettaglioVeicolo"
+            },
+            "name": "MyRestProxy19",
+            "designerId": "30f78ca2-dce5-4ecb-aa1e-2e46a0d5f6f4",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "DettaglioVeicoloUsatoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader5",
+                    "designerId": "4fc81666-2327-4937-a62a-bdfde2580db1"
+                },
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "allowSingle": false,
+                        "designer|displayName": "DettaglioVeicoloUsatoJsonWriter"
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "20d15b28-98ac-407f-a93f-2a9f504b0c7d"
+                }
+            ]
+        }
+    ]
+}

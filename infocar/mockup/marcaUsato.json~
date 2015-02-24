@@ -1,0 +1,88 @@
+{
+	"total" : 169,
+	"success" : true,
+	"message" : null,
+	"data" : [{
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/2409.jpg",
+			"codice" : "2409",
+			"descrizione" : "ABARTH"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/323.jpg",
+			"codice" : "323",
+			"descrizione" : "AC"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/1024.jpg",
+			"codice" : "1024",
+			"descrizione" : "ACM"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/83.jpg",
+			"codice" : "83",
+			"descrizione" : "ALFA ROMEO"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/2771.jpg",
+			"codice" : "2771",
+			"descrizione" : "ALKÈ"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/160.jpg",
+			"codice" : "160",
+			"descrizione" : "ALPINA-BMW"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/700.jpg",
+			"codice" : "700",
+			"descrizione" : "AMG"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/2386.jpg",
+			"codice" : "2386",
+			"descrizione" : "ANDORIA MOTOR"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/333.jpg",
+			"codice" : "333",
+			"descrizione" : "APAL"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/2345.jpg",
+			"codice" : "2345",
+			"descrizione" : "ARIEL"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/180.jpg",
+			"codice" : "180",
+			"descrizione" : "ARO"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/1421.jpg",
+			"codice" : "1421",
+			"descrizione" : "ASIA MOTORS"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/74.jpg",
+			"codice" : "74",
+			"descrizione" : "ASTON MARTIN"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/161.jpg",
+			"codice" : "161",
+			"descrizione" : "AUDI"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/80.jpg",
+			"codice" : "80",
+			"descrizione" : "AUSTIN ROVER"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/35.jpg",
+			"codice" : "35",
+			"descrizione" : "AUTOBIANCHI"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/515.jpg",
+			"codice" : "515",
+			"descrizione" : "AUVERLAND"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/923.jpg",
+			"codice" : "923",
+			"descrizione" : "BEDFORD"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/70.jpg",
+			"codice" : "70",
+			"descrizione" : "BENTLEY"
+		}, {
+			"urlImg" : "http://www.infocarweb2.org/Infocarweb2/ImmaginiQRT/LoghiMarche/49.jpg",
+			"codice" : "49",
+			"descrizione" : "BERTONE"
+		}
+	]
+}
+

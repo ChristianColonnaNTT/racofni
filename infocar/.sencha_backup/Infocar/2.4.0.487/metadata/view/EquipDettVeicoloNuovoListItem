@@ -1,0 +1,145 @@
+{
+    "type": "Ext.dataview.component.ListItem",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "EquipDettVeicoloNuovoListItem",
+        "designer|userClassName": "EquipDettVeicoloNuovoListItem",
+        "itemId": "equipDettVeicoloNuovoListItem",
+        "layout": "hbox",
+        "padding": 10
+    },
+    "name": "MyListItem",
+    "designerId": "30f3c213-d4a6-46de-b586-27f35f267716",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "updateRecord",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "if (me && record) {",
+                    "    var equipPrezzo = Infocar.app.formatCurrency(record.get('equipPrezzo'));",
+                    "",
+                    "    me.down('#descEquipDettVeicoloNuovoDataItemButton').setText(record.get('descrizione'));",
+                    "    me.down('#prezzoEquipDettVeicoloNuovoDataItemLabel').setHtml(equipPrezzo);",
+                    "",
+                    "    var clsStato = '';",
+                    "    // 0=Libero,  6=Nuova Deselezione",
+                    "    if (!record.get('stato') || record.get('stato') === '0' || record.get('stato') === '6') {",
+                    "        clsStato = 'statoLiberoEquipDettVeicoloNuovoDataItemButtonCls';",
+                    "    // 1=Selezionato,  5=Nuova Selezione",
+                    "    } else if (record.get('stato') === '1' || record.get('stato') === '5') {",
+                    "        clsStato = 'statoSelezEquipDettVeicoloNuovoDataItemButtonCls';",
+                    "    // 4=Incluso",
+                    "    } else if (record.get('stato') === '4') {",
+                    "        clsStato = 'statoInclusoEquipDettVeicoloNuovoDataItemButtonCls';",
+                    "    // 2=Non Disponibile",
+                    "    } else if (record.get('stato') === '2') {",
+                    "        clsStato = 'statoNonDispEquipDettVeicoloNuovoDataItemButtonCls';",
+                    "    }",
+                    "",
+                    "    if (clsStato !== '') {",
+                    "        //me.down('#chkboxEquipDettVeicoloNuovoDataItemImg').setSrc('/resources/img/' + imgStato);",
+                    "        //me.down('#statoEquipDettVeicoloNuovoDataItemButton').setIcon('/resources/img/' + imgStato);",
+                    "        me.down('#statoEquipDettVeicoloNuovoDataItemButton').setBaseCls(clsStato);",
+                    "        //me.down('#statoEquipDettVeicoloNuovoDataItemButton').setStyle('{ background-image: url(/resources/img/'+ imgStato +') !important }', null);",
+                    "    } else {",
+                    "        me.down('#statoEquipDettVeicoloNuovoDataItemButton').setBaseCls('statoUndefinedEquipDettVeicoloNuovoDataItemButtonCls');",
+                    "    }",
+                    "",
+                    "    if (record.get('infoFlag') === 'S') {",
+                    "        me.down('#infoEquipDettVeicoloNuovoDataItemButton').setVisibility(true);",
+                    "    } else {",
+                    "        me.down('#infoEquipDettVeicoloNuovoDataItemButton').setVisibility(false);",
+                    "    }",
+                    "}",
+                    "",
+                    "if (me) me.callParent(arguments);",
+                    ""
+                ]
+            },
+            "name": "updateRecord",
+            "designerId": "cc9d6292-9e8a-4e38-9356-5bbbe4b6b0db"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "statoLiberoEquipDettVeicoloNuovoDataItemButtonCls",
+                "designer|displayName": "StatoEquipDettVeicoloNuovoDataItemButton",
+                "itemId": "statoEquipDettVeicoloNuovoDataItemButton",
+                "text": null,
+                "width": null
+            },
+            "name": "MyButton29",
+            "designerId": "cb2700d8-5560-4471-a015-2f52c7cc1f31"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "baseCls": "infoEquipDettVeicoloNuovoDataItemButtonCls",
+                "designer|displayName": "InfoEquipDettVeicoloNuovoDataItemButton",
+                "icon": null,
+                "itemId": "infoEquipDettVeicoloNuovoDataItemButton",
+                "text": null,
+                "width": null
+            },
+            "name": "MyButton30",
+            "designerId": "a4d484a7-4b47-4b8b-82b7-477918470592"
+        },
+        {
+            "type": "Ext.Button",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "DescEquipDettVeicoloNuovoDataItemButton",
+                "itemId": "descEquipDettVeicoloNuovoDataItemButton",
+                "style": null,
+                "text": null,
+                "width": "75%"
+            },
+            "name": "MyButton28",
+            "designerId": "49d92d13-11fb-420f-b5f1-dff940515c53"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "PrezzoEquipDettVeicoloNuovoDataItemLabel",
+                "itemId": "prezzoEquipDettVeicoloNuovoDataItemLabel",
+                "width": "15%"
+            },
+            "name": "MyLabel38",
+            "designerId": "ee7c2e2b-8ca8-435c-b35e-8ede1ee6c842"
+        }
+    ]
+}

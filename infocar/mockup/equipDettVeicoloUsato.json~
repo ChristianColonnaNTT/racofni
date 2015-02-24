@@ -1,0 +1,50 @@
+{
+    "success": true,
+    "message": null,
+    "total": 4,
+    "data": [{
+        "codice": "1",
+        "descrizione": "Cerchi in lega",
+        "equipPrezzo": "250,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "info": "",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "2",
+        "descrizione": "Climatizzatore",
+        "equipPrezzo": "210,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "info": "",
+        "stato": "ATT",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "3",
+        "descrizione": "Fendinebbia",
+        "equipPrezzo": "180,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "info": "",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    },
+    {
+        "codice": "4",
+        "descrizione": "Air bag",
+        "equipPrezzo": "150,00",
+        "cluster_codice": "",
+        "clusterUrlImg": "",
+        "gruppoDesc": "",
+        "info": "",
+        "stato": "DIS",
+        "abbinamentoFlag": ""
+    }]
+}
+

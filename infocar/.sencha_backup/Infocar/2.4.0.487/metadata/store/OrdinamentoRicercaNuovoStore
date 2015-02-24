@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "OrdinamentoRicercaNuovoStore",
+        "model": "OrdinamentoModel",
+        "storeId": "OrdinamentoRicercaNuovoStore"
+    },
+    "name": "OrdinamentoRicercaUsatoStore1",
+    "designerId": "c05954d5-d351-4bb8-9056-c8a576ab4619",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "OrdinamentoRicercaNuovoProxy",
+                "url": "/nuovo/ordinamentoRicerca"
+            },
+            "name": "MyRestProxy11",
+            "designerId": "77fe425b-34db-42fe-b082-5e7f63201247",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "OrdinamentoRicercaNuovoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader9",
+                    "designerId": "13363f53-7050-4bf2-8a89-b818275fbda0"
+                }
+            ]
+        }
+    ]
+}

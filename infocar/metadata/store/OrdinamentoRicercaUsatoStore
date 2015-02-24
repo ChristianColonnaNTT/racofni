@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "OrdinamentoRicercaUsatoStore",
+        "model": "OrdinamentoModel",
+        "storeId": "OrdinamentoRicercaUsatoStore"
+    },
+    "name": "MyJsonStore",
+    "designerId": "06fc4cf8-857e-4f94-b8e7-11683651e093",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "OrdinamentoRicercaUsatoProxy",
+                "url": "/usato/ordinamentoRicerca"
+            },
+            "name": "MyRestProxy11",
+            "designerId": "e845d3ec-fde7-486b-a38a-ebbe7ba85b4f",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "OrdinamentoRicercaUsatoJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader9",
+                    "designerId": "8d305e84-9488-4484-9705-abb19290a3ac"
+                }
+            ]
+        }
+    ]
+}

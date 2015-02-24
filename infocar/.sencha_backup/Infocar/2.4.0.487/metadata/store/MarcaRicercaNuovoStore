@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": null,
+        "designer|userClassName": "MarcaRicercaNuovoStore",
+        "destroyRemovedRecords": null,
+        "model": "MarcaModel",
+        "storeId": "MarcaRicercaNuovoStore"
+    },
+    "name": "MarcaVeicoloUsatoStore1",
+    "designerId": "31be69b8-6ae6-4969-b67c-959e73104f75",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "MarcaRicercaNuovoProxy",
+                "url": "/nuovo/marca"
+            },
+            "name": "MyRestProxy9",
+            "designerId": "f3440042-f0bb-4fa7-b7d8-c796eebb3c17",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "MarcaVeicoloRicercaJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader3",
+                    "designerId": "fecd3c10-dfe8-4624-b256-e422d3ff3add"
+                }
+            ]
+        }
+    ]
+}

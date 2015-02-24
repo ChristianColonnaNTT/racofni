@@ -1,0 +1,106 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "HomeController"
+    },
+    "name": "MyController2",
+    "designerId": "2ac8d8b3-5df7-4e1e-88f0-139b8ca5ac1b",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#ricercaUsatoHomeButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRicercaUsatoButtonTap",
+                "implHandler": [
+                    "Infocar.app.showRicercaUsato();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRicercaUsatoButtonTap",
+            "designerId": "45d55e4a-6506-4724-874c-a0d70b067328"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#ricercaNuovoHomeButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRicercaNuovoButtonTap",
+                "implHandler": [
+                    "Infocar.app.showRicercaNuovo();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRicercaNuovoButtonTap",
+            "designerId": "444a3f33-53fc-41ed-ba54-49393dfc2aa9"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#ricercaStockHomeButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onRicercaStockButtonTap",
+                "implHandler": [
+                    "Infocar.app.showRicercaStock();"
+                ],
+                "name": "tap"
+            },
+            "name": "onRicercaStockButtonTap",
+            "designerId": "c9d4ec2f-3298-4db0-8cdf-b878716f95e0"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "getView",
+                "implHandler": [
+                    "var homeView = this.getHomeView();",
+                    "",
+                    "return homeView;"
+                ]
+            },
+            "name": "getView",
+            "designerId": "68e5bcb7-0bcc-41a8-b6c2-22c0e87be977"
+        },
+        {
+            "type": "controllerref",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoCreate": true,
+                "ref": "homeView",
+                "selector": "container#homeView",
+                "xtype": "HomeView"
+            },
+            "name": "homeView",
+            "designerId": "6636dacf-40b8-4d4c-833a-9401aa76b208"
+        }
+    ]
+}

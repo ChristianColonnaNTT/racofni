@@ -1,0 +1,50 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "data": null,
+        "designer|userClassName": "AlimentazioneRicercaStockStore",
+        "model": "AlimentazioneModel",
+        "storeId": "AlimentazioneRicercaStockStore"
+    },
+    "name": "AlimentazioneRicercaUsatoStore2",
+    "designerId": "3130760e-a40e-42ba-a88c-159b18700acd",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "appendId": false,
+                "designer|displayName": "AlimentazioneRicercaStockProxy",
+                "url": "/stock/alimentazione"
+            },
+            "name": "MyRestProxy",
+            "designerId": "e16e7ad5-84c1-459c-8438-7cce540125db",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "AlimentazioneRicercaStockJsonReader",
+                        "rootProperty": "data"
+                    },
+                    "name": "MyJsonReader1",
+                    "designerId": "3186061c-dcda-4c73-bc08-d3c76a71adcf"
+                }
+            ]
+        }
+    ]
+}

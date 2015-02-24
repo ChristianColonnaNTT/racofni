@@ -1,0 +1,27 @@
+{
+    "success": true,
+    "message": null,
+    "total": 5,
+    "data": [{
+            "codice": "0",
+            "descrizione": "tutti"
+        },
+	{
+            "codice": "1",
+            "descrizione": "Listino 1"
+        },
+        {
+            "codice": "2",
+            "descrizione": "Listino 2"
+        },
+        {
+            "codice": "3",
+            "descrizione": "Listino 3"
+        },
+        {
+            "codice": "4",
+            "descrizione": "Listino 4"
+        }
+    ]
+}
+

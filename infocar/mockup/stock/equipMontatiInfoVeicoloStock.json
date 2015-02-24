@@ -1,0 +1,18 @@
+{
+    "success": true,
+    "message": null,
+    "total": 4,
+    "data": [{
+        "descrizione": "Cambio automatico",
+    },
+    {
+        "descrizione": "Antifurto",
+    },
+    {
+        "descrizione": "Bluetooth",
+    },
+    {
+        "descrizione": "Navigatore",
+    }]
+}
+
