@@ -1121,9 +1121,11 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 }
 
 .infoVeicoloNuovoButtonLandscapeCls {
-  @include infocar-button-icona($param-margin: 5px 0px 5px 0px);
-  width: 24px;
-  height: 24px;
+  @include infocar-button-icona(
+    $param-img-url: url(../images/35-ipad_infocar_done_50.png),
+    $param-img-size: 24px 24px,
+    $param-margin: 5px 0px 5px 0px
+  );
 }
 
 .descDettVeicoloNuovoLabelLandscapeCls {
@@ -1175,7 +1177,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     background-image: $param-bg-img-depressed;
     background-size: $param-bg-img-size;
     background-repeat: no-repeat;
-    background-position: 8px center;
+    background-position: 5px center;
     padding-top: 15px;
     padding-left: $param-padding-left;
     border-right: 1px solid #f2f2f2;
@@ -1231,7 +1233,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_18.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_18.png),
     $param-bg-img-size: 16px 20px,
-    $param-padding-left: 28px
+    $param-padding-left: 25px
 );
 
 @include infocar-button-cluster-dett-veicolo-nuovo(
@@ -1241,7 +1243,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_20.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_20.png),
     $param-bg-img-size: 12px 19px,
-    $param-padding-left: 24px
+    $param-padding-left: 21px
 );
 
 @include infocar-button-cluster-dett-veicolo-nuovo(
@@ -1251,7 +1253,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_06.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_06.png),
     $param-bg-img-size: 14px 20px,
-    $param-padding-left: 26px
+    $param-padding-left: 23px
 );
 
 @include infocar-button-cluster-dett-veicolo-nuovo(
@@ -1261,7 +1263,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_23.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_23.png),
     $param-bg-img-size: 12px 17px,
-    $param-padding-left: 24px
+    $param-padding-left: 21px
 );
 
 @include infocar-button-cluster-dett-veicolo-nuovo(
@@ -1271,7 +1273,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_08.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_08.png),
     $param-bg-img-size: 18px 18px,
-    $param-padding-left: 30px
+    $param-padding-left: 27px
 );
 
 @include infocar-button-cluster-dett-veicolo-nuovo(
@@ -1281,7 +1283,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_03.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_03.png),
     $param-bg-img-size: 11px 22px,
-    $param-padding-left: 23px
+    $param-padding-left: 20px
 );
 
 @include infocar-button-cluster-dett-veicolo-nuovo(
@@ -1291,7 +1293,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_11.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_11.png),
     $param-bg-img-size: 11px 19px,
-    $param-padding-left: 23px
+    $param-padding-left: 20px
 );
 
 @include infocar-button-cluster-dett-veicolo-nuovo(
@@ -1301,7 +1303,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_13.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_13.png),
     $param-bg-img-size: 11px 19px,
-    $param-padding-left: 23px
+    $param-padding-left: 20px
 );
 
 @include infocar-button-cluster-dett-veicolo-nuovo(
@@ -1311,7 +1313,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-bg-img-depressed: url(../images/35-ipad_infocar_done_15.png),
     $param-bg-img-pressed: url(../images/35-ipad_infocar_done_white_15.png),
     $param-bg-img-size: 9px 19px,
-    $param-padding-left: 21px
+    $param-padding-left: 18px
 );
 
 
@@ -1345,8 +1347,10 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
   @include infocar-button-icona(
     $param-img-url: url(../images/punto_domanda_01.png),
     $param-img-size: 18px 18px);
-  width: 18px;
-  height: 18px;
+/*  width: 18px;
+  height: 18px; */
+
+  margin-left: 19px;
 }
 
 .descrizioneHeaderEquipDettVeicoloNuovoButtonCls {

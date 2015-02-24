@@ -74,7 +74,7 @@ Ext.define('Infocar.view.UsatoView', {
                                         xtype: 'textfield',
                                         flex: 1,
                                         itemId: 'descrizioneRicercaUsatoField',
-                                        label: 'Targa o Descrizione PROVA',
+                                        label: 'Targa o Descrizione',
                                         labelWidth: 200,
                                         name: 'descrizione'
                                     },

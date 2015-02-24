@@ -848,15 +848,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": null,
-                                        "cls": [
-                                            "infoVeicoloNuovoButtonLandscapeCls"
-                                        ],
+                                        "baseCls": "infoVeicoloNuovoButtonLandscapeCls",
                                         "designer|displayName": "InfoVeicoloNuovoButton",
-                                        "icon": "resources/images/35-ipad_infocar_done_50.png",
+                                        "height": 24,
+                                        "icon": null,
                                         "iconCls": null,
                                         "itemId": "infoVeicoloNuovoButton",
-                                        "text": null
+                                        "text": null,
+                                        "width": 24
                                     },
                                     "name": "MyButton5",
                                     "designerId": "7d4b8723-46aa-4d8c-b7b7-0002cc5f5631"
@@ -1300,7 +1299,7 @@
                                                 "designer|displayName": "TipoVeicoloClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "tipoVeicoloClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 226,
                                                 "pressed": true,
                                                 "pressedCls": "tipoVeicoloClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "TIPO VEICOLO"
@@ -1329,7 +1328,7 @@
                                                 "designer|displayName": "EsterniClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "esterniClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 147,
                                                 "pressedCls": "esterniClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "ESTERNI"
                                             },
@@ -1357,7 +1356,7 @@
                                                 "designer|displayName": "InterniClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "interniClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 149,
                                                 "pressedCls": "interniClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "INTERNI"
                                             },
@@ -1385,7 +1384,7 @@
                                                 "designer|displayName": "SicurezzaClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "sicurezzaClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 178,
                                                 "pressedCls": "sicurezzaClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "SICUREZZA"
                                             },
@@ -1413,7 +1412,7 @@
                                                 "designer|displayName": "ComfortClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "comfortClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 178,
                                                 "pressedCls": "comfortClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "COMFORT"
                                             },
@@ -1441,7 +1440,7 @@
                                                 "designer|displayName": "ServiziClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "serviziClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 138,
                                                 "pressedCls": "serviziClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "SERVIZI"
                                             },
@@ -1469,7 +1468,7 @@
                                                 "designer|displayName": "TuttiClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "tuttiClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 120,
                                                 "pressedCls": "tuttiClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "TUTTI"
                                             },
@@ -1497,7 +1496,7 @@
                                                 "designer|displayName": "PacchettiClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "pacchettiClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 176,
                                                 "pressedCls": "pacchettiClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "PACCHETTI"
                                             },
@@ -1525,7 +1524,7 @@
                                                 "designer|displayName": "RiepilogoClusterDettVeicoloNuovoButton",
                                                 "height": 43,
                                                 "itemId": "riepilogoClusterDettVeicoloNuovoButton",
-                                                "layout|flex": 1,
+                                                "layout|flex": 181,
                                                 "pressedCls": "riepilogoClusterDettVeicoloNuovoButtonPressedCls",
                                                 "text": "RIEPILOGO"
                                             },
@@ -1658,10 +1657,11 @@
                                                             "userConfig": {
                                                                 "baseCls": "legendaHeaderEquipDettVeicoloNuovoButtonCls",
                                                                 "designer|displayName": "LegendaHeaderEquipDettVeicoloNuovoButton",
+                                                                "height": 26,
                                                                 "icon": null,
                                                                 "itemId": "legendaHeaderEquipDettVeicoloNuovoButton",
                                                                 "text": null,
-                                                                "width": null
+                                                                "width": 18
                                                             },
                                                             "name": "MyButton33",
                                                             "designerId": "a186c2db-1d26-4d8e-bc2d-d35272f0d29d"

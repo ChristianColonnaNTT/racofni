@@ -368,9 +368,10 @@ Ext.define('Infocar.view.NuovoView', {
                                     },
                                     {
                                         xtype: 'button',
-                                        cls: 'infoVeicoloNuovoButtonLandscapeCls',
+                                        baseCls: 'infoVeicoloNuovoButtonLandscapeCls',
+                                        height: 24,
                                         itemId: 'infoVeicoloNuovoButton',
-                                        icon: 'resources/images/35-ipad_infocar_done_50.png'
+                                        width: 24
                                     },
                                     {
                                         xtype: 'label',
@@ -490,7 +491,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 226,
                                                 pressed: true,
                                                 baseCls: 'tipoVeicoloClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
@@ -502,7 +503,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 147,
                                                 baseCls: 'esterniClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
                                                 itemId: 'esterniClusterDettVeicoloNuovoButton',
@@ -513,7 +514,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 149,
                                                 baseCls: 'interniClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
                                                 itemId: 'interniClusterDettVeicoloNuovoButton',
@@ -524,7 +525,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 178,
                                                 baseCls: 'sicurezzaClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
                                                 itemId: 'sicurezzaClusterDettVeicoloNuovoButton',
@@ -535,7 +536,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 178,
                                                 baseCls: 'comfortClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
                                                 itemId: 'comfortClusterDettVeicoloNuovoButton',
@@ -546,7 +547,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 138,
                                                 baseCls: 'serviziClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
                                                 itemId: 'serviziClusterDettVeicoloNuovoButton',
@@ -557,7 +558,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 120,
                                                 baseCls: 'tuttiClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
                                                 itemId: 'tuttiClusterDettVeicoloNuovoButton',
@@ -568,7 +569,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 176,
                                                 baseCls: 'pacchettiClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
                                                 itemId: 'pacchettiClusterDettVeicoloNuovoButton',
@@ -579,7 +580,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'button',
                                                 clusterCodice: null,
-                                                flex: 1,
+                                                flex: 181,
                                                 baseCls: 'riepilogoClusterDettVeicoloNuovoButtonCls',
                                                 height: 43,
                                                 itemId: 'riepilogoClusterDettVeicoloNuovoButton',
@@ -635,7 +636,9 @@ Ext.define('Infocar.view.NuovoView', {
                                                             {
                                                                 xtype: 'button',
                                                                 baseCls: 'legendaHeaderEquipDettVeicoloNuovoButtonCls',
-                                                                itemId: 'legendaHeaderEquipDettVeicoloNuovoButton'
+                                                                height: 26,
+                                                                itemId: 'legendaHeaderEquipDettVeicoloNuovoButton',
+                                                                width: 18
                                                             }
                                                         ]
                                                     },
