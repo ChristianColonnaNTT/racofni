@@ -1,1 +1,0 @@
-{"_comment":"Please don't edit. This is Architect data.","name":"Infocar","resources":[],"requires":[],"classpath":"${app.dir}/app,${app.dir}/resources/js/","css":[{"update":"delta","platform":["phone","tablet","desktop"],"theme":"Default","path":"resources/css/sencha-touch-bec738e8-fd8c-40e5-822f-bef560220f64.css"}],"js":[{"path":"resources/js/numeral.min.js","x-compile":true}]}
