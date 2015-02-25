@@ -1843,7 +1843,9 @@
                     "",
                     ".prezziInfoVeicoloStockOverlayContainerCls {",
                     "  /* right: -92% */",
-                    "}"
+                    "}",
+                    "",
+                    "/* Prova */"
                 ]
             },
             "name": "scss",
