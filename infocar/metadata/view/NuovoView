@@ -1037,6 +1037,9 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "cls": [
+                                            "testataDettVeicoloNuovoContainerPortraitCls"
+                                        ],
                                         "designer|displayName": "TestataDettVeicoloNuovoContainerPortrait",
                                         "itemId": "testataDettVeicoloNuovoContainerPortrait",
                                         "layout": "hbox"
@@ -1053,7 +1056,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "designer|displayName": "DettaglioVeicoloNuovoImgContainer",
-                                                "width": "16%"
+                                                "height": 90,
+                                                "width": 134
                                             },
                                             "name": "MyContainer81",
                                             "designerId": "c83bc82e-a7dd-450f-8a2a-8b40822251c7",
@@ -1066,11 +1070,13 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "centered": true,
                                                         "designer|displayName": "DettaglioVeicoloNuovoImg",
                                                         "height": null,
+                                                        "imageCls": "dettaglioVeicoloNuovoImgCls",
                                                         "itemId": "dettaglioVeicoloNuovoImg",
                                                         "mode": "image",
-                                                        "width": "100%"
+                                                        "width": null
                                                     },
                                                     "name": "MyImg2",
                                                     "designerId": "fa5d02aa-d2d9-459c-9ece-0dcf6d417f3e"
@@ -1085,8 +1091,12 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|displayName": "VBoxContainer",
-                                                "layout": "vbox"
+                                                "cls": [
+                                                    "descTestataDettVeicoloNuovoContainerPortraitCls"
+                                                ],
+                                                "designer|displayName": "DescTestataDettVeicoloNuovoContainerPortrait",
+                                                "layout": "vbox",
+                                                "layout|flex": 100
                                             },
                                             "name": "MyContainer17",
                                             "designerId": "8fd34bdf-cccb-4c21-a9f9-8fcbe32fe7c5",
@@ -1113,6 +1123,9 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "descDettVeicoloNuovoLabelPortraitCls"
+                                                                ],
                                                                 "designer|displayName": "DescDettVeicoloNuovoLabel",
                                                                 "html": null,
                                                                 "itemId": "descDettVeicoloNuovoLabel"
@@ -1146,10 +1159,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "baseCls": "infoVeicoloNuovoButtonPortraitCls",
                                                                 "designer|displayName": "InfoVeicoloNuovoButton",
-                                                                "iconCls": "info",
+                                                                "height": 24,
+                                                                "iconCls": null,
                                                                 "itemId": "infoVeicoloNuovoButton",
-                                                                "text": null
+                                                                "text": null,
+                                                                "width": 24
                                                             },
                                                             "name": "MyButton5",
                                                             "designerId": "8aebafd4-afc2-4402-a403-cc5fa64bbc32"
@@ -1164,6 +1180,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "prezzoBaseDettVeicoloNuovoLabelPortraitCls"
+                                                        ],
                                                         "designer|displayName": "PrezzoBaseDettVeicoloNuovoLabel",
                                                         "itemId": "prezzoBaseDettVeicoloNuovoLabel"
                                                     },
@@ -1180,7 +1199,7 @@
                                                             "userConfig": {
                                                                 "designer|displayName": "tpl",
                                                                 "implHandler": [
-                                                                    "prezzo base: {veicoloBasePrezzo:this.fmtCurrency} &euro;"
+                                                                    "prezzo base: <span class=\"infocar-bold\">{veicoloBasePrezzo:this.fmtCurrency}</span> &euro;"
                                                                 ]
                                                             },
                                                             "name": "tpl",
@@ -1219,6 +1238,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "totaleDettVeicoloNuovoLabelPortraitCls"
+                                                ],
                                                 "designer|displayName": "TotaleDettVeicoloNuovoLabel",
                                                 "docked": "right",
                                                 "itemId": "totaleDettVeicoloNuovoLabel"
@@ -2145,16 +2167,19 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "centered": true,
+                                        "cls": [
+                                            "popupEquipDettVeicoloNuovoPanelCls"
+                                        ],
                                         "container|align": "center",
                                         "designer|displayName": "PopupEquipDettVeicoloNuovoPanel",
-                                        "height": 400,
+                                        "height": 550,
                                         "hidden": true,
-                                        "hideOnMaskTap": false,
+                                        "hideOnMaskTap": null,
                                         "html": null,
                                         "itemId": "popupEquipDettVeicoloNuovoPanel",
                                         "layout": "vbox",
                                         "modal": true,
-                                        "width": 600
+                                        "width": 642
                                     },
                                     "name": "MyPanel5",
                                     "designerId": "e861fda3-62b5-422e-84ce-840e75f4085d",
@@ -2167,7 +2192,11 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "titoloPopupEquipVeicoloNuovoLabelCls"
+                                                ],
                                                 "designer|displayName": "TitoloPopupEquipVeicoloNuovoLabel",
+                                                "height": 52,
                                                 "html": null,
                                                 "itemId": "titoloPopupEquipVeicoloNuovoLabel"
                                             },
@@ -2194,6 +2223,64 @@
                                             ]
                                         },
                                         {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": [
+                                                    "intestazioneEquipDettVeicoloNuovoContainerCls"
+                                                ],
+                                                "container|align": "center",
+                                                "designer|displayName": "IntestazioneEquipDettVeicoloNuovoContainer",
+                                                "height": 22,
+                                                "layout": "hbox",
+                                                "width": "90%"
+                                            },
+                                            "name": "MyContainer100",
+                                            "designerId": "1ba14635-506f-48e6-bcc7-310fcce1bdb4",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "descIntestazioneEquipDettVeicoloNuovoLabelCls"
+                                                        ],
+                                                        "designer|displayName": "DescIntestazioneEquipDettVeicoloNuovoLabel",
+                                                        "html": "Descrizione",
+                                                        "layout|flex": 1
+                                                    },
+                                                    "name": "MyLabel40",
+                                                    "designerId": "c38fa794-c923-43a3-aa5d-108396818024"
+                                                },
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "prezzoIntestazioneEquipDettVeicoloNuovoLabelCls"
+                                                        ],
+                                                        "designer|displayName": "PrezzoIntestazioneEquipDettVeicoloNuovoLabel",
+                                                        "html": "Prezzo",
+                                                        "layout|flex": 1
+                                                    },
+                                                    "name": "MyLabel52",
+                                                    "designerId": "f423a13a-01c4-4057-a3f6-726794e7c411"
+                                                }
+                                            ]
+                                        },
+                                        {
                                             "type": "Ext.dataview.DataView",
                                             "reference": {
                                                 "name": "items",
@@ -2201,16 +2288,20 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "popupEquipDettVeicoloNuovoDataViewCls"
+                                                ],
                                                 "defaultType": null,
                                                 "designer|displayName": "PopupEquipDettVeicoloNuovoDataView",
-                                                "height": 300,
+                                                "height": null,
                                                 "hidden": false,
+                                                "itemCls": "popupEquipDettVeicoloNuovoDataViewItemCls",
                                                 "itemId": "popupEquipDettVeicoloNuovoDataView",
-                                                "layout|flex": null,
+                                                "layout|flex": 1,
                                                 "selectedCls": "selezionePopupEquipDettVeicoloNuovoDataViewSelectedCls",
                                                 "store": "PopupEquipDettVeicoloNuovoStore",
                                                 "useComponents": false,
-                                                "width": 500
+                                                "width": "90%"
                                             },
                                             "name": "MyDataView3",
                                             "designerId": "b0ef98eb-c428-4df8-b6cb-88fb5b8acb63",
@@ -2325,9 +2416,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "container|align": "start",
                                 "designer|displayName": "DettaglioVeicoloNuovoToolbar",
+                                "designer|uiInterfaceName": "infocar-toolbar",
                                 "docked": "bottom",
-                                "hidden": false
+                                "height": 60,
+                                "hidden": false,
+                                "ui": "infocar-toolbar"
                             },
                             "name": "MyToolbar3",
                             "designerId": "5ac11b83-d864-4ef3-9f21-cc33522992f6",
@@ -2340,9 +2435,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "indietroDettaglioVeicoloNuovoButtonCls",
                                         "designer|displayName": "IndietroDettaglioVeicoloNuovoButton",
                                         "itemId": "indietroDettaglioVeicoloNuovoButton",
-                                        "text": "Indietro"
+                                        "text": "INDIETRO"
                                     },
                                     "name": "MyButton12",
                                     "designerId": "5ee3cc78-5c92-48af-a972-b9910ac492c1"
@@ -2355,9 +2451,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "stampaEsitoVeicoloNuovoButtonCls",
                                         "designer|displayName": "StampaDettaglioVeicoloNuovoButton",
+                                        "docked": "right",
                                         "itemId": "stampaEsitoVeicoloNuovoButton",
-                                        "text": "Stampa"
+                                        "text": "STAMPA"
                                     },
                                     "name": "MyButton13",
                                     "designerId": "45d333ea-b2e0-4e44-9db6-9cd82a972ccc"
@@ -2370,10 +2468,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "salvaDettaglioVeicoloNuovoButtonCls",
                                         "designer|displayName": "SalvaDettaglioVeicoloNuovoButton",
                                         "docked": "right",
                                         "itemId": "salvaDettaglioVeicoloNuovoButton",
-                                        "text": "Salva"
+                                        "text": "SALVA"
                                     },
                                     "name": "MyButton14",
                                     "designerId": "5065b449-2caf-4209-92ef-d80d14808539"

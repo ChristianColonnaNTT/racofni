@@ -417,23 +417,28 @@ Ext.define('Infocar.view.NuovoView', {
                                 items: [
                                     {
                                         xtype: 'container',
+                                        cls: 'testataDettVeicoloNuovoContainerPortraitCls',
                                         itemId: 'testataDettVeicoloNuovoContainerPortrait',
                                         layout: 'hbox',
                                         items: [
                                             {
                                                 xtype: 'container',
-                                                width: '16%',
+                                                height: 90,
+                                                width: 134,
                                                 items: [
                                                     {
                                                         xtype: 'image',
+                                                        centered: true,
                                                         itemId: 'dettaglioVeicoloNuovoImg',
-                                                        width: '100%',
+                                                        imageCls: 'dettaglioVeicoloNuovoImgCls',
                                                         mode: 'image'
                                                     }
                                                 ]
                                             },
                                             {
                                                 xtype: 'container',
+                                                flex: 100,
+                                                cls: 'descTestataDettVeicoloNuovoContainerPortraitCls',
                                                 layout: 'vbox',
                                                 items: [
                                                     {
@@ -442,6 +447,7 @@ Ext.define('Infocar.view.NuovoView', {
                                                         items: [
                                                             {
                                                                 xtype: 'label',
+                                                                cls: 'descDettVeicoloNuovoLabelPortraitCls',
                                                                 itemId: 'descDettVeicoloNuovoLabel',
                                                                 tpl: [
                                                                     '{allestimento_descrizione}'
@@ -449,16 +455,19 @@ Ext.define('Infocar.view.NuovoView', {
                                                             },
                                                             {
                                                                 xtype: 'button',
+                                                                baseCls: 'infoVeicoloNuovoButtonPortraitCls',
+                                                                height: 24,
                                                                 itemId: 'infoVeicoloNuovoButton',
-                                                                iconCls: 'info'
+                                                                width: 24
                                                             }
                                                         ]
                                                     },
                                                     {
                                                         xtype: 'label',
+                                                        cls: 'prezzoBaseDettVeicoloNuovoLabelPortraitCls',
                                                         itemId: 'prezzoBaseDettVeicoloNuovoLabel',
                                                         tpl: Ext.create('Ext.XTemplate', 
-                                                            'prezzo base: {veicoloBasePrezzo:this.fmtCurrency} &euro;',
+                                                            'prezzo base: <span class="infocar-bold">{veicoloBasePrezzo:this.fmtCurrency}</span> &euro;',
                                                             {
                                                                 fmtCurrency: function(currValue) {
                                                                     return Infocar.app.formatCurrency(currValue);
@@ -470,6 +479,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             },
                                             {
                                                 xtype: 'label',
+                                                cls: 'totaleDettVeicoloNuovoLabelPortraitCls',
                                                 docked: 'right',
                                                 itemId: 'totaleDettVeicoloNuovoLabel',
                                                 tpl: Ext.create('Ext.XTemplate', 
@@ -858,11 +868,11 @@ Ext.define('Infocar.view.NuovoView', {
                                     {
                                         xtype: 'panel',
                                         centered: true,
-                                        height: 400,
+                                        cls: 'popupEquipDettVeicoloNuovoPanelCls',
+                                        height: 550,
                                         hidden: true,
                                         itemId: 'popupEquipDettVeicoloNuovoPanel',
-                                        width: 600,
-                                        hideOnMaskTap: false,
+                                        width: 642,
                                         modal: true,
                                         layout: {
                                             type: 'vbox',
@@ -871,6 +881,8 @@ Ext.define('Infocar.view.NuovoView', {
                                         items: [
                                             {
                                                 xtype: 'label',
+                                                cls: 'titoloPopupEquipVeicoloNuovoLabelCls',
+                                                height: 52,
                                                 itemId: 'titoloPopupEquipVeicoloNuovoLabel',
                                                 tpl: [
                                                     'Selezionare uno dei seguenti equipaggiamenti da associare a {descEquipSelezionato} ',
@@ -878,11 +890,37 @@ Ext.define('Infocar.view.NuovoView', {
                                                 ]
                                             },
                                             {
+                                                xtype: 'container',
+                                                cls: 'intestazioneEquipDettVeicoloNuovoContainerCls',
+                                                height: 22,
+                                                width: '90%',
+                                                layout: {
+                                                    type: 'hbox',
+                                                    align: 'center'
+                                                },
+                                                items: [
+                                                    {
+                                                        xtype: 'label',
+                                                        flex: 1,
+                                                        cls: 'descIntestazioneEquipDettVeicoloNuovoLabelCls',
+                                                        html: 'Descrizione'
+                                                    },
+                                                    {
+                                                        xtype: 'label',
+                                                        flex: 1,
+                                                        cls: 'prezzoIntestazioneEquipDettVeicoloNuovoLabelCls',
+                                                        html: 'Prezzo'
+                                                    }
+                                                ]
+                                            },
+                                            {
                                                 xtype: 'dataview',
-                                                height: 300,
+                                                flex: 1,
+                                                cls: 'popupEquipDettVeicoloNuovoDataViewCls',
                                                 hidden: false,
                                                 itemId: 'popupEquipDettVeicoloNuovoDataView',
-                                                width: 500,
+                                                width: '90%',
+                                                itemCls: 'popupEquipDettVeicoloNuovoDataViewItemCls',
                                                 itemTpl: [
                                                     '<table class="popupEquipDettVeicoloNuovoDataViewTableCls">',
                                                     '  <tr>',
@@ -924,23 +962,33 @@ Ext.define('Infocar.view.NuovoView', {
                             {
                                 xtype: 'toolbar',
                                 docked: 'bottom',
+                                height: 60,
                                 hidden: false,
+                                ui: 'infocar-toolbar',
+                                layout: {
+                                    type: 'hbox',
+                                    align: 'start'
+                                },
                                 items: [
                                     {
                                         xtype: 'button',
+                                        baseCls: 'indietroDettaglioVeicoloNuovoButtonCls',
                                         itemId: 'indietroDettaglioVeicoloNuovoButton',
-                                        text: 'Indietro'
+                                        text: 'INDIETRO'
                                     },
                                     {
                                         xtype: 'button',
+                                        baseCls: 'stampaEsitoVeicoloNuovoButtonCls',
+                                        docked: 'right',
                                         itemId: 'stampaEsitoVeicoloNuovoButton',
-                                        text: 'Stampa'
+                                        text: 'STAMPA'
                                     },
                                     {
                                         xtype: 'button',
+                                        baseCls: 'salvaDettaglioVeicoloNuovoButtonCls',
                                         docked: 'right',
                                         itemId: 'salvaDettaglioVeicoloNuovoButton',
-                                        text: 'Salva'
+                                        text: 'SALVA'
                                     }
                                 ]
                             }
