@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar2",
+            "name": "topbar6",
             "designerId": "a185a87e-f8d6-4039-a2fa-549e7e748d96",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -863,10 +863,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "InfoVeicoloUsatoButtonCls",
                                         "designer|displayName": "InfoVeicoloUsatoButton",
-                                        "iconCls": "info",
+                                        "height": 24,
+                                        "icon": null,
+                                        "iconCls": null,
                                         "itemId": "infoVeicoloUsatoButton",
-                                        "text": null
+                                        "text": null,
+                                        "width": 24
                                     },
                                     "name": "MyButton5",
                                     "designerId": "1a990d53-b1ea-4be5-baf7-7c044847dd6c"

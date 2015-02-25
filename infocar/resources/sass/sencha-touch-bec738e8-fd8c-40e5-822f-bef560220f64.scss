@@ -432,6 +432,17 @@ body.x-tablet {
 }
 
 
+//Dettaglio allestimento usato
+
+.InfoVeicoloUsatoButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/info_new.png),
+    $param-img-size: 24px 24px,
+    $param-margin: 5px 0px 5px 0px
+  );
+}
+
+
 /* Form ricerca usato/nuovo/stock */
 .ricercaUsatoFormCls, .ricercaNuovoFormCls {
     border-style: solid;

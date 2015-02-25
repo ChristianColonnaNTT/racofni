@@ -374,8 +374,10 @@ Ext.define('Infocar.view.UsatoView', {
                                     },
                                     {
                                         xtype: 'button',
+                                        baseCls: 'InfoVeicoloUsatoButtonCls',
+                                        height: 24,
                                         itemId: 'infoVeicoloUsatoButton',
-                                        iconCls: 'info'
+                                        width: 24
                                     },
                                     {
                                         xtype: 'label',
