@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar3",
+            "name": "topbar",
             "designerId": "69e24a9f-36cf-41e5-87c4-50751e860e24",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -1963,11 +1963,11 @@
                                                         "baseCls": "closeInformEquipDettVeicoloNuovoButtonCls",
                                                         "designer|displayName": "CloseInformEquipDettVeicoloNuovoButton",
                                                         "docked": null,
-                                                        "height": 12,
+                                                        "height": 20,
                                                         "iconCls": null,
                                                         "itemId": "closeInformEquipDettVeicoloNuovoButton",
                                                         "text": null,
-                                                        "width": 12
+                                                        "width": 20
                                                     },
                                                     "name": "MyButton28",
                                                     "designerId": "bbc71a8b-a541-49b0-8bf2-a64559b23322"

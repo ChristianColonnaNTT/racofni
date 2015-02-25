@@ -46,7 +46,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 2",
             "infoFlag": "N",
-            "stato": "4",
+            "stato": "7",
             "abbinamentoFlag": "N",
             "order": 4
         },
@@ -190,7 +190,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "4",
+            "stato": "7",
             "abbinamentoFlag": "S",
             "order": 16
         },

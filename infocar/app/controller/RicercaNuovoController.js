@@ -720,8 +720,18 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             clusterCodice = activeClusterButton.clusterCodice;
         }
 
+
         var equipListView = Ext.ComponentQuery.query('#equipDettVeicoloNuovoList')[0];
         //equipListView.setGrouped(false);
+
+        var prevClasseHeaderGruppi = this.classeHeaderGruppi;
+        if (prevClasseHeaderGruppi) {
+            equipListView.removeCls(prevClasseHeaderGruppi);
+        }
+
+        var classeHeaderGruppi = clusterCodice + 'equipDettVeicoloNuovoListCls';
+        equipListView.addCls(classeHeaderGruppi);
+        this.classeHeaderGruppi = classeHeaderGruppi;
 
         var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');
 

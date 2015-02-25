@@ -780,9 +780,9 @@ Ext.define('Infocar.view.NuovoView', {
                                                     {
                                                         xtype: 'button',
                                                         baseCls: 'closeInformEquipDettVeicoloNuovoButtonCls',
-                                                        height: 12,
+                                                        height: 20,
                                                         itemId: 'closeInformEquipDettVeicoloNuovoButton',
-                                                        width: 12
+                                                        width: 20
                                                     }
                                                 ]
                                             },

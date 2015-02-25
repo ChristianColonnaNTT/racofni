@@ -1361,6 +1361,87 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 }
 
 
+
+@mixin infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice,
+    $param-bg-img-header,
+    $param-bg-img-size,
+    $param-padding-left: 30px
+    )
+{
+  .#{$param-cluster-codice}equipDettVeicoloNuovoListCls .x-list-header {
+    padding-left: $param-padding-left !important;
+    background-image: $param-bg-img-header !important;
+    background-size: $param-bg-img-size !important;
+    background-repeat: no-repeat !important;
+    background-position: 8px 18px !important;
+  }
+}
+
+/*
+.TVEI_equipDettVeicoloNuovoListCls .x-list-header {
+  padding-left: 30px !important;
+  background-image: url(../images/35-ipad_infocar_done_red_18.png) !important;
+  background-size: 16px 20px !important;
+  background-repeat: no-repeat !important;
+  background-position: 8px 18px !important;
+}
+*/
+
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: TVEI_,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_18.png),
+    $param-bg-img-size: 16px 20px
+);
+
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: ESTE_,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_20.png),
+    $param-bg-img-size: 12px 19px
+);
+
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: INTE_,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_06.png),
+    $param-bg-img-size: 14px 20px
+);
+
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: SICU_,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_23.png),
+    $param-bg-img-size: 12px 17px
+);
+
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: COMF_,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_08.png),
+    $param-bg-img-size: 18px 18px
+);
+
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: SERV_,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_03.png),
+    $param-bg-img-size: 11px 22px
+);
+
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: tutti,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_11.png),
+    $param-bg-img-size: 11px 19px
+);
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: PACK_,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_13.png),
+    $param-bg-img-size: 11px 19px
+);
+
+@include infocar-header-gruppo-dett-veicolo-nuovo(
+    $param-cluster-codice: riepilogo,
+    $param-bg-img-header: url(../images/35-ipad_infocar_done_red_15.png),
+    $param-bg-img-size: 9px 19px
+);
+
+
 /* Texbox Cerca e Combobox Logica Dettaglio Veicolo Nuovo */
 .cercaLogicaDettVeicoloNuovoContainerCls {
   margin: 0px 5px 0px 5px;
