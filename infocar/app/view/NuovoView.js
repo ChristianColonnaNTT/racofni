@@ -704,40 +704,46 @@ Ext.define('Infocar.view.NuovoView', {
                                                 grouped: true,
                                                 itemHeight: 50,
                                                 striped: true
-                                            },
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        baseCls: 'popupLegendaEquipDettVeicoloNuovoPanelCls',
+                                        height: 220,
+                                        hidden: true,
+                                        itemId: 'popupLegendaEquipDettVeicoloNuovoPanel',
+                                        width: 320,
+                                        hideOnMaskTap: true,
+                                        modal: true,
+                                        layout: {
+                                            type: 'vbox',
+                                            align: 'start'
+                                        },
+                                        items: [
                                             {
-                                                xtype: 'panel',
-                                                height: 220,
-                                                hidden: true,
-                                                itemId: 'popupLegendaEquipDettVeicoloNuovoPanel',
-                                                width: 320,
-                                                hideOnMaskTap: true,
-                                                modal: true,
+                                                xtype: 'container',
+                                                width: '100%',
                                                 layout: {
-                                                    type: 'vbox',
-                                                    align: 'start'
+                                                    type: 'hbox',
+                                                    align: 'center',
+                                                    pack: 'end'
                                                 },
                                                 items: [
                                                     {
-                                                        xtype: 'container',
-                                                        width: '100%',
-                                                        layout: 'hbox',
-                                                        items: [
-                                                            {
-                                                                xtype: 'button',
-                                                                docked: 'right',
-                                                                itemId: 'closeLegendaEquipDettVeicoloNuovoButton',
-                                                                iconCls: 'star'
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        xtype: 'label',
-                                                        html: '<div style="font-weight: bold">Legenda:</div>  <div style="height: 10px"></div> <table class="testoLegendaEquipDettVeicoloNuovoTableStyle">   <tr>     <td><img src="resources/images/stato_libero.jpg" width="16" height="16"></td>     <td>Libero</td>   </tr>   <tr>     <td><img src="resources/images/stato_selez.png" width="16" height="16"></td>     <td>Selezionato</td>   </tr>   <tr>     <td><img src="resources/images/stato_incluso.jpg" width="16" height="16"></td>     <td style="font-weight: bold">Incluso</td>   </tr>   <tr>     <td><img src="resources/images/stato_non_disp.jpg" width="16" height="16"></td>     <td style="font-weight: bold">Non Disponibile</td>   </tr> </table>',
-                                                        itemId: 'testoLegendaEquipDettVeicoloNuovoLabel',
-                                                        margin: '0 0 0 20'
+                                                        xtype: 'button',
+                                                        baseCls: 'closeLegendaEquipDettVeicoloNuovoButtonCls',
+                                                        height: 15,
+                                                        itemId: 'closeLegendaEquipDettVeicoloNuovoButton',
+                                                        width: 15
                                                     }
                                                 ]
+                                            },
+                                            {
+                                                xtype: 'label',
+                                                html: '<div class="infocar-bold">Legenda:</div> <div style="height: 10px"></div> <table class="testoLegendaEquipDettVeicoloNuovoTableCls">    <tr>         <td><img src="resources/images/35-ipad_infocar_done_35.png" width="24" height="24"></td>         <td>Libero</td>    </tr>    <tr>         <td><img src="resources/images/35-ipad_infocar_done_44.png" width="24" height="24"></td>         <td>Selezionato</td>    </tr>    <tr>         <td><img src="resources/images/35-ipad_infocar_done_42.png" width="24" height="24"></td>         <td class="infocar-bold">Incluso</td>     </tr>     <tr>          <td><img src="resources/images/35-ipad_infocar_done_38.png" width="24" height="24"></td>          <td class="infocar-bold">Non Disponibile</td>     </tr> </table>',
+                                                itemId: 'testoLegendaEquipDettVeicoloNuovoLabel',
+                                                margin: '0 0 0 20'
                                             }
                                         ]
                                     },
@@ -834,30 +840,38 @@ Ext.define('Infocar.view.NuovoView', {
                                     },
                                     {
                                         xtype: 'panel',
-                                        height: 200,
+                                        baseCls: 'popupEquipSelAutomaticaDettVeicoloNuovoPanelCls',
+                                        height: 300,
                                         hidden: true,
                                         itemId: 'popupEquipSelAutomaticaDettVeicoloNuovoPanel',
                                         right: 10,
                                         top: 80,
-                                        width: 300,
+                                        width: 287,
                                         hideOnMaskTap: false,
                                         layout: 'vbox',
                                         modal: false,
                                         items: [
                                             {
                                                 xtype: 'container',
+                                                layout: {
+                                                    type: 'hbox',
+                                                    align: 'center',
+                                                    pack: 'end'
+                                                },
                                                 items: [
                                                     {
                                                         xtype: 'button',
-                                                        docked: 'right',
+                                                        baseCls: 'closeEquipSelAutomaticaDettVeicoloNuovoButtonCls',
+                                                        height: 15,
                                                         itemId: 'closeEquipSelAutomaticaDettVeicoloNuovoButton',
-                                                        iconCls: 'star'
+                                                        width: 15
                                                     }
                                                 ]
                                             },
                                             {
                                                 xtype: 'label',
-                                                height: 60,
+                                                cls: 'msgEquipSelAutomaticaDettVeicoloNuovoLabelCls',
+                                                height: 40,
                                                 hidden: false,
                                                 html: 'Selezionati in automatico gli equipaggiamenti:',
                                                 itemId: 'msgEquipSelAutomaticaDettVeicoloNuovoLabel'
@@ -865,6 +879,7 @@ Ext.define('Infocar.view.NuovoView', {
                                             {
                                                 xtype: 'dataview',
                                                 flex: 1,
+                                                cls: 'equipSelAutomaticaDettVeicoloNuovoDataviewCls',
                                                 itemId: 'equipSelAutomaticaDettVeicoloNuovoDataview',
                                                 itemTpl: [
                                                     '<div>&nbsp;- {descrizione}</div>'

@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar",
+            "name": "topbar3",
             "designerId": "69e24a9f-36cf-41e5-87c4-50751e860e24",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -1795,87 +1795,92 @@
                                                     "designerId": "3a92f950-98f7-4de3-948a-6f58a5eb3fcb"
                                                 }
                                             ]
-                                        },
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": "popupLegendaEquipDettVeicoloNuovoPanelCls",
+                                        "container|align": "start",
+                                        "designer|displayName": "PopupLegendaEquipDettVeicoloNuovoPanel",
+                                        "height": 220,
+                                        "hidden": true,
+                                        "hideOnMaskTap": true,
+                                        "itemId": "popupLegendaEquipDettVeicoloNuovoPanel",
+                                        "layout": "vbox",
+                                        "modal": true,
+                                        "width": 320
+                                    },
+                                    "name": "MyPanel",
+                                    "designerId": "d56e1084-4d2a-4202-90e2-c5ab67be45c5",
+                                    "cn": [
                                         {
-                                            "type": "Ext.Panel",
+                                            "type": "Ext.Container",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "container|align": "start",
-                                                "designer|displayName": "PopupLegendaEquipDettVeicoloNuovoPanel",
-                                                "height": 220,
-                                                "hidden": true,
-                                                "hideOnMaskTap": true,
-                                                "itemId": "popupLegendaEquipDettVeicoloNuovoPanel",
-                                                "layout": "vbox",
-                                                "modal": true,
-                                                "width": 320
+                                                "container|align": "center",
+                                                "container|pack": "end",
+                                                "designer|displayName": "CloseLegendaEquipDettVeicoloNuovoContainer",
+                                                "docked": null,
+                                                "height": null,
+                                                "layout": "hbox",
+                                                "width": "100%"
                                             },
-                                            "name": "MyPanel",
-                                            "designerId": "d56e1084-4d2a-4202-90e2-c5ab67be45c5",
+                                            "name": "MyContainer89",
+                                            "designerId": "02beca54-7050-49a8-ab8c-e1c28465adc3",
                                             "cn": [
                                                 {
-                                                    "type": "Ext.Container",
+                                                    "type": "Ext.Button",
                                                     "reference": {
                                                         "name": "items",
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "container|align": null,
-                                                        "designer|displayName": "CloseLegendaEquipDettVeicoloNuovoContainer",
+                                                        "baseCls": "closeLegendaEquipDettVeicoloNuovoButtonCls",
+                                                        "designer|displayName": "CloseLegendaEquipDettVeicoloNuovoButton",
                                                         "docked": null,
-                                                        "height": null,
-                                                        "layout": "hbox",
-                                                        "width": "100%"
+                                                        "height": 15,
+                                                        "iconCls": null,
+                                                        "itemId": "closeLegendaEquipDettVeicoloNuovoButton",
+                                                        "text": null,
+                                                        "width": 15
                                                     },
-                                                    "name": "MyContainer89",
-                                                    "designerId": "02beca54-7050-49a8-ab8c-e1c28465adc3",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.Button",
-                                                            "reference": {
-                                                                "name": "items",
-                                                                "type": "array"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "designer|displayName": "CloseLegendaEquipDettVeicoloNuovoButton",
-                                                                "docked": "right",
-                                                                "iconCls": "star",
-                                                                "itemId": "closeLegendaEquipDettVeicoloNuovoButton",
-                                                                "text": null
-                                                            },
-                                                            "name": "MyButton28",
-                                                            "designerId": "a29ec953-3977-4f1a-9e4e-bd20089a9132"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "Ext.Label",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "centered": null,
-                                                        "designer|displayName": "TestoLegendaEquipDettVeicoloNuovoLabel",
-                                                        "height": null,
-                                                        "hidden": null,
-                                                        "html": "<div style=\"font-weight: bold\">Legenda:</div>  <div style=\"height: 10px\"></div> <table class=\"testoLegendaEquipDettVeicoloNuovoTableStyle\">   <tr>     <td><img src=\"resources/images/stato_libero.jpg\" width=\"16\" height=\"16\"></td>     <td>Libero</td>   </tr>   <tr>     <td><img src=\"resources/images/stato_selez.png\" width=\"16\" height=\"16\"></td>     <td>Selezionato</td>   </tr>   <tr>     <td><img src=\"resources/images/stato_incluso.jpg\" width=\"16\" height=\"16\"></td>     <td style=\"font-weight: bold\">Incluso</td>   </tr>   <tr>     <td><img src=\"resources/images/stato_non_disp.jpg\" width=\"16\" height=\"16\"></td>     <td style=\"font-weight: bold\">Non Disponibile</td>   </tr> </table>",
-                                                        "itemId": "testoLegendaEquipDettVeicoloNuovoLabel",
-                                                        "layout|flex": null,
-                                                        "margin": "0 0 0 20",
-                                                        "width": null
-                                                    },
-                                                    "name": "MyLabel37",
-                                                    "designerId": "667eebfa-bf4c-4556-a233-653527dcaad6"
+                                                    "name": "MyButton28",
+                                                    "designerId": "a29ec953-3977-4f1a-9e4e-bd20089a9132"
                                                 }
                                             ]
+                                        },
+                                        {
+                                            "type": "Ext.Label",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "centered": null,
+                                                "designer|displayName": "TestoLegendaEquipDettVeicoloNuovoLabel",
+                                                "height": null,
+                                                "hidden": null,
+                                                "html": "<div class=\"infocar-bold\">Legenda:</div> <div style=\"height: 10px\"></div> <table class=\"testoLegendaEquipDettVeicoloNuovoTableCls\">    <tr>         <td><img src=\"resources/images/35-ipad_infocar_done_35.png\" width=\"24\" height=\"24\"></td>         <td>Libero</td>    </tr>    <tr>         <td><img src=\"resources/images/35-ipad_infocar_done_44.png\" width=\"24\" height=\"24\"></td>         <td>Selezionato</td>    </tr>    <tr>         <td><img src=\"resources/images/35-ipad_infocar_done_42.png\" width=\"24\" height=\"24\"></td>         <td class=\"infocar-bold\">Incluso</td>     </tr>     <tr>          <td><img src=\"resources/images/35-ipad_infocar_done_38.png\" width=\"24\" height=\"24\"></td>          <td class=\"infocar-bold\">Non Disponibile</td>     </tr> </table>",
+                                                "itemId": "testoLegendaEquipDettVeicoloNuovoLabel",
+                                                "layout|flex": null,
+                                                "margin": "0 0 0 20",
+                                                "width": null
+                                            },
+                                            "name": "MyLabel37",
+                                            "designerId": "667eebfa-bf4c-4556-a233-653527dcaad6"
                                         }
                                     ]
                                 },
@@ -2074,8 +2079,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "popupEquipSelAutomaticaDettVeicoloNuovoPanelCls",
+                                        "container|align": null,
                                         "designer|displayName": "PopupEquipSelAutomaticaDettVeicoloNuovoPanel",
-                                        "height": 200,
+                                        "height": 300,
                                         "hidden": true,
                                         "hideOnMaskTap": false,
                                         "itemId": "popupEquipSelAutomaticaDettVeicoloNuovoPanel",
@@ -2083,7 +2090,7 @@
                                         "modal": false,
                                         "right": 10,
                                         "top": 80,
-                                        "width": 300
+                                        "width": 287
                                     },
                                     "name": "MyPanel4",
                                     "designerId": "fe2b033e-7e17-42de-b0dc-b6f026205640",
@@ -2096,11 +2103,13 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|displayName": "CloseEquipSelAutomaticaDettVeicoloNuovoContainer",
-                                                "docked": null
+                                                "container|align": "center",
+                                                "container|pack": "end",
+                                                "designer|displayName": "HBoxContainer",
+                                                "layout": "hbox"
                                             },
                                             "name": "MyContainer86",
-                                            "designerId": "2c1234b7-897e-4c35-8e07-da62ae10e3c7",
+                                            "designerId": "c0fe7207-dde3-4a10-8743-96b7d765c99a",
                                             "cn": [
                                                 {
                                                     "type": "Ext.Button",
@@ -2110,14 +2119,16 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "baseCls": "closeEquipSelAutomaticaDettVeicoloNuovoButtonCls",
                                                         "designer|displayName": "CloseEquipSelAutomaticaDettVeicoloNuovoButton",
-                                                        "docked": "right",
-                                                        "iconCls": "star",
+                                                        "height": 15,
+                                                        "html": null,
                                                         "itemId": "closeEquipSelAutomaticaDettVeicoloNuovoButton",
-                                                        "text": null
+                                                        "text": null,
+                                                        "width": 15
                                                     },
-                                                    "name": "MyButton28",
-                                                    "designerId": "e148e6fe-d013-4bef-ad71-9bafd20e1762"
+                                                    "name": "MyButton30",
+                                                    "designerId": "a6b9ddc8-59f5-4415-894b-033ad190595d"
                                                 }
                                             ]
                                         },
@@ -2129,11 +2140,15 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "msgEquipSelAutomaticaDettVeicoloNuovoLabelCls"
+                                                ],
                                                 "designer|displayName": "MsgEquipSelAutomaticaDettVeicoloNuovoLabel",
-                                                "height": 60,
+                                                "height": 40,
                                                 "hidden": false,
                                                 "html": "Selezionati in automatico gli equipaggiamenti:",
-                                                "itemId": "msgEquipSelAutomaticaDettVeicoloNuovoLabel"
+                                                "itemId": "msgEquipSelAutomaticaDettVeicoloNuovoLabel",
+                                                "layout|flex": null
                                             },
                                             "name": "MyLabel37",
                                             "designerId": "59bd8383-b8d5-4d41-9621-717405c9c610"
@@ -2146,13 +2161,16 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "equipSelAutomaticaDettVeicoloNuovoDataviewCls"
+                                                ],
                                                 "designer|displayName": "EquipSelAutomaticaDettVeicoloNuovoDataview",
                                                 "itemId": "equipSelAutomaticaDettVeicoloNuovoDataview",
                                                 "layout|flex": 1,
                                                 "store": "EquipSelAutomaticaDettVeicoloNuovoStore"
                                             },
                                             "name": "MyDataView5",
-                                            "designerId": "b2176f71-8b71-4882-aedb-6a5586804e1c",
+                                            "designerId": "f8d46d4b-9fc4-4371-b386-d843b3b77711",
                                             "cn": [
                                                 {
                                                     "type": "Ext.XTemplate",
@@ -2168,7 +2186,7 @@
                                                         ]
                                                     },
                                                     "name": "itemTpl",
-                                                    "designerId": "90f89404-976c-4ef1-8dba-5a9716522a3c"
+                                                    "designerId": "d1dd4850-295e-4554-9b74-a2ed25fa6b4e"
                                                 }
                                             ]
                                         }

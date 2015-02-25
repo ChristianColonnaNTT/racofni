@@ -28,7 +28,7 @@
         },
         {
             "codice": "Adolorum",
-            "descrizione": "distinctio",
+            "descrizione": "Distinctio",
             "equipPrezzo": "330,93",
             "cluster_codice": "TVEI_",
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
@@ -430,7 +430,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 5",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 36
         },
@@ -549,7 +549,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 6",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 46
         },
@@ -669,7 +669,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 2",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 106
         },

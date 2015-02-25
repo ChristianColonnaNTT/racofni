@@ -1357,6 +1357,11 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
     $param-padding-left: 18px
 );
 
+.evidenzaBtnClusterDettVeicoloNuovo {
+  background-color: #d6d6dc !important;
+  border-right: 1px solid #d6d6dc !important;
+}
+
 
 /* Texbox Cerca e Combobox Logica Dettaglio Veicolo Nuovo */
 .cercaLogicaDettVeicoloNuovoContainerCls {
@@ -1367,12 +1372,6 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 .cercaLogicaDettVeicoloNuovoContainerCls .x-form-label {
   text-align: right;
 }
-
-.evidenzaBtnClusterDettVeicoloNuovo {
-  background-color: #d6d6dc !important;
-  border-right: 1px solid #d6d6dc !important;
-}
-
 
 /* Equipaggiamenti Dettaglio Veicolo Nuovo */
 
@@ -1708,15 +1707,29 @@ td.prezzoPopupEquipDettVeicoloNuovoDataViewTdCls {
 
 
 
-/* Legenda Equipaggiamenti Dettaglio Veicolo Nuovo */
+/* Popup Legenda Equipaggiamenti Dettaglio Veicolo Nuovo */
 
-table.testoLegendaEquipDettVeicoloNuovoTableStyle td {
+.popupLegendaEquipDettVeicoloNuovoPanelCls {
+  background-color: #d6d6dc !important;
+  border: 0 !important;
+  border-radius: 0.8em !important;
+}
+
+.closeLegendaEquipDettVeicoloNuovoButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/17new-ipad_infocar_done_03_big.png),
+    $param-img-size: 15px 15px,
+    $param-margin: 8px 8px 0px 0px);
+}
+
+table.testoLegendaEquipDettVeicoloNuovoTableCls td {
   padding: 4px !important;
   height: 20px !important;
 }
 
+/* DA CANCELLARE
 .statoLiberoEquipDettVeicoloNuovoDataItemButtonCls {
-  background-image: url(../images/stato_libero.jpg);
+  background-image: url(../images/35-ipad_infocar_done_35.png);
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1725,7 +1738,7 @@ table.testoLegendaEquipDettVeicoloNuovoTableStyle td {
 }
 
 .statoSelezEquipDettVeicoloNuovoDataItemButtonCls {
-  background-image: url(../images/stato_selez.png);
+  background-image: url(../images/35-ipad_infocar_done_44.png);
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1734,7 +1747,7 @@ table.testoLegendaEquipDettVeicoloNuovoTableStyle td {
 }
 
 .statoInclusoEquipDettVeicoloNuovoDataItemButtonCls {
-  background-image: url(../images/stato_incluso.jpg);
+  background-image: url(../images/35-ipad_infocar_done_42.png);
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1743,7 +1756,7 @@ table.testoLegendaEquipDettVeicoloNuovoTableStyle td {
 }
 
 .statoNonDispEquipDettVeicoloNuovoDataItemButtonCls {
-  background-image: url(../images/stato_non_disp.jpg);
+  background-image: url(../images/35-ipad_infocar_done_38.png);
   background-size: 25px 25px;
   background-repeat: no-repeat;
   background-position: center center;
@@ -1767,6 +1780,33 @@ table.testoLegendaEquipDettVeicoloNuovoTableStyle td {
   background-position: center center;
   width: 35px;
   height: 35px;
+}
+*/
+
+
+/* Popup Selezione Automatica Equipaggiamenti */
+.popupEquipSelAutomaticaDettVeicoloNuovoPanelCls {
+  background-color: #d6d6dc !important;
+  border: 0 !important;
+  border-radius: 0.8em !important;
+}
+
+.closeEquipSelAutomaticaDettVeicoloNuovoButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/17new-ipad_infocar_done_03_big.png),
+    $param-img-size: 15px 15px,
+    $param-margin: 8px 8px 0px 0px);
+}
+
+.msgEquipSelAutomaticaDettVeicoloNuovoLabelCls {
+  font-size: 0.75em;
+  font-weight: bold;
+  margin: 4px 22px 0px 22px;
+}
+
+.equipSelAutomaticaDettVeicoloNuovoDataviewCls {
+  font-size: 0.75em;
+  margin: 0px 22px 8px 22px;
 }
 
 
