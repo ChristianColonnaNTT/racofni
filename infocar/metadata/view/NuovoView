@@ -2352,9 +2352,15 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "centered": null,
-                                                "designer|displayName": "HBoxContainer",
+                                                "cls": [
+                                                    "equipDettVeicoloNuovoToolbarCls"
+                                                ],
+                                                "container|align": "center",
+                                                "designer|displayName": "EquipDettVeicoloNuovoToolbar",
                                                 "docked": null,
-                                                "layout": "hbox"
+                                                "height": 60,
+                                                "layout": "hbox",
+                                                "width": "100%"
                                             },
                                             "name": "MyContainer24",
                                             "designerId": "f89bfe3c-7bb0-4f23-b658-58925b13e97a",
@@ -2367,25 +2373,16 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "annullaPopupEquipVeicoloNuovoButtonCls"
+                                                        ],
                                                         "designer|displayName": "AnnullaPopupEquipVeicoloNuovoButton",
+                                                        "docked": "left",
                                                         "itemId": "annullaPopupEquipVeicoloNuovoButton",
-                                                        "text": "Annulla tutto"
+                                                        "text": "ANNULLA"
                                                     },
                                                     "name": "MyButton15",
                                                     "designerId": "abbf7815-bc1b-4fba-99f4-767c870a06b7"
-                                                },
-                                                {
-                                                    "type": "Ext.Spacer",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "width": 100
-                                                    },
-                                                    "name": "MySpacer6",
-                                                    "designerId": "c2818d80-f1d4-4e1c-b019-250cfe89db9d"
                                                 },
                                                 {
                                                     "type": "Ext.Button",
@@ -2395,9 +2392,13 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "confermaPopupEquipVeicoloNuovoButtonCls"
+                                                        ],
                                                         "designer|displayName": "ConfermaPopupEquipVeicoloNuovoButton",
+                                                        "docked": "right",
                                                         "itemId": "confermaPopupEquipVeicoloNuovoButton",
-                                                        "text": "Scegli"
+                                                        "text": "CONFERMA"
                                                     },
                                                     "name": "MyButton16",
                                                     "designerId": "68414cfd-be67-4d06-9d63-daf6eff198a9"

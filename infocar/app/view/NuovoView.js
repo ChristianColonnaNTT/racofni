@@ -937,21 +937,27 @@ Ext.define('Infocar.view.NuovoView', {
                                             },
                                             {
                                                 xtype: 'container',
-                                                layout: 'hbox',
+                                                cls: 'equipDettVeicoloNuovoToolbarCls',
+                                                height: 60,
+                                                width: '100%',
+                                                layout: {
+                                                    type: 'hbox',
+                                                    align: 'center'
+                                                },
                                                 items: [
                                                     {
                                                         xtype: 'button',
+                                                        cls: 'annullaPopupEquipVeicoloNuovoButtonCls',
+                                                        docked: 'left',
                                                         itemId: 'annullaPopupEquipVeicoloNuovoButton',
-                                                        text: 'Annulla tutto'
-                                                    },
-                                                    {
-                                                        xtype: 'spacer',
-                                                        width: 100
+                                                        text: 'ANNULLA'
                                                     },
                                                     {
                                                         xtype: 'button',
+                                                        cls: 'confermaPopupEquipVeicoloNuovoButtonCls',
+                                                        docked: 'right',
                                                         itemId: 'confermaPopupEquipVeicoloNuovoButton',
-                                                        text: 'Scegli'
+                                                        text: 'CONFERMA'
                                                     }
                                                 ]
                                             }

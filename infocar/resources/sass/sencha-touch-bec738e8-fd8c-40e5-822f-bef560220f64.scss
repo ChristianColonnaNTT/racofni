@@ -1029,14 +1029,14 @@ div.descrizione4VeicoloRicStockRisultatoDataViewDivCls {
 
 table.equipDettVeicoloUsatoDataViewTableCls {
   width: 100% !important;
-  font-size: 1em;
+  font-size: 0.75em;
 }
 
 td.chkboxEquipDettVeicoloUsatoDataViewTdCls {
   width: 10% !important;
   height: 30px !important;
-  background-image: url(../images/stato_libero.jpg) !important;
-  background-size: 25px 25px !important;
+  background-image: url(../images/15-16-ipad_infocar_04.png) !important;
+  background-size: 22px 22px !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   padding: 0px 5px 0px 5px !important;
@@ -1065,8 +1065,8 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 */
 
 .selezioneEquipDettVeicoloUsatoDataViewSelectedCls td.chkboxEquipDettVeicoloUsatoDataViewTdCls {
-  background-image: url(../images/stato_selez.png) !important;
-  background-size: 25px 25px !important;
+  background-image: url(../images/15-16-ipad_infocar_06.png) !important;
+  background-size: 22px 22px !important;
   background-repeat: no-repeat  !important;
   background-position: center center !important;
 }
@@ -1507,7 +1507,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 {
   background-color: #f8f8f8;
   width: 100%;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: normal;
   padding: 10px 0px 0px 32px;
   margin: 0;
@@ -1552,14 +1552,14 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 
 table.popupEquipDettVeicoloNuovoDataViewTableCls {
   width: 100% !important;
-  font-size: 1em;
+  font-size: 0.75em;
 }
 
 td.chkboxPopupEquipDettVeicoloNuovoDataViewTdCls {
   width: 10% !important;
   height: 30px !important;
   background-image: url(../images/15-16-ipad_infocar_04.png) !important;
-  background-size: 25px 25px !important;
+  background-size: 22px 22px !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
   padding: 0px 5px 0px 5px !important;
@@ -1594,21 +1594,29 @@ td.prezzoPopupEquipDettVeicoloNuovoDataViewTdCls {
   background-position: center center !important;
 }
 
+.equipDettVeicoloNuovoToolbarCls {
+  background-color: $infocar-border-color;
+}
 
+.annullaPopupEquipVeicoloNuovoButtonCls
+{
+  @include infocar-button-red();
+  margin-top: 15px;
+  margin-left: 10px;
+}
 
+.confermaPopupEquipVeicoloNuovoButtonCls
+{
+  @include infocar-button-red();
+  margin-top: 15px;
+  margin-right: 10px;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.annullaPopupEquipVeicoloNuovoButtonCls.x-dock-item.x-unsized,
+.confermaPopupEquipVeicoloNuovoButtonCls.x-dock-item.x-unsized
+{
+  @include infocar-box-orient(horizontal);
+}
 
 
 /* Legenda Equipaggiamenti Dettaglio Veicolo Nuovo */
@@ -1681,52 +1689,12 @@ table.testoLegendaEquipDettVeicoloNuovoTableStyle td {
 }
 
 
-/* Popup equipaggiamenti ricorsivi dettaglio veicolo nuovo */
-table.equipPopupDettVeicoloNuovoDataViewTableCls {
-  width: 100% !important;
-}
-
-td.chkboxPopupEquipDettVeicoloNuovoDataViewTdCls {
-  width: 10% !important;
-  height: 30px !important;
-  background-image: url(../images/stato_libero.jpg) !important;
-  background-size: 25px 25px !important;
-  background-repeat: no-repeat !important;
-  background-position: center center !important;
-  padding: 0px 5px 0px 5px !important;
-  text-align: center !important;
-}
-
-td.descrizionePopupEquipDettVeicoloNuovoDataViewTdCls {
-  width: 75% !important;
-  height: 30px !important;
-  text-align: left !important;
-}
-
-td.prezzoPopupEquipDettVeicoloNuovoDataViewTdCls {
-  width: 15% !important;
-  height: 30px !important;
-  padding: 0px 5px 0px 5px !important;
-  text-align: center !important;
-}
-
-.selezionePopupEquipDettVeicoloNuovoDataViewSelectedCls {
-  background-image: none !important;
-  background-color: #cccccc !important;
-}
-
-.selezionePopupEquipDettVeicoloNuovoDataViewSelectedCls td.chkboxPopupEquipDettVeicoloNuovoDataViewTdCls {
-  background-image: url(../images/stato_selez.png) !important;
-  background-size: 25px 25px !important;
-  background-repeat: no-repeat  !important;
-  background-position: center center !important;
-}
 
 .prezziInfoVeicoloStockOverlayContainerCls {
   /* right: -92% */
 }
 
-/* Prova */
+
 /* ui mixin: infocar-toolbar for of type: sencha-toolbar-ui */
 
 @include sencha-toolbar-ui(
