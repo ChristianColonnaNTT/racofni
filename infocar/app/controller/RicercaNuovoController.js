@@ -76,7 +76,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
                 keyup: 'onCercaDettVeicoloTextboxKeyup'
             },
             "button#infoEquipDettVeicoloNuovoDataItemButton": {
-                tap: 'onInformEquipDettVeicoloDataitemButtonTap'
+                tap: 'DACANCELLAREonInformEquipDettVeicoloDataitemButtonTap'
             },
             "button#closeInformEquipDettVeicoloNuovoButton": {
                 tap: 'onCloseInformEquipDettVeicoloButtonTap'
@@ -499,7 +499,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         this.showEquipaggiamenti(false);
     },
 
-    onInformEquipDettVeicoloDataitemButtonTap: function(button, e, eOpts) {
+    DACANCELLAREonInformEquipDettVeicoloDataitemButtonTap: function(button, e, eOpts) {
         var listItem = button.up('#equipDettVeicoloNuovoListItem');
         var equipModel = listItem.getRecord();
         var equipCodice = equipModel.get('codice');
@@ -1600,6 +1600,15 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             }
         });
 
+        equipList.addListener({
+            tap: {
+                fn: this.onInformEquipDettVeicoloDataitemButtonTap,
+                element: 'innerElement',
+                delegate: "img[class='infoEquipDettVeicoloNuovoImgCls']",
+                scope: this
+            }
+        });
+
         /*
         var list = new Ext.List({
             tpl: '<tpl for="."><li><img src="{avatar}" /><h1>{name}</h1></li></tpl>',
@@ -1646,6 +1655,52 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         //console.log(equipModel);
 
         this.changeStatoEquipDettVeicolo(equipModel);
+    },
+
+    onInformEquipDettVeicoloDataitemButtonTap: function(e, node) {
+        // Leggo il codice dell'equipaggiamento valorizzato nel tag all'interno del XTemplate
+        var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');
+        var equipCodice = e.target.getAttribute('codice');
+        var equipModel = equipStore.findRecord('codice', equipCodice, 0, false, true, true);
+
+        /*
+        var listItem = button.up('#equipDettVeicoloNuovoListItem');
+        var equipModel = listItem.getRecord();
+        var equipCodice = equipModel.get('codice');
+        */
+
+        var informEquipPanel = Ext.ComponentQuery.query('#popupInformEquipDettVeicoloNuovoPanel')[0];
+
+        var informEquipStore = Ext.data.StoreManager.lookup('InformEquipDettVeicoloNuovoStore');
+
+        informEquipStore.load({
+            params: {
+                equipaggiamento_codice: equipCodice
+            },
+            callback: function (records, operation, success) {
+                if(!success){
+                    Infocar.app.showLoadErrorMessage(operation);
+                } else {
+                    var responseData = Ext.decode(operation.getResponse().responseText,false);
+
+                    if(responseData.message !== null){
+                        Ext.Msg.alert("Attenzione", responseData.message);
+                    }
+
+                    var informEquipModel = informEquipStore.getAt(0);
+
+                    var testoInformEquipContainer = informEquipPanel.down('#testoInformEquipDettVeicoloNuovoContainer');
+                    testoInformEquipContainer.getTpl().equipaggiamentoSelez = equipModel.get('descrizione');
+                    testoInformEquipContainer.setData(informEquipModel.raw);
+
+                    testoInformEquipContainer.getScrollable().getScroller().scrollTo(0, 0, false);
+
+                    informEquipPanel.show();
+                }
+            },
+            scope: this
+        });
+
     }
 
 });

@@ -34,7 +34,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 2",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "N",
             "order": 3
         },
@@ -46,7 +46,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 2",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "N",
             "order": 4
         },
@@ -70,7 +70,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 2",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 6
         },
@@ -190,7 +190,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 16
         },
@@ -310,7 +310,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 26
         },
@@ -789,7 +789,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 1016
         },
@@ -909,7 +909,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 1026
         },
@@ -1029,7 +1029,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 5",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 1036
         },
@@ -1148,7 +1148,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 6",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 1046
         },
@@ -1268,7 +1268,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 2",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 206
         },
@@ -1388,7 +1388,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 2016
         },
@@ -1508,7 +1508,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 2026
         },
@@ -1628,7 +1628,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 5",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 2036
         },
@@ -1747,7 +1747,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 6",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 2046
         },
@@ -1867,7 +1867,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 2",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 306
         },
@@ -1987,7 +1987,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 3016
         },
@@ -2107,7 +2107,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 4",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 3026
         },
@@ -2227,7 +2227,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 5",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 3036
         },
@@ -2346,7 +2346,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 6",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "4",
             "abbinamentoFlag": "S",
             "order": 3046
         },

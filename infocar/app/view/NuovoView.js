@@ -690,7 +690,7 @@ Ext.define('Infocar.view.NuovoView', {
                                                     '    </td>',
                                                     '    <td class="infoEquipDettVeicoloNuovoTdCls">',
                                                     '      <tpl if="infoFlag == \'S\'">',
-                                                    '        <img src="resources/images/35-ipad_infocar_done_50.png" class="infoEquipDettVeicoloNuovoImgCls" codice="{codice}">',
+                                                    '        <img src="resources/images/info_new.png" class="infoEquipDettVeicoloNuovoImgCls" codice="{codice}">',
                                                     '      </tpl>',
                                                     '    </td>',
                                                     '    <td class="descEquipDettVeicoloNuovoTdCls"><span class="descEquipDettVeicoloNuovoSpanCls" codice="{codice}">{descrizione}</span></td>',
@@ -704,89 +704,6 @@ Ext.define('Infocar.view.NuovoView', {
                                                 grouped: true,
                                                 itemHeight: 50,
                                                 striped: true
-                                            },
-                                            {
-                                                xtype: 'panel',
-                                                centered: true,
-                                                height: 400,
-                                                hidden: true,
-                                                itemId: 'popupInformEquipDettVeicoloNuovoPanel',
-                                                width: 600,
-                                                hideOnMaskTap: true,
-                                                layout: 'vbox',
-                                                modal: true,
-                                                items: [
-                                                    {
-                                                        xtype: 'container',
-                                                        height: 50,
-                                                        itemId: 'titleBarInformEquipDettVeicoloNuovoContainer',
-                                                        width: '100%',
-                                                        layout: 'hbox',
-                                                        items: [
-                                                            {
-                                                                xtype: 'container',
-                                                                flex: 1,
-                                                                html: 'Info',
-                                                                itemId: 'titoloInformEquipDettVeicoloNuovoLabel'
-                                                            },
-                                                            {
-                                                                xtype: 'button',
-                                                                docked: 'right',
-                                                                itemId: 'closeInformEquipDettVeicoloNuovoButton',
-                                                                iconCls: 'star'
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        xtype: 'container',
-                                                        height: 320,
-                                                        itemId: 'testoInformEquipDettVeicoloNuovoContainer',
-                                                        margin: 10,
-                                                        tpl: Ext.create('Ext.XTemplate', 
-                                                            '<tpl if="typeof this.livello !=\'undefined\'">',
-                                                            '  {% ++this.livello; %}',
-                                                            '<tpl else>',
-                                                            '  {% this.livello=1; %}',
-                                                            '  <table style="width: 100%; background-color: #cccccc;">',
-                                                            '    <tr>',
-                                                            '      <td style="width: 20%; text-align: center; padding: 5px 10px;">E I V</td>',
-                                                            '      <td style="width: 80%; text-align: left; padding: 5px 10px;">{[this.equipaggiamentoSelez]}</td>',
-                                                            '    </tr>',
-                                                            '  </table>',
-                                                            '</tpl>',
-                                                            '<tpl for="items">',
-                                                            '    <tpl if="this.livello==1">',
-                                                            '      <tpl if="items">',
-                                                            '        <div style="background-color: #cccccc; margin: 10px 0px; padding: 5px 10px;">{descrizione}</div>',
-                                                            '        {[this.recurse(values)]}',
-                                                            '      <tpl else>',
-                                                            '        <table style="width: 100%;">',
-                                                            '          <tr>',
-                                                            '            <td style="width: 20%; text-align: center; padding: 5px 10px;"><img src="{eivUrlImg}"></td>',
-                                                            '            <td style="width: 80%; text-align: left; padding: 5px 10px;">{descrizione}</td>',
-                                                            '          </tr>',
-                                                            '        </table>',
-                                                            '      </tpl>',
-                                                            '    <tpl else>',
-                                                            '      <div style="margin: 10px;">',
-                                                            '        <span style="height: 20px;">- {descrizione}</span>',
-                                                            '        <tpl if="items">',
-                                                            '          {[this.recurse(values)]}',
-                                                            '        </tpl>',
-                                                            '      </div>',
-                                                            '    </tpl>',
-                                                            '</tpl>',
-                                                            '{% if (!this.livello || --this.livello < 1) delete this.livello; %}',
-                                                            '',
-                                                            {
-                                                                recurse: function(values) {
-                                                                    return this.apply(values);
-                                                                }
-                                                            }
-                                                        ),
-                                                        scrollable: 'vertical'
-                                                    }
-                                                ]
                                             },
                                             {
                                                 xtype: 'panel',
@@ -821,6 +738,97 @@ Ext.define('Infocar.view.NuovoView', {
                                                         margin: '0 0 0 20'
                                                     }
                                                 ]
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'panel',
+                                        centered: true,
+                                        cls: 'popupInformEquipDettVeicoloNuovoPanelCls',
+                                        height: 400,
+                                        hidden: true,
+                                        itemId: 'popupInformEquipDettVeicoloNuovoPanel',
+                                        width: 600,
+                                        hideOnMaskTap: true,
+                                        layout: 'vbox',
+                                        modal: true,
+                                        items: [
+                                            {
+                                                xtype: 'container',
+                                                cls: 'titleBarInformEquipDettVeicoloNuovoContainerCls',
+                                                height: 52,
+                                                itemId: 'titleBarInformEquipDettVeicoloNuovoContainer',
+                                                width: '100%',
+                                                layout: {
+                                                    type: 'hbox',
+                                                    align: 'center'
+                                                },
+                                                items: [
+                                                    {
+                                                        xtype: 'container',
+                                                        flex: 1,
+                                                        cls: 'titoloInformEquipDettVeicoloNuovoLabelCls',
+                                                        html: 'Info',
+                                                        itemId: 'titoloInformEquipDettVeicoloNuovoLabel'
+                                                    },
+                                                    {
+                                                        xtype: 'button',
+                                                        baseCls: 'closeInformEquipDettVeicoloNuovoButtonCls',
+                                                        height: 12,
+                                                        itemId: 'closeInformEquipDettVeicoloNuovoButton',
+                                                        width: 12
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                xtype: 'container',
+                                                cls: 'testoInformEquipDettVeicoloNuovoContainerCls',
+                                                height: 320,
+                                                itemId: 'testoInformEquipDettVeicoloNuovoContainer',
+                                                margin: 10,
+                                                tpl: Ext.create('Ext.XTemplate', 
+                                                    '<tpl if="typeof this.livello !=\'undefined\'">',
+                                                    '  {% ++this.livello; %}',
+                                                    '<tpl else>',
+                                                    '  {% this.livello=1; %}',
+                                                    '  <table class="titoloTestoInformEquipDettVeicoloNuovoTableCls">',
+                                                    '    <tr>',
+                                                    '      <td class="eivTitoloTestoInformEquipDettVeicoloNuovoTdCls">E I V</td>',
+                                                    '      <td class="descEquipTitoloTestoInformEquipDettVeicoloNuovoTdCls">{[this.equipaggiamentoSelez]}</td>',
+                                                    '    </tr>',
+                                                    '  </table>',
+                                                    '</tpl>',
+                                                    '<tpl for="items">',
+                                                    '    <tpl if="this.livello==1">',
+                                                    '      <tpl if="items">',
+                                                    '        <div class="descEquipLiv1TestoInformEquipDettVeicoloNuovoDivCls">{descrizione}</div>',
+                                                    '        {[this.recurse(values)]}',
+                                                    '      <tpl else>',
+                                                    '        <table class="equipLiv1TestoInformEquipDettVeicoloNuovoTableCls">',
+                                                    '          <tr>',
+                                                    '            <td class="imgEquipLiv1InformEquipDettVeicoloNuovoTdCls"><img src="{eivUrlImg}"></td>',
+                                                    '            <td class="descEquipLiv1InformEquipDettVeicoloNuovoTdCls">{descrizione}</td>',
+                                                    '          </tr>',
+                                                    '        </table>',
+                                                    '      </tpl>',
+                                                    '    <tpl else>',
+                                                    '      <div class="equipTestoInformEquipDettVeicoloNuovoDivCls">',
+                                                    '        <span class="descEquipTestoInformEquipDettVeicoloNuovoSpanCls">- {descrizione}</span>',
+                                                    '        <tpl if="items">',
+                                                    '          {[this.recurse(values)]}',
+                                                    '        </tpl>',
+                                                    '      </div>',
+                                                    '    </tpl>',
+                                                    '</tpl>',
+                                                    '{% if (!this.livello || --this.livello < 1) delete this.livello; %}',
+                                                    '',
+                                                    {
+                                                        recurse: function(values) {
+                                                            return this.apply(values);
+                                                        }
+                                                    }
+                                                ),
+                                                scrollable: 'vertical'
                                             }
                                         ]
                                     },

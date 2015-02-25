@@ -1782,7 +1782,7 @@
                                                             "    </td>",
                                                             "    <td class=\"infoEquipDettVeicoloNuovoTdCls\">",
                                                             "      <tpl if=\"infoFlag == 'S'\">",
-                                                            "        <img src=\"resources/images/35-ipad_infocar_done_50.png\" class=\"infoEquipDettVeicoloNuovoImgCls\" codice=\"{codice}\">",
+                                                            "        <img src=\"resources/images/info_new.png\" class=\"infoEquipDettVeicoloNuovoImgCls\" codice=\"{codice}\">",
                                                             "      </tpl>",
                                                             "    </td>",
                                                             "    <td class=\"descEquipDettVeicoloNuovoTdCls\"><span class=\"descEquipDettVeicoloNuovoSpanCls\" codice=\"{codice}\">{descrizione}</span></td>",
@@ -1793,177 +1793,6 @@
                                                     },
                                                     "name": "itemTpl",
                                                     "designerId": "3a92f950-98f7-4de3-948a-6f58a5eb3fcb"
-                                                }
-                                            ]
-                                        },
-                                        {
-                                            "type": "Ext.Panel",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "centered": true,
-                                                "designer|displayName": "PopupInformEquipDettVeicoloNuovoPanel",
-                                                "height": 400,
-                                                "hidden": true,
-                                                "hideOnMaskTap": true,
-                                                "itemId": "popupInformEquipDettVeicoloNuovoPanel",
-                                                "layout": "vbox",
-                                                "modal": true,
-                                                "scrollable": null,
-                                                "width": 600
-                                            },
-                                            "name": "MyPanel3",
-                                            "designerId": "f5514563-c3ac-4562-9252-0e1b0725e5d0",
-                                            "cn": [
-                                                {
-                                                    "type": "Ext.Container",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "container|align": null,
-                                                        "designer|displayName": "TitleBarInformEquipDettVeicoloNuovoContainer",
-                                                        "docked": null,
-                                                        "height": 50,
-                                                        "itemId": "titleBarInformEquipDettVeicoloNuovoContainer",
-                                                        "layout": "hbox",
-                                                        "layout|flex": null,
-                                                        "width": "100%"
-                                                    },
-                                                    "name": "MyContainer95",
-                                                    "designerId": "3e2241ec-9157-4bbc-9d42-63236ab3b7d8",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.Container",
-                                                            "reference": {
-                                                                "name": "items",
-                                                                "type": "array"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "designer|displayName": "TitoloInformEquipDettVeicoloNuovoLabel",
-                                                                "html": "Info",
-                                                                "itemId": "titoloInformEquipDettVeicoloNuovoLabel",
-                                                                "layout|flex": 1
-                                                            },
-                                                            "name": "MyContainer96",
-                                                            "designerId": "15d1a45e-fdda-4f5f-ba82-295be5c05429"
-                                                        },
-                                                        {
-                                                            "type": "Ext.Button",
-                                                            "reference": {
-                                                                "name": "items",
-                                                                "type": "array"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "designer|displayName": "CloseInformEquipDettVeicoloNuovoButton",
-                                                                "docked": "right",
-                                                                "iconCls": "star",
-                                                                "itemId": "closeInformEquipDettVeicoloNuovoButton",
-                                                                "text": null
-                                                            },
-                                                            "name": "MyButton28",
-                                                            "designerId": "bbc71a8b-a541-49b0-8bf2-a64559b23322"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "Ext.Container",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "designer|displayName": "TestoInformEquipDettVeicoloNuovoContainer",
-                                                        "height": 320,
-                                                        "hidden": null,
-                                                        "itemId": "testoInformEquipDettVeicoloNuovoContainer",
-                                                        "layout|flex": null,
-                                                        "margin": 10,
-                                                        "scrollable": "vertical"
-                                                    },
-                                                    "name": "MyContainer93",
-                                                    "designerId": "3df669be-753a-4dca-9ccf-b6d17ae2b8a5",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.XTemplate",
-                                                            "reference": {
-                                                                "name": "tpl",
-                                                                "type": "object"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "designer|displayName": "tpl",
-                                                                "implHandler": [
-                                                                    "<tpl if=\"typeof this.livello !='undefined'\">",
-                                                                    "  {% ++this.livello; %}",
-                                                                    "<tpl else>",
-                                                                    "  {% this.livello=1; %}",
-                                                                    "  <table style=\"width: 100%; background-color: #cccccc;\">",
-                                                                    "    <tr>",
-                                                                    "      <td style=\"width: 20%; text-align: center; padding: 5px 10px;\">E I V</td>",
-                                                                    "      <td style=\"width: 80%; text-align: left; padding: 5px 10px;\">{[this.equipaggiamentoSelez]}</td>",
-                                                                    "    </tr>",
-                                                                    "  </table>",
-                                                                    "</tpl>",
-                                                                    "<tpl for=\"items\">",
-                                                                    "    <tpl if=\"this.livello==1\">",
-                                                                    "      <tpl if=\"items\">",
-                                                                    "        <div style=\"background-color: #cccccc; margin: 10px 0px; padding: 5px 10px;\">{descrizione}</div>",
-                                                                    "        {[this.recurse(values)]}",
-                                                                    "      <tpl else>",
-                                                                    "        <table style=\"width: 100%;\">",
-                                                                    "          <tr>",
-                                                                    "            <td style=\"width: 20%; text-align: center; padding: 5px 10px;\"><img src=\"{eivUrlImg}\"></td>",
-                                                                    "            <td style=\"width: 80%; text-align: left; padding: 5px 10px;\">{descrizione}</td>",
-                                                                    "          </tr>",
-                                                                    "        </table>",
-                                                                    "      </tpl>",
-                                                                    "    <tpl else>",
-                                                                    "      <div style=\"margin: 10px;\">",
-                                                                    "        <span style=\"height: 20px;\">- {descrizione}</span>",
-                                                                    "        <tpl if=\"items\">",
-                                                                    "          {[this.recurse(values)]}",
-                                                                    "        </tpl>",
-                                                                    "      </div>",
-                                                                    "    </tpl>",
-                                                                    "</tpl>",
-                                                                    "{% if (!this.livello || --this.livello < 1) delete this.livello; %}",
-                                                                    ""
-                                                                ]
-                                                            },
-                                                            "name": "tpl",
-                                                            "designerId": "ffd2a93b-599a-4196-b6c6-10c1e7692292",
-                                                            "cn": [
-                                                                {
-                                                                    "type": "templatefunction",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|params": [
-                                                                            "values"
-                                                                        ],
-                                                                        "fn": "recurse",
-                                                                        "implHandler": [
-                                                                            "return this.apply(values);"
-                                                                        ]
-                                                                    },
-                                                                    "name": "recurse",
-                                                                    "designerId": "0c8a62dd-8d38-4cab-b3f1-fbdd79fb4591"
-                                                                }
-                                                            ]
-                                                        }
-                                                    ]
                                                 }
                                             ]
                                         },
@@ -2045,6 +1874,193 @@
                                                     },
                                                     "name": "MyLabel37",
                                                     "designerId": "667eebfa-bf4c-4556-a233-653527dcaad6"
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Panel",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "centered": true,
+                                        "cls": [
+                                            "popupInformEquipDettVeicoloNuovoPanelCls"
+                                        ],
+                                        "designer|displayName": "PopupInformEquipDettVeicoloNuovoPanel",
+                                        "height": 400,
+                                        "hidden": true,
+                                        "hideOnMaskTap": true,
+                                        "itemId": "popupInformEquipDettVeicoloNuovoPanel",
+                                        "layout": "vbox",
+                                        "modal": true,
+                                        "scrollable": null,
+                                        "width": 600
+                                    },
+                                    "name": "MyPanel3",
+                                    "designerId": "f5514563-c3ac-4562-9252-0e1b0725e5d0",
+                                    "cn": [
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": [
+                                                    "titleBarInformEquipDettVeicoloNuovoContainerCls"
+                                                ],
+                                                "container|align": "center",
+                                                "designer|displayName": "TitleBarInformEquipDettVeicoloNuovoContainer",
+                                                "docked": null,
+                                                "height": 52,
+                                                "itemId": "titleBarInformEquipDettVeicoloNuovoContainer",
+                                                "layout": "hbox",
+                                                "layout|flex": null,
+                                                "width": "100%"
+                                            },
+                                            "name": "MyContainer95",
+                                            "designerId": "3e2241ec-9157-4bbc-9d42-63236ab3b7d8",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "titoloInformEquipDettVeicoloNuovoLabelCls"
+                                                        ],
+                                                        "designer|displayName": "TitoloInformEquipDettVeicoloNuovoLabel",
+                                                        "html": "Info",
+                                                        "itemId": "titoloInformEquipDettVeicoloNuovoLabel",
+                                                        "layout|flex": 1
+                                                    },
+                                                    "name": "MyContainer96",
+                                                    "designerId": "15d1a45e-fdda-4f5f-ba82-295be5c05429"
+                                                },
+                                                {
+                                                    "type": "Ext.Button",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "badgeCls": null,
+                                                        "baseCls": "closeInformEquipDettVeicoloNuovoButtonCls",
+                                                        "designer|displayName": "CloseInformEquipDettVeicoloNuovoButton",
+                                                        "docked": null,
+                                                        "height": 12,
+                                                        "iconCls": null,
+                                                        "itemId": "closeInformEquipDettVeicoloNuovoButton",
+                                                        "text": null,
+                                                        "width": 12
+                                                    },
+                                                    "name": "MyButton28",
+                                                    "designerId": "bbc71a8b-a541-49b0-8bf2-a64559b23322"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": [
+                                                    "testoInformEquipDettVeicoloNuovoContainerCls"
+                                                ],
+                                                "designer|displayName": "TestoInformEquipDettVeicoloNuovoContainer",
+                                                "height": 320,
+                                                "hidden": null,
+                                                "itemId": "testoInformEquipDettVeicoloNuovoContainer",
+                                                "layout|flex": null,
+                                                "margin": 10,
+                                                "scrollable": "vertical"
+                                            },
+                                            "name": "MyContainer93",
+                                            "designerId": "3df669be-753a-4dca-9ccf-b6d17ae2b8a5",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.XTemplate",
+                                                    "reference": {
+                                                        "name": "tpl",
+                                                        "type": "object"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "tpl",
+                                                        "implHandler": [
+                                                            "<tpl if=\"typeof this.livello !='undefined'\">",
+                                                            "  {% ++this.livello; %}",
+                                                            "<tpl else>",
+                                                            "  {% this.livello=1; %}",
+                                                            "  <table class=\"titoloTestoInformEquipDettVeicoloNuovoTableCls\">",
+                                                            "    <tr>",
+                                                            "      <td class=\"eivTitoloTestoInformEquipDettVeicoloNuovoTdCls\">E I V</td>",
+                                                            "      <td class=\"descEquipTitoloTestoInformEquipDettVeicoloNuovoTdCls\">{[this.equipaggiamentoSelez]}</td>",
+                                                            "    </tr>",
+                                                            "  </table>",
+                                                            "</tpl>",
+                                                            "<tpl for=\"items\">",
+                                                            "    <tpl if=\"this.livello==1\">",
+                                                            "      <tpl if=\"items\">",
+                                                            "        <div class=\"descEquipLiv1TestoInformEquipDettVeicoloNuovoDivCls\">{descrizione}</div>",
+                                                            "        {[this.recurse(values)]}",
+                                                            "      <tpl else>",
+                                                            "        <table class=\"equipLiv1TestoInformEquipDettVeicoloNuovoTableCls\">",
+                                                            "          <tr>",
+                                                            "            <td class=\"imgEquipLiv1InformEquipDettVeicoloNuovoTdCls\"><img src=\"{eivUrlImg}\"></td>",
+                                                            "            <td class=\"descEquipLiv1InformEquipDettVeicoloNuovoTdCls\">{descrizione}</td>",
+                                                            "          </tr>",
+                                                            "        </table>",
+                                                            "      </tpl>",
+                                                            "    <tpl else>",
+                                                            "      <div class=\"equipTestoInformEquipDettVeicoloNuovoDivCls\">",
+                                                            "        <span class=\"descEquipTestoInformEquipDettVeicoloNuovoSpanCls\">- {descrizione}</span>",
+                                                            "        <tpl if=\"items\">",
+                                                            "          {[this.recurse(values)]}",
+                                                            "        </tpl>",
+                                                            "      </div>",
+                                                            "    </tpl>",
+                                                            "</tpl>",
+                                                            "{% if (!this.livello || --this.livello < 1) delete this.livello; %}",
+                                                            ""
+                                                        ]
+                                                    },
+                                                    "name": "tpl",
+                                                    "designerId": "ffd2a93b-599a-4196-b6c6-10c1e7692292",
+                                                    "cn": [
+                                                        {
+                                                            "type": "templatefunction",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|params": [
+                                                                    "values"
+                                                                ],
+                                                                "fn": "recurse",
+                                                                "implHandler": [
+                                                                    "return this.apply(values);"
+                                                                ]
+                                                            },
+                                                            "name": "recurse",
+                                                            "designerId": "0c8a62dd-8d38-4cab-b3f1-fbdd79fb4591"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }

@@ -763,7 +763,7 @@
             "userConfig": {
                 "designer|controlQuery": "button#infoEquipDettVeicoloNuovoDataItemButton",
                 "designer|targetType": "Ext.Button",
-                "fn": "onInformEquipDettVeicoloDataitemButtonTap",
+                "fn": "DACANCELLAREonInformEquipDettVeicoloDataitemButtonTap",
                 "implHandler": [
                     "var listItem = button.up('#equipDettVeicoloNuovoListItem');",
                     "var equipModel = listItem.getRecord();",
@@ -804,7 +804,7 @@
                 ],
                 "name": "tap"
             },
-            "name": "onInformEquipDettVeicoloDataitemButtonTap",
+            "name": "DACANCELLAREonInformEquipDettVeicoloDataitemButtonTap",
             "designerId": "79364f63-8380-4d69-b767-32f1f0a9dae7"
         },
         {
@@ -2420,6 +2420,15 @@
                     "    }",
                     "});",
                     "",
+                    "equipList.addListener({",
+                    "    tap: {",
+                    "        fn: this.onInformEquipDettVeicoloDataitemButtonTap,",
+                    "        element: 'innerElement',",
+                    "        delegate: \"img[class='infoEquipDettVeicoloNuovoImgCls']\",",
+                    "        scope: this",
+                    "    }",
+                    "});",
+                    "",
                     "/*",
                     "var list = new Ext.List({",
                     "    tpl: '<tpl for=\".\"><li><img src=\"{avatar}\" /><h1>{name}</h1></li></tpl>',",
@@ -2502,6 +2511,68 @@
             },
             "name": "onDescEquipDettVeicoloTap",
             "designerId": "af12063b-8ee4-4218-83a1-37f04ac06ea1"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "e",
+                    "node"
+                ],
+                "fn": "onInformEquipDettVeicoloDataitemButtonTap",
+                "implHandler": [
+                    "// Leggo il codice dell'equipaggiamento valorizzato nel tag all'interno del XTemplate",
+                    "var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');",
+                    "var equipCodice = e.target.getAttribute('codice');",
+                    "var equipModel = equipStore.findRecord('codice', equipCodice, 0, false, true, true);",
+                    "",
+                    "/*",
+                    "var listItem = button.up('#equipDettVeicoloNuovoListItem');",
+                    "var equipModel = listItem.getRecord();",
+                    "var equipCodice = equipModel.get('codice');",
+                    "*/",
+                    "",
+                    "var informEquipPanel = Ext.ComponentQuery.query('#popupInformEquipDettVeicoloNuovoPanel')[0];",
+                    "",
+                    "var informEquipStore = Ext.data.StoreManager.lookup('InformEquipDettVeicoloNuovoStore');",
+                    "",
+                    "informEquipStore.load({",
+                    "    params: {",
+                    "        equipaggiamento_codice: equipCodice",
+                    "    },",
+                    "    callback: function (records, operation, success) {",
+                    "        if(!success){",
+                    "            Infocar.app.showLoadErrorMessage(operation);",
+                    "        } else {",
+                    "            var responseData = Ext.decode(operation.getResponse().responseText,false);",
+                    "",
+                    "            if(responseData.message !== null){",
+                    "                Ext.Msg.alert(\"Attenzione\", responseData.message);",
+                    "            }",
+                    "",
+                    "            var informEquipModel = informEquipStore.getAt(0);",
+                    "",
+                    "            var testoInformEquipContainer = informEquipPanel.down('#testoInformEquipDettVeicoloNuovoContainer');",
+                    "            testoInformEquipContainer.getTpl().equipaggiamentoSelez = equipModel.get('descrizione');",
+                    "            testoInformEquipContainer.setData(informEquipModel.raw);",
+                    "",
+                    "            testoInformEquipContainer.getScrollable().getScroller().scrollTo(0, 0, false);",
+                    "",
+                    "            informEquipPanel.show();",
+                    "        }",
+                    "    },",
+                    "    scope: this",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "onInformEquipDettVeicoloDataitemButtonTap",
+            "designerId": "6a63ede9-3015-414d-af76-f76733e9d43b"
         }
     ]
 }

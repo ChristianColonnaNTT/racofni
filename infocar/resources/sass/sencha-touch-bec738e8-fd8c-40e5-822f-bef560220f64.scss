@@ -28,6 +28,8 @@ $infocar-risultato-ricerca-item-font: 0.75em;
 
 $infocar-form-label-margin-top: 7px;
 
+$infocar-equip-ricorsivi-font-size: 0.75em;
+
 /* latin */
 @font-face {
   font-family: 'Open Sans';
@@ -267,7 +269,7 @@ body.x-tablet {
     &.x-button-pressing {
         background-color: $param-highlight-color !important;
         background-clip: padding-box !important;
-        background-image: param-img-url !important;
+        background-image: $param-img-url !important;
         background-size: $param-img-size !important;
     }
 }
@@ -429,17 +431,6 @@ body.x-tablet {
 .titoloSezioneTopBarLabelCls {
     font-size: 1.3em !important;
     margin-left: 48px;
-}
-
-
-//Dettaglio allestimento usato
-
-.InfoVeicoloUsatoButtonCls {
-  @include infocar-button-icona(
-    $param-img-url: url(../images/info_new.png),
-    $param-img-size: 24px 24px,
-    $param-margin: 5px 0px 5px 0px
-  );
 }
 
 
@@ -1138,7 +1129,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 
 .infoVeicoloNuovoButtonLandscapeCls {
   @include infocar-button-icona(
-    $param-img-url: url(../images/35-ipad_infocar_done_50.png),
+    $param-img-url: url(../images/info_new.png),
     $param-img-size: 24px 24px,
     $param-margin: 5px 0px 5px 0px
   );
@@ -1177,7 +1168,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 
 .infoVeicoloNuovoButtonPortraitCls {
   @include infocar-button-icona(
-    $param-img-url: url(../images/35-ipad_infocar_done_50.png),
+    $param-img-url: url(../images/info_new.png),
     $param-img-size: 24px 24px,
     $param-margin: 5px 0px 5px 15px
   );
@@ -1628,6 +1619,91 @@ td.prezzoPopupEquipDettVeicoloNuovoDataViewTdCls {
 {
   @include infocar-box-orient(horizontal);
 }
+
+
+/* Popup Informazioni Equipaggiamento Dettaglio Veicolo Nuovo */
+
+.titleBarInformEquipDettVeicoloNuovoContainerCls
+{
+  background-color: #f8f8f8;
+  width: 100%;
+  padding: 10px 0px 0px 32px;
+  margin: 0;
+  border-top: 0;
+  border-bottom: 2px solid #c4c6cb;
+  border-left: 0;
+  border-right: 0;
+}
+
+.titoloInformEquipDettVeicoloNuovoLabelCls {
+  margin-left: 30px;
+  font-size: 26px;
+  font-weight: normal;
+  color: #db021f;
+}
+
+.closeInformEquipDettVeicoloNuovoButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/17new-ipad_infocar_done_03.png),
+    $param-img-size: 12px 12px,
+    $param-margin: 0px 20px 0px 0px);
+}
+
+.titoloTestoInformEquipDettVeicoloNuovoTableCls {
+  width: 100%;
+  background-color: #a0a0a5;
+  font-size: $infocar-equip-ricorsivi-font-size;
+  color: #fff;
+  border-radius: 0.2em;
+}
+
+.eivTitoloTestoInformEquipDettVeicoloNuovoTdCls {
+  width: 20%;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.descEquipTitoloTestoInformEquipDettVeicoloNuovoTdCls {
+  width: 80%;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+.descEquipLiv1TestoInformEquipDettVeicoloNuovoDivCls {
+  background-color: #a0a0a5;
+  margin: 10px 0px;
+  padding: 5px 10px;
+  border-radius: 0.2em;
+  font-size: $infocar-equip-ricorsivi-font-size;
+  color: #fff;
+}
+
+.equipLiv1TestoInformEquipDettVeicoloNuovoTableCls {
+  width: 100%;
+  font-size: $infocar-equip-ricorsivi-font-size;
+}
+
+.imgEquipLiv1InformEquipDettVeicoloNuovoTdCls {
+  width: 20%;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+.descEquipLiv1InformEquipDettVeicoloNuovoTdCls {
+  width: 80%;
+  text-align: left;
+  padding: 5px 10px;
+}
+
+.equipTestoInformEquipDettVeicoloNuovoDivCls {
+  margin: 10px;
+  font-size: 12px;
+}
+
+.descEquipTestoInformEquipDettVeicoloNuovoSpanCls {
+  height: 20px;
+}
+
 
 
 /* Legenda Equipaggiamenti Dettaglio Veicolo Nuovo */
