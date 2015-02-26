@@ -170,13 +170,10 @@ body.x-tablet {
   font-size: 0.75em;
 }
 
-.infocar-bold {
-  font-weight: bold;
-}
 
 
 
-/* Bottoni */
+/* Mixin */
 @mixin infocar-button($param-color: $infocar-button-color,
                       $param-bg-color: $infocar-button-bg-color,
                       $param-highlight-color: $infocar-button-highlight-color,
@@ -303,6 +300,9 @@ body.x-tablet {
 }
 */
 
+@mixin infocar-bold {
+  font-weight: bold;
+}
 
 
 @mixin infocar-align($param-align) {
@@ -330,6 +330,11 @@ body.x-tablet {
   -webkit-box-orient: $param-orient !important;
   -moz-box-orient: $param-orient !important;
   box-orient: $param-orient !important;
+}
+
+
+.infocar-bold {
+  @include infocar-bold();
 }
 
 
@@ -1187,7 +1192,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
   font-size: 1.25em;
 }
 
-.dettaglioVeicoloNuovoImgCls img, .infoVeicoloNuovoMiniImgCls img {
+.dettaglioVeicoloNuovoImgCls img {
   max-height: 90px;
   max-width: 134px;
   width: auto;
@@ -1888,6 +1893,188 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
   margin: 0px 22px 8px 22px;
 }
 
+
+
+/**********************/
+/* Info Veicolo Nuovo */
+/**********************/
+
+.rightInfoVeicoloNuovoContainerCls {
+  margin: 0;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 8px solid $infocar-border-color;
+  border-right: 8px solid $infocar-border-color;
+}
+
+/* Testata Portrait Info Veicolo Nuovo */
+.testataInfoVeicoloNuovoContainerPortraitCls {
+  height: 86px;
+  padding: 5px 0px 5px 0px;
+  margin: 0px 5px 0px 5px;
+  /* border-bottom: 1px solid #db021f; */
+}
+
+.infoVeicoloNuovoMiniImgCls img {
+  max-height: 47px;
+  max-width: 47px;
+  width: auto;
+  height: auto;
+}
+
+.descTestataInfoVeicoloNuovoContainerPortraitCls {
+  /* background-color: #f8f8f8; */
+  background-color: #ffffff;
+  padding: 0px 20px 0px 20px !important;
+  margin: 0;
+}
+
+.descInfoVeicoloNuovoLabelPortraitCls {
+  font-size: 1em;
+  font-weight: bold;
+  /* font-size: 1em; */
+}
+
+/* Generale Info Veicolo Nuovo */
+.generaleInfoVeicoloNuovoContainerCls {
+  padding: 5px 0px 5px 0px;
+}
+
+.testoImgInfoVeicoloNuovoContainerCls {
+  margin: 0px 5px 0px 5px;
+}
+
+.infoVeicoloNuovoImgCls img {
+  width: 313px;
+  max-width: 313px;
+  height: auto;
+}
+
+.testoInfoVeicoloNuovoLabelCls {
+  padding-left: 26px;
+}
+
+.testo1InfoVeicoloNuovoTableCls {
+  @include infocar-bold();
+}
+
+.testo2InfoVeicoloNuovoDivCls {
+  width: 100%;
+}
+
+.sintesiDatiTecniciInfoVeicoloNuovoContainerCls {
+  background-color: #f8f8f8;
+  margin-top: 25px;
+}
+
+.sintesiDatiTecniciInfoVeicoloNuovoLabelCls {
+  padding-left: 8px !important;
+}
+
+.titoloSintesiDatiTecniciInfoVeicoloNuovoDivCls {
+  color: #e30613;
+  font-size: 1.12em;
+}
+
+.descSintesiDatiTecniciInfoVeicoloNuovoDivCls {
+  margin-top: 13px;
+  font-size: 0.88em;
+}
+
+.datiTecniciInfoVeicoloNuovoButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/19-ipad-portrait_done_03.png),
+    $param-img-size: 37px 37px,
+    $param-margin: 0px 13px 0px 13px);
+}
+
+
+.sintesiEquipInfoVeicoloNuovoContainerCls {
+  background-color: #fff;
+}
+
+.sintesiEquipInfoVeicoloNuovoLabelCls {
+  padding-left: 8px !important;
+}
+
+.titoloSintesiEquipInfoVeicoloNuovoDivCls {
+  color: #e30613;
+  font-size: 1.12em;
+}
+
+.descSintesiEquipInfoVeicoloNuovoDivCls {
+  margin-top: 13px;
+  font-size: 0.88em;
+}
+
+.equipInfoVeicoloNuovoButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/19-ipad-portrait_done_06.png),
+    $param-img-size: 37px 37px,
+    $param-margin: 0px 13px 0px 13px);
+}
+
+
+.sintesiSituazioneStockVeicoloNuovoContainerCls {
+  background-color: #f8f8f8;
+}
+
+.sintesiSituazioneStockVeicoloNuovoLabelCls {
+  color: #e30613;
+  font-size: 1.12em;
+  padding-top: 18px !important;
+  padding-bottom: 10px !important;
+  padding-left: 8px !important;
+}
+
+
+.sintesiDatiStockInfoVeicoloNuovoLabelCls {
+  padding-left: 4px !important;
+  padding-right: 13px !important;
+}
+
+.sintesiDatiStockInfoVeicoloNuovoTableCls {
+  border: 0;
+  width: 100%;
+}
+
+.sintesiDatiStockInfoVeicoloNuovoTableCls td {
+  padding: 0px 9px 0px 9px;
+  margin: 0;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #fff;
+}
+
+.headerSintesiDatiStockInfoVeicoloNuovoTrCls {
+  background-color: #a0a0a5;
+  border: 1px solid #a0a0a5;
+  border-radius: 0.4em;
+  color: #fff;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+.allestimentoSintesiDatiStockInfoVeicoloNuovoTrCls {
+  background-color: #fff;
+  color: #000;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+.modelloSintesiDatiStockInfoVeicoloNuovoTrCls {
+  background-color: #f8f8f8;
+  color: #000;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+.sintesiDatiStockInfoVeicoloNuovoImgCls {
+  padding-left: 23px;
+}
 
 /* View con carousel immagini fullscreen */
 

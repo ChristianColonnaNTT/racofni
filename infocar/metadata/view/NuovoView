@@ -1022,7 +1022,7 @@
                                 "cls": [
                                     "rightDettaglioVeicoloNuovoContainerCls"
                                 ],
-                                "designer|displayName": "RightDettaglioVeicoloNuovoContainerCls",
+                                "designer|displayName": "RightDettaglioVeicoloNuovoContainer",
                                 "layout": "vbox",
                                 "layout|flex": 1
                             },
@@ -2615,7 +2615,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|displayName": "VBoxContainer",
+                                "cls": [
+                                    "rightInfoVeicoloNuovoContainerCls"
+                                ],
+                                "designer|displayName": "RightInfoVeicoloNuovoContainer",
                                 "layout": "vbox",
                                 "layout|flex": 1
                             },
@@ -2630,6 +2633,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "cls": [
+                                            "testataInfoVeicoloNuovoContainerPortraitCls"
+                                        ],
+                                        "container|align": "center",
                                         "designer|displayName": "TestataInfoVeicoloNuovoContainerPortrait",
                                         "itemId": "testataInfoVeicoloNuovoContainerPortrait",
                                         "layout": "hbox"
@@ -2645,7 +2652,10 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|displayName": "infoVeicoloNuovoMiniImgContainer"
+                                                "designer|displayName": "infoVeicoloNuovoMiniImgContainer",
+                                                "height": 47,
+                                                "layout": null,
+                                                "width": 47
                                             },
                                             "name": "MyContainer82",
                                             "designerId": "bf543586-93d1-4da1-b584-c5e8300830e6",
@@ -2658,11 +2668,13 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "centered": true,
                                                         "designer|displayName": "InfoVeicoloNuovoMiniImg",
                                                         "height": null,
+                                                        "imageCls": "infoVeicoloNuovoMiniImgCls",
                                                         "itemId": "infoVeicoloNuovoMiniImg",
                                                         "mode": "image",
-                                                        "width": "100%"
+                                                        "width": null
                                                     },
                                                     "name": "MyImg1",
                                                     "designerId": "8e5dc265-1af3-4721-9a30-362d55715e5f"
@@ -2670,35 +2682,59 @@
                                             ]
                                         },
                                         {
-                                            "type": "Ext.Label",
+                                            "type": "Ext.Container",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|displayName": "DescInfoVeicoloNuovoLabel",
-                                                "html": null,
-                                                "itemId": "descInfoVeicoloNuovoLabel"
+                                                "cls": [
+                                                    "descTestataInfoVeicoloNuovoContainerPortraitCls"
+                                                ],
+                                                "container|align": "center",
+                                                "designer|displayName": "DescTestataInfoVeicoloNuovoContainerPortrait",
+                                                "layout": "hbox",
+                                                "layout|flex": 1
                                             },
-                                            "name": "MyLabel15",
-                                            "designerId": "ff49aac4-383d-42ce-b58c-b2102baf13e8",
+                                            "name": "MyContainer101",
+                                            "designerId": "fc8ce59f-1bea-48b9-8b4d-df1f8f995b54",
                                             "cn": [
                                                 {
-                                                    "type": "Ext.XTemplate",
+                                                    "type": "Ext.Label",
                                                     "reference": {
-                                                        "name": "tpl",
-                                                        "type": "object"
+                                                        "name": "items",
+                                                        "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|displayName": "tpl",
-                                                        "implHandler": [
-                                                            "{allestimento_descrizione}"
-                                                        ]
+                                                        "cls": [
+                                                            "descInfoVeicoloNuovoLabelPortraitCls"
+                                                        ],
+                                                        "designer|displayName": "DescInfoVeicoloNuovoLabel",
+                                                        "html": null,
+                                                        "itemId": "descInfoVeicoloNuovoLabel"
                                                     },
-                                                    "name": "tpl",
-                                                    "designerId": "c5fac7f5-50ac-42e7-893c-6ff6e5639073"
+                                                    "name": "MyLabel15",
+                                                    "designerId": "ff49aac4-383d-42ce-b58c-b2102baf13e8",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "tpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "tpl",
+                                                                "implHandler": [
+                                                                    "{allestimento_descrizione}"
+                                                                ]
+                                                            },
+                                                            "name": "tpl",
+                                                            "designerId": "c5fac7f5-50ac-42e7-893c-6ff6e5639073"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -2731,6 +2767,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "generaleInfoVeicoloNuovoContainerCls"
+                                                ],
                                                 "designer|displayName": "GeneraleInfoVeicoloNuovoContainer",
                                                 "itemId": "generaleInfoVeicoloNuovoContainer",
                                                 "layout": "vbox",
@@ -2747,9 +2786,14 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "testoImgInfoVeicoloNuovoContainerCls"
+                                                        ],
                                                         "designer|displayName": "TestoImgInfoVeicoloNuovoContainer",
                                                         "height": null,
-                                                        "layout": "hbox"
+                                                        "layout": "hbox",
+                                                        "layout|flex": null,
+                                                        "width": "100%"
                                                     },
                                                     "name": "MyContainer55",
                                                     "designerId": "276b3e37-304c-4106-b6cf-b41263beb3ea",
@@ -2763,7 +2807,8 @@
                                                             "codeClass": null,
                                                             "userConfig": {
                                                                 "designer|displayName": "InfoVeicoloNuovoImgContainer",
-                                                                "width": "50%"
+                                                                "layout": null,
+                                                                "width": 313
                                                             },
                                                             "name": "MyContainer90",
                                                             "designerId": "60781745-1c54-4be7-ba44-9ee4f63c5bce",
@@ -2778,9 +2823,10 @@
                                                                     "userConfig": {
                                                                         "designer|displayName": "InfoVeicoloNuovoImg",
                                                                         "height": null,
+                                                                        "imageCls": "infoVeicoloNuovoImgCls",
                                                                         "itemId": "infoVeicoloNuovoImg",
                                                                         "mode": "image",
-                                                                        "width": "100%"
+                                                                        "width": null
                                                                     },
                                                                     "name": "MyImg3",
                                                                     "designerId": "4094ec97-924e-4a84-802e-28f0b52a21f7"
@@ -2795,10 +2841,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "testoInfoVeicoloNuovoLabelCls"
+                                                                ],
                                                                 "designer|displayName": "TestoInfoVeicoloNuovoLabel",
                                                                 "itemId": "testoInfoVeicoloNuovoLabel",
-                                                                "layout|flex": null,
-                                                                "width": "50%"
+                                                                "layout|flex": 1,
+                                                                "width": null
                                                             },
                                                             "name": "MyLabel16",
                                                             "designerId": "4c99523d-7c6e-48c4-9d5d-c383b142bd81",
@@ -2813,22 +2862,19 @@
                                                                     "userConfig": {
                                                                         "designer|displayName": "tpl",
                                                                         "implHandler": [
-                                                                            "<table border=\"0\">",
+                                                                            "<table border=\"0\" class=\"testo1InfoVeicoloNuovoTableCls\">",
                                                                             "    <tr>",
-                                                                            "        <td>Data listino:</td>",
-                                                                            "        <td align=\"right\">{dataListino:date('d/m/Y')}</td>",
+                                                                            "        <td>Data listino: {dataListino:date('d/m/Y')}</td>",
                                                                             "    </tr>",
                                                                             "    <tr>",
-                                                                            "        <td>Prezzo listino:</td>",
-                                                                            "        <td align=\"right\">{listinoPrezzo:this.fmtCurrency} &euro;</td>",
+                                                                            "        <td>Prezzo listino: {listinoPrezzo:this.fmtCurrency} &euro;</td>",
                                                                             "    </tr>",
                                                                             "    <tr>",
-                                                                            "        <td>Prezzo chiavi in mano:</td>",
-                                                                            "        <td align=\"right\">{cmPrezzo:this.fmtCurrency} &euro;</td>",
+                                                                            "        <td>Prezzo chiavi in mano: {cmPrezzo:this.fmtCurrency} &euro;</td>",
                                                                             "    </tr>",
                                                                             "</table>",
                                                                             "<br>",
-                                                                            "<div class=\"\">",
+                                                                            "<div class=\"testo2InfoVeicoloNuovoDivCls\">",
                                                                             "Codice infocar: {codiceInfocar}<br>",
                                                                             "Codice casa: {codiceCasa}<br>",
                                                                             "Codice QUD: {codiceQUD}<br>",
@@ -2872,8 +2918,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "container|align": "start",
+                                                        "cls": [
+                                                            "sintesiDatiTecniciInfoVeicoloNuovoContainerCls"
+                                                        ],
+                                                        "container|align": "center",
                                                         "designer|displayName": "SintesiDatiTecniciInfoVeicoloNuovoContainer",
+                                                        "height": 115,
                                                         "itemId": "sintesiDatiTecniciInfoVeicoloNuovoContainer",
                                                         "layout": "hbox"
                                                     },
@@ -2888,9 +2938,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "sintesiDatiTecniciInfoVeicoloNuovoLabelCls"
+                                                                ],
                                                                 "designer|displayName": "SintesiDatiTecniciInfoVeicoloNuovoLabel",
                                                                 "itemId": "sintesiDatiTecniciInfoVeicoloNuovoLabel",
-                                                                "width": "80%"
+                                                                "layout|flex": 1,
+                                                                "width": null
                                                             },
                                                             "name": "MyLabel33",
                                                             "designerId": "8b2cfbea-c3a4-4035-bccc-91095609cc24",
@@ -2905,14 +2959,13 @@
                                                                     "userConfig": {
                                                                         "designer|displayName": "tpl",
                                                                         "implHandler": [
-                                                                            "<div class=\"\">Dati tecnici</div>",
-                                                                            "<br>",
-                                                                            "<div class=\"\">",
-                                                                            "Alimentazione: {alimentazione_descrizione}&nbsp;&nbsp;",
-                                                                            "Cilindrata cm<sup>3</sup>: {cilindrata}&nbsp;&nbsp;",
-                                                                            "Potenza kW/CV: {potenza}<br>",
-                                                                            "Carrozzeria: {carrozzeria_descrizione}&nbsp;&nbsp;",
-                                                                            "Normativa: {normativa}",
+                                                                            "<div class=\"titoloSintesiDatiTecniciInfoVeicoloNuovoDivCls\">Dati tecnici</div>",
+                                                                            "<div class=\"descSintesiDatiTecniciInfoVeicoloNuovoDivCls\">",
+                                                                            "Alimentazione: <span class=\"infocar-bold\">{alimentazione_descrizione}</span>&nbsp;&nbsp;",
+                                                                            "Cilindrata cm<sup>3</sup>: <span class=\"infocar-bold\">{cilindrata}</span>&nbsp;&nbsp;",
+                                                                            "Potenza kW/CV: <span class=\"infocar-bold\">{potenza}</span><br>",
+                                                                            "Carrozzeria: <span class=\"infocar-bold\">{carrozzeria_descrizione}&nbsp;&nbsp;",
+                                                                            "Normativa: <span class=\"infocar-bold\">{normativa}</span>",
                                                                             "</div>"
                                                                         ]
                                                                     },
@@ -2929,11 +2982,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "baseCls": "datiTecniciInfoVeicoloNuovoButtonCls",
                                                                 "designer|displayName": "DatiTecniciInfoVeicoloNuovoButton",
-                                                                "hidden": false,
+                                                                "height": 37,
+                                                                "hidden": null,
                                                                 "itemId": "datiTecniciInfoVeicoloNuovoButton",
-                                                                "text": "Scopri tutti i dati tecnici",
-                                                                "width": "20%"
+                                                                "text": null,
+                                                                "width": 37
                                                             },
                                                             "name": "MyButton18",
                                                             "designerId": "57bcba40-5e4d-453c-ba48-9b6caca8fdb0"
@@ -2948,9 +3003,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "container|align": "start",
+                                                        "cls": [
+                                                            "sintesiEquipInfoVeicoloNuovoContainerCls"
+                                                        ],
+                                                        "container|align": "center",
                                                         "designer|displayName": "SintesiEquipInfoVeicoloNuovoContainer",
-                                                        "height": null,
+                                                        "height": 102,
                                                         "itemId": "sintesiEquipInfoVeicoloNuovoContainer",
                                                         "layout": "hbox"
                                                     },
@@ -2965,9 +3023,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "sintesiEquipInfoVeicoloNuovoLabelCls"
+                                                                ],
                                                                 "designer|displayName": "SintesiEquipInfoVeicoloNuovoLabel",
                                                                 "itemId": "sintesiEquipInfoVeicoloNuovoLabel",
-                                                                "width": "80%"
+                                                                "layout|flex": 1,
+                                                                "width": null
                                                             },
                                                             "name": "MyLabel33",
                                                             "designerId": "d25c2e0b-609d-437c-8d55-4236514d89fc",
@@ -2982,9 +3044,8 @@
                                                                     "userConfig": {
                                                                         "designer|displayName": "tpl",
                                                                         "implHandler": [
-                                                                            "<div class=\"\">Equipaggiamenti</div>",
-                                                                            "<br>",
-                                                                            "<div class=\"\">",
+                                                                            "<div class=\"titoloSintesiEquipInfoVeicoloNuovoDivCls\">Equipaggiamenti</div>",
+                                                                            "<div class=\"descSintesiEquipInfoVeicoloNuovoDivCls\">",
                                                                             "Questo allestimento comprende {numEquip} equipaggiamenti",
                                                                             "</div>"
                                                                         ]
@@ -3002,11 +3063,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "baseCls": "equipInfoVeicoloNuovoButtonCls",
                                                                 "designer|displayName": "EquipInfoVeicoloNuovoButton",
+                                                                "height": 37,
                                                                 "hidden": false,
                                                                 "itemId": "equipInfoVeicoloNuovoButton",
-                                                                "text": "Scopri tutti gli equipaggiamenti",
-                                                                "width": "20%"
+                                                                "text": null,
+                                                                "width": 37
                                                             },
                                                             "name": "MyButton18",
                                                             "designerId": "42706f19-d4b3-48f7-9c3d-9f78119e9626"
@@ -3021,10 +3084,13 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "sintesiSituazioneStockVeicoloNuovoContainerCls"
+                                                        ],
                                                         "designer|displayName": "SintesiSituazioneStockVeicoloNuovoContainer",
                                                         "height": null,
                                                         "itemId": "sintesiSituazioneStockVeicoloNuovoContainer",
-                                                        "layout": "hbox"
+                                                        "layout": "vbox"
                                                     },
                                                     "name": "MyContainer58",
                                                     "designerId": "5b940fbc-cf3e-48d4-ba66-fea586b48ac2",
@@ -3037,231 +3103,267 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "designer|displayName": "MessaggioGraficoInfoVeicoloNuovoLabel",
-                                                                "html": "Valori previsivi non disponibili",
-                                                                "itemId": "messaggioGraficoInfoVeicoloNuovoLabel",
-                                                                "width": "50%"
-                                                            },
-                                                            "name": "MyLabel49",
-                                                            "designerId": "6cbf5520-d20d-4e0a-9eb0-f7bff65da13c"
-                                                        },
-                                                        {
-                                                            "type": "Ext.chart.CartesianChart",
-                                                            "reference": {
-                                                                "name": "items",
-                                                                "type": "array"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "centered": null,
-                                                                "colors": [
-                                                                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                                                                "cls": [
+                                                                    "sintesiSituazioneStockVeicoloNuovoLabelCls"
                                                                 ],
-                                                                "designer|displayName": "GraficoInfoVeicoloNuovoChart",
-                                                                "height": 300,
-                                                                "hidden": true,
-                                                                "itemId": "graficoInfoVeicoloNuovoChart",
-                                                                "store": "GraficoInfoVeicoloNuovoStore",
-                                                                "width": "50%"
+                                                                "designer|displayName": "SintesiSituazioneStockVeicoloNuovoLabel",
+                                                                "html": "Situazione in stock"
                                                             },
-                                                            "name": "MyLineChart1",
-                                                            "designerId": "bcd40b22-02c7-483a-8f62-c8e8f9ab1ec2",
-                                                            "isBuiltIn": true,
-                                                            "iconCls": "icon-line-chart",
-                                                            "autoName": "MyLineChart",
-                                                            "cn": [
-                                                                {
-                                                                    "type": "Ext.chart.axis.Category",
-                                                                    "reference": {
-                                                                        "name": "axes",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|displayName": "CategoryAxis",
-                                                                        "fields": [
-                                                                            "valoreX"
-                                                                        ],
-                                                                        "title": null
-                                                                    },
-                                                                    "name": "MyCategoryAxis",
-                                                                    "designerId": "4df37833-b267-4823-b5e3-22bd6b895d73"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.chart.axis.Numeric",
-                                                                    "reference": {
-                                                                        "name": "axes",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|displayName": "NumericAxis",
-                                                                        "fields": [
-                                                                            "valoreY1",
-                                                                            "valoreY2"
-                                                                        ],
-                                                                        "grid": [
-                                                                            "{",
-                                                                            "    odd: {",
-                                                                            "        fill: '#e8e8e8'",
-                                                                            "    }",
-                                                                            "}"
-                                                                        ],
-                                                                        "position": "left",
-                                                                        "title": null
-                                                                    },
-                                                                    "name": "MyNumericAxis",
-                                                                    "designerId": "012fbcc1-012c-431b-9f2d-5e8588bb0119"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.chart.series.Line",
-                                                                    "reference": {
-                                                                        "name": "series",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "colors": [
-                                                                            "rgba(0,200,0,0.3)"
-                                                                        ],
-                                                                        "designer|displayName": "LineSeries1",
-                                                                        "marker": [
-                                                                            "{",
-                                                                            "    type: \"circle\",",
-                                                                            "    fill: \"rgb(0,200,0)\",",
-                                                                            "    radius: 4",
-                                                                            "}"
-                                                                        ],
-                                                                        "style": [
-                                                                            "{",
-                                                                            "    stroke: 'rgb(0,200,0)',",
-                                                                            "    lineWidth: 2",
-                                                                            "}"
-                                                                        ],
-                                                                        "xField": "valoreX",
-                                                                        "yField": "valoreY1"
-                                                                    },
-                                                                    "name": "MyLineSeries",
-                                                                    "designerId": "47679a50-78c1-4dea-87e6-83088ea29223"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.chart.series.Line",
-                                                                    "reference": {
-                                                                        "name": "series",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "colors": [
-                                                                            "transparent"
-                                                                        ],
-                                                                        "designer|displayName": "LineSeries2",
-                                                                        "marker": [
-                                                                            "{",
-                                                                            "    type: \"circle\",",
-                                                                            "    fill: \"rgb(0,0,200)\",",
-                                                                            "    radius: 4",
-                                                                            "}"
-                                                                        ],
-                                                                        "style": [
-                                                                            "{",
-                                                                            "    stroke: 'rgb(0,0,200)',",
-                                                                            "    lineWidth: 2",
-                                                                            "}"
-                                                                        ],
-                                                                        "xField": "valoreX",
-                                                                        "yField": "valoreY2"
-                                                                    },
-                                                                    "name": "MyLineSeries1",
-                                                                    "designerId": "d39758b6-bbc6-4769-b7c7-e3954daddf8f"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.chart.interactions.PanZoom",
-                                                                    "reference": {
-                                                                        "name": "interactions",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|displayName": "PanZoomInteraction"
-                                                                    },
-                                                                    "name": "MyPanZoomInteraction",
-                                                                    "designerId": "788aa632-dc69-4c22-a8d5-33d19f8d6806"
-                                                                }
-                                                            ]
+                                                            "name": "MyLabel53",
+                                                            "designerId": "4bccaa2b-0150-4c1e-a265-bb8325e0b081"
                                                         },
                                                         {
-                                                            "type": "Ext.Label",
+                                                            "type": "Ext.Container",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "designer|displayName": "SintesiDatiStockInfoVeicoloNuovoLabel",
-                                                                "itemId": "sintesiDatiStockInfoVeicoloNuovoLabel",
-                                                                "layout|flex": null,
-                                                                "width": "50%"
+                                                                "designer|displayName": "HBoxContainer",
+                                                                "layout": "hbox"
                                                             },
-                                                            "name": "MyLabel16",
-                                                            "designerId": "3a8e1ebc-197f-4d9e-8800-8af223475388",
+                                                            "name": "MyContainer102",
+                                                            "designerId": "ca11fd39-af73-4f81-9b08-9dd73ab646ed",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.XTemplate",
+                                                                    "type": "Ext.Label",
                                                                     "reference": {
-                                                                        "name": "tpl",
-                                                                        "type": "object"
+                                                                        "name": "items",
+                                                                        "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "designer|displayName": "tpl",
-                                                                        "implHandler": [
-                                                                            "<table border=\"0\" cellspacing=\"4\" cellpadding=\"4\">",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\">In stock</td>",
-                                                                            "        <td>Fisico</td>",
-                                                                            "        <td>Virtuale</td>",
-                                                                            "        <td>Giacenza</td>",
-                                                                            "        <td>Giacenza media</td>",
-                                                                            "    </tr>",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\">Allestimento</td>",
-                                                                            "        <td>{allestimentoFisicoStock:this.fmtInt}</td>",
-                                                                            "        <td>{allestimentoVirtualeStock:this.fmtInt}</td>",
-                                                                            "        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>",
-                                                                            "        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{allestimentoGiacenzaStockUrlImg}\"></td>",
-                                                                            "    </tr>",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\">Modello</td>",
-                                                                            "        <td>{modelloFisicoStock:this.fmtInt}</td>",
-                                                                            "        <td>{modelloVirtualeStock:this.fmtInt}</td>",
-                                                                            "        <td>{modelloGiacenzaStock:this.fmtInt}</td>",
-                                                                            "        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{modelloGiacenzaStockUrlImg}\"></td>",
-                                                                            "    </tr>",
-                                                                            "</table>"
-                                                                        ]
+                                                                        "designer|displayName": "MessaggioGraficoInfoVeicoloNuovoLabel",
+                                                                        "html": "Valori previsivi non disponibili",
+                                                                        "itemId": "messaggioGraficoInfoVeicoloNuovoLabel",
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "tpl",
-                                                                    "designerId": "f6c1551d-743f-4974-b60b-f31ace82c86a",
+                                                                    "name": "MyLabel49",
+                                                                    "designerId": "6cbf5520-d20d-4e0a-9eb0-f7bff65da13c"
+                                                                },
+                                                                {
+                                                                    "type": "Ext.chart.CartesianChart",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "centered": null,
+                                                                        "colors": [
+                                                                            "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                                                                        ],
+                                                                        "designer|displayName": "GraficoInfoVeicoloNuovoChart",
+                                                                        "height": 300,
+                                                                        "hidden": true,
+                                                                        "itemId": "graficoInfoVeicoloNuovoChart",
+                                                                        "store": "GraficoInfoVeicoloNuovoStore",
+                                                                        "width": "50%"
+                                                                    },
+                                                                    "name": "MyLineChart1",
+                                                                    "designerId": "bcd40b22-02c7-483a-8f62-c8e8f9ab1ec2",
+                                                                    "isBuiltIn": true,
+                                                                    "iconCls": "icon-line-chart",
+                                                                    "autoName": "MyLineChart",
                                                                     "cn": [
                                                                         {
-                                                                            "type": "templatefunction",
+                                                                            "type": "Ext.chart.axis.Category",
                                                                             "reference": {
-                                                                                "name": "items",
+                                                                                "name": "axes",
                                                                                 "type": "array"
                                                                             },
                                                                             "codeClass": null,
                                                                             "userConfig": {
-                                                                                "designer|params": [
-                                                                                    "intValue"
+                                                                                "designer|displayName": "CategoryAxis",
+                                                                                "fields": [
+                                                                                    "valoreX"
                                                                                 ],
-                                                                                "fn": "fmtInt",
+                                                                                "title": null
+                                                                            },
+                                                                            "name": "MyCategoryAxis",
+                                                                            "designerId": "4df37833-b267-4823-b5e3-22bd6b895d73"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.chart.axis.Numeric",
+                                                                            "reference": {
+                                                                                "name": "axes",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "NumericAxis",
+                                                                                "fields": [
+                                                                                    "valoreY1",
+                                                                                    "valoreY2"
+                                                                                ],
+                                                                                "grid": [
+                                                                                    "{",
+                                                                                    "    odd: {",
+                                                                                    "        fill: '#e8e8e8'",
+                                                                                    "    }",
+                                                                                    "}"
+                                                                                ],
+                                                                                "position": "left",
+                                                                                "title": null
+                                                                            },
+                                                                            "name": "MyNumericAxis",
+                                                                            "designerId": "012fbcc1-012c-431b-9f2d-5e8588bb0119"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.chart.series.Line",
+                                                                            "reference": {
+                                                                                "name": "series",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "colors": [
+                                                                                    "rgba(0,200,0,0.3)"
+                                                                                ],
+                                                                                "designer|displayName": "LineSeries1",
+                                                                                "marker": [
+                                                                                    "{",
+                                                                                    "    type: \"circle\",",
+                                                                                    "    fill: \"rgb(0,200,0)\",",
+                                                                                    "    radius: 4",
+                                                                                    "}"
+                                                                                ],
+                                                                                "style": [
+                                                                                    "{",
+                                                                                    "    stroke: 'rgb(0,200,0)',",
+                                                                                    "    lineWidth: 2",
+                                                                                    "}"
+                                                                                ],
+                                                                                "xField": "valoreX",
+                                                                                "yField": "valoreY1"
+                                                                            },
+                                                                            "name": "MyLineSeries",
+                                                                            "designerId": "47679a50-78c1-4dea-87e6-83088ea29223"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.chart.series.Line",
+                                                                            "reference": {
+                                                                                "name": "series",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "colors": [
+                                                                                    "transparent"
+                                                                                ],
+                                                                                "designer|displayName": "LineSeries2",
+                                                                                "marker": [
+                                                                                    "{",
+                                                                                    "    type: \"circle\",",
+                                                                                    "    fill: \"rgb(0,0,200)\",",
+                                                                                    "    radius: 4",
+                                                                                    "}"
+                                                                                ],
+                                                                                "style": [
+                                                                                    "{",
+                                                                                    "    stroke: 'rgb(0,0,200)',",
+                                                                                    "    lineWidth: 2",
+                                                                                    "}"
+                                                                                ],
+                                                                                "xField": "valoreX",
+                                                                                "yField": "valoreY2"
+                                                                            },
+                                                                            "name": "MyLineSeries1",
+                                                                            "designerId": "d39758b6-bbc6-4769-b7c7-e3954daddf8f"
+                                                                        },
+                                                                        {
+                                                                            "type": "Ext.chart.interactions.PanZoom",
+                                                                            "reference": {
+                                                                                "name": "interactions",
+                                                                                "type": "array"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "PanZoomInteraction"
+                                                                            },
+                                                                            "name": "MyPanZoomInteraction",
+                                                                            "designerId": "788aa632-dc69-4c22-a8d5-33d19f8d6806"
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "Ext.Label",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "cls": [
+                                                                            "sintesiDatiStockInfoVeicoloNuovoLabelCls"
+                                                                        ],
+                                                                        "designer|displayName": "SintesiDatiStockInfoVeicoloNuovoLabel",
+                                                                        "itemId": "sintesiDatiStockInfoVeicoloNuovoLabel",
+                                                                        "layout|flex": null,
+                                                                        "width": "50%"
+                                                                    },
+                                                                    "name": "MyLabel16",
+                                                                    "designerId": "3a8e1ebc-197f-4d9e-8800-8af223475388",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.XTemplate",
+                                                                            "reference": {
+                                                                                "name": "tpl",
+                                                                                "type": "object"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "tpl",
                                                                                 "implHandler": [
-                                                                                    "return Infocar.app.formatInt(intValue);"
+                                                                                    "<table class=\"sintesiDatiStockInfoVeicoloNuovoTableCls\">",
+                                                                                    "    <tr class=\"headerSintesiDatiStockInfoVeicoloNuovoTrCls\">",
+                                                                                    "        <td>In stock</td>",
+                                                                                    "        <td>Fisico</td>",
+                                                                                    "        <td>Virtuale</td>",
+                                                                                    "        <td>Giacenza</td>",
+                                                                                    "        <td>Giacenza media</td>",
+                                                                                    "    </tr>",
+                                                                                    "    <tr class=\"allestimentoSintesiDatiStockInfoVeicoloNuovoTrCls\">",
+                                                                                    "        <td>Allestimento</td>",
+                                                                                    "        <td>{allestimentoFisicoStock:this.fmtInt}</td>",
+                                                                                    "        <td>{allestimentoVirtualeStock:this.fmtInt}</td>",
+                                                                                    "        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>",
+                                                                                    "        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{allestimentoGiacenzaStockUrlImg}\" class=\"sintesiDatiStockInfoVeicoloNuovoImgCls\"></td>",
+                                                                                    "    </tr>",
+                                                                                    "    <tr class=\"modelloSintesiDatiStockInfoVeicoloNuovoTrCls\">",
+                                                                                    "        <td>Modello</td>",
+                                                                                    "        <td>{modelloFisicoStock:this.fmtInt}</td>",
+                                                                                    "        <td>{modelloVirtualeStock:this.fmtInt}</td>",
+                                                                                    "        <td>{modelloGiacenzaStock:this.fmtInt}</td>",
+                                                                                    "        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{modelloGiacenzaStockUrlImg}\" class=\"sintesiDatiStockInfoVeicoloNuovoImgCls\"></td>",
+                                                                                    "    </tr>",
+                                                                                    "</table>"
                                                                                 ]
                                                                             },
-                                                                            "name": "fmtInt",
-                                                                            "designerId": "44c3792a-c490-43cd-8dbb-2ba563724fe2"
+                                                                            "name": "tpl",
+                                                                            "designerId": "f6c1551d-743f-4974-b60b-f31ace82c86a",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "templatefunction",
+                                                                                    "reference": {
+                                                                                        "name": "items",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "designer|params": [
+                                                                                            "intValue"
+                                                                                        ],
+                                                                                        "fn": "fmtInt",
+                                                                                        "implHandler": [
+                                                                                            "return Infocar.app.formatInt(intValue);"
+                                                                                        ]
+                                                                                    },
+                                                                                    "name": "fmtInt",
+                                                                                    "designerId": "44c3792a-c490-43cd-8dbb-2ba563724fe2"
+                                                                                }
+                                                                            ]
                                                                         }
                                                                     ]
                                                                 }
