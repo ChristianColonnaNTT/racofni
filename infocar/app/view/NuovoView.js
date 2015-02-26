@@ -1250,85 +1250,127 @@ Ext.define('Infocar.view.NuovoView', {
                                                                 layout: 'hbox',
                                                                 items: [
                                                                     {
-                                                                        xtype: 'label',
-                                                                        html: 'Valori previsivi non disponibili',
-                                                                        itemId: 'messaggioGraficoInfoVeicoloNuovoLabel',
-                                                                        width: '50%'
-                                                                    },
-                                                                    {
-                                                                        xtype: 'chart',
-                                                                        height: 300,
-                                                                        hidden: true,
-                                                                        itemId: 'graficoInfoVeicoloNuovoChart',
+                                                                        xtype: 'container',
+                                                                        cls: 'titoloGraficoInfoVeicoloNuovoContainerCls',
                                                                         width: '50%',
-                                                                        colors: [
-                                                                            '#115fa6',
-                                                                            '#94ae0a',
-                                                                            '#a61120',
-                                                                            '#ff8809',
-                                                                            '#ffd13e',
-                                                                            '#a61187',
-                                                                            '#24ad9a',
-                                                                            '#7c7474',
-                                                                            '#a66111'
-                                                                        ],
-                                                                        store: 'GraficoInfoVeicoloNuovoStore',
-                                                                        axes: [
+                                                                        layout: {
+                                                                            type: 'vbox',
+                                                                            align: 'center'
+                                                                        },
+                                                                        items: [
                                                                             {
-                                                                                type: 'category',
-                                                                                fields: [
-                                                                                    'valoreX'
-                                                                                ]
+                                                                                xtype: 'label',
+                                                                                cls: 'titoloGraficoInfoVeicoloNuovoLabelCls',
+                                                                                html: 'Previsioni tenuta dell\'usato (&euro;)',
+                                                                                itemId: 'titoloGraficoInfoVeicoloNuovoLabel'
                                                                             },
                                                                             {
-                                                                                type: 'numeric',
-                                                                                fields: [
-                                                                                    'valoreY1',
-                                                                                    'valoreY2'
+                                                                                xtype: 'label',
+                                                                                html: 'Valori previsivi non disponibili',
+                                                                                itemId: 'messaggioGraficoInfoVeicoloNuovoLabel',
+                                                                                width: '50%'
+                                                                            },
+                                                                            {
+                                                                                xtype: 'chart',
+                                                                                cls: 'graficoInfoVeicoloNuovoChartCls',
+                                                                                height: 300,
+                                                                                hidden: true,
+                                                                                itemId: 'graficoInfoVeicoloNuovoChart',
+                                                                                width: '100%',
+                                                                                background: '#71727d',
+                                                                                colors: [
+                                                                                    '#115fa6',
+                                                                                    '#94ae0a',
+                                                                                    '#a61120',
+                                                                                    '#ff8809',
+                                                                                    '#ffd13e',
+                                                                                    '#a61187',
+                                                                                    '#24ad9a',
+                                                                                    '#7c7474',
+                                                                                    '#a66111'
                                                                                 ],
-                                                                                grid: {
-                                                                                    odd: {
-                                                                                        fill: '#e8e8e8'
+                                                                                store: 'GraficoInfoVeicoloNuovoStore',
+                                                                                axes: [
+                                                                                    {
+                                                                                        type: 'category',
+                                                                                        fields: [
+                                                                                            'valoreX'
+                                                                                        ],
+                                                                                        grid: {
+                                                                                            stroke: '#868790'
+                                                                                        },
+                                                                                        label: {
+                                                                                            color: '#fff',
+                                                                                            x: 0,
+                                                                                            y: 0,
+                                                                                            textBaseline: 'middle',
+                                                                                            textAlign: 'center',
+                                                                                            fontSize: 12,
+                                                                                            fontFamily: 'Helvetica'
+                                                                                        },
+                                                                                        style: {
+                                                                                            stroke: '#868790'
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        type: 'numeric',
+                                                                                        fields: [
+                                                                                            'valoreY1',
+                                                                                            'valoreY2'
+                                                                                        ],
+                                                                                        grid: {
+                                                                                            stroke: '#868790'
+                                                                                        },
+                                                                                        label: {
+                                                                                            color: '#fff',
+                                                                                            x: 0,
+                                                                                            y: 0,
+                                                                                            textBaseline: 'middle',
+                                                                                            textAlign: 'center',
+                                                                                            fontSize: 12,
+                                                                                            fontFamily: 'Helvetica'
+                                                                                        },
+                                                                                        position: 'left',
+                                                                                        style: {
+                                                                                            stroke: '#868790'
+                                                                                        }
                                                                                     }
-                                                                                },
-                                                                                position: 'left'
-                                                                            }
-                                                                        ],
-                                                                        series: [
-                                                                            {
-                                                                                type: 'line',
-                                                                                colors: 'rgba(0,200,0,0.3)',
-                                                                                marker: {
-                                                                                    type: 'circle',
-                                                                                    fill: 'rgb(0,200,0)',
-                                                                                    radius: 4
-                                                                                },
-                                                                                style: {
-                                                                                    stroke: 'rgb(0,200,0)',
-                                                                                    lineWidth: 2
-                                                                                },
-                                                                                xField: 'valoreX',
-                                                                                yField: 'valoreY1'
-                                                                            },
-                                                                            {
-                                                                                type: 'line',
-                                                                                colors: 'transparent',
-                                                                                marker: {
-                                                                                    type: 'circle',
-                                                                                    fill: 'rgb(0,0,200)',
-                                                                                    radius: 4
-                                                                                },
-                                                                                style: {
-                                                                                    stroke: 'rgb(0,0,200)',
-                                                                                    lineWidth: 2
-                                                                                },
-                                                                                xField: 'valoreX',
-                                                                                yField: 'valoreY2'
-                                                                            }
-                                                                        ],
-                                                                        interactions: [
-                                                                            {
-                                                                                type: 'panzoom'
+                                                                                ],
+                                                                                series: [
+                                                                                    {
+                                                                                        type: 'line',
+                                                                                        marker: {
+                                                                                            type: 'circle',
+                                                                                            fill: '#7ee2ff',
+                                                                                            radius: 4
+                                                                                        },
+                                                                                        style: {
+                                                                                            stroke: '#7ee2ff',
+                                                                                            lineWidth: 2
+                                                                                        },
+                                                                                        xField: 'valoreX',
+                                                                                        yField: 'valoreY1'
+                                                                                    },
+                                                                                    {
+                                                                                        type: 'line',
+                                                                                        marker: {
+                                                                                            type: 'circle',
+                                                                                            fill: '#c1e422',
+                                                                                            radius: 4
+                                                                                        },
+                                                                                        style: {
+                                                                                            stroke: '#c1e422',
+                                                                                            lineWidth: 2
+                                                                                        },
+                                                                                        xField: 'valoreX',
+                                                                                        yField: 'valoreY2'
+                                                                                    }
+                                                                                ],
+                                                                                interactions: [
+                                                                                    {
+                                                                                        type: 'panzoom'
+                                                                                    }
+                                                                                ]
                                                                             }
                                                                         ]
                                                                     },
@@ -1428,13 +1470,21 @@ Ext.define('Infocar.view.NuovoView', {
                             },
                             {
                                 xtype: 'toolbar',
+                                cls: 'infoVeicoloNuovoToolbarCls',
                                 docked: 'bottom',
+                                height: 60,
                                 hidden: false,
+                                ui: 'infocar-toolbar',
+                                layout: {
+                                    type: 'hbox',
+                                    align: 'start'
+                                },
                                 items: [
                                     {
                                         xtype: 'button',
+                                        baseCls: 'indietroInfoVeicoloNuovoButtonCls',
                                         itemId: 'indietroInfoVeicoloNuovoButton',
-                                        text: 'Indietro'
+                                        text: 'INDIETRO'
                                     }
                                 ]
                             }

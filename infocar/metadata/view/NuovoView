@@ -3127,163 +3127,220 @@
                                                             "designerId": "ca11fd39-af73-4f81-9b08-9dd73ab646ed",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.Label",
+                                                                    "type": "Ext.Container",
                                                                     "reference": {
                                                                         "name": "items",
                                                                         "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "designer|displayName": "MessaggioGraficoInfoVeicoloNuovoLabel",
-                                                                        "html": "Valori previsivi non disponibili",
-                                                                        "itemId": "messaggioGraficoInfoVeicoloNuovoLabel",
-                                                                        "width": "50%"
-                                                                    },
-                                                                    "name": "MyLabel49",
-                                                                    "designerId": "6cbf5520-d20d-4e0a-9eb0-f7bff65da13c"
-                                                                },
-                                                                {
-                                                                    "type": "Ext.chart.CartesianChart",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "centered": null,
-                                                                        "colors": [
-                                                                            "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
+                                                                        "cls": [
+                                                                            "titoloGraficoInfoVeicoloNuovoContainerCls"
                                                                         ],
-                                                                        "designer|displayName": "GraficoInfoVeicoloNuovoChart",
-                                                                        "height": 300,
-                                                                        "hidden": true,
-                                                                        "itemId": "graficoInfoVeicoloNuovoChart",
-                                                                        "store": "GraficoInfoVeicoloNuovoStore",
+                                                                        "container|align": "center",
+                                                                        "designer|displayName": "TitoloGraficoInfoVeicoloNuovoContainer",
+                                                                        "layout": "vbox",
                                                                         "width": "50%"
                                                                     },
-                                                                    "name": "MyLineChart1",
-                                                                    "designerId": "bcd40b22-02c7-483a-8f62-c8e8f9ab1ec2",
-                                                                    "isBuiltIn": true,
-                                                                    "iconCls": "icon-line-chart",
-                                                                    "autoName": "MyLineChart",
+                                                                    "name": "MyContainer103",
+                                                                    "designerId": "19c92816-f19b-43e8-a658-9b243a067ebe",
                                                                     "cn": [
                                                                         {
-                                                                            "type": "Ext.chart.axis.Category",
+                                                                            "type": "Ext.Label",
                                                                             "reference": {
-                                                                                "name": "axes",
+                                                                                "name": "items",
                                                                                 "type": "array"
                                                                             },
                                                                             "codeClass": null,
                                                                             "userConfig": {
-                                                                                "designer|displayName": "CategoryAxis",
-                                                                                "fields": [
-                                                                                    "valoreX"
+                                                                                "cls": [
+                                                                                    "titoloGraficoInfoVeicoloNuovoLabelCls"
                                                                                 ],
-                                                                                "title": null
+                                                                                "designer|displayName": "TitoloGraficoInfoVeicoloNuovoChart",
+                                                                                "html": "Previsioni tenuta dell'usato (&euro;)",
+                                                                                "itemId": "titoloGraficoInfoVeicoloNuovoLabel",
+                                                                                "width": null
                                                                             },
-                                                                            "name": "MyCategoryAxis",
-                                                                            "designerId": "4df37833-b267-4823-b5e3-22bd6b895d73"
+                                                                            "name": "MyLabel54",
+                                                                            "designerId": "ecd6b433-49f2-4027-9fe5-19b0f72f9356"
                                                                         },
                                                                         {
-                                                                            "type": "Ext.chart.axis.Numeric",
+                                                                            "type": "Ext.Label",
                                                                             "reference": {
-                                                                                "name": "axes",
+                                                                                "name": "items",
                                                                                 "type": "array"
                                                                             },
                                                                             "codeClass": null,
                                                                             "userConfig": {
-                                                                                "designer|displayName": "NumericAxis",
-                                                                                "fields": [
-                                                                                    "valoreY1",
-                                                                                    "valoreY2"
-                                                                                ],
-                                                                                "grid": [
-                                                                                    "{",
-                                                                                    "    odd: {",
-                                                                                    "        fill: '#e8e8e8'",
-                                                                                    "    }",
-                                                                                    "}"
-                                                                                ],
-                                                                                "position": "left",
-                                                                                "title": null
+                                                                                "designer|displayName": "MessaggioGraficoInfoVeicoloNuovoLabel",
+                                                                                "html": "Valori previsivi non disponibili",
+                                                                                "itemId": "messaggioGraficoInfoVeicoloNuovoLabel",
+                                                                                "width": "50%"
                                                                             },
-                                                                            "name": "MyNumericAxis",
-                                                                            "designerId": "012fbcc1-012c-431b-9f2d-5e8588bb0119"
+                                                                            "name": "MyLabel49",
+                                                                            "designerId": "6cbf5520-d20d-4e0a-9eb0-f7bff65da13c"
                                                                         },
                                                                         {
-                                                                            "type": "Ext.chart.series.Line",
+                                                                            "type": "Ext.chart.CartesianChart",
                                                                             "reference": {
-                                                                                "name": "series",
+                                                                                "name": "items",
                                                                                 "type": "array"
                                                                             },
                                                                             "codeClass": null,
                                                                             "userConfig": {
+                                                                                "background": [
+                                                                                    "#71727d"
+                                                                                ],
+                                                                                "centered": null,
+                                                                                "cls": [
+                                                                                    "graficoInfoVeicoloNuovoChartCls"
+                                                                                ],
                                                                                 "colors": [
-                                                                                    "rgba(0,200,0,0.3)"
+                                                                                    "[\"#115fa6\", \"#94ae0a\", \"#a61120\", \"#ff8809\", \"#ffd13e\", \"#a61187\", \"#24ad9a\", \"#7c7474\", \"#a66111\"]"
                                                                                 ],
-                                                                                "designer|displayName": "LineSeries1",
-                                                                                "marker": [
-                                                                                    "{",
-                                                                                    "    type: \"circle\",",
-                                                                                    "    fill: \"rgb(0,200,0)\",",
-                                                                                    "    radius: 4",
-                                                                                    "}"
-                                                                                ],
-                                                                                "style": [
-                                                                                    "{",
-                                                                                    "    stroke: 'rgb(0,200,0)',",
-                                                                                    "    lineWidth: 2",
-                                                                                    "}"
-                                                                                ],
-                                                                                "xField": "valoreX",
-                                                                                "yField": "valoreY1"
+                                                                                "designer|displayName": "GraficoInfoVeicoloNuovoChart",
+                                                                                "height": 300,
+                                                                                "hidden": true,
+                                                                                "itemId": "graficoInfoVeicoloNuovoChart",
+                                                                                "store": "GraficoInfoVeicoloNuovoStore",
+                                                                                "styleHtmlCls": null,
+                                                                                "styleHtmlContent": null,
+                                                                                "width": "100%"
                                                                             },
-                                                                            "name": "MyLineSeries",
-                                                                            "designerId": "47679a50-78c1-4dea-87e6-83088ea29223"
-                                                                        },
-                                                                        {
-                                                                            "type": "Ext.chart.series.Line",
-                                                                            "reference": {
-                                                                                "name": "series",
-                                                                                "type": "array"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "colors": [
-                                                                                    "transparent"
-                                                                                ],
-                                                                                "designer|displayName": "LineSeries2",
-                                                                                "marker": [
-                                                                                    "{",
-                                                                                    "    type: \"circle\",",
-                                                                                    "    fill: \"rgb(0,0,200)\",",
-                                                                                    "    radius: 4",
-                                                                                    "}"
-                                                                                ],
-                                                                                "style": [
-                                                                                    "{",
-                                                                                    "    stroke: 'rgb(0,0,200)',",
-                                                                                    "    lineWidth: 2",
-                                                                                    "}"
-                                                                                ],
-                                                                                "xField": "valoreX",
-                                                                                "yField": "valoreY2"
-                                                                            },
-                                                                            "name": "MyLineSeries1",
-                                                                            "designerId": "d39758b6-bbc6-4769-b7c7-e3954daddf8f"
-                                                                        },
-                                                                        {
-                                                                            "type": "Ext.chart.interactions.PanZoom",
-                                                                            "reference": {
-                                                                                "name": "interactions",
-                                                                                "type": "array"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "designer|displayName": "PanZoomInteraction"
-                                                                            },
-                                                                            "name": "MyPanZoomInteraction",
-                                                                            "designerId": "788aa632-dc69-4c22-a8d5-33d19f8d6806"
+                                                                            "name": "MyLineChart1",
+                                                                            "designerId": "bcd40b22-02c7-483a-8f62-c8e8f9ab1ec2",
+                                                                            "isBuiltIn": true,
+                                                                            "iconCls": "icon-line-chart",
+                                                                            "autoName": "MyLineChart",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "Ext.chart.axis.Category",
+                                                                                    "reference": {
+                                                                                        "name": "axes",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "designer|displayName": "CategoryAxis",
+                                                                                        "fields": [
+                                                                                            "valoreX"
+                                                                                        ],
+                                                                                        "grid": [
+                                                                                            "{ stroke: '#868790' }"
+                                                                                        ],
+                                                                                        "label": [
+                                                                                            "{\"color\":\"#fff\",\"x\":0,\"y\":0,\"textBaseline\":\"middle\",\"textAlign\":\"center\",\"fontSize\":12,\"fontFamily\":\"Helvetica\"}"
+                                                                                        ],
+                                                                                        "style": [
+                                                                                            "{",
+                                                                                            "    stroke: '#868790'",
+                                                                                            "}"
+                                                                                        ],
+                                                                                        "title": null
+                                                                                    },
+                                                                                    "name": "MyCategoryAxis",
+                                                                                    "designerId": "4df37833-b267-4823-b5e3-22bd6b895d73"
+                                                                                },
+                                                                                {
+                                                                                    "type": "Ext.chart.axis.Numeric",
+                                                                                    "reference": {
+                                                                                        "name": "axes",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "designer|displayName": "NumericAxis",
+                                                                                        "fields": [
+                                                                                            "valoreY1",
+                                                                                            "valoreY2"
+                                                                                        ],
+                                                                                        "grid": [
+                                                                                            "{ stroke: '#868790' }"
+                                                                                        ],
+                                                                                        "label": [
+                                                                                            "{\"color\":\"#fff\",\"x\":0,\"y\":0,\"textBaseline\":\"middle\",\"textAlign\":\"center\",\"fontSize\":12,\"fontFamily\":\"Helvetica\"}"
+                                                                                        ],
+                                                                                        "position": "left",
+                                                                                        "style": [
+                                                                                            "{ stroke: '#868790' }"
+                                                                                        ],
+                                                                                        "title": null
+                                                                                    },
+                                                                                    "name": "MyNumericAxis",
+                                                                                    "designerId": "012fbcc1-012c-431b-9f2d-5e8588bb0119"
+                                                                                },
+                                                                                {
+                                                                                    "type": "Ext.chart.series.Line",
+                                                                                    "reference": {
+                                                                                        "name": "series",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "colors": null,
+                                                                                        "designer|displayName": "LineSeries1",
+                                                                                        "marker": [
+                                                                                            "{",
+                                                                                            "    type: \"circle\",",
+                                                                                            "    fill: \"#7ee2ff\",",
+                                                                                            "    radius: 4",
+                                                                                            "}"
+                                                                                        ],
+                                                                                        "style": [
+                                                                                            "{",
+                                                                                            "    stroke: '#7ee2ff',",
+                                                                                            "    lineWidth: 2",
+                                                                                            "}"
+                                                                                        ],
+                                                                                        "xField": "valoreX",
+                                                                                        "yField": "valoreY1"
+                                                                                    },
+                                                                                    "name": "MyLineSeries",
+                                                                                    "designerId": "47679a50-78c1-4dea-87e6-83088ea29223"
+                                                                                },
+                                                                                {
+                                                                                    "type": "Ext.chart.series.Line",
+                                                                                    "reference": {
+                                                                                        "name": "series",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "colors": null,
+                                                                                        "designer|displayName": "LineSeries2",
+                                                                                        "marker": [
+                                                                                            "{",
+                                                                                            "    type: \"circle\",",
+                                                                                            "    fill: \"#c1e422\",",
+                                                                                            "    radius: 4",
+                                                                                            "}"
+                                                                                        ],
+                                                                                        "style": [
+                                                                                            "{",
+                                                                                            "    stroke: '#c1e422',",
+                                                                                            "    lineWidth: 2",
+                                                                                            "}"
+                                                                                        ],
+                                                                                        "xField": "valoreX",
+                                                                                        "yField": "valoreY2"
+                                                                                    },
+                                                                                    "name": "MyLineSeries1",
+                                                                                    "designerId": "d39758b6-bbc6-4769-b7c7-e3954daddf8f"
+                                                                                },
+                                                                                {
+                                                                                    "type": "Ext.chart.interactions.PanZoom",
+                                                                                    "reference": {
+                                                                                        "name": "interactions",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "designer|displayName": "PanZoomInteraction"
+                                                                                    },
+                                                                                    "name": "MyPanZoomInteraction",
+                                                                                    "designerId": "788aa632-dc69-4c22-a8d5-33d19f8d6806"
+                                                                                }
+                                                                            ]
                                                                         }
                                                                     ]
                                                                 },
@@ -3521,9 +3578,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "cls": [
+                                    "infoVeicoloNuovoToolbarCls"
+                                ],
+                                "container|align": "start",
                                 "designer|displayName": "InfoVeicoloNuovoToolbar",
+                                "designer|uiInterfaceName": "infocar-toolbar",
                                 "docked": "bottom",
-                                "hidden": false
+                                "height": 60,
+                                "hidden": false,
+                                "ui": "infocar-toolbar"
                             },
                             "name": "MyToolbar2",
                             "designerId": "a2a40a72-0179-419b-87f6-19f350eab324",
@@ -3536,9 +3600,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "badgeCls": null,
+                                        "baseCls": "indietroInfoVeicoloNuovoButtonCls",
                                         "designer|displayName": "IndietroInfoVeicoloNuovoButton",
                                         "itemId": "indietroInfoVeicoloNuovoButton",
-                                        "text": "Indietro"
+                                        "text": "INDIETRO"
                                     },
                                     "name": "MyButton12",
                                     "designerId": "85e06923-c2aa-4c10-a3a7-901455808bac"

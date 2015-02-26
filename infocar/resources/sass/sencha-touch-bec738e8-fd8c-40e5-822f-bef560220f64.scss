@@ -2076,6 +2076,46 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
   padding-left: 23px;
 }
 
+
+/* Grafico Info Veicolo Usato */
+
+.titoloGraficoInfoVeicoloNuovoContainerCls {
+  background: #71727d;
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+}
+
+.titoloGraficoInfoVeicoloNuovoLabelCls {
+  font-size: 1em;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.graficoInfoVeicoloNuovoChartCls {
+  border-bottom-left-radius: 0.4em !important;
+  border-bottom-right-radius: 0.4em !important;
+}
+
+
+/* Toolbar a Pie Pagina Info Veicolo Nuovo */
+.indietroInfoVeicoloNuovoButtonCls,
+{
+  @include infocar-button-red();
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.indietroInfoVeicoloNuovoButtonCls {
+  margin-left: 10px;
+}
+
+.indietroInfoVeicoloNuovoButtonCls.x-dock-item.x-unsized,
+{
+  @include infocar-box-orient(horizontal);
+}
+
+
 /* View con carousel immagini fullscreen */
 
 .photoFullscreenImgCls img {
