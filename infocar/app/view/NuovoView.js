@@ -1188,7 +1188,7 @@ Ext.define('Infocar.view.NuovoView', {
                                                                     'Alimentazione: <span class="infocar-bold">{alimentazione_descrizione}</span>&nbsp;&nbsp;',
                                                                     'Cilindrata cm<sup>3</sup>: <span class="infocar-bold">{cilindrata}</span>&nbsp;&nbsp;',
                                                                     'Potenza kW/CV: <span class="infocar-bold">{potenza}</span><br>',
-                                                                    'Carrozzeria: <span class="infocar-bold">{carrozzeria_descrizione}&nbsp;&nbsp;',
+                                                                    'Carrozzeria: <span class="infocar-bold">{carrozzeria_descrizione}</span>&nbsp;&nbsp;',
                                                                     'Normativa: <span class="infocar-bold">{normativa}</span>',
                                                                     '</div>'
                                                                 ]
@@ -1247,6 +1247,7 @@ Ext.define('Infocar.view.NuovoView', {
                                                             },
                                                             {
                                                                 xtype: 'container',
+                                                                cls: 'graficoDatiStockInfoVeicoloNuovoContainerCls',
                                                                 layout: 'hbox',
                                                                 items: [
                                                                     {
@@ -1346,7 +1347,8 @@ Ext.define('Infocar.view.NuovoView', {
                                                                                         },
                                                                                         style: {
                                                                                             stroke: '#7ee2ff',
-                                                                                            lineWidth: 2
+                                                                                            lineWidth: 2,
+                                                                                            smooth: true
                                                                                         },
                                                                                         xField: 'valoreX',
                                                                                         yField: 'valoreY1'
@@ -1360,7 +1362,8 @@ Ext.define('Infocar.view.NuovoView', {
                                                                                         },
                                                                                         style: {
                                                                                             stroke: '#c1e422',
-                                                                                            lineWidth: 2
+                                                                                            lineWidth: 2,
+                                                                                            smooth: true
                                                                                         },
                                                                                         xField: 'valoreX',
                                                                                         yField: 'valoreY2'
@@ -1418,27 +1421,32 @@ Ext.define('Infocar.view.NuovoView', {
                                             },
                                             {
                                                 xtype: 'container',
+                                                cls: 'datiTecniciInfoVeicoloNuovoContainerCls',
                                                 itemId: 'datiTecniciInfoVeicoloNuovoContainer',
                                                 layout: 'vbox',
                                                 items: [
                                                     {
                                                         xtype: 'label',
-                                                        html: 'Dati tecnici'
+                                                        cls: 'titoloDatiTecniciInfoVeicoloNuovoLabelCls',
+                                                        html: 'Dati tecnici dettagliati'
                                                     },
                                                     {
                                                         xtype: 'list',
                                                         flex: 1,
+                                                        cls: 'datiTecniciInfoVeicoloNuovoListViewCls',
                                                         disableSelection: true,
+                                                        itemCls: 'datiTecniciInfoVeicoloNuovoListViewItemCls',
                                                         itemTpl: [
-                                                            '<table border="0">',
+                                                            '<table class="datiTecniciInfoVeicoloNuovoTableCls">',
                                                             '  <tr>',
-                                                            '    <td style="width: 200px">{nomeAttributo}:</td>',
-                                                            '    <td>{valoreAttributo}</td>',
+                                                            '    <td class="attributoDatiTecniciInfoVeicoloNuovoTdCls">{nomeAttributo}:</td>',
+                                                            '    <td class="valoreDatiTecniciInfoVeicoloNuovoTdCls">{valoreAttributo}</td>',
                                                             '  </tr>',
                                                             '</table>'
                                                         ],
                                                         store: 'DatiTecniciInfoVeicoloNuovoStore',
-                                                        grouped: true
+                                                        grouped: true,
+                                                        itemHeight: 34
                                                     }
                                                 ]
                                             },
@@ -1449,13 +1457,15 @@ Ext.define('Infocar.view.NuovoView', {
                                                 items: [
                                                     {
                                                         xtype: 'label',
+                                                        cls: 'titoloEquipInfoVeicoloNuovoLabelCls',
                                                         html: 'Tutti gli equipaggiamenti'
                                                     },
                                                     {
                                                         xtype: 'dataview',
                                                         flex: 1,
+                                                        cls: 'equipInfoVeicoloNuovoDataviewCls',
                                                         itemTpl: Ext.create('Ext.XTemplate', 
-                                                            '<div> - {descrizione}</div>',
+                                                            '<div class="descEquipInfoVeicoloNuovoDataviewItemDivCls"> > {descrizione}</div>',
                                                             {
                                                                 disableFormats: true
                                                             }

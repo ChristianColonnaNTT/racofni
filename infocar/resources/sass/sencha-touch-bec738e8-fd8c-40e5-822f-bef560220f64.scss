@@ -1383,16 +1383,6 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
   }
 }
 
-/*
-.TVEI_equipDettVeicoloNuovoListCls .x-list-header {
-  padding-left: 30px !important;
-  background-image: url(../images/35-ipad_infocar_done_red_18.png) !important;
-  background-size: 16px 20px !important;
-  background-repeat: no-repeat !important;
-  background-position: 8px 18px !important;
-}
-*/
-
 @include infocar-header-gruppo-dett-veicolo-nuovo(
     $param-cluster-codice: TVEI_,
     $param-bg-img-header: url(../images/35-ipad_infocar_done_red_18.png),
@@ -2027,7 +2017,32 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
   padding-left: 8px !important;
 }
 
+/* Grafico Info Veicolo Usato */
 
+.graficoDatiStockInfoVeicoloNuovoContainerCls {
+  padding-left: 13px !important;
+}
+
+.titoloGraficoInfoVeicoloNuovoContainerCls {
+  background: #71727d;
+  border-top-left-radius: 0.4em;
+  border-top-right-radius: 0.4em;
+}
+
+.titoloGraficoInfoVeicoloNuovoLabelCls {
+  font-size: 1em;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.graficoInfoVeicoloNuovoChartCls {
+  border-bottom-left-radius: 0.4em !important;
+  border-bottom-right-radius: 0.4em !important;
+}
+
+
+/* Tabellla Dati Stock Info Veicolo Nuovo */
 .sintesiDatiStockInfoVeicoloNuovoLabelCls {
   padding-left: 4px !important;
   padding-right: 13px !important;
@@ -2036,10 +2051,11 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 .sintesiDatiStockInfoVeicoloNuovoTableCls {
   border: 0;
   width: 100%;
+  font-size: 0.75em;
 }
 
 .sintesiDatiStockInfoVeicoloNuovoTableCls td {
-  padding: 0px 9px 0px 9px;
+  padding: 0px 5px 0px 5px;
   margin: 0;
   text-align: left;
   vertical-align: middle;
@@ -2077,27 +2093,6 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 }
 
 
-/* Grafico Info Veicolo Usato */
-
-.titoloGraficoInfoVeicoloNuovoContainerCls {
-  background: #71727d;
-  border-top-left-radius: 0.4em;
-  border-top-right-radius: 0.4em;
-}
-
-.titoloGraficoInfoVeicoloNuovoLabelCls {
-  font-size: 1em;
-  color: #fff;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.graficoInfoVeicoloNuovoChartCls {
-  border-bottom-left-radius: 0.4em !important;
-  border-bottom-right-radius: 0.4em !important;
-}
-
-
 /* Toolbar a Pie Pagina Info Veicolo Nuovo */
 .indietroInfoVeicoloNuovoButtonCls,
 {
@@ -2114,6 +2109,105 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 {
   @include infocar-box-orient(horizontal);
 }
+
+
+/* Schermata Dati tecnici Info Veicolo Nuovo */
+
+.titoloDatiTecniciInfoVeicoloNuovoLabelCls {
+  color: #e30613;
+  font-size: 1.12em;
+  padding-top: 12px !important;
+  padding-bottom: 10px !important;
+  margin-left: 17px !important;
+}
+
+.datiTecniciInfoVeicoloNuovoListViewCls {
+  background-color: #fff;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+
+.datiTecniciInfoVeicoloNuovoListViewCls .x-list-header { /* Sottogruppi */
+  height: 26px;
+  line-height: 19px;
+  background-color: #a0a0a5;
+  background-image: none;
+  border: 0;
+  color: #fff;
+  font-size: 0.88em;
+  font-weight: normal;
+  margin-bottom: 4px;
+  border-radius: 0.2em;
+}
+
+/*
+.datiTecniciInfoVeicoloNuovoListViewCls .x-list-item.x-list-item-tpl .x-innerhtml {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  border: 0;
+}
+*/
+
+.datiTecniciInfoVeicoloNuovoListViewItemCls,
+.datiTecniciInfoVeicoloNuovoListViewItemCls .x-innerhtml {
+  padding: 0px 0px 0px 0px !important;
+  margin: 0px 0px 4px 0px !important;
+  border: 0 !important;
+}
+
+.datiTecniciInfoVeicoloNuovoListViewItemCls:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+.datiTecniciInfoVeicoloNuovoListViewItemCls:nth-child(even) {
+  background-color: #fff;
+}
+
+.datiTecniciInfoVeicoloNuovoTableCls {
+  padding: 5px 0px 0px 12px;
+  height: 30px;
+  font-size: 0.75em;
+  width: 100%;
+  border: 0;
+}
+
+.attributoDatiTecniciInfoVeicoloNuovoTdCls {
+  padding: 5px 0px 0px 12px;
+  width: 33%;
+}
+
+.valoreDatiTecniciInfoVeicoloNuovoTdCls {
+  padding: 5px 0px 0px 12px;
+  width: 67%;
+}
+
+
+
+/* Schermata Equipaggiamenti Info Veicolo Nuovo */
+
+.titoloEquipInfoVeicoloNuovoLabelCls {
+  color: #e30613;
+  font-size: 1.12em;
+  padding-top: 12px !important;
+  padding-bottom: 10px !important;
+  margin-left: 17px !important;
+}
+
+.equipInfoVeicoloNuovoDataviewCls {
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+
+.descEquipInfoVeicoloNuovoDataviewItemDivCls {
+  height: 32px;
+  line-height: 32px;
+  font-size: 0.75em;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+
 
 
 /* View con carousel immagini fullscreen */

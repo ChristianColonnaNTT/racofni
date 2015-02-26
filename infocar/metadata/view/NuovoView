@@ -2964,7 +2964,7 @@
                                                                             "Alimentazione: <span class=\"infocar-bold\">{alimentazione_descrizione}</span>&nbsp;&nbsp;",
                                                                             "Cilindrata cm<sup>3</sup>: <span class=\"infocar-bold\">{cilindrata}</span>&nbsp;&nbsp;",
                                                                             "Potenza kW/CV: <span class=\"infocar-bold\">{potenza}</span><br>",
-                                                                            "Carrozzeria: <span class=\"infocar-bold\">{carrozzeria_descrizione}&nbsp;&nbsp;",
+                                                                            "Carrozzeria: <span class=\"infocar-bold\">{carrozzeria_descrizione}</span>&nbsp;&nbsp;",
                                                                             "Normativa: <span class=\"infocar-bold\">{normativa}</span>",
                                                                             "</div>"
                                                                         ]
@@ -3120,7 +3120,10 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "designer|displayName": "HBoxContainer",
+                                                                "cls": [
+                                                                    "graficoDatiStockInfoVeicoloNuovoContainerCls"
+                                                                ],
+                                                                "designer|displayName": "GraficoDatiStockInfoVeicoloNuovoContainer",
                                                                 "layout": "hbox"
                                                             },
                                                             "name": "MyContainer102",
@@ -3289,7 +3292,8 @@
                                                                                         "style": [
                                                                                             "{",
                                                                                             "    stroke: '#7ee2ff',",
-                                                                                            "    lineWidth: 2",
+                                                                                            "    lineWidth: 2,",
+                                                                                            "    smooth: true",
                                                                                             "}"
                                                                                         ],
                                                                                         "xField": "valoreX",
@@ -3318,7 +3322,8 @@
                                                                                         "style": [
                                                                                             "{",
                                                                                             "    stroke: '#c1e422',",
-                                                                                            "    lineWidth: 2",
+                                                                                            "    lineWidth: 2,",
+                                                                                            "    smooth: true",
                                                                                             "}"
                                                                                         ],
                                                                                         "xField": "valoreX",
@@ -3438,6 +3443,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "datiTecniciInfoVeicoloNuovoContainerCls"
+                                                ],
                                                 "designer|displayName": "DatiTecniciInfoVeicoloNuovoContainer",
                                                 "itemId": "datiTecniciInfoVeicoloNuovoContainer",
                                                 "layout": "vbox"
@@ -3453,8 +3461,11 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "titoloDatiTecniciInfoVeicoloNuovoLabelCls"
+                                                        ],
                                                         "designer|displayName": "TitoloDatiTecniciInfoVeicoloNuovoLabel",
-                                                        "html": "Dati tecnici"
+                                                        "html": "Dati tecnici dettagliati"
                                                     },
                                                     "name": "MyLabel35",
                                                     "designerId": "dc4a6838-e280-4d40-84a9-bdb1310ca956"
@@ -3467,11 +3478,17 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "datiTecniciInfoVeicoloNuovoListViewCls"
+                                                        ],
                                                         "designer|displayName": "DatiTecniciInfoVeicoloNuovoListView",
                                                         "disableSelection": true,
                                                         "grouped": true,
+                                                        "itemCls": "datiTecniciInfoVeicoloNuovoListViewItemCls",
+                                                        "itemHeight": 34,
                                                         "layout|flex": 1,
-                                                        "store": "DatiTecniciInfoVeicoloNuovoStore"
+                                                        "store": "DatiTecniciInfoVeicoloNuovoStore",
+                                                        "striped": null
                                                     },
                                                     "name": "MyList",
                                                     "designerId": "58c49cf0-2573-4865-8779-eded372a81b2",
@@ -3486,10 +3503,10 @@
                                                             "userConfig": {
                                                                 "designer|displayName": "itemTpl",
                                                                 "implHandler": [
-                                                                    "<table border=\"0\">",
+                                                                    "<table class=\"datiTecniciInfoVeicoloNuovoTableCls\">",
                                                                     "  <tr>",
-                                                                    "    <td style=\"width: 200px\">{nomeAttributo}:</td>",
-                                                                    "    <td>{valoreAttributo}</td>",
+                                                                    "    <td class=\"attributoDatiTecniciInfoVeicoloNuovoTdCls\">{nomeAttributo}:</td>",
+                                                                    "    <td class=\"valoreDatiTecniciInfoVeicoloNuovoTdCls\">{valoreAttributo}</td>",
                                                                     "  </tr>",
                                                                     "</table>"
                                                                 ]
@@ -3524,6 +3541,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "titoloEquipInfoVeicoloNuovoLabelCls"
+                                                        ],
                                                         "designer|displayName": "TitoloEquipInfoVeicoloNuovoLabel",
                                                         "html": "Tutti gli equipaggiamenti"
                                                     },
@@ -3538,6 +3558,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "equipInfoVeicoloNuovoDataviewCls"
+                                                        ],
                                                         "designer|displayName": "EquipInfoVeicoloNuovoDataview",
                                                         "layout|flex": 1,
                                                         "store": "EquipInfoVeicoloNuovoStore"
@@ -3556,7 +3579,7 @@
                                                                 "designer|displayName": "itemTpl",
                                                                 "disableFormats": true,
                                                                 "implHandler": [
-                                                                    "<div> - {descrizione}</div>"
+                                                                    "<div class=\"descEquipInfoVeicoloNuovoDataviewItemDivCls\"> > {descrizione}</div>"
                                                                 ]
                                                             },
                                                             "name": "itemTpl",
