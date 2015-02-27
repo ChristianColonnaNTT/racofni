@@ -85,6 +85,10 @@ Ext.define('Infocar.model.DettaglioVeicoloNuovoModel', {
             {
                 name: 'urlImg',
                 type: 'string'
+            },
+            {
+                name: 'miniUrlImg',
+                type: 'string'
             }
         ],
         proxy: {

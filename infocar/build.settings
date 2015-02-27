@@ -2,6 +2,6 @@
     "webBuild": {
         "environment": "production",
         "clean": "on",
-        "publishPath": "/home/domus/sencha/builds"
+        "publishPath": "C:/Daniele/Progetti/Domus Infocar/builds/infocar/"
     }
 }

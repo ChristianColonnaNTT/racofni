@@ -266,6 +266,20 @@
                     "designerId": "a01c8ea3-da6c-4a7a-b9e7-c9e02561d7b6"
                 }
             ]
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "miniUrlImg",
+                "type": "string"
+            },
+            "name": "field84",
+            "designerId": "e58882e3-fdc3-46b2-8b1a-fc4958f1f126"
         }
     ]
 }

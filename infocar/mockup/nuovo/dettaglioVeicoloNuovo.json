@@ -17,7 +17,8 @@
         "veicoloBasePrezzo": "1.234,56",
         "equipaggiamentiPrezzo": "400,00",
         "totalePrezzo": "6.543,21",
-        "urlImg": "../resources/images/ferrari1.jpg"
+        "urlImg": "../resources/images/ferrari1.jpg",
+        "miniUrlImg": "../resources/images/alfa.jpg"
     }]
 }
 
