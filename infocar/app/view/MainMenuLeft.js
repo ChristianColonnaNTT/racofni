@@ -54,28 +54,32 @@ Ext.define('Infocar.view.MainMenuLeft', {
                 xtype: 'button',
                 cls: 'HomeMenuLeftButtonCls',
                 itemId: 'homeMenuLeftButton',
-                iconCls: 'home',
+                icon: 'resources/images/10-ipad_infocar_done_15.png',
+                iconCls: 'iconMenuLeftButtonCls',
                 text: 'Home'
             },
             {
                 xtype: 'button',
                 cls: 'MenuLeftButtonCls',
                 itemId: 'ricercaUsatoMenuLeftButton',
-                iconCls: 'action',
+                icon: 'resources/images/10-ipad_infocar_done_19.png',
+                iconCls: 'iconMenuLeftButtonCls',
                 text: 'Preliminare ritiro usato'
             },
             {
                 xtype: 'button',
                 cls: 'MenuLeftButtonCls',
                 itemId: 'ricercaNuovoMenuLeftButton',
-                iconCls: 'action',
+                icon: 'resources/images/10-ipad_infocar_done_20.png',
+                iconCls: 'iconMenuLeftButtonCls',
                 text: 'Preliminare configuratore nuovo'
             },
             {
                 xtype: 'button',
                 cls: 'MenuLeftButtonCls',
                 itemId: 'ricercaStockMenuLeftButton',
-                iconCls: 'action',
+                icon: 'resources/images/10-ipad_infocar_done_22.png',
+                iconCls: 'iconMenuLeftButtonCls',
                 text: 'Ricerca stock'
             }
         ]

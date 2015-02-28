@@ -55,7 +55,7 @@ Ext.define('Infocar.view.NuovoView', {
                 items: [
                     {
                         xtype: 'container',
-                        Titolo: 'Configurazione - Ricerca nuovo',
+                        Titolo: 'Configurazione > <img src="resources/images/10-ipad_infocar_done_18.png"> Ricerca nuovo',
                         itemId: 'ricercaNuovoContainer',
                         layout: 'vbox',
                         items: [

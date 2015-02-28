@@ -120,6 +120,9 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             "container#bodyNuovoContainer": {
                 activeitemchange: 'onContainerActiveItemChange'
             },
+            "container#corpoInfoVeicoloNuovoContainer": {
+                activeitemchange: 'onCorpoInfoVeicoloNuovoContainerActiveItemChange'
+            },
             "button#stampaEsitoVeicoloNuovoButton": {
                 tap: 'onStampaEsitoVeicoloButtonTap'
             }
@@ -647,6 +650,15 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
 
         var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');
         topBarCtrl.setTitoloFromContainer(container, item);
+    },
+
+    onCorpoInfoVeicoloNuovoContainerActiveItemChange: function(container, value, oldValue, eOpts) {
+        var item = value;
+
+        var bodyContainer = container.up('#bodyNuovoContainer');
+
+        var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');
+        topBarCtrl.setTitoloFromContainer(bodyContainer, item);
     },
 
     onStampaEsitoVeicoloButtonTap: function(button, e, eOpts) {
@@ -1524,16 +1536,40 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         // Titoli schermate
 
         cmp = Ext.ComponentQuery.query("#ricercaNuovoContainer")[0];
-        cmp.Titolo = "Configurazione - Ricerca nuovo";
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA NUOVO</span> >'+
+            ' <img src="resources/images/10-ipad_infocar_done_18.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">RICERCA RITIRO</span>';
 
         cmp = Ext.ComponentQuery.query("#dettaglioVeicoloNuovoContainer")[0];
-        cmp.Titolo = "Configurazione - Preliminare";
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA NUOVO</span> >'+
+            ' <img src="resources/images/49-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DETTAGLIO ALLESTIMENTO</span>';
 
         cmp = Ext.ComponentQuery.query("#infoVeicoloNuovoContainer")[0];
-        cmp.Titolo = "Configurazione - Dettaglio del modello";
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA NUOVO</span> >'+
+            ' <img src="resources/images/49-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DETTAGLI VEICOLO</span>';
 
         cmp = Ext.ComponentQuery.query("#esitoVeicoloNuovoContainer")[0];
-        cmp.Titolo = "Configurazione - Esito";
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA NUOVO</span> >'+
+            ' <img src="resources/images/23-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">ESITO</span>';
+
+        cmp = Ext.ComponentQuery.query("#generaleInfoVeicoloNuovoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA NUOVO</span> >'+
+            ' <img src="resources/images/49-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DETTAGLI VEICOLO</span>';
+
+        cmp = Ext.ComponentQuery.query("#datiTecniciInfoVeicoloNuovoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA NUOVO</span> >'+
+            ' <img src="resources/images/dati_tecnici.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DATI TECNICI DETTAGLIATI</span>';
+
+        cmp = Ext.ComponentQuery.query("#equipInfoVeicoloNuovoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA NUOVO</span> >'+
+            ' <img src="resources/images/20-ipad-portrait_done_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">EQUIPAGGIAMENTI</span>';
+
 
         // Ricerca Nuovo
 

@@ -102,6 +102,7 @@ Ext.define('Infocar.view.StockView', {
                                     {
                                         xtype: 'container',
                                         flex: 3,
+                                        itemId: 'mycontainer40',
                                         layout: 'hbox',
                                         items: [
                                             {
@@ -128,7 +129,7 @@ Ext.define('Infocar.view.StockView', {
                                             },
                                             {
                                                 xtype: 'spacer',
-                                                width: 50
+                                                width: 30
                                             },
                                             {
                                                 xtype: 'sliderfield',
@@ -171,6 +172,7 @@ Ext.define('Infocar.view.StockView', {
                                                     {
                                                         xtype: 'label',
                                                         flex: 1,
+                                                        cls: 'prezzoMinRicercaStockLabelCls',
                                                         itemId: 'prezzoMinRicercaStockLabel',
                                                         tpl: Ext.create('Ext.XTemplate', 
                                                             '{prezzo:this.fmtCurrency} &euro;',
@@ -199,7 +201,7 @@ Ext.define('Infocar.view.StockView', {
                                             },
                                             {
                                                 xtype: 'spacer',
-                                                width: 110
+                                                width: 90
                                             },
                                             {
                                                 xtype: 'container',
@@ -209,6 +211,7 @@ Ext.define('Infocar.view.StockView', {
                                                     {
                                                         xtype: 'label',
                                                         flex: 1,
+                                                        cls: 'kmMinRicercaStockLabelCls',
                                                         itemId: 'kmMinRicercaStockLabel',
                                                         tpl: Ext.create('Ext.XTemplate', 
                                                             '{km:this.fmtInt} Km',
@@ -256,7 +259,7 @@ Ext.define('Infocar.view.StockView', {
                                             },
                                             {
                                                 xtype: 'spacer',
-                                                width: 50
+                                                width: 30
                                             },
                                             {
                                                 xtype: 'selectfield',
@@ -610,20 +613,23 @@ Ext.define('Infocar.view.StockView', {
                                                     },
                                                     {
                                                         xtype: 'tabpanel',
-                                                        height: 162,
+                                                        height: 'auto',
                                                         itemId: 'schedaInfoVeicoloStockTabPanelCls',
                                                         items: [
                                                             {
                                                                 xtype: 'container',
                                                                 title: 'INFORMAZIONI AGGIUNTIVE',
                                                                 cls: 'informAggiuntiveSchedaInfoVeicoloStockTabCls',
-                                                                scrollable: 'vertical',
+                                                                height: 'auto',
+                                                                layout: 'fit',
+                                                                scrollable: false,
                                                                 items: [
                                                                     {
                                                                         xtype: 'label',
+                                                                        height: 'auto',
                                                                         itemId: 'informAggiuntiveSchedaInfoVeicoloStockLabel',
                                                                         tpl: [
-                                                                            '{infoAggiuntiveSchedaVeicolo}'
+                                                                            'aertar tawrt farwgt arwegt arwg tewr gtea rg ewrag erw<br/><br/><br/><br/><br/>sdfwrgthyj{infoAggiuntiveSchedaVeicolo}'
                                                                         ]
                                                                     }
                                                                 ]
@@ -632,10 +638,13 @@ Ext.define('Infocar.view.StockView', {
                                                                 xtype: 'container',
                                                                 title: 'STATO D\'USO',
                                                                 cls: 'statoUsoSchedaInfoVeicoloStockTabCls',
-                                                                scrollable: 'vertical',
+                                                                height: 'auto',
+                                                                layout: 'fit',
+                                                                scrollable: false,
                                                                 items: [
                                                                     {
                                                                         xtype: 'label',
+                                                                        height: 'auto',
                                                                         itemId: 'statoUsoSchedaInfoVeicoloStockLabel',
                                                                         tpl: [
                                                                             '{statoUsoSchedaVeicolo}'

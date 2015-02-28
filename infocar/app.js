@@ -374,7 +374,7 @@ Ext.application({
 
         this.checkOrientation();
 
-        ricStockCtrl.loadEstremiPrezzoKmAndVeicoliStock();
+        ricStockCtrl.loadVeicoliStock(false);
 
     },
 

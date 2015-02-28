@@ -56,6 +56,9 @@ Ext.define('Infocar.controller.RicercaStockController', {
             "container#bodyStockContainer": {
                 activeitemchange: 'onBodyContainerActiveItemChange'
             },
+            "container#corpoInfoVeicoloStockContainer": {
+                activeitemchange: 'onCorpoInfoVeicoloStockContainerActiveItemChange'
+            },
             "togglefield#stockUsatoRicercaStockToggle": {
                 change: 'onStockUsatoToggleChange'
             },
@@ -117,7 +120,7 @@ Ext.define('Infocar.controller.RicercaStockController', {
         this.showVeicoloNumRisultati(veicoloCount);
         */
 
-        this.loadVeicoliStock();
+        this.loadVeicoliStock(true);
 
         button.setText('AGGIORNA RICERCA');
     },
@@ -287,7 +290,7 @@ Ext.define('Infocar.controller.RicercaStockController', {
     },
 
     onOrdinamentoRicercaComboboxChange: function(selectfield, newValue, oldValue, eOpts) {
-        this.loadVeicoliStock();
+        this.loadVeicoliStock(true);
 
     },
 
@@ -303,7 +306,7 @@ Ext.define('Infocar.controller.RicercaStockController', {
         //this.initPrezziOverlay();
 
         //this.loadEstremiPrezzoKm();
-
+        this.loadEstremiPrezzoKmAndVeicoliStock();
     },
 
     onBodyContainerActiveItemChange: function(container, value, oldValue, eOpts) {
@@ -311,6 +314,15 @@ Ext.define('Infocar.controller.RicercaStockController', {
 
         var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');
         topBarCtrl.setTitoloFromContainer(container, item);
+    },
+
+    onCorpoInfoVeicoloStockContainerActiveItemChange: function(container, value, oldValue, eOpts) {
+        var item = value;
+
+        var bodyContainer = container.up('#bodyStockContainer');
+
+        var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');
+        topBarCtrl.setTitoloFromContainer(bodyContainer, item);
     },
 
     onStockUsatoToggleChange: function(togglefield, newValue, oldValue, eOpts) {
@@ -413,7 +425,7 @@ Ext.define('Infocar.controller.RicercaStockController', {
         veicoloNumRisultatiLabel.setHtml(numRisultati + ' Veicoli');
     },
 
-    loadVeicoliStock: function() {
+    loadVeicoliStock: function(formParamsFlag) {
         var veicoloStore = Ext.data.StoreManager.lookup('VeicoloStockStore');
 
         var ricercaForm = Ext.ComponentQuery.query('#ricercaStockForm')[0];
@@ -422,13 +434,19 @@ Ext.define('Infocar.controller.RicercaStockController', {
         var ordinamentoCombobox = Ext.ComponentQuery.query('#ordinamentoRicStockComboBox')[0];
         var ordinamentoCodice = ordinamentoCombobox.getValue();
 
+        var loadParams = {
+            ordinamento_codice: ordinamentoCodice
+        };
+
+        if (formParamsFlag) {
+            loadParams = Ext.Object.merge(
+                loadParams,
+                    ricercaForm.getValues());
+        }
+
+
         veicoloStore.load({
-            params: Ext.Object.merge(
-                {
-                    ordinamento_codice: ordinamentoCodice
-                },
-                ricercaForm.getValues()
-            ),
+            params: loadParams,
             callback: function (records, operation, success) {
                 if(!success){
                     Infocar.app.showLoadErrorMessage(operation);
@@ -461,6 +479,9 @@ Ext.define('Infocar.controller.RicercaStockController', {
                 }
 
                 var estremiPrezzoKmModel = record;
+
+                // DEBUG
+                //alert("["+ estremiPrezzoKmModel.get('minPrezzo') +"] ["+ estremiPrezzoKmModel.get('maxPrezzo') +"]");
 
                 var prezzoMinMaxSlider = Ext.ComponentQuery.query('#prezzoMinMaxRicercaStockSlider')[0];
                 var kmMinMaxSlider = Ext.ComponentQuery.query('#kmMinMaxRicercaStockSlider')[0];
@@ -505,7 +526,8 @@ Ext.define('Infocar.controller.RicercaStockController', {
                 //var ricercaForm = Ext.ComponentQuery.query('#ricercaStockForm')[0];
                 //console.log("Form values 1: "+ Ext.encode(ricercaForm.getValues()));
 
-                this.loadVeicoliStock();
+                // DEBUG TODO
+                //this.loadVeicoliStock();
             },
             failure: function(record, operation) {
                 Infocar.app.showLoadErrorMessage(operation);
@@ -577,10 +599,37 @@ Ext.define('Infocar.controller.RicercaStockController', {
         var cmp;
 
         cmp = Ext.ComponentQuery.query("#ricercaStockContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA USATO DA STOCK</span> >'+
+            ' <img src="resources/images/10-ipad_infocar_done_18.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">RICERCA RITIRO</span>';
+
+        cmp = Ext.ComponentQuery.query("#infoVeicoloStockContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA USATO DA STOCK</span> >'+
+            ' <img src="resources/images/49-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DETTAGLI VEICOLO</span>';
+
+        cmp = Ext.ComponentQuery.query("#generaleInfoVeicoloStockContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA USATO DA STOCK</span> >'+
+            ' <img src="resources/images/49-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DETTAGLI VEICOLO</span>';
+
+        cmp = Ext.ComponentQuery.query("#datiTecniciInfoVeicoloStockContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA USATO DA STOCK</span> >'+
+            ' <img src="resources/images/dati_tecnici.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DATI TECNICI DETTAGLIATI</span>';
+
+        cmp = Ext.ComponentQuery.query("#equipInfoVeicoloStockContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">VENDITA USATO DA STOCK</span> >'+
+            ' <img src="resources/images/20-ipad-portrait_done_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">EQUIPAGGIAMENTI</span>';
+
+        /*
+        cmp = Ext.ComponentQuery.query("#ricercaStockContainer")[0];
         cmp.Titolo = "Stock - Ricerca stock";
 
         cmp = Ext.ComponentQuery.query("#infoVeicoloStockContainer")[0];
         cmp.Titolo = "Stock - Dettaglio veicolo";
+        */
 
     },
 

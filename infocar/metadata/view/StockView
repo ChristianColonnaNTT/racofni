@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar1",
+            "name": "topbar5",
             "designerId": "20ecee56-aaba-40f9-a440-800d06d90ca5",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -201,6 +201,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "designer|displayName": "HBoxContainer",
+                                        "itemId": "mycontainer40",
                                         "layout": "hbox",
                                         "layout|flex": 3
                                     },
@@ -271,7 +272,8 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "baseCls": null,
-                                                "width": 50
+                                                "hidden": null,
+                                                "width": 30
                                             },
                                             "name": "MySpacer9",
                                             "designerId": "b5d9b25d-d811-4133-9087-4cb24331d30c"
@@ -385,6 +387,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "prezzoMinRicercaStockLabelCls"
+                                                        ],
                                                         "designer|displayName": "PrezzoMinRicercaStockLabel",
                                                         "itemId": "prezzoMinRicercaStockLabel",
                                                         "layout|flex": 1,
@@ -501,7 +506,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "baseCls": null,
-                                                "width": 110
+                                                "width": 90
                                             },
                                             "name": "MySpacer9",
                                             "designerId": "c2f435ab-c9fd-4b17-9575-dfdfc47582b8"
@@ -529,6 +534,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "kmMinRicercaStockLabelCls"
+                                                        ],
                                                         "designer|displayName": "KmMinRicercaStockLabel",
                                                         "itemId": "kmMinRicercaStockLabel",
                                                         "layout|flex": 1
@@ -682,7 +690,7 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "baseCls": null,
-                                                "width": 50
+                                                "width": 30
                                             },
                                             "name": "MySpacer",
                                             "designerId": "6e20bbb4-74b6-4484-9330-e45a842c5f24"
@@ -1604,7 +1612,7 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "designer|displayName": "SchedaInfoVeicoloStockTabPanel",
-                                                        "height": 162,
+                                                        "height": "auto",
                                                         "itemId": "schedaInfoVeicoloStockTabPanelCls",
                                                         "layout|flex": null
                                                     },
@@ -1623,7 +1631,9 @@
                                                                     "informAggiuntiveSchedaInfoVeicoloStockTabCls"
                                                                 ],
                                                                 "designer|displayName": "InformAggiuntiveSchedaInfoVeicoloStockTab",
-                                                                "scrollable": "vertical",
+                                                                "height": "auto",
+                                                                "layout": "fit",
+                                                                "scrollable": false,
                                                                 "title": "INFORMAZIONI AGGIUNTIVE"
                                                             },
                                                             "name": "MyContainer70",
@@ -1638,6 +1648,7 @@
                                                                     "codeClass": null,
                                                                     "userConfig": {
                                                                         "designer|displayName": "InformAggiuntiveSchedaInfoVeicoloStockLabel",
+                                                                        "height": "auto",
                                                                         "itemId": "informAggiuntiveSchedaInfoVeicoloStockLabel",
                                                                         "width": null
                                                                     },
@@ -1654,7 +1665,7 @@
                                                                             "userConfig": {
                                                                                 "designer|displayName": "tpl",
                                                                                 "implHandler": [
-                                                                                    "{infoAggiuntiveSchedaVeicolo}"
+                                                                                    "aertar tawrt farwgt arwegt arwg tewr gtea rg ewrag erw<br/><br/><br/><br/><br/>sdfwrgthyj{infoAggiuntiveSchedaVeicolo}"
                                                                                 ]
                                                                             },
                                                                             "name": "tpl",
@@ -1676,7 +1687,9 @@
                                                                     "statoUsoSchedaInfoVeicoloStockTabCls"
                                                                 ],
                                                                 "designer|displayName": "StatoUsoSchedaInfoVeicoloStockTab",
-                                                                "scrollable": "vertical",
+                                                                "height": "auto",
+                                                                "layout": "fit",
+                                                                "scrollable": false,
                                                                 "title": "STATO D'USO"
                                                             },
                                                             "name": "MyContainer69",
@@ -1691,7 +1704,7 @@
                                                                     "codeClass": null,
                                                                     "userConfig": {
                                                                         "designer|displayName": "StatoUsoSchedaInfoVeicoloStockLabel",
-                                                                        "height": null,
+                                                                        "height": "auto",
                                                                         "itemId": "statoUsoSchedaInfoVeicoloStockLabel",
                                                                         "width": null
                                                                     },

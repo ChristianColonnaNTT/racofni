@@ -125,6 +125,9 @@ Ext.define('Infocar.controller.RicercaUsatoController', {
             "container#bodyUsatoContainer": {
                 activeitemchange: 'onBodyContainerActiveItemChange'
             },
+            "container#corpoInfoVeicoloUsatoContainer": {
+                activeitemchange: 'onCorpoInfoVeicoloUsatoContainerActiveItemChange'
+            },
             "button#stampaEsitoVeicoloUsatoButton": {
                 tap: 'onStampaEsitoVeicoloButtonTap'
             },
@@ -948,6 +951,15 @@ Ext.define('Infocar.controller.RicercaUsatoController', {
         topBarCtrl.setTitoloFromContainer(container, item);
     },
 
+    onCorpoInfoVeicoloUsatoContainerActiveItemChange: function(container, value, oldValue, eOpts) {
+        var item = value;
+
+        var bodyContainer = container.up('#bodyUsatoContainer');
+
+        var topBarCtrl = this.getApplication().getController('Infocar.controller.TopBarController');
+        topBarCtrl.setTitoloFromContainer(bodyContainer, item);
+    },
+
     onStampaEsitoVeicoloButtonTap: function(button, e, eOpts) {
         var urlStampa = Infocar.app.stampaEsitoVeicoloUsatoUrl;
 
@@ -1672,7 +1684,42 @@ Ext.define('Infocar.controller.RicercaUsatoController', {
         var cmp;
 
         // Titoli schermate
+        cmp = Ext.ComponentQuery.query("#ricercaUsatoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">RITIRO USATO</span> >'+
+            ' <img src="resources/images/10-ipad_infocar_done_18.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">RICERCA RITIRO</span>';
 
+        cmp = Ext.ComponentQuery.query("#dettaglioVeicoloUsatoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">RITIRO USATO</span> >'+
+            ' <img src="resources/images/49-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DETTAGLIO ALLESTIMENTO</span>';
+
+        cmp = Ext.ComponentQuery.query("#infoVeicoloUsatoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">RITIRO USATO</span> >'+
+            ' <img src="resources/images/49-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DETTAGLI VEICOLO</span>';
+
+        cmp = Ext.ComponentQuery.query("#esitoVeicoloUsatoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">RITIRO USATO</span> >'+
+            ' <img src="resources/images/23-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">ESITO</span>';
+
+        cmp = Ext.ComponentQuery.query("#generaleInfoVeicoloUsatoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">RITIRO USATO</span> >'+
+            ' <img src="resources/images/49-ipad-portrait_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DETTAGLI VEICOLO</span>';
+
+        cmp = Ext.ComponentQuery.query("#datiTecniciInfoVeicoloUsatoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">RITIRO USATO</span> >'+
+            ' <img src="resources/images/dati_tecnici.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">DATI TECNICI DETTAGLIATI</span>';
+
+        cmp = Ext.ComponentQuery.query("#equipInfoVeicoloUsatoContainer")[0];
+        cmp.Titolo = '<span class="nomeModuloTitoloSchermataTopBarSpanCls">RITIRO USATO</span> >'+
+            ' <img src="resources/images/20-ipad-portrait_done_03.png" class="iconaTitoloSchermataTopBarImgCls">'+
+            ' <span class="nomeSchermataTitoloSchermataTopBarSpanCls">EQUIPAGGIAMENTI</span>';
+
+        /*
         cmp = Ext.ComponentQuery.query("#ricercaUsatoContainer")[0];
         cmp.Titolo = "Ritiro - Ricerca ritiro";
 
@@ -1684,7 +1731,7 @@ Ext.define('Infocar.controller.RicercaUsatoController', {
 
         cmp = Ext.ComponentQuery.query("#esitoVeicoloUsatoContainer")[0];
         cmp.Titolo = "Ritiro - Esito";
-
+        */
 
         // Ricerca Usato
 

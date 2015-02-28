@@ -89,7 +89,9 @@
                     "HomeMenuLeftButtonCls"
                 ],
                 "designer|displayName": "HomeMenuLeftButton",
-                "iconCls": "home",
+                "height": null,
+                "icon": "resources/images/10-ipad_infocar_done_15.png",
+                "iconCls": "iconMenuLeftButtonCls",
                 "itemId": "homeMenuLeftButton",
                 "style": null,
                 "text": "Home"
@@ -109,7 +111,8 @@
                     "MenuLeftButtonCls"
                 ],
                 "designer|displayName": "RicercaUsatoMenuLeftButton",
-                "iconCls": "action",
+                "icon": "resources/images/10-ipad_infocar_done_19.png",
+                "iconCls": "iconMenuLeftButtonCls",
                 "itemId": "ricercaUsatoMenuLeftButton",
                 "text": "Preliminare ritiro usato"
             },
@@ -127,7 +130,9 @@
                 "cls": [
                     "MenuLeftButtonCls"
                 ],
-                "iconCls": "action",
+                "designer|displayName": "RicercaNuovoMenuLeftButton",
+                "icon": "resources/images/10-ipad_infocar_done_20.png",
+                "iconCls": "iconMenuLeftButtonCls",
                 "itemId": "ricercaNuovoMenuLeftButton",
                 "text": "Preliminare configuratore nuovo"
             },
@@ -146,7 +151,8 @@
                     "MenuLeftButtonCls"
                 ],
                 "designer|displayName": "RicercaStockMenuLeftButton",
-                "iconCls": "action",
+                "icon": "resources/images/10-ipad_infocar_done_22.png",
+                "iconCls": "iconMenuLeftButtonCls",
                 "itemId": "ricercaStockMenuLeftButton",
                 "text": "Ricerca stock"
             },
