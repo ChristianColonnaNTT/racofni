@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar2",
+            "name": "topbar1",
             "designerId": "a185a87e-f8d6-4039-a2fa-549e7e748d96",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -5129,17 +5129,16 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "Titolo": "Ritiro - Esito",
-                        "baseCls": "EsitoVeicoloUsatoContainerCls",
+                        "Titolo": "Configurazione - Esito",
                         "cls": [
-                            "marginContainer"
+                            "esitoVeicoloNuovoContainerCls"
                         ],
                         "designer|displayName": "EsitoVeicoloUsatoContainer",
                         "itemId": "esitoVeicoloUsatoContainer",
                         "layout": "vbox"
                     },
-                    "name": "MyContainer8",
-                    "designerId": "5b87be76-faa2-4ca8-aac5-88151b94a09a",
+                    "name": "MyContainer7",
+                    "designerId": "92a7b842-8e9d-4326-8e80-2a4478a0dab7",
                     "customConfigs": [
                         {
                             "group": "(Custom Properties)",
@@ -5149,6 +5148,25 @@
                     ],
                     "cn": [
                         {
+                            "type": "Ext.Container",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "cls": [
+                                    "messaggioEsitoVeicoloNuovoContainerCls"
+                                ],
+                                "designer|displayName": "MessaggioEsitoVeicoloUsatoContainer",
+                                "height": 165,
+                                "html": "<div class=\"titoloMessaggioEsitoVeicoloNuovoDivCls\">PRELIMINARE DI RITIRO</div> <div class=\"descMessaggioEsitoVeicoloNuovoDivCls\">L'operazione &egrave; stata salvata correttamente, per poterla modificare  sar&agrave; necessario accedere al sito InfocarWeb 3.0 da un personal computer.</div>",
+                                "width": "100%"
+                            },
+                            "name": "MyContainer104",
+                            "designerId": "a7d3a0de-eeba-4d56-a967-83ce215ca71a"
+                        },
+                        {
                             "type": "Ext.Label",
                             "reference": {
                                 "name": "items",
@@ -5156,12 +5174,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "cls": [
+                                    "testoEsitoVeicoloNuovoLabelCls"
+                                ],
                                 "designer|displayName": "TestoEsitoVeicoloUsatoLabel",
                                 "html": null,
                                 "itemId": "testoEsitoVeicoloUsatoLabel"
                             },
                             "name": "MyLabel17",
-                            "designerId": "751c65e2-71f4-486f-a28a-696eb3be90cf",
+                            "designerId": "64283a29-7da2-4f00-9dbc-6bcc0fd22641",
                             "cn": [
                                 {
                                     "type": "Ext.XTemplate",
@@ -5173,20 +5194,14 @@
                                     "userConfig": {
                                         "designer|displayName": "tpl",
                                         "implHandler": [
-                                            "<div style=\"height:100px\"></div>",
-                                            "",
-                                            "<p>Preliminare di ritiro</p>",
-                                            "<p>l'operazione &egrave; stata salvata correttamente, per poterla modificare sar&agrave;",
-                                            "    necessario accedere a Infocarweb su PC</p>",
-                                            "<p>Riepilogo</p>",
-                                            "",
-                                            "<br>",
-                                            "",
-                                            "{allestimento_descrizione}"
+                                            "<div class=\"titoloTestoEsitoVeicoloNuovoDivCls\">RIEPILOGO</div>",
+                                            "<div class=\"imgAllestimentoTestoEsitoVeicoloNuovoDivCls\"> ",
+                                            "<img src=\"{miniUrlImg}\" class=\"imgTestoEsitoVeicoloNuovoImgCls\"><span class=\"allestimentoTestoEsitoVeicoloNuovoSpanCls\">{allestimento_descrizione}</span>",
+                                            "</div>"
                                         ]
                                     },
                                     "name": "tpl",
-                                    "designerId": "77e267db-0e5d-4bfb-a5ce-561589db2536"
+                                    "designerId": "1bcc372a-3d3a-4a1a-856a-5468eb01de1e"
                                 }
                             ]
                         },
@@ -5203,7 +5218,7 @@
                                 "layout": "vbox"
                             },
                             "name": "MyContainer20",
-                            "designerId": "5ab292ad-8abf-45d6-bc82-1b225360316c",
+                            "designerId": "7e6383ba-455f-4603-92f1-7705160b1e63",
                             "cn": [
                                 {
                                     "type": "Ext.Container",
@@ -5213,6 +5228,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "veicoloBasePrezzoEsitoVeicoloUsatoContainerCls",
+                                        "cls": [
+                                            "totaleConcordato"
+                                        ],
                                         "designer|displayName": "ValutazioneQRContainer",
                                         "layout": "hbox",
                                         "width": null
@@ -5228,8 +5247,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "baseCls": "veicoloBasePrezzoEsitoVeicoloNuovoLabel1Cls",
                                                 "designer|displayName": "ValutazioneQRPrezzoEsitoVeicoloUsatoLabel",
-                                                "html": "Valutazione personalizzata QR",
+                                                "html": "Valutazione personalizzata QR:",
                                                 "width": "25%"
                                             },
                                             "name": "MyLabel24",
@@ -5243,6 +5263,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "veicoloBasePrezzoEsitoVeicoloNuovoLabel2Cls"
+                                                ],
                                                 "designer|displayName": "ValutazioneQRPrezzoEsitoVeicoloUsatoLabel2",
                                                 "itemId": "valutazioneQRPrezzoEsitoVeicoloUsatoLabel2",
                                                 "width": "25%"
@@ -5299,6 +5322,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "totalePrezzoEsitoVeicoloNuovoContainerCls",
                                         "designer|displayName": "VarConcessionarioContainer",
                                         "layout": "hbox",
                                         "width": null
@@ -5314,8 +5338,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "baseCls": "equipaggiamentiPrezzoEsitoVeicoloNuovoLabel1Cls",
                                                 "designer|displayName": "VarConcessPrezzoEsitoVeicoloUsatoLabel1",
-                                                "html": "Variazione concessionario",
+                                                "html": "Variazione concessionario:",
                                                 "width": "25%"
                                             },
                                             "name": "MyLabel24",
@@ -5329,6 +5354,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "baseCls": "equipaggiamentiPrezzoEsitoVeicoloNuovoLabel2Cls",
                                                 "designer|displayName": "VarConcessPrezzoEsitoVeicoloUsatoLabel2",
                                                 "itemId": "varConcessPrezzoEsitoVeicoloUsatoLabel2",
                                                 "width": "25%"
@@ -5385,6 +5411,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "equipaggiamentiPrezzoEsitoVeicoloNuovoContainerCls",
                                         "designer|displayName": "VarTotConcordatoContainer",
                                         "layout": "hbox",
                                         "width": null
@@ -5400,8 +5427,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "baseCls": "equipaggiamentiPrezzoEsitoVeicoloNuovoLabel1Cls",
                                                 "designer|displayName": "VarConcorPrezzoEsitoVeicoloUsatoLabel1",
-                                                "html": "Variazione concordata",
+                                                "html": "Variazione concordata:",
                                                 "width": "25%"
                                             },
                                             "name": "MyLabel26",
@@ -5415,6 +5443,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "baseCls": "equipaggiamentiPrezzoEsitoVeicoloNuovoLabel2Cls",
                                                 "designer|displayName": "VarConcorPrezzoEsitoVeicoloUsatoLabel2",
                                                 "itemId": "varConcorPrezzoEsitoVeicoloUsatoLabel2",
                                                 "width": "25%"
@@ -5460,7 +5489,28 @@
                                                     ]
                                                 }
                                             ]
-                                        },
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Ext.Container",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": "totalePrezzoEsitoVeicoloNuovoContainerCls",
+                                        "cls": [
+                                            "totaleConcordato"
+                                        ],
+                                        "designer|displayName": "TotConcordatoContainer",
+                                        "layout": "hbox",
+                                        "width": null
+                                    },
+                                    "name": "MyContainer8",
+                                    "designerId": "898c1115-3276-4a5f-bd7b-7206413bc85b",
+                                    "cn": [
                                         {
                                             "type": "Ext.Label",
                                             "reference": {
@@ -5469,13 +5519,14 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "baseCls": "totalePrezzoEsitoVeicoloUsatoLabel1Cls",
                                                 "designer|displayName": "TotaleConcorPrezzoEsitoVeicoloUsatoLabel1",
-                                                "html": "Totale concordato",
+                                                "html": "TOTALE CONCORDATO:",
                                                 "itemId": null,
                                                 "width": "25%"
                                             },
                                             "name": "MyLabel28",
-                                            "designerId": "54eb1b34-65b0-474f-bcc1-cb882d861845"
+                                            "designerId": "276d3ad6-1959-46f9-ad62-4be79932e151"
                                         },
                                         {
                                             "type": "Ext.Label",
@@ -5485,13 +5536,14 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "baseCls": "totalePrezzoEsitoVeicoloNuovoLabel2Cls",
                                                 "designer|displayName": "TotaleConcorPrezzoEsitoVeicoloUsatoLabel2",
                                                 "html": null,
                                                 "itemId": "totaleConcorPrezzoEsitoVeicoloUsatoLabel2",
                                                 "width": "25%"
                                             },
                                             "name": "MyLabel29",
-                                            "designerId": "42d43911-1c1e-4645-a394-8453a63e21b9",
+                                            "designerId": "5b623fe6-6617-4be2-9ee5-1c06d3c93457",
                                             "cn": [
                                                 {
                                                     "type": "Ext.XTemplate",
@@ -5507,7 +5559,7 @@
                                                         ]
                                                     },
                                                     "name": "tpl6",
-                                                    "designerId": "d06b6c84-7db9-49d7-9f89-8fe5f80ea185",
+                                                    "designerId": "d59554a9-246b-4a24-bc75-58786fd6ac0f",
                                                     "cn": [
                                                         {
                                                             "type": "templatefunction",
@@ -5526,7 +5578,7 @@
                                                                 ]
                                                             },
                                                             "name": "fmtCurrency",
-                                                            "designerId": "572e06dc-8201-4054-9cc0-bdf746436378"
+                                                            "designerId": "70e0154e-8f77-4503-8d3c-edd86a3a33cf"
                                                         }
                                                     ]
                                                 }
@@ -5544,11 +5596,15 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "container|align": "start",
                                 "designer|displayName": "EsitoVeicoloUsatoToolbar",
-                                "docked": "bottom"
+                                "designer|uiInterfaceName": "infocar-toolbar",
+                                "docked": "bottom",
+                                "height": 60,
+                                "ui": "infocar-toolbar"
                             },
                             "name": "MyToolbar1",
-                            "designerId": "714993a0-65a9-4e5d-b45b-d469797520c6",
+                            "designerId": "b4542b2e-768a-427b-b9ff-e17d5f1469c2",
                             "cn": [
                                 {
                                     "type": "Ext.Button",
@@ -5558,12 +5614,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "stampaEsitoVeicoloNuovoButtonCls",
                                         "designer|displayName": "StampaEsitoVeicoloUsatoButton",
                                         "itemId": "stampaEsitoVeicoloUsatoButton",
-                                        "text": "Stampa"
+                                        "text": "STAMPA"
                                     },
                                     "name": "MyButton13",
-                                    "designerId": "eb89873f-c575-4968-b744-e84fd27830cc"
+                                    "designerId": "24348869-d6fd-49d1-9097-b68db05e79ef"
                                 },
                                 {
                                     "type": "Ext.Button",
@@ -5573,13 +5630,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "ricercaUsatoEsitoVeicoloNuovoButtonCls",
                                         "designer|displayName": "RicercaNuovoEsitoVeicoloUsatoButton",
                                         "docked": "right",
                                         "itemId": "ricercaNuovoEsitoVeicoloUsatoButton",
-                                        "text": "Configura nuovo"
+                                        "text": "RITIRO USATO"
                                     },
                                     "name": "MyButton14",
-                                    "designerId": "08a6bb9c-d826-4415-bfe9-0303f21fd9dd"
+                                    "designerId": "4afc5d4b-c3f5-4241-9a05-91dbe9b7e60f"
                                 },
                                 {
                                     "type": "Ext.Button",
@@ -5589,13 +5647,14 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "ricercaStockEsitoVeicoloNuovoButtonCls",
                                         "designer|displayName": "RicercaStockEsitoVeicoloUsatoButton",
                                         "docked": "right",
                                         "itemId": "ricercaStockEsitoVeicoloUsatoButton",
-                                        "text": "Lista stock"
+                                        "text": "LISTA STOCK"
                                     },
                                     "name": "MyButton12",
-                                    "designerId": "85f6bc91-ea4d-411a-959c-03ca46b2f341"
+                                    "designerId": "5b7570b2-a675-4e85-8092-c6e73cb3bd4e"
                                 }
                             ]
                         }

@@ -1862,26 +1862,27 @@ Ext.define('Infocar.view.UsatoView', {
                     },
                     {
                         xtype: 'container',
-                        Titolo: 'Ritiro - Esito',
-                        baseCls: 'EsitoVeicoloUsatoContainerCls',
-                        cls: 'marginContainer',
+                        Titolo: 'Configurazione - Esito',
+                        cls: 'esitoVeicoloNuovoContainerCls',
                         itemId: 'esitoVeicoloUsatoContainer',
                         layout: 'vbox',
                         items: [
                             {
+                                xtype: 'container',
+                                cls: 'messaggioEsitoVeicoloNuovoContainerCls',
+                                height: 165,
+                                html: '<div class="titoloMessaggioEsitoVeicoloNuovoDivCls">PRELIMINARE DI RITIRO</div> <div class="descMessaggioEsitoVeicoloNuovoDivCls">L\'operazione &egrave; stata salvata correttamente, per poterla modificare  sar&agrave; necessario accedere al sito InfocarWeb 3.0 da un personal computer.</div>',
+                                width: '100%'
+                            },
+                            {
                                 xtype: 'label',
+                                cls: 'testoEsitoVeicoloNuovoLabelCls',
                                 itemId: 'testoEsitoVeicoloUsatoLabel',
                                 tpl: [
-                                    '<div style="height:100px"></div>',
-                                    '',
-                                    '<p>Preliminare di ritiro</p>',
-                                    '<p>l\'operazione &egrave; stata salvata correttamente, per poterla modificare sar&agrave;',
-                                    '    necessario accedere a Infocarweb su PC</p>',
-                                    '<p>Riepilogo</p>',
-                                    '',
-                                    '<br>',
-                                    '',
-                                    '{allestimento_descrizione}'
+                                    '<div class="titoloTestoEsitoVeicoloNuovoDivCls">RIEPILOGO</div>',
+                                    '<div class="imgAllestimentoTestoEsitoVeicoloNuovoDivCls"> ',
+                                    '<img src="{miniUrlImg}" class="imgTestoEsitoVeicoloNuovoImgCls"><span class="allestimentoTestoEsitoVeicoloNuovoSpanCls">{allestimento_descrizione}</span>',
+                                    '</div>'
                                 ]
                             },
                             {
@@ -1891,15 +1892,19 @@ Ext.define('Infocar.view.UsatoView', {
                                 items: [
                                     {
                                         xtype: 'container',
+                                        baseCls: 'veicoloBasePrezzoEsitoVeicoloUsatoContainerCls',
+                                        cls: 'totaleConcordato',
                                         layout: 'hbox',
                                         items: [
                                             {
                                                 xtype: 'label',
-                                                html: 'Valutazione personalizzata QR',
+                                                baseCls: 'veicoloBasePrezzoEsitoVeicoloNuovoLabel1Cls',
+                                                html: 'Valutazione personalizzata QR:',
                                                 width: '25%'
                                             },
                                             {
                                                 xtype: 'label',
+                                                cls: 'veicoloBasePrezzoEsitoVeicoloNuovoLabel2Cls',
                                                 itemId: 'valutazioneQRPrezzoEsitoVeicoloUsatoLabel2',
                                                 tpl: Ext.create('Ext.XTemplate', 
                                                     '{valutazioneQRPrezzo:this.fmtCurrency} &euro;',
@@ -1915,15 +1920,18 @@ Ext.define('Infocar.view.UsatoView', {
                                     },
                                     {
                                         xtype: 'container',
+                                        baseCls: 'totalePrezzoEsitoVeicoloNuovoContainerCls',
                                         layout: 'hbox',
                                         items: [
                                             {
                                                 xtype: 'label',
-                                                html: 'Variazione concessionario',
+                                                baseCls: 'equipaggiamentiPrezzoEsitoVeicoloNuovoLabel1Cls',
+                                                html: 'Variazione concessionario:',
                                                 width: '25%'
                                             },
                                             {
                                                 xtype: 'label',
+                                                baseCls: 'equipaggiamentiPrezzoEsitoVeicoloNuovoLabel2Cls',
                                                 itemId: 'varConcessPrezzoEsitoVeicoloUsatoLabel2',
                                                 tpl: Ext.create('Ext.XTemplate', 
                                                     '{varConcessionarioPrezzo:this.fmtCurrency} &euro;',
@@ -1939,15 +1947,18 @@ Ext.define('Infocar.view.UsatoView', {
                                     },
                                     {
                                         xtype: 'container',
+                                        baseCls: 'equipaggiamentiPrezzoEsitoVeicoloNuovoContainerCls',
                                         layout: 'hbox',
                                         items: [
                                             {
                                                 xtype: 'label',
-                                                html: 'Variazione concordata',
+                                                baseCls: 'equipaggiamentiPrezzoEsitoVeicoloNuovoLabel1Cls',
+                                                html: 'Variazione concordata:',
                                                 width: '25%'
                                             },
                                             {
                                                 xtype: 'label',
+                                                baseCls: 'equipaggiamentiPrezzoEsitoVeicoloNuovoLabel2Cls',
                                                 itemId: 'varConcorPrezzoEsitoVeicoloUsatoLabel2',
                                                 tpl: Ext.create('Ext.XTemplate', 
                                                     '{varConcordataPrezzo:this.fmtCurrency} &euro;',
@@ -1958,14 +1969,24 @@ Ext.define('Infocar.view.UsatoView', {
                                                     }
                                                 ),
                                                 width: '25%'
-                                            },
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        xtype: 'container',
+                                        baseCls: 'totalePrezzoEsitoVeicoloNuovoContainerCls',
+                                        cls: 'totaleConcordato',
+                                        layout: 'hbox',
+                                        items: [
                                             {
                                                 xtype: 'label',
-                                                html: 'Totale concordato',
+                                                baseCls: 'totalePrezzoEsitoVeicoloUsatoLabel1Cls',
+                                                html: 'TOTALE CONCORDATO:',
                                                 width: '25%'
                                             },
                                             {
                                                 xtype: 'label',
+                                                baseCls: 'totalePrezzoEsitoVeicoloNuovoLabel2Cls',
                                                 itemId: 'totaleConcorPrezzoEsitoVeicoloUsatoLabel2',
                                                 tpl: Ext.create('Ext.XTemplate', 
                                                     '{totaleConcordatoPrezzo:this.fmtCurrency} &euro;',
@@ -1984,23 +2005,32 @@ Ext.define('Infocar.view.UsatoView', {
                             {
                                 xtype: 'toolbar',
                                 docked: 'bottom',
+                                height: 60,
+                                ui: 'infocar-toolbar',
+                                layout: {
+                                    type: 'hbox',
+                                    align: 'start'
+                                },
                                 items: [
                                     {
                                         xtype: 'button',
+                                        baseCls: 'stampaEsitoVeicoloNuovoButtonCls',
                                         itemId: 'stampaEsitoVeicoloUsatoButton',
-                                        text: 'Stampa'
+                                        text: 'STAMPA'
                                     },
                                     {
                                         xtype: 'button',
+                                        baseCls: 'ricercaUsatoEsitoVeicoloNuovoButtonCls',
                                         docked: 'right',
                                         itemId: 'ricercaNuovoEsitoVeicoloUsatoButton',
-                                        text: 'Configura nuovo'
+                                        text: 'RITIRO USATO'
                                     },
                                     {
                                         xtype: 'button',
+                                        baseCls: 'ricercaStockEsitoVeicoloNuovoButtonCls',
                                         docked: 'right',
                                         itemId: 'ricercaStockEsitoVeicoloUsatoButton',
-                                        text: 'Lista stock'
+                                        text: 'LISTA STOCK'
                                     }
                                 ]
                             }
