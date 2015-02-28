@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar1",
+            "name": "topbar",
             "designerId": "a185a87e-f8d6-4039-a2fa-549e7e748d96",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -298,19 +298,6 @@
                                             },
                                             "name": "MyButton8",
                                             "designerId": "6dd8e2fc-c629-464d-97d6-f302303aa37f"
-                                        },
-                                        {
-                                            "type": "Ext.Spacer",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "width": 31
-                                            },
-                                            "name": "MySpacer2",
-                                            "designerId": "0319801f-f2f1-4b5b-bb1e-59acaf075775"
                                         }
                                     ]
                                 },

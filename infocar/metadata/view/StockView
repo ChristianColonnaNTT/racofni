@@ -146,6 +146,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "stockUsatoRicercaStockToggleCls"
+                                                ],
                                                 "designer|displayName": "StockUsatoRicercaStockToggle",
                                                 "itemId": "stockUsatoRicercaStockToggle",
                                                 "label": "Stock",
@@ -742,19 +745,6 @@
                                             },
                                             "name": "MyButton3",
                                             "designerId": "0942c05e-4966-4d0f-a657-5047e77105f7"
-                                        },
-                                        {
-                                            "type": "Ext.Spacer",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "width": 31
-                                            },
-                                            "name": "MySpacer2",
-                                            "designerId": "a89159ac-c70a-45a2-91a6-08a71cd09b1e"
                                         }
                                     ]
                                 }
@@ -1025,7 +1015,10 @@
                             },
                             "codeClass": null,
                             "userConfig": {
-                                "designer|displayName": "VBoxContainer",
+                                "cls": [
+                                    "rightInfoVeicoloStockContainerCls"
+                                ],
+                                "designer|displayName": "RightInfoVeicoloStockContainer",
                                 "layout": "vbox",
                                 "layout|flex": 1
                             },
@@ -1040,6 +1033,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "cls": [
+                                            "testataInfoVeicoloStockContainerPortraitCls"
+                                        ],
+                                        "container|align": "center",
                                         "designer|displayName": "TestataInfoVeicoloStockContainerPortrait",
                                         "itemId": "testataInfoVeicoloStockContainerPortrait",
                                         "layout": "hbox"
@@ -1048,51 +1045,96 @@
                                     "designerId": "aed4d4fc-dea2-403d-a6e3-4d906fd22f59",
                                     "cn": [
                                         {
-                                            "type": "Ext.Img",
+                                            "type": "Ext.Container",
                                             "reference": {
                                                 "name": "items",
                                                 "type": "array"
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|displayName": "InfoVeicoloStockMiniImg",
+                                                "centered": null,
+                                                "designer|displayName": "InfoVeicoloStockMiniImgContainer",
                                                 "height": 50,
-                                                "itemId": "infoVeicoloStockMiniImg",
                                                 "width": 50
                                             },
-                                            "name": "MyImg1",
-                                            "designerId": "27153248-7c1e-4d87-8315-4661588261bc"
-                                        },
-                                        {
-                                            "type": "Ext.Label",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "designer|displayName": "DescInfoVeicoloStockLabel",
-                                                "html": null,
-                                                "itemId": "descInfoVeicoloStockLabel"
-                                            },
-                                            "name": "MyLabel15",
-                                            "designerId": "661931ce-60b9-48d5-9b1e-97c70cdc2eae",
+                                            "name": "MyContainer105",
+                                            "designerId": "912eba1e-2e30-4baf-9add-b963227ec3d8",
                                             "cn": [
                                                 {
-                                                    "type": "Ext.XTemplate",
+                                                    "type": "Ext.Img",
                                                     "reference": {
-                                                        "name": "tpl",
-                                                        "type": "object"
+                                                        "name": "items",
+                                                        "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|displayName": "tpl",
-                                                        "implHandler": [
-                                                            "{veicoloStock_descrizione}"
-                                                        ]
+                                                        "centered": true,
+                                                        "designer|displayName": "InfoVeicoloStockMiniImg",
+                                                        "height": null,
+                                                        "imageCls": "infoVeicoloStockMiniImgCls",
+                                                        "itemId": "infoVeicoloStockMiniImg",
+                                                        "mode": "image",
+                                                        "width": null
                                                     },
-                                                    "name": "tpl",
-                                                    "designerId": "6108afac-8b4c-4285-907b-325d52672a7c"
+                                                    "name": "MyImg1",
+                                                    "designerId": "27153248-7c1e-4d87-8315-4661588261bc"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "type": "Ext.Container",
+                                            "reference": {
+                                                "name": "items",
+                                                "type": "array"
+                                            },
+                                            "codeClass": null,
+                                            "userConfig": {
+                                                "cls": [
+                                                    "descTestataInfoVeicoloStockContainerPortraitCls"
+                                                ],
+                                                "container|align": "center",
+                                                "designer|displayName": "DescTestataInfoVeicoloStockContainerPortrait",
+                                                "layout": "hbox",
+                                                "layout|flex": 1
+                                            },
+                                            "name": "MyContainer106",
+                                            "designerId": "c0b32808-104e-4aca-a397-727c1f9a2f2d",
+                                            "cn": [
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "descInfoVeicoloStockLabelPortraitCls"
+                                                        ],
+                                                        "designer|displayName": "DescInfoVeicoloStockLabel",
+                                                        "html": null,
+                                                        "itemId": "descInfoVeicoloStockLabel"
+                                                    },
+                                                    "name": "MyLabel15",
+                                                    "designerId": "661931ce-60b9-48d5-9b1e-97c70cdc2eae",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "tpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "tpl",
+                                                                "implHandler": [
+                                                                    "{veicoloStock_descrizione}"
+                                                                ]
+                                                            },
+                                                            "name": "tpl",
+                                                            "designerId": "6108afac-8b4c-4285-907b-325d52672a7c"
+                                                        }
+                                                    ]
                                                 }
                                             ]
                                         }
@@ -1125,6 +1167,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "generaleInfoVeicoloStockContainerCls"
+                                                ],
                                                 "designer|displayName": "GeneraleInfoVeicoloStockContainer",
                                                 "itemId": "generaleInfoVeicoloStockContainer",
                                                 "layout": "vbox",
@@ -1141,9 +1186,13 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "testoImgInfoVeicoloStockContainerCls"
+                                                        ],
                                                         "designer|displayName": "TestoImgInfoVeicoloStockContainer",
                                                         "height": null,
-                                                        "layout": "hbox"
+                                                        "layout": "hbox",
+                                                        "width": "100%"
                                                     },
                                                     "name": "MyContainer55",
                                                     "designerId": "c439773c-9633-41d0-b96d-99098782a7b9",
@@ -1158,7 +1207,7 @@
                                                             "userConfig": {
                                                                 "designer|displayName": "InfoVeicoloStockCarousel",
                                                                 "itemId": "infoVeicoloStockCarousel",
-                                                                "width": "50%"
+                                                                "width": 313
                                                             },
                                                             "name": "MyCarousel",
                                                             "designerId": "2005f239-9c7a-4af7-80a4-08f22af9b894",
@@ -1272,9 +1321,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "testoinfoVeicoloStockContainerCls"
+                                                                ],
                                                                 "designer|displayName": "TestoinfoVeicoloStockContainer",
                                                                 "itemId": "testoinfoVeicoloStockContainer",
-                                                                "width": "50%"
+                                                                "layout|flex": 1,
+                                                                "width": null
                                                             },
                                                             "name": "MyContainer",
                                                             "designerId": "dbbe84fb-e517-4ba2-9574-8bae26d82e82",
@@ -1287,6 +1340,9 @@
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
+                                                                        "cls": [
+                                                                            "testoInfoVeicoloStockLabelCls"
+                                                                        ],
                                                                         "designer|displayName": "TestoInfoVeicoloStockLabel",
                                                                         "itemId": "testoInfoVeicoloStockLabel",
                                                                         "width": "100%"
@@ -1304,10 +1360,10 @@
                                                                             "userConfig": {
                                                                                 "designer|displayName": "tpl",
                                                                                 "implHandler": [
-                                                                                    "<div class=\"\">Prezzo di vendita</div>",
-                                                                                    "<div class=\"\">{venditaPrezzo:this.fmtCurrency} &euro;</div>",
+                                                                                    "<div class=\"labelPrezzoVendTestoInfoVeicoloStockDivCls\">Prezzo di vendita</div>",
+                                                                                    "<div class=\"valorePrezzoVendTestoInfoVeicoloStockDivCls\">{venditaPrezzo:this.fmtCurrency} &euro;</div>",
                                                                                     "<br>",
-                                                                                    "<div class=\"\">",
+                                                                                    "<div class=\"prezziTestoInfoVeicoloStockDivCls\">",
                                                                                     "Codice infocar: {codiceInfocar}<br>",
                                                                                     "Codice casa: {codiceCasa}<br>",
                                                                                     "Codice QUD: {codiceQUD}<br>",
@@ -1353,7 +1409,7 @@
                                                                             "prezziInfoVeicoloStockOverlayContainerCls"
                                                                         ],
                                                                         "designer|displayName": "PrezziInfoVeicoloStockOverlayContainer",
-                                                                        "height": 60,
+                                                                        "height": 58,
                                                                         "hidden": null,
                                                                         "hideAnimation": null,
                                                                         "html": null,
@@ -1363,7 +1419,7 @@
                                                                         "right": null,
                                                                         "scrollable": false,
                                                                         "showAnimation": null,
-                                                                        "style": "background-color: #cccccc;",
+                                                                        "style": null,
                                                                         "top": 0,
                                                                         "width": "100%"
                                                                     },
@@ -1382,12 +1438,13 @@
                                                                             },
                                                                             "codeClass": null,
                                                                             "userConfig": {
+                                                                                "baseCls": "frecciaPrezziInfoVeicoloStockButtonCls",
                                                                                 "designer|displayName": "FrecciaPrezziInfoVeicoloStockButton",
-                                                                                "height": null,
-                                                                                "iconCls": "arrow_left",
+                                                                                "height": 58,
+                                                                                "iconCls": null,
                                                                                 "itemId": "frecciaPrezziInfoVeicoloStockButton",
                                                                                 "text": null,
-                                                                                "width": 60
+                                                                                "width": 57
                                                                             },
                                                                             "name": "MyButton17",
                                                                             "designerId": "95cf5fd3-49d5-401c-a0a4-34d722b5150c"
@@ -1400,6 +1457,9 @@
                                                                             },
                                                                             "codeClass": null,
                                                                             "userConfig": {
+                                                                                "cls": [
+                                                                                    "testoPrezziInfoVeicoloStockLabelCls"
+                                                                                ],
                                                                                 "designer|displayName": "TestoPrezziInfoVeicoloStockLabel",
                                                                                 "html": null,
                                                                                 "itemId": "testoPrezziInfoVeicoloStockLabel",
@@ -1444,9 +1504,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "container|align": "start",
+                                                        "cls": [
+                                                            "sintesiEquipInfoVeicoloStockContainerCls"
+                                                        ],
+                                                        "container|align": "center",
                                                         "designer|displayName": "SintesiEquipInfoVeicoloStockContainer",
-                                                        "height": null,
+                                                        "height": 102,
                                                         "itemId": "sintesiEquipInfoVeicoloStockContainer",
                                                         "layout": "hbox"
                                                     },
@@ -1461,8 +1524,12 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "sintesiEquipInfoVeicoloStockLabelCls"
+                                                                ],
                                                                 "designer|displayName": "SintesiEquipInfoVeicoloStockLabel",
                                                                 "itemId": "sintesiEquipInfoVeicoloStockLabel",
+                                                                "layout|flex": 1,
                                                                 "width": "80%"
                                                             },
                                                             "name": "MyLabel33",
@@ -1478,11 +1545,11 @@
                                                                     "userConfig": {
                                                                         "designer|displayName": "tpl",
                                                                         "implHandler": [
-                                                                            "<div class=\"\">Equipaggiamenti</div>",
-                                                                            "<br>",
-                                                                            "<div class=\"\">",
+                                                                            "<div class=\"titoloSintesiEquipInfoVeicoloStockDivCls\">Equipaggiamenti</div>",
+                                                                            "<div class=\"descSintesiEquipInfoVeicoloStockDivCls\">",
                                                                             "Questo allestimento comprende {numEquip} equipaggiamenti",
-                                                                            "</div>"
+                                                                            "</div>",
+                                                                            ""
                                                                         ]
                                                                     },
                                                                     "name": "tpl",
@@ -1498,16 +1565,35 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "baseCls": "equipInfoVeicoloStockButtonCls",
                                                                 "designer|displayName": "EquipInfoVeicoloStockButton",
+                                                                "height": 37,
                                                                 "hidden": false,
                                                                 "itemId": "equipInfoVeicoloStockButton",
-                                                                "text": "Scopri tutti gli equipaggiamenti",
-                                                                "width": "20%"
+                                                                "text": null,
+                                                                "width": 37
                                                             },
                                                             "name": "MyButton18",
                                                             "designerId": "cefd711e-4fa6-4a49-b82c-a65705c13e51"
                                                         }
                                                     ]
+                                                },
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "titoloSchedaInfoVeicoloStockLabelCls"
+                                                        ],
+                                                        "designer|displayName": "TitoloSchedaInfoVeicoloStockLabel",
+                                                        "html": "Scheda veicolo"
+                                                    },
+                                                    "name": "MyLabel56",
+                                                    "designerId": "39cee0c8-f6f4-4afb-a2c2-4f8a78d77e51"
                                                 },
                                                 {
                                                     "type": "Ext.tab.Panel",
@@ -1518,7 +1604,8 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "designer|displayName": "SchedaInfoVeicoloStockTabPanel",
-                                                        "height": 200,
+                                                        "height": 162,
+                                                        "itemId": "schedaInfoVeicoloStockTabPanelCls",
                                                         "layout|flex": null
                                                     },
                                                     "name": "MyTabPanel",
@@ -1532,8 +1619,12 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "informAggiuntiveSchedaInfoVeicoloStockTabCls"
+                                                                ],
                                                                 "designer|displayName": "InformAggiuntiveSchedaInfoVeicoloStockTab",
-                                                                "title": "Informazioni aggiuntive"
+                                                                "scrollable": "vertical",
+                                                                "title": "INFORMAZIONI AGGIUNTIVE"
                                                             },
                                                             "name": "MyContainer70",
                                                             "designerId": "150f7101-1a08-4f51-84ce-59937541cfee",
@@ -1581,8 +1672,12 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "statoUsoSchedaInfoVeicoloStockTabCls"
+                                                                ],
                                                                 "designer|displayName": "StatoUsoSchedaInfoVeicoloStockTab",
-                                                                "title": "Stato uso"
+                                                                "scrollable": "vertical",
+                                                                "title": "STATO D'USO"
                                                             },
                                                             "name": "MyContainer69",
                                                             "designerId": "b6722428-d95d-4a4e-93e4-513e227eb381",
@@ -1596,7 +1691,7 @@
                                                                     "codeClass": null,
                                                                     "userConfig": {
                                                                         "designer|displayName": "StatoUsoSchedaInfoVeicoloStockLabel",
-                                                                        "height": "100%",
+                                                                        "height": null,
                                                                         "itemId": "statoUsoSchedaInfoVeicoloStockLabel",
                                                                         "width": null
                                                                     },
@@ -1631,7 +1726,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "docked": "top"
+                                                                "baseCls": null,
+                                                                "cls": [
+                                                                    "schedaInfoVeicoloStockTabBarCls"
+                                                                ],
+                                                                "designer|uiInterfaceName": "untitled-ui-3",
+                                                                "docked": "top",
+                                                                "ui": "untitled-ui-3"
                                                             },
                                                             "name": "MyTabBar",
                                                             "designerId": "ff42c543-c216-4c4e-ae59-0e557ce30a0e"
@@ -1646,8 +1747,12 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "container|align": "start",
+                                                        "cls": [
+                                                            "sintesiDatiTecniciInfoVeicoloStockContainerCls"
+                                                        ],
+                                                        "container|align": "center",
                                                         "designer|displayName": "SintesiDatiTecniciInfoVeicoloStockContainer",
+                                                        "height": 115,
                                                         "itemId": "sintesiDatiTecniciInfoVeicoloStockContainer",
                                                         "layout": "hbox"
                                                     },
@@ -1662,9 +1767,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "cls": [
+                                                                    "sintesiDatiTecniciInfoVeicoloStockLabelCls"
+                                                                ],
                                                                 "designer|displayName": "SintesiDatiTecniciInfoVeicoloStockLabel",
                                                                 "itemId": "sintesiDatiTecniciInfoVeicoloStockLabel",
-                                                                "width": "80%"
+                                                                "layout|flex": 1,
+                                                                "width": null
                                                             },
                                                             "name": "MyLabel33",
                                                             "designerId": "dfadd775-5cd2-46ab-9a89-6f3456babe4b",
@@ -1679,14 +1788,13 @@
                                                                     "userConfig": {
                                                                         "designer|displayName": "tpl",
                                                                         "implHandler": [
-                                                                            "<div class=\"\">Dati tecnici</div>",
-                                                                            "<br>",
-                                                                            "<div class=\"\">",
-                                                                            "Alimentazione: {alimentazione_descrizione}&nbsp;&nbsp;",
-                                                                            "Cilindrata cm<sup>3</sup>: {cilindrata}&nbsp;&nbsp;",
-                                                                            "Potenza kW/CV: {potenza}<br>",
-                                                                            "Carrozzeria: {carrozzeria_descrizione}&nbsp;&nbsp;",
-                                                                            "Normativa: {normativa}",
+                                                                            "<div class=\"titoloSintesiDatiTecniciInfoVeicoloStockDivCls\">Dati tecnici</div>",
+                                                                            "<div class=\"descSintesiDatiTecniciInfoVeicoloStockDivCls\">",
+                                                                            "Alimentazione: <span class=\"infocar-bold\">{alimentazione_descrizione}</span>&nbsp;&nbsp;",
+                                                                            "Cilindrata cm<sup>3</sup>: <span class=\"infocar-bold\">{cilindrata}</span>&nbsp;&nbsp;",
+                                                                            "Potenza kW/CV: <span class=\"infocar-bold\">{potenza}</span><br>",
+                                                                            "Carrozzeria: <span class=\"infocar-bold\">{carrozzeria_descrizione}</span>&nbsp;&nbsp;",
+                                                                            "Normativa: <span class=\"infocar-bold\">{normativa}</span>",
                                                                             "</div>"
                                                                         ]
                                                                     },
@@ -1703,11 +1811,13 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "baseCls": "datiTecniciInfoVeicoloStockButtonCls",
                                                                 "designer|displayName": "DatiTecniciInfoVeicoloStockButton",
-                                                                "hidden": false,
+                                                                "height": 37,
+                                                                "hidden": null,
                                                                 "itemId": "datiTecniciInfoVeicoloStockButton",
-                                                                "text": "Scopri tutti i dati tecnici",
-                                                                "width": "20%"
+                                                                "text": null,
+                                                                "width": 37
                                                             },
                                                             "name": "MyButton18",
                                                             "designerId": "45cc87e5-dd5a-4256-88ff-5b9911c41381"
@@ -1725,7 +1835,7 @@
                                                         "designer|displayName": "SintesiSituazioneStockVeicoloStockContainer",
                                                         "height": null,
                                                         "itemId": "sintesiSituazioneStockVeicoloStockContainer",
-                                                        "layout": "hbox"
+                                                        "layout": "vbox"
                                                     },
                                                     "name": "MyContainer58",
                                                     "designerId": "9421c132-80e8-466d-963d-81d4caa4107e",
@@ -1738,141 +1848,184 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "designer|displayName": "SintesiDatiPrevisiviInfoVeicoloStockLabel",
-                                                                "itemId": "sintesiDatiPrevisiviInfoVeicoloStockLabel",
-                                                                "layout|flex": null,
-                                                                "width": "50%"
+                                                                "cls": [
+                                                                    "sintesiSituazioneStockVeicoloStockLabelCls"
+                                                                ],
+                                                                "designer|displayName": "SintesiSituazioneStockVeicoloStockLabel",
+                                                                "html": "Situazione in stock"
                                                             },
-                                                            "name": "MyLabel37",
-                                                            "designerId": "bb55996d-2092-4351-91f1-4f083478aa63",
-                                                            "cn": [
-                                                                {
-                                                                    "type": "Ext.XTemplate",
-                                                                    "reference": {
-                                                                        "name": "tpl",
-                                                                        "type": "object"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|displayName": "tpl",
-                                                                        "implHandler": [
-                                                                            "<table border=\"0\" cellspacing=\"4\" cellpadding=\"4\">",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\"></td>",
-                                                                            "        <td>Valore previsivo a 3 mesi</td>",
-                                                                            "        <td>Valore previsivo a 6 mesi</td>",
-                                                                            "    </tr>",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\">Vendita</td>",
-                                                                            "        <td>{venditaValoreMesi3:this.fmtInt}</td>",
-                                                                            "        <td>{venditaValoreMesi6:this.fmtInt}</td>",
-                                                                            "    </tr>",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\">Ritiro</td>",
-                                                                            "        <td>{ritiroValoreMesi3:this.fmtInt}</td>",
-                                                                            "        <td>{ritiroValoreMesi6:this.fmtInt}</td>",
-                                                                            "    </tr>",
-                                                                            "</table>"
-                                                                        ]
-                                                                    },
-                                                                    "name": "tpl",
-                                                                    "designerId": "94002add-0ad8-400b-b584-cc3e04d14f77",
-                                                                    "cn": [
-                                                                        {
-                                                                            "type": "templatefunction",
-                                                                            "reference": {
-                                                                                "name": "items",
-                                                                                "type": "array"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "designer|params": [
-                                                                                    "intValue"
-                                                                                ],
-                                                                                "fn": "fmtInt",
-                                                                                "implHandler": [
-                                                                                    "return Infocar.app.formatInt(intValue);"
-                                                                                ]
-                                                                            },
-                                                                            "name": "fmtInt",
-                                                                            "designerId": "0db698f1-03f4-420f-9e05-71bf15492fa7"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
+                                                            "name": "MyLabel55",
+                                                            "designerId": "c8d35b33-058d-48c6-9a9d-e4e123f318df"
                                                         },
                                                         {
-                                                            "type": "Ext.Label",
+                                                            "type": "Ext.Container",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "designer|displayName": "SintesiDatiStockInfoVeicoloStockLabel",
-                                                                "itemId": "sintesiDatiStockInfoVeicoloStockLabel",
-                                                                "layout|flex": null,
-                                                                "width": "50%"
+                                                                "cls": [
+                                                                    "datiPrevisiviDatiStockInfoVeicoloStockContainerCls"
+                                                                ],
+                                                                "designer|displayName": "DatiPrevisiviDatiStockInfoVeicoloStockContainer",
+                                                                "layout": "hbox"
                                                             },
-                                                            "name": "MyLabel16",
-                                                            "designerId": "43e06cf1-5734-48f6-af6c-ffc7d1e7b03d",
+                                                            "name": "MyContainer107",
+                                                            "designerId": "1d7c4fc0-581f-4eca-8881-f9874e4f4afc",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.XTemplate",
+                                                                    "type": "Ext.Label",
                                                                     "reference": {
-                                                                        "name": "tpl",
-                                                                        "type": "object"
+                                                                        "name": "items",
+                                                                        "type": "array"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "designer|displayName": "tpl",
-                                                                        "implHandler": [
-                                                                            "<table border=\"0\" cellspacing=\"4\" cellpadding=\"4\">",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\">In stock</td>",
-                                                                            "        <td>Fisico</td>",
-                                                                            "        <td>Virtuale</td>",
-                                                                            "        <td>Giacenza media</td>",
-                                                                            "        <td>Giacenza modello</td>",
-                                                                            "    </tr>",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\">Allestimento</td>",
-                                                                            "        <td>{allestimentoFisicoStock:this.fmtInt}</td>",
-                                                                            "        <td>{allestimentoVirtualeStock:this.fmtInt}</td>",
-                                                                            "        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>",
-                                                                            "        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{allestimentoGiacenzaStockUrlImg}\"></td>",
-                                                                            "    </tr>",
-                                                                            "    <tr>",
-                                                                            "        <td align=\"left\">Modello</td>",
-                                                                            "        <td>{modelloFisicoStock:this.fmtInt}</td>",
-                                                                            "        <td>{modelloVirtualeStock:this.fmtInt}</td>",
-                                                                            "        <td>{modelloGiacenzaStock:this.fmtInt}</td>",
-                                                                            "        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{modelloGiacenzaStockUrlImg}\"></td>",
-                                                                            "    </tr>",
-                                                                            "</table>"
-                                                                        ]
+                                                                        "cls": [
+                                                                            "sintesiDatiPrevisiviInfoVeicoloStockLabelCls"
+                                                                        ],
+                                                                        "designer|displayName": "SintesiDatiPrevisiviInfoVeicoloStockLabel",
+                                                                        "itemId": "sintesiDatiPrevisiviInfoVeicoloStockLabel",
+                                                                        "layout|flex": null,
+                                                                        "width": "50%"
                                                                     },
-                                                                    "name": "tpl",
-                                                                    "designerId": "063111ab-ead0-40b0-9ea4-59a5d5ec896d",
+                                                                    "name": "MyLabel37",
+                                                                    "designerId": "bb55996d-2092-4351-91f1-4f083478aa63",
                                                                     "cn": [
                                                                         {
-                                                                            "type": "templatefunction",
+                                                                            "type": "Ext.XTemplate",
                                                                             "reference": {
-                                                                                "name": "items",
-                                                                                "type": "array"
+                                                                                "name": "tpl",
+                                                                                "type": "object"
                                                                             },
                                                                             "codeClass": null,
                                                                             "userConfig": {
-                                                                                "designer|params": [
-                                                                                    "intValue"
-                                                                                ],
-                                                                                "fn": "fmtInt",
+                                                                                "designer|displayName": "tpl",
                                                                                 "implHandler": [
-                                                                                    "return Infocar.app.formatInt(intValue);"
+                                                                                    "<table class=\"sintesiDatiPrevisiviInfoVeicoloStockTableCls\">",
+                                                                                    "    <tr class=\"headerSintesiDatiPrevisiviInfoVeicoloStockTrCls\">",
+                                                                                    "        <td></td>",
+                                                                                    "        <td>Valore previsivo a 3 mesi</td>",
+                                                                                    "        <td>Valore previsivo a 6 mesi</td>",
+                                                                                    "    </tr>",
+                                                                                    "    <tr class=\"venditaSintesiDatiPrevisiviInfoVeicoloStockTrCls\">",
+                                                                                    "        <td>Vendita</td>",
+                                                                                    "        <td>{venditaValoreMesi3:this.fmtInt}</td>",
+                                                                                    "        <td>{venditaValoreMesi6:this.fmtInt}</td>",
+                                                                                    "    </tr>",
+                                                                                    "    <tr class=\"rititoSintesiDatiPrevisiviInfoVeicoloStockTrCls\">",
+                                                                                    "        <td>Ritiro</td>",
+                                                                                    "        <td>{ritiroValoreMesi3:this.fmtInt}</td>",
+                                                                                    "        <td>{ritiroValoreMesi6:this.fmtInt}</td>",
+                                                                                    "    </tr>",
+                                                                                    "</table>"
                                                                                 ]
                                                                             },
-                                                                            "name": "fmtInt",
-                                                                            "designerId": "191be0cb-ad05-4e46-8379-1bd13de82894"
+                                                                            "name": "tpl",
+                                                                            "designerId": "94002add-0ad8-400b-b584-cc3e04d14f77",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "templatefunction",
+                                                                                    "reference": {
+                                                                                        "name": "items",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "designer|params": [
+                                                                                            "intValue"
+                                                                                        ],
+                                                                                        "fn": "fmtInt",
+                                                                                        "implHandler": [
+                                                                                            "return Infocar.app.formatInt(intValue);"
+                                                                                        ]
+                                                                                    },
+                                                                                    "name": "fmtInt",
+                                                                                    "designerId": "0db698f1-03f4-420f-9e05-71bf15492fa7"
+                                                                                }
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                },
+                                                                {
+                                                                    "type": "Ext.Label",
+                                                                    "reference": {
+                                                                        "name": "items",
+                                                                        "type": "array"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "cls": [
+                                                                            "sintesiDatiStockInfoVeicoloStockLabelCls"
+                                                                        ],
+                                                                        "designer|displayName": "SintesiDatiStockInfoVeicoloStockLabel",
+                                                                        "itemId": "sintesiDatiStockInfoVeicoloStockLabel",
+                                                                        "layout|flex": null,
+                                                                        "width": "50%"
+                                                                    },
+                                                                    "name": "MyLabel16",
+                                                                    "designerId": "43e06cf1-5734-48f6-af6c-ffc7d1e7b03d",
+                                                                    "cn": [
+                                                                        {
+                                                                            "type": "Ext.XTemplate",
+                                                                            "reference": {
+                                                                                "name": "tpl",
+                                                                                "type": "object"
+                                                                            },
+                                                                            "codeClass": null,
+                                                                            "userConfig": {
+                                                                                "designer|displayName": "tpl",
+                                                                                "implHandler": [
+                                                                                    "<table class=\"sintesiDatiStockInfoVeicoloStockTableCls\">",
+                                                                                    "    <tr class=\"headerSintesiDatiStockInfoVeicoloStockTrCls\">",
+                                                                                    "        <td>In stock</td>",
+                                                                                    "        <td>Fisico</td>",
+                                                                                    "        <td>Virtuale</td>",
+                                                                                    "        <td>Giacenza media</td>",
+                                                                                    "        <td>Giacenza modello</td>",
+                                                                                    "    </tr>",
+                                                                                    "    <tr class=\"allestimentoSintesiDatiStockInfoVeicoloStockTrCls\">",
+                                                                                    "        <td>Allestimento</td>",
+                                                                                    "        <td>{allestimentoFisicoStock:this.fmtInt}</td>",
+                                                                                    "        <td>{allestimentoVirtualeStock:this.fmtInt}</td>",
+                                                                                    "        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>",
+                                                                                    "        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{allestimentoGiacenzaStockUrlImg}\" class=\"sintesiDatiStockInfoVeicoloStockImgCls\"></td>",
+                                                                                    "    </tr>",
+                                                                                    "    <tr class=\"modelloSintesiDatiStockInfoVeicoloStockTrCls\">",
+                                                                                    "        <td>Modello</td>",
+                                                                                    "        <td>{modelloFisicoStock:this.fmtInt}</td>",
+                                                                                    "        <td>{modelloVirtualeStock:this.fmtInt}</td>",
+                                                                                    "        <td>{modelloGiacenzaStock:this.fmtInt}</td>",
+                                                                                    "        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src=\"{modelloGiacenzaStockUrlImg}\" class=\"sintesiDatiStockInfoVeicoloStockImgCls\"></td>",
+                                                                                    "    </tr>",
+                                                                                    "</table>",
+                                                                                    ""
+                                                                                ]
+                                                                            },
+                                                                            "name": "tpl",
+                                                                            "designerId": "063111ab-ead0-40b0-9ea4-59a5d5ec896d",
+                                                                            "cn": [
+                                                                                {
+                                                                                    "type": "templatefunction",
+                                                                                    "reference": {
+                                                                                        "name": "items",
+                                                                                        "type": "array"
+                                                                                    },
+                                                                                    "codeClass": null,
+                                                                                    "userConfig": {
+                                                                                        "designer|params": [
+                                                                                            "intValue"
+                                                                                        ],
+                                                                                        "fn": "fmtInt",
+                                                                                        "implHandler": [
+                                                                                            "return Infocar.app.formatInt(intValue);"
+                                                                                        ]
+                                                                                    },
+                                                                                    "name": "fmtInt",
+                                                                                    "designerId": "191be0cb-ad05-4e46-8379-1bd13de82894"
+                                                                                }
+                                                                            ]
                                                                         }
                                                                     ]
                                                                 }
@@ -1890,6 +2043,9 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
+                                                "cls": [
+                                                    "datiTecniciInfoVeicoloStockContainerCls"
+                                                ],
                                                 "designer|displayName": "DatiTecniciInfoVeicoloStockContainer",
                                                 "itemId": "datiTecniciInfoVeicoloStockContainer",
                                                 "layout": "vbox"
@@ -1905,6 +2061,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "titoloDatiTecniciInfoVeicoloStockLabelCls"
+                                                        ],
                                                         "designer|displayName": "TitoloDatiTecniciInfoVeicoloStockLabel",
                                                         "html": "Dati tecnici"
                                                     },
@@ -1919,9 +2078,14 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "datiTecniciInfoVeicoloStockListViewCls"
+                                                        ],
                                                         "designer|displayName": "DatiTecniciInfoVeicoloStockListView",
                                                         "disableSelection": true,
                                                         "grouped": true,
+                                                        "itemCls": "datiTecniciInfoVeicoloStockListViewItemCls",
+                                                        "itemHeight": 34,
                                                         "layout|flex": 1,
                                                         "store": "DatiTecniciInfoVeicoloStockStore"
                                                     },
@@ -1938,10 +2102,10 @@
                                                             "userConfig": {
                                                                 "designer|displayName": "itemTpl",
                                                                 "implHandler": [
-                                                                    "<table border=\"0\">",
+                                                                    "<table class=\"datiTecniciInfoVeicoloStockTableCls\">",
                                                                     "  <tr>",
-                                                                    "    <td style=\"width: 200px\">{nomeAttributo}:</td>",
-                                                                    "    <td>{valoreAttributo}</td>",
+                                                                    "    <td class=\"attributoDatiTecniciInfoVeicoloStockTdCls\">{nomeAttributo}:</td>",
+                                                                    "    <td class=\"valoreDatiTecniciInfoVeicoloStockTdCls\">{valoreAttributo}</td>",
                                                                     "  </tr>",
                                                                     "</table>",
                                                                     ""
@@ -1977,6 +2141,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "titoloEquipSerieInfoVeicoloStockLabelCls"
+                                                        ],
                                                         "designer|displayName": "TitoloEquipSerieInfoVeicoloStockLabel",
                                                         "html": "Equipaggiamenti di serie"
                                                     },
@@ -1991,6 +2158,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "equipSerieInfoVeicoloStockDataviewCls"
+                                                        ],
                                                         "designer|displayName": "EquipSerieInfoVeicoloStockDataview",
                                                         "layout|flex": 1,
                                                         "store": "EquipSerieInfoVeicoloStockStore"
@@ -2009,7 +2179,7 @@
                                                                 "designer|displayName": "itemTpl",
                                                                 "disableFormats": true,
                                                                 "implHandler": [
-                                                                    "<div> - {descrizione}</div>"
+                                                                    "<div class=\"descEquipSerieInfoVeicoloStockDataviewItemDivCls\"> > {descrizione}</div>"
                                                                 ]
                                                             },
                                                             "name": "itemTpl",
@@ -2025,6 +2195,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "titoloEquipMontatiInfoVeicoloStockLabelCls"
+                                                        ],
                                                         "designer|displayName": "TitoloEquipMontatiInfoVeicoloStockLabel",
                                                         "html": "Equipaggiamenti montati"
                                                     },
@@ -2039,6 +2212,9 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
+                                                        "cls": [
+                                                            "equipMontatiInfoVeicoloStockDataviewCls"
+                                                        ],
                                                         "designer|displayName": "EquipMontatiInfoVeicoloStockDataview",
                                                         "layout|flex": 1,
                                                         "store": "EquipMontatiInfoVeicoloStockStore"
@@ -2057,7 +2233,7 @@
                                                                 "designer|displayName": "itemTpl",
                                                                 "disableFormats": true,
                                                                 "implHandler": [
-                                                                    "<div> - {descrizione}</div>"
+                                                                    "<div class=\"descEquipMontatiInfoVeicoloNuovoDataviewItemDivCls\"> > {descrizione}</div>"
                                                                 ]
                                                             },
                                                             "name": "itemTpl",
@@ -2079,9 +2255,13 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "container|align": "start",
                                 "designer|displayName": "InfoVeicoloStockToolbar",
+                                "designer|uiInterfaceName": "infocar-toolbar",
                                 "docked": "bottom",
-                                "hidden": false
+                                "height": 60,
+                                "hidden": false,
+                                "ui": "infocar-toolbar"
                             },
                             "name": "MyToolbar2",
                             "designerId": "a7c6ee0d-294d-4e22-adc6-ae6549224423",
@@ -2094,9 +2274,10 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "indietroInfoVeicoloStockButtonCls",
                                         "designer|displayName": "IndietroInfoVeicoloStockButton",
                                         "itemId": "indietroInfoVeicoloStockButton",
-                                        "text": "Indietro"
+                                        "text": "INDIETRO"
                                     },
                                     "name": "MyButton12",
                                     "designerId": "e450a423-9d23-4dc0-9960-487ca3e7b588"
@@ -2110,6 +2291,7 @@
                                     "codeClass": null,
                                     "userConfig": {
                                         "designer|displayName": "StampaInfoVeicoloStockButton",
+                                        "hidden": true,
                                         "itemId": "stampaInfoVeicoloStockButton",
                                         "text": "Stampa"
                                     },

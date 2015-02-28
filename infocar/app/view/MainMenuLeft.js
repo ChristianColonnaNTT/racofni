@@ -42,10 +42,11 @@ Ext.define('Infocar.view.MainMenuLeft', {
                     },
                     {
                         xtype: 'button',
+                        baseCls: 'hideMainMenuLeftButtonCls',
                         docked: 'right',
-                        height: 40,
+                        height: 28,
                         itemId: 'hideMainMenuLeftButton',
-                        iconCls: 'more'
+                        width: 34
                     }
                 ]
             },

@@ -196,8 +196,9 @@ body.x-tablet {
     color: $param-color;
     font-size: $param-font-size;
     font-weight: normal !important;
-    height: 3vh;
-    min-height: 30px;
+    height: 30px;
+    /* height: 3vh;
+    min-height: 30px; */
 
     &.x-button-pressing {
         background-color: $param-highlight-color !important;
@@ -270,35 +271,6 @@ body.x-tablet {
         background-size: $param-img-size !important;
     }
 }
-
-/*
-@mixin infocar-button-icona(
-    $param-highlight-color: $infocar-button-highlight-color,
-    $param-padding: 0,
-    $param-margin: 0)
-{
-    -webkit-background-clip: padding-box;
-    -webkit-tap-highlight-color: $param-highlight-color;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-
-    @include infocar-align(center);
-
-    background-clip: padding-box;
-    background: none;
-    border: 0 !important;
-    color: #fff;
-    padding: $param-padding;
-    margin: $param-margin;
-    border-radius: 0;
-
-    &.x-button-pressing {
-        background-color: $param-highlight-color !important;
-        background-clip: padding-box !important;
-        background-image: none !important;
-    }
-}
-*/
 
 @mixin infocar-bold {
   font-weight: bold;
@@ -397,6 +369,14 @@ body.x-tablet {
     border-radius: 0 !important;
 }
 
+.hideMainMenuLeftButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/10-ipad_infocar_done_06.png),
+    $param-img-size: 24px 18px,
+    $param-margin: 0px 8px 0px 0px
+  );
+}
+
 /*
 .x-badge, .x-button-icon, .x-shown, .home, .x-button-label,
 .x-button-normal, .x-button, .x-iconalign-left,
@@ -416,27 +396,54 @@ body.x-tablet {
 }
 
 .downTopBarContainerCls {
-    background-color: #333344;
-    color: #fff;
+  background-color: #333344;
+  background-image: url(../images/15-16-ipad_infocar_03.png) !important;
+  background-size: 16px 49px !important;
+  background-repeat: no-repeat !important;
+  background-position: 20px 0px !important;
+  color: #fff;
+  border-top: 3px solid #f2f2f2;
+  border-bottom: 0;
 }
 
 .showMainMenuLeftButtonCls {
-    margin-left: 24px;
+  @include infocar-button-icona(
+    $param-img-url: url(../images/10-ipad_infocar_done_06.png),
+    $param-img-size: 24px 18px,
+    $param-margin: 0px 0px 0px 18px
+  );
+}
+
+.logoTopBarImgCls {
+  margin-left: 10px;
+}
+
+.imgUserNameTopBarLabel {
+  width: 10px;
+  height: 11px;
+  margin-right: 4px;
 }
 
 .userNameTopBarLabelCls {
-    text-align: right !important;
-    margin-right: 26px;
+  text-align: right !important;
+  margin-right: 26px;
+  font-weight: bold;
+  font-size: 0.88em;
 }
 
 .esciTopBarButtonCls {
-    margin-right: 40px;
+  @include infocar-button-icona(
+    $param-img-url: url(../images/10-ipad_infocar_done_03.png),
+    $param-img-size: 37px 38px,
+    $param-margin: 0px 40px 0px 0px
+  );
 }
 
 .titoloSezioneTopBarLabelCls {
-    font-size: 1.3em !important;
-    margin-left: 48px;
+  font-size: 1.3em !important;
+  margin-left: 24px;
 }
+
 
 
 /* Form ricerca usato/nuovo/stock */
@@ -444,22 +451,34 @@ body.x-tablet {
     border-style: solid;
     border-color: $infocar-border-color;
     border-top-width: 0;
-    border-bottom-width: 1vh;
-    border-left-width: 1vw;
-    border-right-width: 1vw;
+    border-bottom-width: 10px;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    height: 140px;
+    padding-top: 10px;
+    padding-left: 6px;
+    padding-right: 15px;
+/*
     height: 13vh;
     min-height: 150px;
+*/
 }
 
 .ricercaStockFormCls {
     border-style: solid;
     border-color: $infocar-border-color;
     border-top-width: 0;
-    border-bottom-width: 1vh;
-    border-left-width: 1vw;
-    border-right-width: 1vw;
+    border-bottom-width: 10px;
+    border-left-width: 8px;
+    border-right-width: 8px;
+    height: 210px;
+    padding-top: 10px;
+    padding-left: 6px;
+    padding-right: 15px;
+/*
     height: 18vh;
     min-height: 200px;
+*/
 }
 
 
@@ -474,7 +493,7 @@ body.x-tablet {
 .ricercaNuovoFormCls .x-field-text .x-input-el,
 .ricercaStockFormCls .x-field-text .x-input-el
 {
-    font-size: 1em;
+    font-size: 0.75em;
 }
 
 
@@ -496,8 +515,9 @@ body.x-tablet {
 }
 
 .stockUsatoRicercaStockLabelCls {
-    font-weight: bold;
-    padding: 0.65em;
+  font-size: 0.75em;
+  font-weight: bold;
+  padding: 7px 0px 0px 14px;
     /* height: 45px !important; */
     /* line-height: 45px !important; */ /* $form-thumb-size */
     /* vertical-align: middle !important; */
@@ -511,8 +531,9 @@ body.x-tablet {
 .veicoloRicStockNumRisultatiContainerCls {
     color: #fff;
     background-color: #a0a0a5;
-    height: 4vh;
-    min-height: 45px;
+    height: 45px;
+    /* height: 4vh;
+    min-height: 45px; */
 }
 
 .indietroModelloRicUsatoButtonCls, .indietroAllestimentoRicUsatoButtonCls,
@@ -543,37 +564,27 @@ body.x-tablet {
 .ordinamentoRicStockComboBoxCls, .ordinamentoRicStockComboBoxCls .x-form-label
 /* .ordinamentoRicUsatoComboBoxCls .x-field-mask */
 {
-    border: 0;
-    color: #fff !important;
-    background-color: #a0a0a5;
-    height: 4vh;
-    min-height: 45px;
+  border: 0;
+  color: #fff !important;
+  background-color: #a0a0a5;
+  /*height: 4vh;
+  min-height: 45px;*/
+  font-size: 1em !important;
 }
 
-/* .x-spinner .x-input-el, .x-field-select .x-input-el { */
-/* TODO DA CANCELLARE
-.ordinamentoRicUsatoComboBoxCls .x-input-el, .ordinamentoRicUsatoComboBoxCls .x-field-mask {
-    -webkit-text-fill-color: #000;
-    -webkit-opacity: 1;
-    color: #000 !important;
-    height: 20px;
-    border: 1px solid #000;
-    background-color: #fff;
-}
-*/
-
-/* TODO DA CANCELLARE
-.ordinamentoRicUsatoComboBoxCls .x-input-el,
-.ordinamentoRicNuovoComboBoxCls .x-input-el,
-.ordinamentoRicStockComboBoxCls .x-input-el
+.ordinamentoRicUsatoComboBoxCls.x-field-select .x-input-el,
+.ordinamentoRicNuovoComboBoxCls.x-field-select .x-input-el,
+.ordinamentoRicStockComboBoxCls.x-field-select .x-input-el
 {
-    -webkit-text-fill-color: #fff;
-    -webkit-opacity: 1;
-    background-color: #a0a0a5;
-    height: 4vh;
-    min-height: 45px;
+    font-size: 1em !important;
 }
-*/
+
+.ordinamentoRicUsatoComboBoxCls,
+.ordinamentoRicNuovoComboBoxCls,
+.ordinamentoRicStockComboBoxCls {
+  margin-right: 8px;
+}
+
 
 
 /* Liste risultato ricerca usato/nuovo */
@@ -711,7 +722,7 @@ td.frecciaVeicoloRicStockRisultatoDataViewTdCls {
 }
 
 img.frecciaVeicoloRicStockRisultatoDataViewImgCls {
-  height: 40px;
+  /* height: 40px; */
   vertical-align: middle !important;
 }
 
@@ -2342,6 +2353,458 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 
 
 
+/**********************/
+/* Info Veicolo Stock */
+/**********************/
+
+.rightInfoVeicoloStockContainerCls {
+  margin: 0;
+  border-top: 0;
+  border-bottom: 0;
+  border-left: 8px solid $infocar-border-color;
+  border-right: 8px solid $infocar-border-color;
+}
+
+/* Testata Portrait Info Veicolo Nuovo */
+.testataInfoVeicoloStockContainerPortraitCls {
+  height: 86px;
+  padding: 5px 0px 5px 0px;
+  margin: 0px 5px 0px 5px;
+  /* border-bottom: 1px solid #db021f; */
+}
+
+.infoVeicoloStockMiniImgCls img {
+  max-height: 50px;
+  max-width: 50px;
+  width: auto;
+  height: auto;
+}
+
+.descTestataInfoVeicoloStockContainerPortraitCls {
+  /* background-color: #f8f8f8; */
+  background-color: #ffffff;
+  padding: 0px 20px 0px 20px !important;
+  margin: 0;
+}
+
+.descInfoVeicoloStockLabelPortraitCls {
+  font-size: 1em;
+  font-weight: bold;
+  /* font-size: 1em; */
+}
+
+/* Generale Info Veicolo Stock */
+.generaleInfoVeicoloStockContainerCls {
+  padding: 5px 0px 5px 0px;
+}
+
+.testoImgInfoVeicoloStockContainerCls {
+  margin: 0px 5px 0px 5px;
+}
+
+/*
+.infoVeicoloNuovoImgCls img {
+  width: 313px;
+  max-width: 313px;
+  height: auto;
+}
+*/
+
+.testoInfoVeicoloStockLabelCls {
+  padding-left: 26px;
+}
+
+
+.labelPrezzoVendTestoInfoVeicoloStockDivCls {
+  font-size: 0.88em;
+}
+
+.valorePrezzoVendTestoInfoVeicoloStockDivCls {
+  font-size: 1.25em;
+  font-weight: bold;
+}
+
+.prezziTestoInfoVeicoloStockDivCls {
+  font-size: 0.75em;
+}
+
+.prezziInfoVeicoloStockOverlayContainerCls {
+  background-color: #f2f2f2;
+}
+
+.frecciaPrezziInfoVeicoloStockButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/49-ipad-portrait_07.png),
+    $param-img-size: 57px 58px);
+  background-color: #fff;
+}
+
+.testoPrezziInfoVeicoloStockLabelCls {
+  padding-top: 5px;
+  padding-right: 20px;
+}
+
+
+/* Sintesi equipaggiamenti info veicolo stock */
+.sintesiEquipInfoVeicoloStockContainerCls {
+  background-color: #f8f8f8;
+  margin-top: 25px;
+}
+
+.sintesiEquipInfoVeicoloStockLabelCls {
+  padding-left: 8px !important;
+}
+
+.titoloSintesiEquipInfoVeicoloStockDivCls {
+  color: #e30613;
+  font-size: 1.12em;
+}
+
+.descSintesiEquipInfoVeicoloStockDivCls {
+  margin-top: 13px;
+  font-size: 0.88em;
+}
+
+.equipInfoVeicoloStockButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/19-ipad-portrait_done_03.png),
+    $param-img-size: 37px 37px,
+    $param-margin: 0px 13px 0px 13px);
+}
+
+
+/* Tabs Scheda Informazioni Aggiuntive e Stato d'Uso */
+.titoloSchedaInfoVeicoloStockLabelCls {
+  padding: 25px 0px 25px 8px;
+  color: #e30613;
+  font-size: 1.12em;
+}
+
+.schedaInfoVeicoloStockTabPanelCls {
+  margin-top: 25px;
+  height: auto;
+}
+
+.schedaInfoVeicoloStockTabBarCls {
+  background-color: #f8f8f8;
+  border-top: 1px solid #eae8e8;
+  border-bottom: 0;
+  border-left: 0;
+  border-right: 0;
+}
+
+.schedaInfoVeicoloStockTabBarCls .x-tab .x-button-label {
+  font-weight: normal !important;
+  font-size: 0.88em !important;
+}
+
+.schedaInfoVeicoloStockTabBarCls .x-tab.x-tab-active .x-button-label {
+  font-weight: bold !important;
+  font-size: 0.88em !important;
+}
+
+/*
+.schedaInfoVeicoloStockTabBarCls .x-tab {
+  background-image: none !important;
+}
+
+.schedaInfoVeicoloStockTabBarCls .x-tab.x-tab-active {
+  background-image: url(../images/49-ipad-portrait_11.png) !important;
+  background-size: 15px 9px !important;
+  background-repeat: no-repeat !important;
+  background-position: 10px 0px !important;
+}
+*/
+
+.informAggiuntiveSchedaInfoVeicoloStockTabCls {
+  padding-left: 8px;
+  font-size: 0.75em;
+}
+
+.statoUsoSchedaInfoVeicoloStockTabCls {
+  padding-left: 8px;
+  font-size: 0.75em;
+}
+
+
+/* Sintesi Dati Tecnici Info Veicolo Stock */
+.sintesiDatiTecniciInfoVeicoloStockContainerCls {
+  background-color: #fff;
+  margin-top: 25px;
+}
+
+.sintesiDatiTecniciInfoVeicoloStockLabelCls {
+  padding-left: 8px !important;
+}
+
+.titoloSintesiDatiTecniciInfoVeicoloStockDivCls {
+  color: #e30613;
+  font-size: 1.12em;
+}
+
+.descSintesiDatiTecniciInfoVeicoloStockDivCls {
+  margin-top: 13px;
+  font-size: 0.88em;
+}
+
+.datiTecniciInfoVeicoloStockButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/19-ipad-portrait_done_06.png),
+    $param-img-size: 37px 37px,
+    $param-margin: 0px 13px 0px 13px);
+}
+
+
+
+
+/* Tabellla Dati Previsivi Info Veicolo Stock */
+.sintesiSituazioneStockVeicoloStockLabelCls {
+  color: #e30613;
+  font-size: 1.12em;
+  padding-top: 18px !important;
+  padding-bottom: 10px !important;
+  padding-left: 8px !important;
+}
+
+.datiPrevisiviDatiStockInfoVeicoloStockContainerCls {
+  padding-left: 13px !important;
+}
+
+/*
+.sintesiDatiPrevisiviInfoVeicoloStockLabelCls {
+  padding-left: 13px !important;
+}
+*/
+
+.sintesiDatiPrevisiviInfoVeicoloStockTableCls {
+  border: 0;
+  width: 100%;
+  font-size: 0.75em;
+}
+
+.sintesiDatiPrevisiviInfoVeicoloStockTableCls td {
+  padding: 0px 5px 0px 5px;
+  margin: 0;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #fff;
+}
+
+.headerSintesiDatiPrevisiviInfoVeicoloStockTrCls {
+  background-color: #a0a0a5;
+  border: 1px solid #a0a0a5;
+  border-radius: 0.4em;
+  color: #fff;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+.venditaSintesiDatiPrevisiviInfoVeicoloStockTrCls {
+  background-color: #fff;
+  color: #000;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+.rititoSintesiDatiPrevisiviInfoVeicoloStockTrCls {
+  background-color: #f8f8f8;
+  color: #000;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Tabellla Dati Stock Info Veicolo Stock */
+.sintesiDatiStockInfoVeicoloStockLabelCls {
+  padding-left: 4px !important;
+  padding-right: 13px !important;
+}
+
+.sintesiDatiStockInfoVeicoloStockTableCls {
+  border: 0;
+  width: 100%;
+  font-size: 0.75em;
+}
+
+.sintesiDatiStockInfoVeicoloStockTableCls td {
+  padding: 0px 5px 0px 5px;
+  margin: 0;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid #fff;
+}
+
+.headerSintesiDatiStockInfoVeicoloStockTrCls {
+  background-color: #a0a0a5;
+  border: 1px solid #a0a0a5;
+  border-radius: 0.4em;
+  color: #fff;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+.allestimentoSintesiDatiStockInfoVeicoloStockTrCls {
+  background-color: #fff;
+  color: #000;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+.modelloSintesiDatiStockInfoVeicoloStockTrCls {
+  background-color: #f8f8f8;
+  color: #000;
+  height: 51px;
+  padding: 0;
+  margin: 0;
+}
+
+.sintesiDatiStockInfoVeicoloStockImgCls {
+  padding-left: 23px;
+}
+
+
+/* Toolbar a Pie Pagina Info Veicolo Stock */
+.indietroInfoVeicoloStockButtonCls,
+{
+  @include infocar-button-red();
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.indietroInfoVeicoloStockButtonCls {
+  margin-left: 10px;
+}
+
+.indietroInfoVeicoloStockButtonCls.x-dock-item.x-unsized,
+{
+  @include infocar-box-orient(horizontal);
+}
+
+
+/* Schermata Equipaggiamenti Info Veicolo Stock */
+.titoloEquipSerieInfoVeicoloStockLabelCls {
+  color: #e30613;
+  font-size: 1.12em;
+  padding-top: 12px !important;
+  padding-bottom: 10px !important;
+  margin-left: 17px !important;
+}
+
+.equipSerieInfoVeicoloStockDataviewCls {
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+
+.descEquipSerieInfoVeicoloStockDataviewItemDivCls {
+  height: 32px;
+  line-height: 32px;
+  font-size: 0.75em;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+
+.titoloEquipMontatiInfoVeicoloStockLabelCls {
+  color: #e30613;
+  font-size: 1.12em;
+  padding-top: 4px !important;
+  padding-bottom: 10px !important;
+  margin-left: 17px !important;
+}
+
+.equipMontatiInfoVeicoloStockDataviewCls {
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+
+.descEquipMontatiInfoVeicoloNuovoDataviewItemDivCls {
+  height: 32px;
+  line-height: 32px;
+  font-size: 0.75em;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+
+/* Schermata Dati tecnici Info Veicolo Stock */
+.titoloDatiTecniciInfoVeicoloStockLabelCls {
+  color: #e30613;
+  font-size: 1.12em;
+  padding-top: 12px !important;
+  padding-bottom: 10px !important;
+  margin-left: 17px !important;
+}
+
+.datiTecniciInfoVeicoloStockListViewCls {
+  background-color: #fff;
+  margin-left: 13px !important;
+  margin-right: 13px !important;
+}
+
+.datiTecniciInfoVeicoloStockListViewCls .x-list-header { /* Sottogruppi */
+  height: 26px;
+  line-height: 19px;
+  background-color: #a0a0a5;
+  background-image: none;
+  border: 0;
+  color: #fff;
+  font-size: 0.88em;
+  font-weight: normal;
+  margin-bottom: 4px;
+  border-radius: 0.2em;
+}
+
+/*
+.datiTecniciInfoVeicoloStockListViewCls .x-list-item.x-list-item-tpl .x-innerhtml {
+  padding: 0px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
+  border: 0;
+}
+*/
+
+.datiTecniciInfoVeicoloStockListViewItemCls,
+.datiTecniciInfoVeicoloStockListViewItemCls .x-innerhtml {
+  padding: 0px 0px 0px 0px !important;
+  margin: 0px 0px 4px 0px !important;
+  border: 0 !important;
+}
+
+.datiTecniciInfoVeicoloStockListViewItemCls:nth-child(odd) {
+  background-color: #f4f4f4;
+}
+
+.datiTecniciInfoVeicoloStockListViewItemCls:nth-child(even) {
+  background-color: #fff;
+}
+
+.datiTecniciInfoVeicoloStockTableCls {
+  padding: 5px 0px 0px 12px;
+  height: 30px;
+  font-size: 0.75em;
+  width: 100%;
+  border: 0;
+}
+
+.attributoDatiTecniciInfoVeicoloStockTdCls {
+  padding: 5px 0px 0px 12px;
+  width: 33%;
+}
+
+.valoreDatiTecniciInfoVeicoloStockTdCls {
+  padding: 5px 0px 0px 12px;
+  width: 67%;
+}
+
+
+
+
 /* View con carousel immagini fullscreen */
 
 .photoFullscreenImgCls img {
@@ -2351,9 +2814,7 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 
 
 
-.prezziInfoVeicoloStockOverlayContainerCls {
-  /* right: -92% */
-}
+
 
 
 /* ui mixin: infocar-toolbar for of type: sencha-toolbar-ui */
@@ -2362,4 +2823,11 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
   $ui-label:"infocar-toolbar",
     $color: $infocar-border-color,
     $gradient: $toolbar-gradient
+);
+/* ui mixin: untitled-ui-3 for of type: sencha-toolbar-ui */
+
+@include sencha-toolbar-ui(
+  $ui-label:"untitled-ui-3",
+    $color: #f8f8f8,
+    $gradient: flat
 );

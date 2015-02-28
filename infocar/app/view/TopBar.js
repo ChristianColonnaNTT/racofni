@@ -27,7 +27,7 @@ Ext.define('Infocar.view.TopBar', {
 
     config: {
         cls: 'topBarCls',
-        height: '15%',
+        height: 135,
         itemId: 'topBar',
         layout: {
             type: 'vbox',
@@ -37,7 +37,7 @@ Ext.define('Infocar.view.TopBar', {
             {
                 xtype: 'container',
                 cls: 'upTopBarContainerCls',
-                height: '64%',
+                height: 79,
                 minHeight: 45,
                 width: '100%',
                 layout: {
@@ -47,13 +47,17 @@ Ext.define('Infocar.view.TopBar', {
                 items: [
                     {
                         xtype: 'button',
-                        cls: 'showMainMenuLeftButtonCls',
+                        baseCls: 'showMainMenuLeftButtonCls',
+                        height: 28,
                         itemId: 'showMainMenuLeftButton',
-                        iconCls: 'more'
+                        width: 34
                     },
                     {
                         xtype: 'image',
-                        width: 328
+                        cls: 'logoTopBarImgCls',
+                        height: 41,
+                        width: 164,
+                        src: 'resources/images/5-ipad_infocar_03.png'
                     },
                     {
                         xtype: 'label',
@@ -61,21 +65,22 @@ Ext.define('Infocar.view.TopBar', {
                         cls: 'userNameTopBarLabelCls',
                         itemId: 'userNameTopBarLabel',
                         tpl: [
-                            '{nomeUtente} {cognomeUtente}'
+                            '<img src="resources/images/10-ipad_infocar_done_09.png" class="imgUserNameTopBarLabel">{nomeUtente} {cognomeUtente}'
                         ]
                     },
                     {
                         xtype: 'button',
-                        cls: 'esciTopBarButtonCls',
+                        baseCls: 'esciTopBarButtonCls',
+                        height: 38,
                         itemId: 'esciTopBarButton',
-                        text: 'Esci'
+                        width: 37
                     }
                 ]
             },
             {
                 xtype: 'container',
                 cls: 'downTopBarContainerCls',
-                height: '36%',
+                height: 56,
                 width: '100%',
                 layout: {
                     type: 'hbox',
@@ -86,7 +91,7 @@ Ext.define('Infocar.view.TopBar', {
                         xtype: 'label',
                         cls: 'titoloSezioneTopBarLabelCls',
                         itemId: 'titoloSezioneTopBarLabel',
-                        width: 350
+                        width: '100%'
                     }
                 ]
             }

@@ -147,10 +147,6 @@ Ext.define('Infocar.view.NuovoView', {
                                                 baseCls: 'azzeraRicNuovoButtonCls',
                                                 itemId: 'azzeraRicNuovoButton',
                                                 text: 'AZZERA RICERCA'
-                                            },
-                                            {
-                                                xtype: 'spacer',
-                                                width: 31
                                             }
                                         ]
                                     },

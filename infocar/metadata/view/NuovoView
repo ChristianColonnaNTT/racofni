@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar",
+            "name": "topbar2",
             "designerId": "69e24a9f-36cf-41e5-87c4-50751e860e24",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -289,19 +289,6 @@
                                             },
                                             "name": "MyButton8",
                                             "designerId": "ef08bddf-3521-4630-86d4-a739e5cdb24e"
-                                        },
-                                        {
-                                            "type": "Ext.Spacer",
-                                            "reference": {
-                                                "name": "items",
-                                                "type": "array"
-                                            },
-                                            "codeClass": null,
-                                            "userConfig": {
-                                                "width": 31
-                                            },
-                                            "name": "MySpacer2",
-                                            "designerId": "cfcd8a2a-42c9-49a4-a688-7fd6b368f3c5"
                                         }
                                     ]
                                 },
@@ -2652,7 +2639,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "designer|displayName": "infoVeicoloNuovoMiniImgContainer",
+                                                "designer|displayName": "InfoVeicoloNuovoMiniImgContainer",
                                                 "height": 47,
                                                 "layout": null,
                                                 "width": 47

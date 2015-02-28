@@ -406,6 +406,12 @@ Ext.application({
 
         var photoFullscreenCtrl = this.getController('Infocar.controller.PhotoFullScreenController');
         photoFullscreenCtrl.adjustScalePhotoCarousel();
+
+
+        // Riposiziono la linguetta dei prezzi nella scherma info veicolo stock
+        var ricercaStockCtrl = this.getController('Infocar.controller.RicercaStockController');
+        ricercaStockCtrl.initPrezziOverlay();
+
     },
 
     orientationPortrait: function() {
@@ -436,6 +442,11 @@ Ext.application({
 
         var photoFullscreenCtrl = this.getController('Infocar.controller.PhotoFullScreenController');
         photoFullscreenCtrl.adjustScalePhotoCarousel();
+
+        // Riposiziono la linguetta dei prezzi nella scherma info veicolo stock
+        var ricercaStockCtrl = this.getController('Infocar.controller.RicercaStockController');
+        ricercaStockCtrl.initPrezziOverlay();
+
     },
 
     checkOrientation: function() {

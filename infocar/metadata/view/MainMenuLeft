@@ -63,11 +63,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
+                        "badgeCls": null,
+                        "baseCls": "hideMainMenuLeftButtonCls",
                         "docked": "right",
-                        "height": 40,
-                        "iconCls": "more",
+                        "height": 28,
+                        "iconCls": null,
                         "itemId": "hideMainMenuLeftButton",
-                        "text": null
+                        "text": null,
+                        "width": 34
                     },
                     "name": "MyButton7",
                     "designerId": "ea12a3ba-ce32-4c54-af05-d77568874f9e"

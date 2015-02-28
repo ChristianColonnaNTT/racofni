@@ -606,7 +606,13 @@
                     "if (testataLandscape) testataLandscape.setHidden(false);",
                     "",
                     "var photoFullscreenCtrl = this.getController('Infocar.controller.PhotoFullScreenController');",
-                    "photoFullscreenCtrl.adjustScalePhotoCarousel();"
+                    "photoFullscreenCtrl.adjustScalePhotoCarousel();",
+                    "",
+                    "",
+                    "// Riposiziono la linguetta dei prezzi nella scherma info veicolo stock",
+                    "var ricercaStockCtrl = this.getController('Infocar.controller.RicercaStockController');",
+                    "ricercaStockCtrl.initPrezziOverlay();",
+                    ""
                 ]
             },
             "name": "orientationLandscape",
@@ -648,7 +654,12 @@
                     "if (testataLandscape) testataLandscape.setHidden(true);",
                     "",
                     "var photoFullscreenCtrl = this.getController('Infocar.controller.PhotoFullScreenController');",
-                    "photoFullscreenCtrl.adjustScalePhotoCarousel();"
+                    "photoFullscreenCtrl.adjustScalePhotoCarousel();",
+                    "",
+                    "// Riposiziono la linguetta dei prezzi nella scherma info veicolo stock",
+                    "var ricercaStockCtrl = this.getController('Infocar.controller.RicercaStockController');",
+                    "ricercaStockCtrl.initPrezziOverlay();",
+                    ""
                 ]
             },
             "name": "orientationPortrait",

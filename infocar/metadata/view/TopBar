@@ -13,7 +13,7 @@
         "designer|userAlias": "TopBar",
         "designer|userClassName": "TopBar",
         "docked": null,
-        "height": "15%",
+        "height": 135,
         "itemId": "topBar",
         "layout": "vbox"
     },
@@ -33,7 +33,7 @@
                 ],
                 "container|align": "center",
                 "designer|displayName": "UpTopBarContainer",
-                "height": "64%",
+                "height": 79,
                 "layout": "hbox",
                 "layout|flex": null,
                 "minHeight": 45,
@@ -50,13 +50,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "cls": [
-                            "showMainMenuLeftButtonCls"
-                        ],
+                        "baseCls": "showMainMenuLeftButtonCls",
                         "designer|displayName": "ShowMainMenuLeftButton",
-                        "iconCls": "more",
+                        "height": 28,
+                        "iconCls": null,
                         "itemId": "showMainMenuLeftButton",
-                        "text": null
+                        "text": null,
+                        "width": 34
                     },
                     "name": "MyButton",
                     "designerId": "f547e741-f675-4e8e-a49b-d82ea41185d4"
@@ -69,10 +69,14 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "LogoImg",
+                        "cls": [
+                            "logoTopBarImgCls"
+                        ],
+                        "designer|displayName": "LogoTopBarImg",
                         "docked": null,
-                        "height": null,
-                        "width": 328
+                        "height": 41,
+                        "src": "resources/images/5-ipad_infocar_03.png",
+                        "width": 164
                     },
                     "name": "MyImg",
                     "designerId": "21a17a27-b6d3-4f0b-99a8-c8f27bedbbf8"
@@ -112,7 +116,7 @@
                             "userConfig": {
                                 "designer|displayName": "tpl",
                                 "implHandler": [
-                                    "{nomeUtente} {cognomeUtente}"
+                                    "<img src=\"resources/images/10-ipad_infocar_done_09.png\" class=\"imgUserNameTopBarLabel\">{nomeUtente} {cognomeUtente}"
                                 ]
                             },
                             "name": "tpl",
@@ -128,14 +132,13 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "cls": [
-                            "esciTopBarButtonCls"
-                        ],
+                        "baseCls": "esciTopBarButtonCls",
                         "designer|displayName": "EsciTopBarButton",
                         "docked": null,
-                        "height": null,
+                        "height": 38,
                         "itemId": "esciTopBarButton",
-                        "text": "Esci"
+                        "text": null,
+                        "width": 37
                     },
                     "name": "MyButton6",
                     "designerId": "440a7efb-f565-4eb0-9ad9-d701600b73b7"
@@ -155,7 +158,7 @@
                 ],
                 "container|align": "center",
                 "designer|displayName": "DownTopBarContainer",
-                "height": "36%",
+                "height": 56,
                 "layout": "hbox",
                 "layout|flex": null,
                 "width": "100%"
@@ -182,7 +185,7 @@
                         "left": null,
                         "margin": null,
                         "top": null,
-                        "width": 350
+                        "width": "100%"
                     },
                     "name": "MyLabel",
                     "designerId": "32a91250-f821-4e9d-8b84-2e3eac19cddd"

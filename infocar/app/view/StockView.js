@@ -82,6 +82,7 @@ Ext.define('Infocar.view.StockView', {
                                             },
                                             {
                                                 xtype: 'togglefield',
+                                                cls: 'stockUsatoRicercaStockToggleCls',
                                                 itemId: 'stockUsatoRicercaStockToggle',
                                                 label: 'Stock',
                                                 labelWidth: '45%'
@@ -284,10 +285,6 @@ Ext.define('Infocar.view.StockView', {
                                                 baseCls: 'cercaRicStockButtonCls',
                                                 itemId: 'cercaRicStockButton',
                                                 text: 'Cerca'
-                                            },
-                                            {
-                                                xtype: 'spacer',
-                                                width: 31
                                             }
                                         ]
                                     }
@@ -400,24 +397,49 @@ Ext.define('Infocar.view.StockView', {
                             {
                                 xtype: 'container',
                                 flex: 1,
+                                cls: 'rightInfoVeicoloStockContainerCls',
                                 layout: 'vbox',
                                 items: [
                                     {
                                         xtype: 'container',
+                                        cls: 'testataInfoVeicoloStockContainerPortraitCls',
                                         itemId: 'testataInfoVeicoloStockContainerPortrait',
-                                        layout: 'hbox',
+                                        layout: {
+                                            type: 'hbox',
+                                            align: 'center'
+                                        },
                                         items: [
                                             {
-                                                xtype: 'image',
+                                                xtype: 'container',
                                                 height: 50,
-                                                itemId: 'infoVeicoloStockMiniImg',
-                                                width: 50
+                                                width: 50,
+                                                items: [
+                                                    {
+                                                        xtype: 'image',
+                                                        centered: true,
+                                                        itemId: 'infoVeicoloStockMiniImg',
+                                                        imageCls: 'infoVeicoloStockMiniImgCls',
+                                                        mode: 'image'
+                                                    }
+                                                ]
                                             },
                                             {
-                                                xtype: 'label',
-                                                itemId: 'descInfoVeicoloStockLabel',
-                                                tpl: [
-                                                    '{veicoloStock_descrizione}'
+                                                xtype: 'container',
+                                                flex: 1,
+                                                cls: 'descTestataInfoVeicoloStockContainerPortraitCls',
+                                                layout: {
+                                                    type: 'hbox',
+                                                    align: 'center'
+                                                },
+                                                items: [
+                                                    {
+                                                        xtype: 'label',
+                                                        cls: 'descInfoVeicoloStockLabelPortraitCls',
+                                                        itemId: 'descInfoVeicoloStockLabel',
+                                                        tpl: [
+                                                            '{veicoloStock_descrizione}'
+                                                        ]
+                                                    }
                                                 ]
                                             }
                                         ]
@@ -433,18 +455,21 @@ Ext.define('Infocar.view.StockView', {
                                         items: [
                                             {
                                                 xtype: 'container',
+                                                cls: 'generaleInfoVeicoloStockContainerCls',
                                                 itemId: 'generaleInfoVeicoloStockContainer',
                                                 layout: 'vbox',
                                                 scrollable: 'vertical',
                                                 items: [
                                                     {
                                                         xtype: 'container',
+                                                        cls: 'testoImgInfoVeicoloStockContainerCls',
+                                                        width: '100%',
                                                         layout: 'hbox',
                                                         items: [
                                                             {
                                                                 xtype: 'carousel',
                                                                 itemId: 'infoVeicoloStockCarousel',
-                                                                width: '50%',
+                                                                width: 313,
                                                                 items: [
                                                                     {
                                                                         xtype: 'container',
@@ -483,17 +508,19 @@ Ext.define('Infocar.view.StockView', {
                                                             },
                                                             {
                                                                 xtype: 'container',
+                                                                flex: 1,
+                                                                cls: 'testoinfoVeicoloStockContainerCls',
                                                                 itemId: 'testoinfoVeicoloStockContainer',
-                                                                width: '50%',
                                                                 items: [
                                                                     {
                                                                         xtype: 'label',
+                                                                        cls: 'testoInfoVeicoloStockLabelCls',
                                                                         itemId: 'testoInfoVeicoloStockLabel',
                                                                         tpl: Ext.create('Ext.XTemplate', 
-                                                                            '<div class="">Prezzo di vendita</div>',
-                                                                            '<div class="">{venditaPrezzo:this.fmtCurrency} &euro;</div>',
+                                                                            '<div class="labelPrezzoVendTestoInfoVeicoloStockDivCls">Prezzo di vendita</div>',
+                                                                            '<div class="valorePrezzoVendTestoInfoVeicoloStockDivCls">{venditaPrezzo:this.fmtCurrency} &euro;</div>',
                                                                             '<br>',
-                                                                            '<div class="">',
+                                                                            '<div class="prezziTestoInfoVeicoloStockDivCls">',
                                                                             'Codice infocar: {codiceInfocar}<br>',
                                                                             'Codice casa: {codiceCasa}<br>',
                                                                             'Codice QUD: {codiceQUD}<br>',
@@ -510,9 +537,8 @@ Ext.define('Infocar.view.StockView', {
                                                                     {
                                                                         xtype: 'container',
                                                                         cls: 'prezziInfoVeicoloStockOverlayContainerCls',
-                                                                        height: 60,
+                                                                        height: 58,
                                                                         itemId: 'prezziInfoVeicoloStockOverlayContainer',
-                                                                        style: 'background-color: #cccccc;',
                                                                         top: 0,
                                                                         width: '100%',
                                                                         layout: 'hbox',
@@ -520,13 +546,15 @@ Ext.define('Infocar.view.StockView', {
                                                                         items: [
                                                                             {
                                                                                 xtype: 'button',
+                                                                                baseCls: 'frecciaPrezziInfoVeicoloStockButtonCls',
+                                                                                height: 58,
                                                                                 itemId: 'frecciaPrezziInfoVeicoloStockButton',
-                                                                                width: 60,
-                                                                                iconCls: 'arrow_left'
+                                                                                width: 57
                                                                             },
                                                                             {
                                                                                 xtype: 'label',
                                                                                 flex: 1,
+                                                                                cls: 'testoPrezziInfoVeicoloStockLabelCls',
                                                                                 itemId: 'testoPrezziInfoVeicoloStockLabel',
                                                                                 tpl: [
                                                                                     '<div style="width: 100%; text-align: right">',
@@ -543,40 +571,53 @@ Ext.define('Infocar.view.StockView', {
                                                     },
                                                     {
                                                         xtype: 'container',
+                                                        cls: 'sintesiEquipInfoVeicoloStockContainerCls',
+                                                        height: 102,
                                                         itemId: 'sintesiEquipInfoVeicoloStockContainer',
                                                         layout: {
                                                             type: 'hbox',
-                                                            align: 'start'
+                                                            align: 'center'
                                                         },
                                                         items: [
                                                             {
                                                                 xtype: 'label',
+                                                                flex: 1,
+                                                                cls: 'sintesiEquipInfoVeicoloStockLabelCls',
                                                                 itemId: 'sintesiEquipInfoVeicoloStockLabel',
                                                                 tpl: [
-                                                                    '<div class="">Equipaggiamenti</div>',
-                                                                    '<br>',
-                                                                    '<div class="">',
+                                                                    '<div class="titoloSintesiEquipInfoVeicoloStockDivCls">Equipaggiamenti</div>',
+                                                                    '<div class="descSintesiEquipInfoVeicoloStockDivCls">',
                                                                     'Questo allestimento comprende {numEquip} equipaggiamenti',
-                                                                    '</div>'
+                                                                    '</div>',
+                                                                    ''
                                                                 ],
                                                                 width: '80%'
                                                             },
                                                             {
                                                                 xtype: 'button',
+                                                                baseCls: 'equipInfoVeicoloStockButtonCls',
+                                                                height: 37,
                                                                 hidden: false,
                                                                 itemId: 'equipInfoVeicoloStockButton',
-                                                                width: '20%',
-                                                                text: 'Scopri tutti gli equipaggiamenti'
+                                                                width: 37
                                                             }
                                                         ]
                                                     },
                                                     {
+                                                        xtype: 'label',
+                                                        cls: 'titoloSchedaInfoVeicoloStockLabelCls',
+                                                        html: 'Scheda veicolo'
+                                                    },
+                                                    {
                                                         xtype: 'tabpanel',
-                                                        height: 200,
+                                                        height: 162,
+                                                        itemId: 'schedaInfoVeicoloStockTabPanelCls',
                                                         items: [
                                                             {
                                                                 xtype: 'container',
-                                                                title: 'Informazioni aggiuntive',
+                                                                title: 'INFORMAZIONI AGGIUNTIVE',
+                                                                cls: 'informAggiuntiveSchedaInfoVeicoloStockTabCls',
+                                                                scrollable: 'vertical',
                                                                 items: [
                                                                     {
                                                                         xtype: 'label',
@@ -589,11 +630,12 @@ Ext.define('Infocar.view.StockView', {
                                                             },
                                                             {
                                                                 xtype: 'container',
-                                                                title: 'Stato uso',
+                                                                title: 'STATO D\'USO',
+                                                                cls: 'statoUsoSchedaInfoVeicoloStockTabCls',
+                                                                scrollable: 'vertical',
                                                                 items: [
                                                                     {
                                                                         xtype: 'label',
-                                                                        height: '100%',
                                                                         itemId: 'statoUsoSchedaInfoVeicoloStockLabel',
                                                                         tpl: [
                                                                             '{statoUsoSchedaVeicolo}'
@@ -603,110 +645,129 @@ Ext.define('Infocar.view.StockView', {
                                                             }
                                                         ],
                                                         tabBar: {
-                                                            docked: 'top'
+                                                            cls: 'schedaInfoVeicoloStockTabBarCls',
+                                                            docked: 'top',
+                                                            ui: 'untitled-ui-3'
                                                         }
                                                     },
                                                     {
                                                         xtype: 'container',
+                                                        cls: 'sintesiDatiTecniciInfoVeicoloStockContainerCls',
+                                                        height: 115,
                                                         itemId: 'sintesiDatiTecniciInfoVeicoloStockContainer',
                                                         layout: {
                                                             type: 'hbox',
-                                                            align: 'start'
+                                                            align: 'center'
                                                         },
                                                         items: [
                                                             {
                                                                 xtype: 'label',
+                                                                flex: 1,
+                                                                cls: 'sintesiDatiTecniciInfoVeicoloStockLabelCls',
                                                                 itemId: 'sintesiDatiTecniciInfoVeicoloStockLabel',
                                                                 tpl: [
-                                                                    '<div class="">Dati tecnici</div>',
-                                                                    '<br>',
-                                                                    '<div class="">',
-                                                                    'Alimentazione: {alimentazione_descrizione}&nbsp;&nbsp;',
-                                                                    'Cilindrata cm<sup>3</sup>: {cilindrata}&nbsp;&nbsp;',
-                                                                    'Potenza kW/CV: {potenza}<br>',
-                                                                    'Carrozzeria: {carrozzeria_descrizione}&nbsp;&nbsp;',
-                                                                    'Normativa: {normativa}',
+                                                                    '<div class="titoloSintesiDatiTecniciInfoVeicoloStockDivCls">Dati tecnici</div>',
+                                                                    '<div class="descSintesiDatiTecniciInfoVeicoloStockDivCls">',
+                                                                    'Alimentazione: <span class="infocar-bold">{alimentazione_descrizione}</span>&nbsp;&nbsp;',
+                                                                    'Cilindrata cm<sup>3</sup>: <span class="infocar-bold">{cilindrata}</span>&nbsp;&nbsp;',
+                                                                    'Potenza kW/CV: <span class="infocar-bold">{potenza}</span><br>',
+                                                                    'Carrozzeria: <span class="infocar-bold">{carrozzeria_descrizione}</span>&nbsp;&nbsp;',
+                                                                    'Normativa: <span class="infocar-bold">{normativa}</span>',
                                                                     '</div>'
-                                                                ],
-                                                                width: '80%'
+                                                                ]
                                                             },
                                                             {
                                                                 xtype: 'button',
-                                                                hidden: false,
+                                                                baseCls: 'datiTecniciInfoVeicoloStockButtonCls',
+                                                                height: 37,
                                                                 itemId: 'datiTecniciInfoVeicoloStockButton',
-                                                                width: '20%',
-                                                                text: 'Scopri tutti i dati tecnici'
+                                                                width: 37
                                                             }
                                                         ]
                                                     },
                                                     {
                                                         xtype: 'container',
                                                         itemId: 'sintesiSituazioneStockVeicoloStockContainer',
-                                                        layout: 'hbox',
+                                                        layout: 'vbox',
                                                         items: [
                                                             {
                                                                 xtype: 'label',
-                                                                itemId: 'sintesiDatiPrevisiviInfoVeicoloStockLabel',
-                                                                tpl: Ext.create('Ext.XTemplate', 
-                                                                    '<table border="0" cellspacing="4" cellpadding="4">',
-                                                                    '    <tr>',
-                                                                    '        <td align="left"></td>',
-                                                                    '        <td>Valore previsivo a 3 mesi</td>',
-                                                                    '        <td>Valore previsivo a 6 mesi</td>',
-                                                                    '    </tr>',
-                                                                    '    <tr>',
-                                                                    '        <td align="left">Vendita</td>',
-                                                                    '        <td>{venditaValoreMesi3:this.fmtInt}</td>',
-                                                                    '        <td>{venditaValoreMesi6:this.fmtInt}</td>',
-                                                                    '    </tr>',
-                                                                    '    <tr>',
-                                                                    '        <td align="left">Ritiro</td>',
-                                                                    '        <td>{ritiroValoreMesi3:this.fmtInt}</td>',
-                                                                    '        <td>{ritiroValoreMesi6:this.fmtInt}</td>',
-                                                                    '    </tr>',
-                                                                    '</table>',
-                                                                    {
-                                                                        fmtInt: function(intValue) {
-                                                                            return Infocar.app.formatInt(intValue);
-                                                                        }
-                                                                    }
-                                                                ),
-                                                                width: '50%'
+                                                                cls: 'sintesiSituazioneStockVeicoloStockLabelCls',
+                                                                html: 'Situazione in stock'
                                                             },
                                                             {
-                                                                xtype: 'label',
-                                                                itemId: 'sintesiDatiStockInfoVeicoloStockLabel',
-                                                                tpl: Ext.create('Ext.XTemplate', 
-                                                                    '<table border="0" cellspacing="4" cellpadding="4">',
-                                                                    '    <tr>',
-                                                                    '        <td align="left">In stock</td>',
-                                                                    '        <td>Fisico</td>',
-                                                                    '        <td>Virtuale</td>',
-                                                                    '        <td>Giacenza media</td>',
-                                                                    '        <td>Giacenza modello</td>',
-                                                                    '    </tr>',
-                                                                    '    <tr>',
-                                                                    '        <td align="left">Allestimento</td>',
-                                                                    '        <td>{allestimentoFisicoStock:this.fmtInt}</td>',
-                                                                    '        <td>{allestimentoVirtualeStock:this.fmtInt}</td>',
-                                                                    '        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>',
-                                                                    '        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src="{allestimentoGiacenzaStockUrlImg}"></td>',
-                                                                    '    </tr>',
-                                                                    '    <tr>',
-                                                                    '        <td align="left">Modello</td>',
-                                                                    '        <td>{modelloFisicoStock:this.fmtInt}</td>',
-                                                                    '        <td>{modelloVirtualeStock:this.fmtInt}</td>',
-                                                                    '        <td>{modelloGiacenzaStock:this.fmtInt}</td>',
-                                                                    '        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src="{modelloGiacenzaStockUrlImg}"></td>',
-                                                                    '    </tr>',
-                                                                    '</table>',
+                                                                xtype: 'container',
+                                                                cls: 'datiPrevisiviDatiStockInfoVeicoloStockContainerCls',
+                                                                layout: 'hbox',
+                                                                items: [
                                                                     {
-                                                                        fmtInt: function(intValue) {
-                                                                            return Infocar.app.formatInt(intValue);
-                                                                        }
+                                                                        xtype: 'label',
+                                                                        cls: 'sintesiDatiPrevisiviInfoVeicoloStockLabelCls',
+                                                                        itemId: 'sintesiDatiPrevisiviInfoVeicoloStockLabel',
+                                                                        tpl: Ext.create('Ext.XTemplate', 
+                                                                            '<table class="sintesiDatiPrevisiviInfoVeicoloStockTableCls">',
+                                                                            '    <tr class="headerSintesiDatiPrevisiviInfoVeicoloStockTrCls">',
+                                                                            '        <td></td>',
+                                                                            '        <td>Valore previsivo a 3 mesi</td>',
+                                                                            '        <td>Valore previsivo a 6 mesi</td>',
+                                                                            '    </tr>',
+                                                                            '    <tr class="venditaSintesiDatiPrevisiviInfoVeicoloStockTrCls">',
+                                                                            '        <td>Vendita</td>',
+                                                                            '        <td>{venditaValoreMesi3:this.fmtInt}</td>',
+                                                                            '        <td>{venditaValoreMesi6:this.fmtInt}</td>',
+                                                                            '    </tr>',
+                                                                            '    <tr class="rititoSintesiDatiPrevisiviInfoVeicoloStockTrCls">',
+                                                                            '        <td>Ritiro</td>',
+                                                                            '        <td>{ritiroValoreMesi3:this.fmtInt}</td>',
+                                                                            '        <td>{ritiroValoreMesi6:this.fmtInt}</td>',
+                                                                            '    </tr>',
+                                                                            '</table>',
+                                                                            {
+                                                                                fmtInt: function(intValue) {
+                                                                                    return Infocar.app.formatInt(intValue);
+                                                                                }
+                                                                            }
+                                                                        ),
+                                                                        width: '50%'
+                                                                    },
+                                                                    {
+                                                                        xtype: 'label',
+                                                                        cls: 'sintesiDatiStockInfoVeicoloStockLabelCls',
+                                                                        itemId: 'sintesiDatiStockInfoVeicoloStockLabel',
+                                                                        tpl: Ext.create('Ext.XTemplate', 
+                                                                            '<table class="sintesiDatiStockInfoVeicoloStockTableCls">',
+                                                                            '    <tr class="headerSintesiDatiStockInfoVeicoloStockTrCls">',
+                                                                            '        <td>In stock</td>',
+                                                                            '        <td>Fisico</td>',
+                                                                            '        <td>Virtuale</td>',
+                                                                            '        <td>Giacenza media</td>',
+                                                                            '        <td>Giacenza modello</td>',
+                                                                            '    </tr>',
+                                                                            '    <tr class="allestimentoSintesiDatiStockInfoVeicoloStockTrCls">',
+                                                                            '        <td>Allestimento</td>',
+                                                                            '        <td>{allestimentoFisicoStock:this.fmtInt}</td>',
+                                                                            '        <td>{allestimentoVirtualeStock:this.fmtInt}</td>',
+                                                                            '        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>',
+                                                                            '        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src="{allestimentoGiacenzaStockUrlImg}" class="sintesiDatiStockInfoVeicoloStockImgCls"></td>',
+                                                                            '    </tr>',
+                                                                            '    <tr class="modelloSintesiDatiStockInfoVeicoloStockTrCls">',
+                                                                            '        <td>Modello</td>',
+                                                                            '        <td>{modelloFisicoStock:this.fmtInt}</td>',
+                                                                            '        <td>{modelloVirtualeStock:this.fmtInt}</td>',
+                                                                            '        <td>{modelloGiacenzaStock:this.fmtInt}</td>',
+                                                                            '        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src="{modelloGiacenzaStockUrlImg}" class="sintesiDatiStockInfoVeicoloStockImgCls"></td>',
+                                                                            '    </tr>',
+                                                                            '</table>',
+                                                                            '',
+                                                                            {
+                                                                                fmtInt: function(intValue) {
+                                                                                    return Infocar.app.formatInt(intValue);
+                                                                                }
+                                                                            }
+                                                                        ),
+                                                                        width: '50%'
                                                                     }
-                                                                ),
-                                                                width: '50%'
+                                                                ]
                                                             }
                                                         ]
                                                     }
@@ -714,28 +775,33 @@ Ext.define('Infocar.view.StockView', {
                                             },
                                             {
                                                 xtype: 'container',
+                                                cls: 'datiTecniciInfoVeicoloStockContainerCls',
                                                 itemId: 'datiTecniciInfoVeicoloStockContainer',
                                                 layout: 'vbox',
                                                 items: [
                                                     {
                                                         xtype: 'label',
+                                                        cls: 'titoloDatiTecniciInfoVeicoloStockLabelCls',
                                                         html: 'Dati tecnici'
                                                     },
                                                     {
                                                         xtype: 'list',
                                                         flex: 1,
+                                                        cls: 'datiTecniciInfoVeicoloStockListViewCls',
                                                         disableSelection: true,
+                                                        itemCls: 'datiTecniciInfoVeicoloStockListViewItemCls',
                                                         itemTpl: [
-                                                            '<table border="0">',
+                                                            '<table class="datiTecniciInfoVeicoloStockTableCls">',
                                                             '  <tr>',
-                                                            '    <td style="width: 200px">{nomeAttributo}:</td>',
-                                                            '    <td>{valoreAttributo}</td>',
+                                                            '    <td class="attributoDatiTecniciInfoVeicoloStockTdCls">{nomeAttributo}:</td>',
+                                                            '    <td class="valoreDatiTecniciInfoVeicoloStockTdCls">{valoreAttributo}</td>',
                                                             '  </tr>',
                                                             '</table>',
                                                             ''
                                                         ],
                                                         store: 'DatiTecniciInfoVeicoloStockStore',
-                                                        grouped: true
+                                                        grouped: true,
+                                                        itemHeight: 34
                                                     }
                                                 ]
                                             },
@@ -746,13 +812,15 @@ Ext.define('Infocar.view.StockView', {
                                                 items: [
                                                     {
                                                         xtype: 'label',
+                                                        cls: 'titoloEquipSerieInfoVeicoloStockLabelCls',
                                                         html: 'Equipaggiamenti di serie'
                                                     },
                                                     {
                                                         xtype: 'dataview',
                                                         flex: 1,
+                                                        cls: 'equipSerieInfoVeicoloStockDataviewCls',
                                                         itemTpl: Ext.create('Ext.XTemplate', 
-                                                            '<div> - {descrizione}</div>',
+                                                            '<div class="descEquipSerieInfoVeicoloStockDataviewItemDivCls"> > {descrizione}</div>',
                                                             {
                                                                 disableFormats: true
                                                             }
@@ -761,13 +829,15 @@ Ext.define('Infocar.view.StockView', {
                                                     },
                                                     {
                                                         xtype: 'label',
+                                                        cls: 'titoloEquipMontatiInfoVeicoloStockLabelCls',
                                                         html: 'Equipaggiamenti montati'
                                                     },
                                                     {
                                                         xtype: 'dataview',
                                                         flex: 1,
+                                                        cls: 'equipMontatiInfoVeicoloStockDataviewCls',
                                                         itemTpl: Ext.create('Ext.XTemplate', 
-                                                            '<div> - {descrizione}</div>',
+                                                            '<div class="descEquipMontatiInfoVeicoloNuovoDataviewItemDivCls"> > {descrizione}</div>',
                                                             {
                                                                 disableFormats: true
                                                             }
@@ -783,15 +853,23 @@ Ext.define('Infocar.view.StockView', {
                             {
                                 xtype: 'toolbar',
                                 docked: 'bottom',
+                                height: 60,
                                 hidden: false,
+                                ui: 'infocar-toolbar',
+                                layout: {
+                                    type: 'hbox',
+                                    align: 'start'
+                                },
                                 items: [
                                     {
                                         xtype: 'button',
+                                        baseCls: 'indietroInfoVeicoloStockButtonCls',
                                         itemId: 'indietroInfoVeicoloStockButton',
-                                        text: 'Indietro'
+                                        text: 'INDIETRO'
                                     },
                                     {
                                         xtype: 'button',
+                                        hidden: true,
                                         itemId: 'stampaInfoVeicoloStockButton',
                                         text: 'Stampa'
                                     }
