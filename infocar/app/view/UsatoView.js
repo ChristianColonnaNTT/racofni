@@ -153,6 +153,10 @@ Ext.define('Infocar.view.UsatoView', {
                                                 baseCls: 'azzeraRicUsatoButtonCls',
                                                 itemId: 'azzeraRicUsatoButton',
                                                 text: 'AZZERA RICERCA'
+                                            },
+                                            {
+                                                xtype: 'spacer',
+                                                width: 31
                                             }
                                         ]
                                     },
@@ -357,6 +361,7 @@ Ext.define('Infocar.view.UsatoView', {
                                 items: [
                                     {
                                         xtype: 'container',
+                                        baseCls: 'DettaglioVeicoloUsatoImgContainerCls',
                                         height: 90,
                                         width: 134,
                                         items: [
@@ -425,15 +430,25 @@ Ext.define('Infocar.view.UsatoView', {
                                         items: [
                                             {
                                                 xtype: 'container',
-                                                height: 90,
+                                                baseCls: 'DettaglioVeicoloUsatoMiniImgContainerPortCls',
+                                                height: '100%',
                                                 width: 134,
                                                 items: [
                                                     {
                                                         xtype: 'image',
                                                         centered: true,
+                                                        cls: 'port',
                                                         itemId: 'dettaglioVeicoloUsatoImg',
                                                         imageCls: 'dettaglioVeicoloUsatoImgCls',
                                                         mode: 'image'
+                                                    },
+                                                    {
+                                                        xtype: 'label',
+                                                        cls: 'descInfoVeicoloUsatoLabel1Cls',
+                                                        itemId: 'descInfoVeicoloUsatoLabel1',
+                                                        tpl: [
+                                                            '<div class="InfoVeicoloUsatoMiniImgContainerTmplPortCls">{allestimento_descrizione} </div>'
+                                                        ]
                                                     }
                                                 ]
                                             },
@@ -457,7 +472,10 @@ Ext.define('Infocar.view.UsatoView', {
                                                             },
                                                             {
                                                                 xtype: 'button',
+                                                                baseCls: 'infoVeicoloUsatoButtonCls',
+                                                                height: 24,
                                                                 itemId: 'infoVeicoloUsatoButton',
+                                                                width: 24,
                                                                 iconCls: 'info'
                                                             }
                                                         ]
@@ -524,6 +542,7 @@ Ext.define('Infocar.view.UsatoView', {
                                                                         xtype: 'datepickerfield',
                                                                         attivaSyncFlag: 'S',
                                                                         annullaButtonFlag: 'S',
+                                                                        baseCls: 'DataImmatricDettVeicoloUsatoDatepickerFieldCls',
                                                                         itemId: 'dataImmatricDettVeicoloUsatoDatepickerField',
                                                                         width: '75%',
                                                                         label: 'Data immatricolazione',
@@ -1381,12 +1400,14 @@ Ext.define('Infocar.view.UsatoView', {
                         items: [
                             {
                                 xtype: 'container',
+                                baseCls: 'TestataInfoVeicoloUsatoContainerLandscapeCls',
                                 hidden: true,
                                 itemId: 'testataInfoVeicoloUsatoContainerLandscape',
                                 layout: 'vbox',
                                 items: [
                                     {
                                         xtype: 'container',
+                                        baseCls: 'TestataInfoVeicoloUsatoContainerLandscapeCls',
                                         height: 90,
                                         width: 134,
                                         items: [
@@ -1404,7 +1425,7 @@ Ext.define('Infocar.view.UsatoView', {
                                         xtype: 'label',
                                         itemId: 'descInfoVeicoloUsatoLabel',
                                         tpl: [
-                                            '{allestimento_descrizione}'
+                                            '<div class="InfoVeicoloUsatoMiniImgContainerTmplCls">{allestimento_descrizione} </div>'
                                         ]
                                     }
                                 ]
@@ -1412,20 +1433,24 @@ Ext.define('Infocar.view.UsatoView', {
                             {
                                 xtype: 'container',
                                 flex: 1,
+                                cls: 'rightDettaglioVeicoloUsatoContainerCls',
                                 layout: 'vbox',
                                 items: [
                                     {
                                         xtype: 'container',
+                                        baseCls: 'TestataInfoVeicoloUsatoContainerPortraitCls',
                                         itemId: 'testataInfoVeicoloUsatoContainerPortrait',
                                         layout: 'hbox',
                                         items: [
                                             {
                                                 xtype: 'container',
+                                                baseCls: 'InfoVeicoloUsatoMiniImgContainerCls',
                                                 height: 90,
                                                 width: 134,
                                                 items: [
                                                     {
                                                         xtype: 'image',
+                                                        baseCls: 'infoVeicoloUsatoMiniImgCls',
                                                         centered: true,
                                                         itemId: 'infoVeicoloUsatoMiniImg',
                                                         mode: 'image'
@@ -1436,7 +1461,7 @@ Ext.define('Infocar.view.UsatoView', {
                                                 xtype: 'label',
                                                 itemId: 'descInfoVeicoloUsatoLabel',
                                                 tpl: [
-                                                    '{allestimento_descrizione}'
+                                                    '<div class="InfoVeicoloUsatoMiniImgContainerTmplClsPort">{allestimento_descrizione}</div>'
                                                 ]
                                             }
                                         ]
@@ -1458,10 +1483,12 @@ Ext.define('Infocar.view.UsatoView', {
                                                 items: [
                                                     {
                                                         xtype: 'container',
+                                                        baseCls: '',
                                                         layout: 'hbox',
                                                         items: [
                                                             {
                                                                 xtype: 'container',
+                                                                cls: 'InfoVeicoloUsatoImgContainerCls',
                                                                 width: '50%',
                                                                 layout: 'fit',
                                                                 items: [
@@ -1475,20 +1502,21 @@ Ext.define('Infocar.view.UsatoView', {
                                                             },
                                                             {
                                                                 xtype: 'label',
+                                                                baseCls: 'TestoInfoVeicoloUsatoLabelCls',
                                                                 itemId: 'testoInfoVeicoloUsatoLabel',
                                                                 tpl: Ext.create('Ext.XTemplate', 
-                                                                    '<table border="0">',
+                                                                    '<table class="testoInfoVeicoloUsatoLabelTable" border="0">',
                                                                     '    <tr>',
-                                                                    '        <td>Ultimo prezzo:</td>',
-                                                                    '        <td align="right">{ultimoPrezzo:this.fmtCurrency} &euro;</td>',
+                                                                    '        <td class="ultimoPrezzo">Ultimo prezzo:</td>',
+                                                                    '        <td class="ultimoPrezzoPrezzo paddingPrezzo" align="right">{ultimoPrezzo:this.fmtCurrency} &euro;</td>',
                                                                     '    </tr>',
                                                                     '    <tr>',
-                                                                    '        <td>Quotazione Quattroruote:</td>',
-                                                                    '        <td align="right">{quotazioneQrPrezzo:this.fmtCurrency} &euro;</td>',
+                                                                    '        <td class="quotazioneQattroruote">Quotazione Quattroruote:</td>',
+                                                                    '        <td class="quotazioneQuattroruotePrezzo paddingPrezzo" align="right">{quotazioneQrPrezzo:this.fmtCurrency} &euro;</td>',
                                                                     '    </tr>',
                                                                     '</table>',
                                                                     '<br>',
-                                                                    '<div class="">',
+                                                                    '<div class="codiciInfoVeicoloUsato">',
                                                                     'Codice infocar: {codiceInfocar}<br>',
                                                                     'Codice casa: {codiceCasa}<br>',
                                                                     'Codice QUD: {codiceQUD}<br>',
@@ -1506,186 +1534,254 @@ Ext.define('Infocar.view.UsatoView', {
                                                     },
                                                     {
                                                         xtype: 'container',
-                                                        itemId: 'sintesiDatiTecniciInfoVeicoloUsatoContainer',
+                                                        cls: [
+                                                            'sintesiDatiTecniciInfoVeicoloNuovoContainerCls',
+                                                            'sintesiDatiTecniciInfoVeicoloUsatoContainerCls'
+                                                        ],
+                                                        height: 115,
+                                                        itemId: 'SintesiDatiTecniciInfoVeicoloUsatoContainer',
                                                         layout: {
                                                             type: 'hbox',
-                                                            align: 'start'
+                                                            align: 'center'
                                                         },
                                                         items: [
                                                             {
                                                                 xtype: 'label',
+                                                                flex: 1,
+                                                                cls: 'sintesiDatiTecniciInfoVeicoloNuovoLabelCls',
                                                                 itemId: 'sintesiDatiTecniciInfoVeicoloUsatoLabel',
                                                                 tpl: [
-                                                                    '<div class="">Dati tecnici</div>',
-                                                                    '<br>',
-                                                                    '<div class="">',
-                                                                    'Alimentazione: {alimentazione_descrizione}&nbsp;&nbsp;',
-                                                                    'Cilindrata cm<sup>3</sup>: {cilindrata}&nbsp;&nbsp;',
-                                                                    'Potenza kW/CV: {potenza}<br>',
-                                                                    'Carrozzeria: {carrozzeria_descrizione}&nbsp;&nbsp;',
-                                                                    'Normativa: {normativa}',
+                                                                    '<div class="titoloSintesiDatiTecniciInfoVeicoloNuovoDivCls">Dati tecnici</div>',
+                                                                    '<div class="descSintesiDatiTecniciInfoVeicoloNuovoDivCls">',
+                                                                    'Alimentazione: <span class="infocar-bold">{alimentazione_descrizione}</span>&nbsp;&nbsp;',
+                                                                    'Cilindrata cm<sup>3</sup>: <span class="infocar-bold">{cilindrata}</span>&nbsp;&nbsp;',
+                                                                    'Potenza kW/CV: <span class="infocar-bold">{potenza}</span><br>',
+                                                                    'Carrozzeria: <span class="infocar-bold">{carrozzeria_descrizione}</span>&nbsp;&nbsp;',
+                                                                    'Normativa: <span class="infocar-bold">{normativa}</span>',
                                                                     '</div>'
-                                                                ],
-                                                                width: '80%'
-                                                            },
-                                                            {
-                                                                xtype: 'button',
-                                                                itemId: 'datiTecniciInfoVeicoloUsatoButton',
-                                                                width: '20%',
-                                                                text: 'Scopri tutti i dati tecnici'
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        xtype: 'container',
-                                                        itemId: 'sintesiEquipInfoVeicoloUsatoContainer',
-                                                        layout: {
-                                                            type: 'hbox',
-                                                            align: 'start'
-                                                        },
-                                                        items: [
-                                                            {
-                                                                xtype: 'label',
-                                                                itemId: 'sintesiEquipInfoVeicoloUsatoLabel',
-                                                                tpl: [
-                                                                    '<div class="">Equipaggiamenti</div>',
-                                                                    '<br>',
-                                                                    '<div class="">',
-                                                                    'Questo allestimento comprende {numEquip} equipaggiamenti',
-                                                                    '</div>'
-                                                                ],
-                                                                width: '80%'
-                                                            },
-                                                            {
-                                                                xtype: 'button',
-                                                                itemId: 'equipInfoVeicoloUsatoButton',
-                                                                width: '20%',
-                                                                text: 'Scopri tutti gli equipaggiamenti'
-                                                            }
-                                                        ]
-                                                    },
-                                                    {
-                                                        xtype: 'container',
-                                                        itemId: 'sintesiSituazioneStockVeicoloUsatoContainer',
-                                                        layout: 'hbox',
-                                                        items: [
-                                                            {
-                                                                xtype: 'label',
-                                                                html: 'Valori previsivi non disponibili',
-                                                                itemId: 'messaggioGraficoInfoVeicoloUsatoLabel',
-                                                                width: '50%'
-                                                            },
-                                                            {
-                                                                xtype: 'chart',
-                                                                height: 300,
-                                                                hidden: true,
-                                                                itemId: 'graficoInfoVeicoloUsatoChart',
-                                                                width: '50%',
-                                                                colors: [
-                                                                    '#115fa6',
-                                                                    '#94ae0a',
-                                                                    '#a61120',
-                                                                    '#ff8809',
-                                                                    '#ffd13e',
-                                                                    '#a61187',
-                                                                    '#24ad9a',
-                                                                    '#7c7474',
-                                                                    '#a66111'
-                                                                ],
-                                                                store: 'GraficoInfoVeicoloUsatoStore',
-                                                                axes: [
-                                                                    {
-                                                                        type: 'category',
-                                                                        fields: [
-                                                                            'valoreX'
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        type: 'numeric',
-                                                                        fields: [
-                                                                            'valoreY1',
-                                                                            'valoreY2'
-                                                                        ],
-                                                                        grid: {
-                                                                            odd: {
-                                                                                fill: '#e8e8e8'
-                                                                            }
-                                                                        },
-                                                                        position: 'left'
-                                                                    }
-                                                                ],
-                                                                series: [
-                                                                    {
-                                                                        type: 'line',
-                                                                        colors: 'rgba(0,200,0,0.3)',
-                                                                        marker: {
-                                                                            type: 'circle',
-                                                                            fill: 'rgb(0,200,0)',
-                                                                            radius: 4
-                                                                        },
-                                                                        style: {
-                                                                            stroke: 'rgb(0,200,0)',
-                                                                            lineWidth: 2
-                                                                        },
-                                                                        xField: 'valoreX',
-                                                                        yField: 'valoreY1'
-                                                                    },
-                                                                    {
-                                                                        type: 'line',
-                                                                        colors: 'transparent',
-                                                                        marker: {
-                                                                            type: 'circle',
-                                                                            fill: 'rgb(0,0,200)',
-                                                                            radius: 4
-                                                                        },
-                                                                        style: {
-                                                                            stroke: 'rgb(0,0,200)',
-                                                                            lineWidth: 2
-                                                                        },
-                                                                        xField: 'valoreX',
-                                                                        yField: 'valoreY2'
-                                                                    }
-                                                                ],
-                                                                interactions: [
-                                                                    {
-                                                                        type: 'panzoom'
-                                                                    }
                                                                 ]
                                                             },
                                                             {
+                                                                xtype: 'button',
+                                                                baseCls: 'datiTecniciInfoVeicoloNuovoButtonCls',
+                                                                height: 37,
+                                                                itemId: 'DatiTecniciInfoVeicoloUsatoButton',
+                                                                width: 37
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        xtype: 'container',
+                                                        cls: 'sintesiEquipInfoVeicoloNuovoContainerCls',
+                                                        height: 102,
+                                                        itemId: 'SintesiEquipInfoVeicoloUsatoContainer',
+                                                        layout: {
+                                                            type: 'hbox',
+                                                            align: 'center'
+                                                        },
+                                                        items: [
+                                                            {
                                                                 xtype: 'label',
-                                                                itemId: 'sintesiDatiStockInfoVeicoloUsatoLabel',
-                                                                tpl: Ext.create('Ext.XTemplate', 
-                                                                    '<table border="0" cellspacing="4" cellpadding="4">',
-                                                                    '    <tr>',
-                                                                    '        <td align="left">In stock</td>',
-                                                                    '        <td>Fisico</td>',
-                                                                    '        <td>Virtuale</td>',
-                                                                    '        <td>Giacenza</td>',
-                                                                    '        <td>Giacenza media</td>',
-                                                                    '    </tr>',
-                                                                    '    <tr>',
-                                                                    '        <td align="left">Allestimento</td>',
-                                                                    '        <td>{allestimentoFisicoStock:this.fmtInt}</td>',
-                                                                    '        <td>{allestimentoVirtualeStock:this.fmtInt}</td>',
-                                                                    '        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>',
-                                                                    '        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src="{allestimentoGiacenzaStockUrlImg}"></td>',
-                                                                    '    </tr>',
-                                                                    '    <tr>',
-                                                                    '        <td align="left">Modello</td>',
-                                                                    '        <td>{modelloFisicoStock:this.fmtInt}</td>',
-                                                                    '        <td>{modelloVirtualeStock:this.fmtInt}</td>',
-                                                                    '        <td>{modelloGiacenzaStock:this.fmtInt}</td>',
-                                                                    '        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src="{modelloGiacenzaStockUrlImg}"></td>',
-                                                                    '    </tr>',
-                                                                    '</table>',
+                                                                flex: 1,
+                                                                cls: 'sintesiEquipInfoVeicoloNuovoLabelCls',
+                                                                itemId: 'sintesiEquipInfoVeicoloUsatoLabel',
+                                                                tpl: [
+                                                                    '<div class="titoloSintesiEquipInfoVeicoloNuovoDivCls">Equipaggiamenti</div>',
+                                                                    '<div class="descSintesiEquipInfoVeicoloNuovoDivCls">',
+                                                                    'Questo allestimento comprende {numEquip} equipaggiamenti',
+                                                                    '</div>'
+                                                                ]
+                                                            },
+                                                            {
+                                                                xtype: 'button',
+                                                                baseCls: 'equipInfoVeicoloNuovoButtonCls',
+                                                                height: 37,
+                                                                hidden: false,
+                                                                itemId: 'equipInfoVeicoloUsatoButton',
+                                                                width: 37
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        xtype: 'container',
+                                                        cls: 'sintesiSituazioneStockVeicoloNuovoContainerCls',
+                                                        itemId: 'sintesiSituazioneStockVeicoloNuovoContainer1',
+                                                        layout: 'vbox',
+                                                        items: [
+                                                            {
+                                                                xtype: 'label',
+                                                                cls: 'sintesiSituazioneStockVeicoloNuovoLabelCls',
+                                                                html: 'Situazione in stock'
+                                                            },
+                                                            {
+                                                                xtype: 'container',
+                                                                cls: 'graficoDatiStockInfoVeicoloNuovoContainerCls',
+                                                                layout: 'hbox',
+                                                                items: [
                                                                     {
-                                                                        fmtInt: function(intValue) {
-                                                                            return Infocar.app.formatInt(intValue);
-                                                                        }
+                                                                        xtype: 'container',
+                                                                        cls: 'titoloGraficoInfoVeicoloNuovoContainerCls',
+                                                                        width: '50%',
+                                                                        layout: {
+                                                                            type: 'vbox',
+                                                                            align: 'center'
+                                                                        },
+                                                                        items: [
+                                                                            {
+                                                                                xtype: 'label',
+                                                                                cls: 'titoloGraficoInfoVeicoloNuovoLabelCls',
+                                                                                html: 'Previsioni tenuta dell\'usato (&euro;)',
+                                                                                itemId: 'TitoloGraficoInfoVeicoloUsatoChart'
+                                                                            },
+                                                                            {
+                                                                                xtype: 'label',
+                                                                                html: 'Valori previsivi non disponibili',
+                                                                                itemId: 'messaggioGraficoInfoVeicoloUsatoLabel',
+                                                                                width: '50%'
+                                                                            },
+                                                                            {
+                                                                                xtype: 'chart',
+                                                                                cls: 'graficoInfoVeicoloNuovoChartCls',
+                                                                                height: 300,
+                                                                                hidden: true,
+                                                                                itemId: 'graficoInfoVeicoloUsatoChart',
+                                                                                width: '100%',
+                                                                                background: '#71727d',
+                                                                                colors: [
+                                                                                    '#115fa6',
+                                                                                    '#94ae0a',
+                                                                                    '#a61120',
+                                                                                    '#ff8809',
+                                                                                    '#ffd13e',
+                                                                                    '#a61187',
+                                                                                    '#24ad9a',
+                                                                                    '#7c7474',
+                                                                                    '#a66111'
+                                                                                ],
+                                                                                store: 'GraficoInfoVeicoloUsatoStore',
+                                                                                axes: [
+                                                                                    {
+                                                                                        type: 'category',
+                                                                                        fields: [
+                                                                                            'valoreX'
+                                                                                        ],
+                                                                                        grid: {
+                                                                                            stroke: '#868790'
+                                                                                        },
+                                                                                        label: {
+                                                                                            color: '#fff',
+                                                                                            x: 0,
+                                                                                            y: 0,
+                                                                                            textBaseline: 'middle',
+                                                                                            textAlign: 'center',
+                                                                                            fontSize: 12,
+                                                                                            fontFamily: 'Helvetica'
+                                                                                        },
+                                                                                        style: {
+                                                                                            stroke: '#868790'
+                                                                                        }
+                                                                                    },
+                                                                                    {
+                                                                                        type: 'numeric',
+                                                                                        fields: [
+                                                                                            'valoreY1',
+                                                                                            'valoreY2'
+                                                                                        ],
+                                                                                        grid: {
+                                                                                            stroke: '#868790'
+                                                                                        },
+                                                                                        label: {
+                                                                                            color: '#fff',
+                                                                                            x: 0,
+                                                                                            y: 0,
+                                                                                            textBaseline: 'middle',
+                                                                                            textAlign: 'center',
+                                                                                            fontSize: 12,
+                                                                                            fontFamily: 'Helvetica'
+                                                                                        },
+                                                                                        position: 'left',
+                                                                                        style: {
+                                                                                            stroke: '#868790'
+                                                                                        }
+                                                                                    }
+                                                                                ],
+                                                                                series: [
+                                                                                    {
+                                                                                        type: 'line',
+                                                                                        marker: {
+                                                                                            type: 'circle',
+                                                                                            fill: '#7ee2ff',
+                                                                                            radius: 4
+                                                                                        },
+                                                                                        style: {
+                                                                                            stroke: '#7ee2ff',
+                                                                                            lineWidth: 2,
+                                                                                            smooth: true
+                                                                                        },
+                                                                                        xField: 'valoreX',
+                                                                                        yField: 'valoreY1'
+                                                                                    },
+                                                                                    {
+                                                                                        type: 'line',
+                                                                                        marker: {
+                                                                                            type: 'circle',
+                                                                                            fill: '#c1e422',
+                                                                                            radius: 4
+                                                                                        },
+                                                                                        style: {
+                                                                                            stroke: '#c1e422',
+                                                                                            lineWidth: 2,
+                                                                                            smooth: true
+                                                                                        },
+                                                                                        xField: 'valoreX',
+                                                                                        yField: 'valoreY2'
+                                                                                    }
+                                                                                ],
+                                                                                interactions: [
+                                                                                    {
+                                                                                        type: 'panzoom'
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    },
+                                                                    {
+                                                                        xtype: 'label',
+                                                                        cls: 'sintesiDatiStockInfoVeicoloNuovoLabelCls',
+                                                                        itemId: 'sintesiDatiStockInfoVeicoloUsatoLabel',
+                                                                        tpl: Ext.create('Ext.XTemplate', 
+                                                                            '<table class="sintesiDatiStockInfoVeicoloNuovoTableCls">',
+                                                                            '    <tr class="headerSintesiDatiStockInfoVeicoloNuovoTrCls">',
+                                                                            '        <td>In stock</td>',
+                                                                            '        <td>Fisico</td>',
+                                                                            '        <td>Virtuale</td>',
+                                                                            '        <td>Giacenza</td>',
+                                                                            '        <td>Giacenza media</td>',
+                                                                            '    </tr>',
+                                                                            '    <tr class="allestimentoSintesiDatiStockInfoVeicoloNuovoTrCls">',
+                                                                            '        <td>Allestimento</td>',
+                                                                            '        <td>{allestimentoFisicoStock:this.fmtInt}</td>',
+                                                                            '        <td>{allestimentoVirtualeStock:this.fmtInt}</td>',
+                                                                            '        <td>{allestimentoGiacenzaStock:this.fmtInt}</td>',
+                                                                            '        <td>{allestimentoGiacMediaStock:this.fmtInt}&nbsp;<img src="{allestimentoGiacenzaStockUrlImg}" class="sintesiDatiStockInfoVeicoloNuovoImgCls"></td>',
+                                                                            '    </tr>',
+                                                                            '    <tr class="modelloSintesiDatiStockInfoVeicoloNuovoTrCls">',
+                                                                            '        <td>Modello</td>',
+                                                                            '        <td>{modelloFisicoStock:this.fmtInt}</td>',
+                                                                            '        <td>{modelloVirtualeStock:this.fmtInt}</td>',
+                                                                            '        <td>{modelloGiacenzaStock:this.fmtInt}</td>',
+                                                                            '        <td>{modelloGiacMediaStock:this.fmtInt}&nbsp;<img src="{modelloGiacenzaStockUrlImg}" class="sintesiDatiStockInfoVeicoloNuovoImgCls"></td>',
+                                                                            '    </tr>',
+                                                                            '</table>',
+                                                                            {
+                                                                                fmtInt: function(intValue) {
+                                                                                    return Infocar.app.formatInt(intValue);
+                                                                                }
+                                                                            }
+                                                                        ),
+                                                                        width: '50%'
                                                                     }
-                                                                ),
-                                                                width: '50%'
+                                                                ]
                                                             }
                                                         ]
                                                     }
@@ -1693,45 +1789,51 @@ Ext.define('Infocar.view.UsatoView', {
                                             },
                                             {
                                                 xtype: 'container',
+                                                cls: 'datiTecniciInfoVeicoloNuovoContainerCls',
                                                 itemId: 'datiTecniciInfoVeicoloUsatoContainer',
                                                 layout: 'vbox',
                                                 items: [
                                                     {
                                                         xtype: 'label',
-                                                        html: 'Dati tecnici'
+                                                        cls: 'titoloDatiTecniciInfoVeicoloNuovoLabelCls',
+                                                        html: 'Dati tecnici dettagliati'
                                                     },
                                                     {
                                                         xtype: 'list',
                                                         flex: 1,
+                                                        cls: 'datiTecniciInfoVeicoloNuovoListViewCls',
                                                         disableSelection: true,
+                                                        itemCls: 'datiTecniciInfoVeicoloNuovoListViewItemCls',
                                                         itemTpl: [
-                                                            '<table border="0">',
+                                                            '<table class="datiTecniciInfoVeicoloNuovoTableCls">',
                                                             '  <tr>',
-                                                            '    <td style="width: 200px">{nomeAttributo}:</td>',
-                                                            '    <td>{valoreAttributo}</td>',
+                                                            '    <td class="attributoDatiTecniciInfoVeicoloNuovoTdCls">{nomeAttributo}:</td>',
+                                                            '    <td class="valoreDatiTecniciInfoVeicoloNuovoTdCls">{valoreAttributo}</td>',
                                                             '  </tr>',
-                                                            '</table>',
-                                                            ''
+                                                            '</table>'
                                                         ],
                                                         store: 'DatiTecniciInfoVeicoloUsatoStore',
-                                                        grouped: true
+                                                        grouped: true,
+                                                        itemHeight: 34
                                                     }
                                                 ]
                                             },
                                             {
                                                 xtype: 'container',
+                                                baseCls: 'EquipInfoVeicoloUsatoContainerCls',
                                                 itemId: 'equipInfoVeicoloUsatoContainer',
                                                 layout: 'vbox',
                                                 items: [
                                                     {
                                                         xtype: 'label',
+                                                        baseCls: 'TitoloEquipInfoVeicoloUsatoLabelCls',
                                                         html: 'Tutti gli equipaggiamenti'
                                                     },
                                                     {
                                                         xtype: 'dataview',
                                                         flex: 1,
                                                         itemTpl: Ext.create('Ext.XTemplate', 
-                                                            '<div> - {descrizione}</div>',
+                                                            '<div class="equipaggiamentiListCls"> > {descrizione}</div>',
                                                             {
                                                                 disableFormats: true
                                                             }
@@ -1761,6 +1863,8 @@ Ext.define('Infocar.view.UsatoView', {
                     {
                         xtype: 'container',
                         Titolo: 'Ritiro - Esito',
+                        baseCls: 'EsitoVeicoloUsatoContainerCls',
+                        cls: 'marginContainer',
                         itemId: 'esitoVeicoloUsatoContainer',
                         layout: 'vbox',
                         items: [

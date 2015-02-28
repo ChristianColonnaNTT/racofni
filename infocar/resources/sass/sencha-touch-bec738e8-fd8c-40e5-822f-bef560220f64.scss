@@ -1,3 +1,4 @@
+/* _arch-vars-start */
 /* Variabili Infocar */
 $infocar-border-color: #333344;
 
@@ -134,6 +135,7 @@ $toolbar-input-color: $infocar-border-color;
 @import 'sencha-touch/default/all';
 
 
+/* _arch-other-start */
 
 /* Font */
 body.x-desktop {
@@ -515,13 +517,225 @@ body.x-tablet {
 }
 
 .stockUsatoRicercaStockLabelCls {
-  font-size: 0.75em;
-  font-weight: bold;
-  padding: 7px 0px 0px 14px;
+    font-weight: bold;
+    padding: 0.65em;
     /* height: 45px !important; */
     /* line-height: 45px !important; */ /* $form-thumb-size */
     /* vertical-align: middle !important; */
     /* border: 1px solid black; */
+}
+
+//Dettaglio allestimento usato
+
+/*
+.InfoVeicoloUsatoButtonCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/info_new.png),
+    $param-img-size: 24px 24px,
+    $param-margin: 5px 0px 5px 0px
+  );
+
+}
+
+*/
+
+.InfoVeicoloUsatoMiniImgContainerCls{
+
+    height: 200px !important;
+
+}
+
+.descInfoVeicoloUsatoLabel1Cls{
+    margin-left:200px;
+
+}
+
+
+
+
+.dettaglioVeicoloUsatoImgCls.port{
+  //  margin-left: 150px;
+  //  margin-top: 100px;
+
+}
+
+.InfoVeicoloUsatoButtonCls{
+
+
+}
+
+.TestoInfoVeicoloUsatoLabelCls {
+   padding-left: 20px;
+   padding-top: 20px;
+}
+
+.TestataInfoVeicoloUsatoContainerLandscapeCls {
+    background-color: #e5e5e5;
+    width: 295px;
+}
+
+.InfoVeicoloUsatoMiniImgContainerTmplCls{
+    padding-top:120px;
+    color: #333344;
+    text-transform: uppercase;
+    padding-left: 10px;
+}
+
+.InfoVeicoloUsatoMiniImgContainerTmplClsPort{
+  margin-left: 180px;
+  padding-top: 20px;
+  height: 200px;
+     color: #333344;
+    text-transform: uppercase;
+
+}
+
+.InfoVeicoloUsatoMiniImgContainerTmplPortCls{
+   margin-left: 200px;
+
+}
+
+.DettaglioVeicoloUsatoMiniImgContainerPortCls{
+
+
+}
+
+//usato -> dettagli  equipaggiamento
+
+.TitoloEquipInfoVeicoloUsatoLabelCls, .red{
+    color: #e30613;
+}
+
+.EquipInfoVeicoloUsatoContainerCls{
+    padding: 20px;
+}
+
+.equipaggiamentiListCls{
+    padding-top:20px;
+
+}
+
+//usato --> dettagli dati decnici
+
+.DatiTecniciInfoVeicoloUsatoContainerCls, .marginContainer{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+
+//usato -> dettagli del modello
+
+.DatiTecniciInfoVeicoloUsatoButtonCls{
+     @include infocar-button-icona(
+    $param-img-url: url(../images/freccia_usato_1.png),
+    $param-img-size: 38px 38px,
+    $param-margin: 5px 0px 5px 0px
+  );
+    padding-top: 150px;
+    height: 50px;
+    width: 50px;
+}
+
+.EquipInfoVeicoloUsatoButtonCls {
+     @include infocar-button-icona(
+    $param-img-url: url(../images/freccia_usato_2.png),
+    $param-img-size: 38px 38px,
+    $param-margin: 5px 0px 5px 0px
+  );
+    padding-top: 150px;
+    height: 50px;
+    width: 50px;
+}
+
+
+.DettaglioVeicoloUsatoImgContainerCls{
+
+}
+
+
+.InfoVeicoloUsatoImgContainerCls{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.EquipInfoVeicoloUsatoButtonCls, .DatiTecniciInfoVeicoloUsatoButtonCls{
+    padding-top: 150px;
+}
+
+
+.tabellaDettraglioModelloUsatoTitolo{
+    background-color: #a0a0a5;
+    color: white;
+    height: 50px;
+}
+
+.tabellaDettraglioModelloUsatoTable {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 0.75em;
+}
+
+
+.tabellaDettraglioModelloUsatoTable td{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+.tabellaDettraglioModelloUsatoAllestimento {
+     height: 50px;
+}
+
+.tabellaDettraglioModelloUsatoModello{
+     background-color: #f8f8f8;
+     height: 50px;
+}
+
+.paddingPrezzo{
+    padding-left: 15px;
+}
+
+.InfoVeicoloUsatoTitle{
+    color: #e30613;
+    font-size: 1.12em;
+}
+
+.InfoVeicoloUsatoText{
+    color: black;
+    font-size: 0.88em;
+}
+
+//classi comuni agli sfondi
+.grayBackground{
+  background-color: #f8f8f8;
+  margin-right: 20px;
+  margin-top: 10px;
+  padding-top: 10px;
+ // padding-bottom: 10px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.whiteBackground{
+  margin-right: 20px;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.grayBackgroundStock{
+  background-color: #f8f8f8;
+  margin-right: 20px;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  margin-bottom: -50px;
+  margin-left: 10px;
 }
 
 
@@ -753,6 +967,13 @@ div.descrizione4VeicoloRicStockRisultatoDataViewDivCls {
   border-right: 8px solid $infocar-border-color;
 }
 
+//conainer dettaglio del modello portrait
+.TestataInfoVeicoloUsatoContainerPortraitCls  {
+
+  border-bottom: 8px solid $infocar-border-color;
+
+}
+
 /* Testata landscape Dettaglio Veicolo Usato */
 .testataDettVeicoloUsatoContainerLandscapeCls {
   background-color: #f8f8f8;
@@ -781,10 +1002,11 @@ div.descrizione4VeicoloRicStockRisultatoDataViewDivCls {
 
 /* Testata Portrait Dettaglio Veicolo Usato */
 .testataDettVeicoloUsatoContainerPortraitCls {
-  height: 100px;
+  height: 150px;
   padding: 5px 0px 5px 0px;
   margin: 0px 5px 0px 5px;
   border-bottom: 1px solid #db021f;
+  background-color: #f8f8f8;
 }
 
 .descTestataDettVeicoloUsatoContainerPortraitCls {
@@ -811,11 +1033,20 @@ div.descrizione4VeicoloRicStockRisultatoDataViewDivCls {
   font-size: 1.25em;
 }
 
-.dettaglioVeicoloUsatoImgCls img, .infoVeicoloUsatoMiniImgCls img {
+.dettaglioVeicoloUsatoImgCls img, {
   max-height: 90px;
   max-width: 134px;
   width: auto;
   height: auto;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+.infoVeicoloUsatoMiniImgCls img {
+  width: auto;
+  height: auto;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 
 /* Form Dettaglio Veicolo Usato */
@@ -1143,7 +1374,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
   font-size: 1em;
 }
 
-.infoVeicoloNuovoButtonLandscapeCls {
+.infoVeicoloNuovoButtonLandscapeCls, .InfoVeicoloUsatoButtonCls  {
   @include infocar-button-icona(
     $param-img-url: url(../images/info_new.png),
     $param-img-size: 24px 24px,
@@ -1182,12 +1413,18 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
   /* font-size: 1em; */
 }
 
-.infoVeicoloNuovoButtonPortraitCls {
+.infoVeicoloNuovoButtonPortraitCls, .infoVeicoloUsatoButtonCls {
   @include infocar-button-icona(
     $param-img-url: url(../images/info_new.png),
     $param-img-size: 24px 24px,
     $param-margin: 5px 0px 5px 15px
   );
+}
+
+//regole per allineare il pulsante info
+.infoVeicoloUsatoButtonCls {
+  margin-left: -50px;
+  margin-top: 0px;    
 }
 
 .prezzoBaseDettVeicoloNuovoLabelPortraitCls {
