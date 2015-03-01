@@ -84,7 +84,7 @@ Ext.define('Infocar.view.StockView', {
                                                 xtype: 'togglefield',
                                                 cls: 'stockUsatoRicercaStockToggleCls',
                                                 itemId: 'stockUsatoRicercaStockToggle',
-                                                label: 'Stock',
+                                                label: 'Usato',
                                                 labelWidth: '45%'
                                             },
                                             {
@@ -95,7 +95,7 @@ Ext.define('Infocar.view.StockView', {
                                             {
                                                 xtype: 'label',
                                                 cls: 'stockUsatoRicercaStockLabelCls',
-                                                html: 'Usato'
+                                                html: 'Nuovo'
                                             }
                                         ]
                                     },
@@ -472,42 +472,7 @@ Ext.define('Infocar.view.StockView', {
                                                             {
                                                                 xtype: 'carousel',
                                                                 itemId: 'infoVeicoloStockCarousel',
-                                                                width: 313,
-                                                                items: [
-                                                                    {
-                                                                        xtype: 'container',
-                                                                        layout: 'fit',
-                                                                        items: [
-                                                                            {
-                                                                                xtype: 'image',
-                                                                                itemId: 'infoVeicoloStockImg1',
-                                                                                mode: 'image'
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        xtype: 'container',
-                                                                        layout: 'fit',
-                                                                        items: [
-                                                                            {
-                                                                                xtype: 'image',
-                                                                                itemId: 'infoVeicoloStockImg2',
-                                                                                mode: 'image'
-                                                                            }
-                                                                        ]
-                                                                    },
-                                                                    {
-                                                                        xtype: 'container',
-                                                                        layout: 'fit',
-                                                                        items: [
-                                                                            {
-                                                                                xtype: 'image',
-                                                                                itemId: 'infoVeicoloStockImg3',
-                                                                                mode: 'image'
-                                                                            }
-                                                                        ]
-                                                                    }
-                                                                ]
+                                                                width: 313
                                                             },
                                                             {
                                                                 xtype: 'container',

@@ -178,6 +178,7 @@
                     "        });",
                     "",
                     "        // Dati del corpo",
+                    "        /*",
                     "        var infoVeicoloImg1 = Ext.ComponentQuery.query('#infoVeicoloStockImg1')[0];",
                     "        infoVeicoloImg1.setSrc(infoVeicoloModel.get('infoUrlImg1'));",
                     "",
@@ -186,6 +187,8 @@
                     "",
                     "        var infoVeicoloImg3 = Ext.ComponentQuery.query('#infoVeicoloStockImg3')[0];",
                     "        infoVeicoloImg3.setSrc(infoVeicoloModel.get('infoUrlImg3'));",
+                    "        */",
+                    "        this.creaInfoVeicoloCarouselImages(infoVeicoloModel);",
                     "",
                     "        var testoContainer = Ext.ComponentQuery.query('#testoinfoVeicoloStockContainer')[0];",
                     "",
@@ -510,7 +513,7 @@
                     "stockUsatoRicToggle.reset();",
                     "",
                     "var stockUsatoHiddenField = Ext.ComponentQuery.query('#stockUsatoRicercaStockHiddenField')[0];",
-                    "stockUsatoHiddenField.setValue('S');",
+                    "stockUsatoHiddenField.setValue('U');",
                     "",
                     "//this.loadEstremiPrezzoKm();",
                     "",
@@ -881,7 +884,7 @@
                 "fn": "onStockUsatoToggleChange",
                 "implHandler": [
                     "var stockUsatoHiddenField = Ext.ComponentQuery.query('#stockUsatoRicercaStockHiddenField')[0];",
-                    "var stockUsatoValue = newValue ? 'U' : 'S';",
+                    "var stockUsatoValue = newValue ? 'N' : 'U';",
                     "stockUsatoHiddenField.setValue(stockUsatoValue);",
                     ""
                 ],
@@ -907,12 +910,25 @@
                     "",
                     "var infoVeicoloModel = Infocar.app.infoVeicoloStockModel;",
                     "",
+                    "var carouselImagesSrc = [];",
+                    "for(var i=1; i<=15; i++) {",
+                    "    var srcImg = infoVeicoloModel.get('infoUrlImg' + i);",
+                    "",
+                    "    if (! srcImg)  break;",
+                    "    ",
+                    "    carouselImagesSrc.push(srcImg);",
+                    "}",
+                    "",
+                    "",
+                    "",
                     "//var carouselItems = infoVeicoloCarousel.child('image');",
+                    "/*",
                     "var carouselImagesSrc = [",
                     "    infoVeicoloModel.get('infoUrlImg1'),",
                     "    infoVeicoloModel.get('infoUrlImg2'),",
                     "    infoVeicoloModel.get('infoUrlImg3')",
                     "];",
+                    "*/",
                     "",
                     "/*",
                     "for(i=0, len=carouselItems.length; i<len; i++) {",
@@ -1056,6 +1072,52 @@
             },
             "name": "onStampaInfoVeicloButtonTap",
             "designerId": "f180bb40-40c2-41ac-a1f9-4d93ef8d7066"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "infoVeicoloModel"
+                ],
+                "fn": "creaInfoVeicoloCarouselImages",
+                "implHandler": [
+                    "var infoVeicoloCarousel = Ext.ComponentQuery.query('#infoVeicoloStockCarousel')[0];",
+                    "infoVeicoloCarousel.removeAll();",
+                    "",
+                    "var itemsImg = [];",
+                    "",
+                    "for(var i=1; i<=15; i++) {",
+                    "",
+                    "    var srcImg = infoVeicoloModel.get('infoUrlImg' + i);",
+                    "",
+                    "    if (! srcImg)  break;",
+                    "",
+                    "    itemsImg.push({",
+                    "        xtype: 'container',",
+                    "        layout: 'fit',",
+                    "        items: [",
+                    "          {",
+                    "            xtype: 'image',",
+                    "            itemId: 'infoVeicoloStockImg1',",
+                    "            mode: 'image',",
+                    "            src: srcImg",
+                    "          }",
+                    "        ]",
+                    "    });",
+                    "}",
+                    "",
+                    "infoVeicoloCarousel.setItems(itemsImg);",
+                    "infoVeicoloCarousel.setActiveItem(0);",
+                    ""
+                ]
+            },
+            "name": "creaInfoVeicoloCarouselImages",
+            "designerId": "7cfbba48-c6b0-4004-90ba-87be60686a94"
         }
     ]
 }

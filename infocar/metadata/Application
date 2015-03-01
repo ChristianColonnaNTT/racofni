@@ -60,9 +60,9 @@
         "requires": [
             "Ext.Anim"
         ],
-        "stampaEsitoVeicoloNuovoUrl": "nuovo/StampaPreliminareRitiro",
-        "stampaEsitoVeicoloUsatoUrl": "usato/StampaPreliminareRitiro",
-        "stampaInfoVeicoloStockUrl": "stock/StampaPreliminareRitiro",
+        "stampaEsitoVeicoloNuovoUrl": "/nuovo/StampaPreliminareRitiro",
+        "stampaEsitoVeicoloUsatoUrl": "/usato/StampaPreliminareRitiro",
+        "stampaInfoVeicoloStockUrl": "/stock/StampaPreliminareRitiro",
         "stores": [
             "AlimentazioneRicercaUsatoStore",
             "ModelloRicercaUsatoStore",
@@ -1265,6 +1265,42 @@
             },
             "name": "preloadViews",
             "designerId": "fa39f8d4-c22b-4991-acfd-e181ccb518df"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "showMask",
+                "implHandler": [
+                    "Ext.Viewport.setMasked({",
+                    "    xtype: 'loadmask',",
+                    "    message: 'Loading...'",
+                    "});",
+                    ""
+                ]
+            },
+            "name": "showMask",
+            "designerId": "0f8af996-d583-4c7b-8e57-a50ef17f0061"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "hideMask",
+                "implHandler": [
+                    "Ext.Viewport.setMasked(false);"
+                ]
+            },
+            "name": "hideMask",
+            "designerId": "82873db3-1fff-4fff-a5a8-5528d71bfe24"
         }
     ]
 }

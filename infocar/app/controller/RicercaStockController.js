@@ -165,6 +165,7 @@ Ext.define('Infocar.controller.RicercaStockController', {
                 });
 
                 // Dati del corpo
+                /*
                 var infoVeicoloImg1 = Ext.ComponentQuery.query('#infoVeicoloStockImg1')[0];
                 infoVeicoloImg1.setSrc(infoVeicoloModel.get('infoUrlImg1'));
 
@@ -173,6 +174,8 @@ Ext.define('Infocar.controller.RicercaStockController', {
 
                 var infoVeicoloImg3 = Ext.ComponentQuery.query('#infoVeicoloStockImg3')[0];
                 infoVeicoloImg3.setSrc(infoVeicoloModel.get('infoUrlImg3'));
+                */
+                this.creaInfoVeicoloCarouselImages(infoVeicoloModel);
 
                 var testoContainer = Ext.ComponentQuery.query('#testoinfoVeicoloStockContainer')[0];
 
@@ -327,7 +330,7 @@ Ext.define('Infocar.controller.RicercaStockController', {
 
     onStockUsatoToggleChange: function(togglefield, newValue, oldValue, eOpts) {
         var stockUsatoHiddenField = Ext.ComponentQuery.query('#stockUsatoRicercaStockHiddenField')[0];
-        var stockUsatoValue = newValue ? 'U' : 'S';
+        var stockUsatoValue = newValue ? 'N' : 'U';
         stockUsatoHiddenField.setValue(stockUsatoValue);
 
     },
@@ -338,12 +341,25 @@ Ext.define('Infocar.controller.RicercaStockController', {
 
         var infoVeicoloModel = Infocar.app.infoVeicoloStockModel;
 
+        var carouselImagesSrc = [];
+        for(var i=1; i<=15; i++) {
+            var srcImg = infoVeicoloModel.get('infoUrlImg' + i);
+
+            if (! srcImg)  break;
+
+            carouselImagesSrc.push(srcImg);
+        }
+
+
+
         //var carouselItems = infoVeicoloCarousel.child('image');
+        /*
         var carouselImagesSrc = [
             infoVeicoloModel.get('infoUrlImg1'),
             infoVeicoloModel.get('infoUrlImg2'),
             infoVeicoloModel.get('infoUrlImg3')
         ];
+        */
 
         /*
         for(i=0, len=carouselItems.length; i<len; i++) {
@@ -548,7 +564,7 @@ Ext.define('Infocar.controller.RicercaStockController', {
         stockUsatoRicToggle.reset();
 
         var stockUsatoHiddenField = Ext.ComponentQuery.query('#stockUsatoRicercaStockHiddenField')[0];
-        stockUsatoHiddenField.setValue('S');
+        stockUsatoHiddenField.setValue('U');
 
         //this.loadEstremiPrezzoKm();
 
@@ -723,6 +739,37 @@ Ext.define('Infocar.controller.RicercaStockController', {
             prezziOverlayContainer.setLeft(prezziContainerWidth - frecciaButtonWidth);
             //prezziOverlayCntElement.setStyle({left: (prezziContainerWidth - frecciaButtonWidth) + ''});
         }
+
+    },
+
+    creaInfoVeicoloCarouselImages: function(infoVeicoloModel) {
+        var infoVeicoloCarousel = Ext.ComponentQuery.query('#infoVeicoloStockCarousel')[0];
+        infoVeicoloCarousel.removeAll();
+
+        var itemsImg = [];
+
+        for(var i=1; i<=15; i++) {
+
+            var srcImg = infoVeicoloModel.get('infoUrlImg' + i);
+
+            if (! srcImg)  break;
+
+            itemsImg.push({
+                xtype: 'container',
+                layout: 'fit',
+                items: [
+                  {
+                    xtype: 'image',
+                    itemId: 'infoVeicoloStockImg1',
+                    mode: 'image',
+                    src: srcImg
+                  }
+                ]
+            });
+        }
+
+        infoVeicoloCarousel.setItems(itemsImg);
+        infoVeicoloCarousel.setActiveItem(0);
 
     }
 

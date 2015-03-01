@@ -159,6 +159,174 @@
             },
             "codeClass": null,
             "userConfig": {
+                "name": "infoUrlImg4",
+                "type": "string"
+            },
+            "name": "field22",
+            "designerId": "b47257ed-ad91-482d-aa0c-41c2a87c35e7"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg5",
+                "type": "string"
+            },
+            "name": "field23",
+            "designerId": "aacb1251-7699-43ac-9bc9-3ad1edb33375"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg6",
+                "type": "string"
+            },
+            "name": "field26",
+            "designerId": "8c85af89-5849-4a11-b5bc-3882ea5085d6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg7",
+                "type": "string"
+            },
+            "name": "field27",
+            "designerId": "2ecb835a-8bed-4a3c-9f08-0ba7ea4a3527"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg8",
+                "type": "string"
+            },
+            "name": "field28",
+            "designerId": "35642edb-d860-495f-b7b6-cfbdf35a866d"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg9",
+                "type": "string"
+            },
+            "name": "field29",
+            "designerId": "df1d85de-ee52-4ff3-b82c-a82c7860e24e"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg10",
+                "type": "string"
+            },
+            "name": "field30",
+            "designerId": "d2aaa0b2-50c1-41bf-9f3b-5264d3bf8f4b"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg11",
+                "type": "string"
+            },
+            "name": "field31",
+            "designerId": "e2aa40ae-5fb3-4681-a3f4-f9a76c697ada"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg12",
+                "type": "string"
+            },
+            "name": "field32",
+            "designerId": "d69ac685-05e8-4b41-b25e-167f88cc13dc"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg13",
+                "type": "string"
+            },
+            "name": "field33",
+            "designerId": "9bceadfb-9d72-4c0d-a9c1-4270f85c700f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg14",
+                "type": "string"
+            },
+            "name": "field34",
+            "designerId": "876d516e-2199-4598-8d44-de01c2eeb4af"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "infoUrlImg15",
+                "type": "string"
+            },
+            "name": "field35",
+            "designerId": "9d3a5e18-91a6-4d31-8533-e020fbb51d9f"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
                 "name": "venditaPrezzo",
                 "type": "string"
             },

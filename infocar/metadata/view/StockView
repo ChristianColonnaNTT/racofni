@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar5",
+            "name": "topbar",
             "designerId": "20ecee56-aaba-40f9-a440-800d06d90ca5",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -151,7 +151,7 @@
                                                 ],
                                                 "designer|displayName": "StockUsatoRicercaStockToggle",
                                                 "itemId": "stockUsatoRicercaStockToggle",
-                                                "label": "Stock",
+                                                "label": "Usato",
                                                 "labelWidth": "45%",
                                                 "name": null
                                             },
@@ -185,7 +185,7 @@
                                                     "stockUsatoRicercaStockLabelCls"
                                                 ],
                                                 "designer|displayName": "StockUsatoRicercaStockLabel",
-                                                "html": "Usato"
+                                                "html": "Nuovo"
                                             },
                                             "name": "MyLabel32",
                                             "designerId": "7409fda7-a2b3-4d69-b662-f7f9e9dadda7"
@@ -1218,108 +1218,7 @@
                                                                 "width": 313
                                                             },
                                                             "name": "MyCarousel",
-                                                            "designerId": "2005f239-9c7a-4af7-80a4-08f22af9b894",
-                                                            "cn": [
-                                                                {
-                                                                    "type": "Ext.Container",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|displayName": "InfoVeicoloStockContainer1",
-                                                                        "layout": "fit"
-                                                                    },
-                                                                    "name": "MyContainer6",
-                                                                    "designerId": "ec9fd2d3-cefe-4bd5-8bc6-bc97eccc1366",
-                                                                    "cn": [
-                                                                        {
-                                                                            "type": "Ext.Img",
-                                                                            "reference": {
-                                                                                "name": "items",
-                                                                                "type": "array"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "designer|displayName": "InfoVeicoloStockImg1",
-                                                                                "height": null,
-                                                                                "itemId": "infoVeicoloStockImg1",
-                                                                                "mode": "image",
-                                                                                "width": null
-                                                                            },
-                                                                            "name": "MyImg3",
-                                                                            "designerId": "871730dc-3f2d-440b-949c-bd43a9851601"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "type": "Ext.Container",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|displayName": "InfoVeicoloStockContainer2",
-                                                                        "layout": "fit"
-                                                                    },
-                                                                    "name": "MyContainer2",
-                                                                    "designerId": "2457ba69-f82c-4e45-83f5-14f9ee06178f",
-                                                                    "cn": [
-                                                                        {
-                                                                            "type": "Ext.Img",
-                                                                            "reference": {
-                                                                                "name": "items",
-                                                                                "type": "array"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "designer|displayName": "InfoVeicoloStockImg2",
-                                                                                "height": null,
-                                                                                "itemId": "infoVeicoloStockImg2",
-                                                                                "mode": "image",
-                                                                                "width": null
-                                                                            },
-                                                                            "name": "MyImg4",
-                                                                            "designerId": "eff33239-860b-4f7f-8314-46471968adf0"
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "type": "Ext.Container",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|displayName": "InfoVeicoloStockContainer3",
-                                                                        "layout": "fit"
-                                                                    },
-                                                                    "name": "MyContainer62",
-                                                                    "designerId": "98099826-6db0-4707-82ab-f56b9e7c25b2",
-                                                                    "cn": [
-                                                                        {
-                                                                            "type": "Ext.Img",
-                                                                            "reference": {
-                                                                                "name": "items",
-                                                                                "type": "array"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "designer|displayName": "InfoVeicoloStockImg3",
-                                                                                "height": null,
-                                                                                "itemId": "infoVeicoloStockImg3",
-                                                                                "mode": "image",
-                                                                                "width": null
-                                                                            },
-                                                                            "name": "MyImg5",
-                                                                            "designerId": "ed672a8d-4e51-48ec-8b78-1019bdda5ec2"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
+                                                            "designerId": "2005f239-9c7a-4af7-80a4-08f22af9b894"
                                                         },
                                                         {
                                                             "type": "Ext.Container",

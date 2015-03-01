@@ -41,9 +41,9 @@ Ext.application({
     ],
     syncDisabled: 'S',
     modalitaSviluppoFlag: 'S',
-    stampaEsitoVeicoloUsatoUrl: 'usato/StampaPreliminareRitiro',
-    stampaEsitoVeicoloNuovoUrl: 'nuovo/StampaPreliminareRitiro',
-    stampaInfoVeicoloStockUrl: 'stock/StampaPreliminareRitiro',
+    stampaEsitoVeicoloUsatoUrl: '/usato/StampaPreliminareRitiro',
+    stampaEsitoVeicoloNuovoUrl: '/nuovo/StampaPreliminareRitiro',
+    stampaInfoVeicoloStockUrl: '/stock/StampaPreliminareRitiro',
     models: [
         'AlimentazioneModel',
         'MarcaModel',
@@ -929,6 +929,18 @@ Ext.application({
         var ricStockCtrl = this.getController('Infocar.controller.RicercaStockController');
         var stockView = ricStockCtrl.getView();
 
+    },
+
+    showMask: function() {
+        Ext.Viewport.setMasked({
+            xtype: 'loadmask',
+            message: 'Loading...'
+        });
+
+    },
+
+    hideMask: function() {
+        Ext.Viewport.setMasked(false);
     }
 
 });

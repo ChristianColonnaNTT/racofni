@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar3",
+            "name": "topbar1",
             "designerId": "69e24a9f-36cf-41e5-87c4-50751e860e24",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -3532,7 +3532,7 @@
                                                             "titoloEquipInfoVeicoloNuovoLabelCls"
                                                         ],
                                                         "designer|displayName": "TitoloEquipInfoVeicoloNuovoLabel",
-                                                        "html": "Tutti gli equipaggiamenti"
+                                                        "html": "Equipaggiamenti di serie"
                                                     },
                                                     "name": "MyLabel34",
                                                     "designerId": "04627419-c245-467c-b1d3-8378dac387cf"

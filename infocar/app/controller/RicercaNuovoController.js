@@ -618,7 +618,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
     onLogicaDettVeicoloComboboxChange: function(selectfield, newValue, oldValue, eOpts) {
         this.resetCercaEquipVeicoloTextbox();
 
-        this.loadEquipaggiamenti();
+        this.loadEquipaggiamenti({prevLogicaCodice: oldValue});
     },
 
     onCloseEquipSelAutomaticaDettVeicoloButtonTap: function(button, e, eOpts) {
@@ -794,7 +794,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
                     return filterFlag;
                 }
             },
-            {property: 'descrizione', value: filtroCerca}
+            {property: 'descrizione', value: filtroCerca, anyMatch: true}
         ]);
 
 
@@ -840,6 +840,8 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         if (changeStatoFlag) {
 
             this.syncEquipDettVeicolo();
+        } else {
+            Infocar.app.hideMask();
         }
     },
 
@@ -856,7 +858,8 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
     },
 
     hideInfoSelezioneEquip: function() {
-        this.showHideEquipClustersCount(1, false);
+        //this.showHideEquipClustersCount(1, false);
+        this.showHideEquipClustersCount(0, false);
         this.hidePopupSelAutomaticaEquip();
 
         this.timeoutIdHideInfoSelezioneEquip = null;
@@ -1183,6 +1186,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         if (options) {
             clusterCodice = options.clusterCodice;
             fnAfterShowEquip = options.fnAfterShowEquip;
+            prevLogicaCodice = options.prevLogicaCodice;
         }
 
         var veicoloModel = Infocar.app.dettaglioVeicoloNuovoModel;
@@ -1200,7 +1204,14 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             scope: this,
             callback: function (records, operation, success) {
                 if(!success){
+                    if (typeof prevLogicaCodice != 'undefined' && prevLogicaCodice !== null) {
+                        logicaCombobox.suspendEvents();
+                        logicaCombobox.setValue(prevLogicaCodice);
+                        logicaCombobox.resumeEvents(true);
+                    }
+
                     Infocar.app.showLoadErrorMessage(operation);
+
                 } else {
                     var responseData = Ext.decode(operation.getResponse().responseText,false);
 
@@ -1209,7 +1220,8 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
                     }
 
                     this.showEquipaggiamenti(clusterCodice);
-                    this.showHideEquipClustersCount(1, false);
+                    //this.showHideEquipClustersCount(1, false);
+                    this.showHideEquipClustersCount(0, false);
 
                     if (fnAfterShowEquip) {
                         fnAfterShowEquip.apply(this);
@@ -1374,6 +1386,8 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
 
                 this.loadDettaglioVeicolo();
 
+                Infocar.app.hideMask();
+
                 var esitoChk = this.checkSelEquipRicorsiva(descEquipSelezionato);
 
                 if (! esitoChk) {
@@ -1383,6 +1397,8 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             failure: function (proxy, response, operation, eOpts) {
                 // TODO DEBUG
                 //console.log("equipStore.syncWithListener.exception: operation["+ operation +"]");
+
+                Infocar.app.hideMask();
 
                 Infocar.app.showSyncErrorMessage(response, operation);
             }
@@ -1690,17 +1706,31 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
     },
 
     onDescEquipDettVeicoloTap: function(e, node) {
-        // Leggo il codice dell'equipaggiamento valorizzato nel tag all'interno del XTemplate
-        var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');
+        //Ext.Viewport.mask(true);
+        Infocar.app.showMask();
+        /*
+        Ext.Viewport.setMasked({
+             xtype: 'loadmask',
+             message: 'Loading...'
+        });
+        */
 
-        var equipCodice = e.target.getAttribute('codice');
+        var me = this;
+        setTimeout(function(){
+            // Leggo il codice dell'equipaggiamento valorizzato nel tag all'interno del XTemplate
+            var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');
 
-        var equipModel = equipStore.findRecord('codice', equipCodice, 0, false, true, true);
+            var equipCodice = e.target.getAttribute('codice');
 
-        // TODO DEBUG
-        //console.log(equipModel);
+            var equipModel = equipStore.findRecord('codice', equipCodice, 0, false, true, true);
 
-        this.changeStatoEquipDettVeicolo(equipModel);
+            // TODO DEBUG
+            //console.log(equipModel);
+
+            //this.changeStatoEquipDettVeicolo(equipModel);
+            me.changeStatoEquipDettVeicolo(equipModel);
+        }, 200);
+
     },
 
     onInformEquipDettVeicoloDataitemButtonTap: function(e, node) {

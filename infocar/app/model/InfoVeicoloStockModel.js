@@ -65,6 +65,54 @@ Ext.define('Infocar.model.InfoVeicoloStockModel', {
                 type: 'string'
             },
             {
+                name: 'infoUrlImg4',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg5',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg6',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg7',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg8',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg9',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg10',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg11',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg12',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg13',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg14',
+                type: 'string'
+            },
+            {
+                name: 'infoUrlImg15',
+                type: 'string'
+            },
+            {
                 name: 'venditaPrezzo',
                 type: 'string'
             },
