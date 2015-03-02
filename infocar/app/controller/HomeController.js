@@ -29,11 +29,20 @@ Ext.define('Infocar.controller.HomeController', {
             "button#ricercaUsatoHomeButton": {
                 tap: 'onRicercaUsatoButtonTap'
             },
+            "button#ricercaUsatoHomeButtonLabel": {
+                tap: 'onRicercaUsatoButtonTap1'
+            },
             "button#ricercaNuovoHomeButton": {
                 tap: 'onRicercaNuovoButtonTap'
             },
+            "button#ricercaNuovoHomeButtonLabel": {
+                tap: 'onRicercaNuovoButtonTap1'
+            },
             "button#ricercaStockHomeButton": {
                 tap: 'onRicercaStockButtonTap'
+            },
+            "button#ricercaStockHomeButtonLabel": {
+                tap: 'onRicercaStockButtonTap1'
             }
         }
     },
@@ -42,11 +51,23 @@ Ext.define('Infocar.controller.HomeController', {
         Infocar.app.showRicercaUsato();
     },
 
+    onRicercaUsatoButtonTap1: function(button, e, eOpts) {
+        Infocar.app.showRicercaUsato();
+    },
+
     onRicercaNuovoButtonTap: function(button, e, eOpts) {
         Infocar.app.showRicercaNuovo();
     },
 
+    onRicercaNuovoButtonTap1: function(button, e, eOpts) {
+        Infocar.app.showRicercaNuovo();
+    },
+
     onRicercaStockButtonTap: function(button, e, eOpts) {
+        Infocar.app.showRicercaStock();
+    },
+
+    onRicercaStockButtonTap1: function(button, e, eOpts) {
         Infocar.app.showRicercaStock();
     },
 

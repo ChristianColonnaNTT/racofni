@@ -6,6 +6,7 @@
     },
     "codeClass": null,
     "userConfig": {
+        "baseCls": "homeViewCls",
         "container|align": "center",
         "container|pack": "center",
         "designer|userAlias": "HomeView",
@@ -17,21 +18,6 @@
     "name": "MyContainer8",
     "designerId": "2610f0c8-5f9e-4138-9d64-29572915df12",
     "cn": [
-        {
-            "type": "Ext.Img",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|displayName": "WelcomeHomeImg",
-                "height": 200,
-                "width": 200
-            },
-            "name": "MyImg6",
-            "designerId": "4caf8635-64d0-4aee-9e41-53ba26a5a04b"
-        },
         {
             "type": "Ext.Label",
             "reference": {
@@ -57,7 +43,7 @@
                     "userConfig": {
                         "designer|displayName": "tpl",
                         "implHandler": [
-                            "Benvenuto {nomeUtente} {cognomeUtente}"
+                            "<div class=\"homePageWelcome\">Benvenuto </div>  <div class=\"homePageName\"> {nomeUtente} {cognomeUtente} </div>"
                         ]
                     },
                     "name": "tpl",
@@ -82,6 +68,25 @@
             "designerId": "fd1f71bc-333c-4020-8b91-4c8359e03c9b"
         },
         {
+            "type": "Ext.Img",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "welcomeHomeImgCls"
+                ],
+                "designer|displayName": "WelcomeHomeImg",
+                "height": null,
+                "src": "resources/images/logo_hp.png",
+                "width": null
+            },
+            "name": "MyImg6",
+            "designerId": "4caf8635-64d0-4aee-9e41-53ba26a5a04b"
+        },
+        {
             "type": "Ext.Container",
             "reference": {
                 "name": "items",
@@ -89,6 +94,9 @@
             },
             "codeClass": null,
             "userConfig": {
+                "cls": [
+                    "moduliButtonsHomeContainerCls"
+                ],
                 "designer|displayName": "ModuliButtonsHomeContainer",
                 "layout": "hbox"
             },
@@ -96,84 +104,165 @@
             "designerId": "129fdb56-325b-46a3-8145-c5e9b4c4fc8a",
             "cn": [
                 {
-                    "type": "Ext.Button",
+                    "type": "Ext.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "RicercaUsatoHomeButton",
-                        "designer|uiInterfaceName": "normal",
-                        "hidden": true,
-                        "iconCls": "action",
-                        "itemId": "ricercaUsatoHomeButton",
-                        "text": "Ritiro"
+                        "designer|displayName": "usatoContainer"
                     },
-                    "name": "MyButton31",
-                    "designerId": "779bd883-db56-4acc-ad40-2ac37a388b1d"
+                    "name": "MyContainer43",
+                    "designerId": "9fe8a16a-7048-4ab6-af2e-173f7c99b6be",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "RicercaUsatoHomeButtonCls",
+                                "designer|displayName": "ricercaUsatoHomeButton",
+                                "designer|uiInterfaceName": "normal",
+                                "hidden": true,
+                                "iconCls": "action",
+                                "itemId": "ricercaUsatoHomeButton",
+                                "text": null
+                            },
+                            "name": "MyButton31",
+                            "designerId": "779bd883-db56-4acc-ad40-2ac37a388b1d"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "ricercaUsatoHomeButtonLabelCls",
+                                "cls": [
+                                    "whiteHomeLabel"
+                                ],
+                                "designer|displayName": "ricercaUsatoHomeButtonLabel",
+                                "id": "ricercaUsatoHomeButtonLabel",
+                                "labelCls": "x-button-label whiteHomeLabel",
+                                "text": "",
+                                "width": null
+                            },
+                            "name": "MyButton29",
+                            "designerId": "fcd9f6e0-1ec3-42af-8cfa-a12d5ff2eb1d"
+                        }
+                    ]
                 },
                 {
-                    "type": "Ext.Spacer",
+                    "type": "Ext.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "itemId": "homeButtonsSpacer1",
-                        "width": 50
+                        "designer|displayName": "nuovoContainer"
                     },
-                    "name": "MySpacer12",
-                    "designerId": "b9e02010-e2c5-46d0-87fb-fc54ff37fce2"
+                    "name": "MyContainer47",
+                    "designerId": "11aeda66-c341-44db-9882-e4731e7a869e",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "RicercaNuovoHomeButtonCls",
+                                "designer|displayName": "ricercaNuovoHomeButton",
+                                "hidden": true,
+                                "iconCls": "action",
+                                "itemId": "ricercaNuovoHomeButton",
+                                "text": null
+                            },
+                            "name": "MyButton17",
+                            "designerId": "cc2e8e7e-6b6a-4826-9ef9-19b9d849da21"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "nuovoHomeLabelCls",
+                                "cls": [
+                                    "whiteHomeLabel"
+                                ],
+                                "designer|displayName": "ricercaNuovoHomeButtonLabel",
+                                "id": "ricercaNuovoHomeButtonLabel",
+                                "labelCls": "x-button-label whiteHomeLabel",
+                                "text": "MyButton34"
+                            },
+                            "name": "MyButton34",
+                            "designerId": "a11a775d-4748-4b09-bfdb-0f39de883728"
+                        }
+                    ]
                 },
                 {
-                    "type": "Ext.Button",
+                    "type": "Ext.Container",
                     "reference": {
                         "name": "items",
                         "type": "array"
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "RicercaNuovoHomeButton",
-                        "hidden": true,
-                        "iconCls": "action",
-                        "itemId": "ricercaNuovoHomeButton",
-                        "text": "Configurazione"
+                        "designer|displayName": "stockContainer"
                     },
-                    "name": "MyButton17",
-                    "designerId": "cc2e8e7e-6b6a-4826-9ef9-19b9d849da21"
-                },
-                {
-                    "type": "Ext.Spacer",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "itemId": "homeButtonsSpacer2",
-                        "width": 50
-                    },
-                    "name": "MySpacer13",
-                    "designerId": "6e8bfd6e-e6a4-4a99-964b-62cecec50ca9"
-                },
-                {
-                    "type": "Ext.Button",
-                    "reference": {
-                        "name": "items",
-                        "type": "array"
-                    },
-                    "codeClass": null,
-                    "userConfig": {
-                        "designer|displayName": "RicercaStockHomeButton",
-                        "hidden": true,
-                        "iconCls": "action",
-                        "itemId": "ricercaStockHomeButton",
-                        "text": "Stock"
-                    },
-                    "name": "MyButton32",
-                    "designerId": "86881352-14cd-4d5f-8daa-83ccc3f6fbf2"
+                    "name": "MyContainer48",
+                    "designerId": "87db5580-5d4b-4e96-b4e9-505820a83796",
+                    "cn": [
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "RicercaStockHomeButtonCls",
+                                "designer|displayName": "ricercaStockHomeButton",
+                                "hidden": true,
+                                "iconCls": "action",
+                                "itemId": "ricercaStockHomeButton",
+                                "text": null
+                            },
+                            "name": "MyButton32",
+                            "designerId": "86881352-14cd-4d5f-8daa-83ccc3f6fbf2"
+                        },
+                        {
+                            "type": "Ext.Button",
+                            "reference": {
+                                "name": "items",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "baseCls": "ricercaStockHomeButtonLabel",
+                                "cls": [
+                                    "whiteHomeLabel"
+                                ],
+                                "designer|displayName": "ricercaStockHomeButtonLabel",
+                                "id": "ricercaStockHomeButtonLabel",
+                                "labelCls": "x-button-label whiteHomeLabel",
+                                "text": "MyButton35"
+                            },
+                            "name": "MyButton35",
+                            "designerId": "8e85b8c4-a960-4a2f-a589-0546aeaebbc1"
+                        }
+                    ]
                 }
             ]
         }

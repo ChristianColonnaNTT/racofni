@@ -870,7 +870,7 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#datiTecniciInfoVeicoloUsatoButton",
+                "designer|controlQuery": "button#DatiTecniciInfoVeicoloUsatoButton",
                 "designer|targetType": "Ext.Button",
                 "fn": "onDatiTecniciInfoVeicoloButtonTap",
                 "implHandler": [

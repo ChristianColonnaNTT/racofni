@@ -18,15 +18,15 @@ Ext.define('Infocar.view.HomeView', {
     alias: 'widget.HomeView',
 
     requires: [
-        'Ext.Img',
         'Ext.Label',
         'Ext.XTemplate',
+        'Ext.Img',
         'Ext.Container',
-        'Ext.Button',
-        'Ext.Spacer'
+        'Ext.Button'
     ],
 
     config: {
+        baseCls: 'homeViewCls',
         itemId: 'homeView',
         layout: {
             type: 'vbox',
@@ -35,15 +35,10 @@ Ext.define('Infocar.view.HomeView', {
         },
         items: [
             {
-                xtype: 'image',
-                height: 200,
-                width: 200
-            },
-            {
                 xtype: 'label',
                 itemId: 'welcomeHomeLabel',
                 tpl: [
-                    'Benvenuto {nomeUtente} {cognomeUtente}'
+                    '<div class="homePageWelcome">Benvenuto </div>  <div class="homePageName"> {nomeUtente} {cognomeUtente} </div>'
                 ]
             },
             {
@@ -52,39 +47,74 @@ Ext.define('Infocar.view.HomeView', {
                 itemId: 'messageHomeLabel'
             },
             {
+                xtype: 'image',
+                cls: 'welcomeHomeImgCls',
+                src: 'resources/images/logo_hp.png'
+            },
+            {
                 xtype: 'container',
+                cls: 'moduliButtonsHomeContainerCls',
                 layout: 'hbox',
                 items: [
                     {
-                        xtype: 'button',
-                        hidden: true,
-                        itemId: 'ricercaUsatoHomeButton',
-                        iconCls: 'action',
-                        text: 'Ritiro'
+                        xtype: 'container',
+                        items: [
+                            {
+                                xtype: 'button',
+                                baseCls: 'RicercaUsatoHomeButtonCls',
+                                hidden: true,
+                                itemId: 'ricercaUsatoHomeButton',
+                                iconCls: 'action'
+                            },
+                            {
+                                xtype: 'button',
+                                baseCls: 'ricercaUsatoHomeButtonLabelCls',
+                                cls: 'whiteHomeLabel',
+                                id: 'ricercaUsatoHomeButtonLabel',
+                                labelCls: 'x-button-label whiteHomeLabel',
+                                text: ''
+                            }
+                        ]
                     },
                     {
-                        xtype: 'spacer',
-                        itemId: 'homeButtonsSpacer1',
-                        width: 50
+                        xtype: 'container',
+                        items: [
+                            {
+                                xtype: 'button',
+                                baseCls: 'RicercaNuovoHomeButtonCls',
+                                hidden: true,
+                                itemId: 'ricercaNuovoHomeButton',
+                                iconCls: 'action'
+                            },
+                            {
+                                xtype: 'button',
+                                baseCls: 'nuovoHomeLabelCls',
+                                cls: 'whiteHomeLabel',
+                                id: 'ricercaNuovoHomeButtonLabel',
+                                labelCls: 'x-button-label whiteHomeLabel',
+                                text: 'MyButton34'
+                            }
+                        ]
                     },
                     {
-                        xtype: 'button',
-                        hidden: true,
-                        itemId: 'ricercaNuovoHomeButton',
-                        iconCls: 'action',
-                        text: 'Configurazione'
-                    },
-                    {
-                        xtype: 'spacer',
-                        itemId: 'homeButtonsSpacer2',
-                        width: 50
-                    },
-                    {
-                        xtype: 'button',
-                        hidden: true,
-                        itemId: 'ricercaStockHomeButton',
-                        iconCls: 'action',
-                        text: 'Stock'
+                        xtype: 'container',
+                        items: [
+                            {
+                                xtype: 'button',
+                                baseCls: 'RicercaStockHomeButtonCls',
+                                hidden: true,
+                                itemId: 'ricercaStockHomeButton',
+                                iconCls: 'action'
+                            },
+                            {
+                                xtype: 'button',
+                                baseCls: 'ricercaStockHomeButtonLabel',
+                                cls: 'whiteHomeLabel',
+                                id: 'ricercaStockHomeButtonLabel',
+                                labelCls: 'x-button-label whiteHomeLabel',
+                                text: 'MyButton35'
+                            }
+                        ]
                     }
                 ]
             }

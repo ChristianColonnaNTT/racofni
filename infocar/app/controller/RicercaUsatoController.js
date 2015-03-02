@@ -76,7 +76,7 @@ Ext.define('Infocar.controller.RicercaUsatoController', {
             "button#infoVeicoloUsatoButton": {
                 tap: 'onInfoVeicoloButtonTap'
             },
-            "button#datiTecniciInfoVeicoloUsatoButton": {
+            "button#DatiTecniciInfoVeicoloUsatoButton": {
                 tap: 'onDatiTecniciInfoVeicoloButtonTap'
             },
             "button#equipInfoVeicoloUsatoButton": {
