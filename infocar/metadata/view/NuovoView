@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar",
+            "name": "topbar1",
             "designerId": "69e24a9f-36cf-41e5-87c4-50751e860e24",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -4051,11 +4051,28 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "ricercaUsatoEsitoVeicoloNuovoButtonCls",
-                                        "designer|displayName": "RicercaUsatoEsitoVeicoloNuovoButton",
+                                        "baseCls": "homeEsitoVeicoloNuovoButtonCls",
+                                        "designer|displayName": "HomeEsitoVeicoloNuovoButton",
                                         "docked": "right",
-                                        "itemId": "ricercaUsatoEsitoVeicoloNuovoButton",
-                                        "text": "RITIRO USATO"
+                                        "itemId": "homeEsitoVeicoloNuovoButton",
+                                        "text": "HOME"
+                                    },
+                                    "name": "MyButton1",
+                                    "designerId": "40b9956e-7609-402d-af4c-3261c19b42b2"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": "ricercaNuovoEsitoVeicoloNuovoButtonCls",
+                                        "designer|displayName": "RicercaNuovoEsitoVeicoloNuovoButton",
+                                        "docked": "right",
+                                        "itemId": "ricercaNuovoEsitoVeicoloNuovoButton",
+                                        "text": "NUOVO"
                                     },
                                     "name": "MyButton14",
                                     "designerId": "aff75948-afd1-456b-8f35-53528872c9a3"
@@ -4071,6 +4088,7 @@
                                         "baseCls": "ricercaStockEsitoVeicoloNuovoButtonCls",
                                         "designer|displayName": "RicercaStockEsitoVeicoloNuovoButton",
                                         "docked": "right",
+                                        "hidden": true,
                                         "itemId": "ricercaStockEsitoVeicoloNuovoButton",
                                         "text": "LISTA STOCK"
                                     },

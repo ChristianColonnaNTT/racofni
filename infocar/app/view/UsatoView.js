@@ -152,7 +152,7 @@ Ext.define('Infocar.view.UsatoView', {
                                                 xtype: 'button',
                                                 baseCls: 'azzeraRicUsatoButtonCls',
                                                 itemId: 'azzeraRicUsatoButton',
-                                                text: 'AZZERA RICERCA'                                           
+                                                text: 'AZZERA RICERCA'
                                             }
                                         ]
                                     },
@@ -427,7 +427,7 @@ Ext.define('Infocar.view.UsatoView', {
                                             {
                                                 xtype: 'container',
                                                 baseCls: 'DettaglioVeicoloUsatoMiniImgContainerPortCls',
-                                                height: '90',
+                                                height: 90,
                                                 width: 134,
                                                 items: [
                                                     {
@@ -2022,17 +2022,25 @@ Ext.define('Infocar.view.UsatoView', {
                                     },
                                     {
                                         xtype: 'button',
-                                        baseCls: 'ricercaUsatoEsitoVeicoloNuovoButtonCls',
+                                        baseCls: 'homeEsitoVeicoloUsatoButtonCls',
                                         docked: 'right',
-                                        itemId: 'ricercaNuovoEsitoVeicoloUsatoButton',
-                                        text: 'Configura nuovo'
+                                        itemId: 'homeEsitoVeicoloUsatoButton',
+                                        text: 'HOME'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        baseCls: 'ricercaUsatoEsitoVeicoloUsatoButtonCls',
+                                        docked: 'right',
+                                        itemId: 'ricercaUsatoEsitoVeicoloUsatoButton',
+                                        text: 'NUOVO'
                                     },
                                     {
                                         xtype: 'button',
                                         baseCls: 'ricercaStockEsitoVeicoloNuovoButtonCls',
                                         docked: 'right',
+                                        hidden: true,
                                         itemId: 'ricercaStockEsitoVeicoloUsatoButton',
-                                        text: 'Lista stock'
+                                        text: 'LISTA STOCK'
                                     }
                                 ]
                             }

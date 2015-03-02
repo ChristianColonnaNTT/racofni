@@ -111,7 +111,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "usatoContainer"
+                        "designer|displayName": "usatoHomeButtonsContainer",
+                        "itemId": "usatoHomeButtonsContainer"
                     },
                     "name": "MyContainer43",
                     "designerId": "9fe8a16a-7048-4ab6-af2e-173f7c99b6be",
@@ -127,7 +128,7 @@
                                 "baseCls": "RicercaUsatoHomeButtonCls",
                                 "designer|displayName": "ricercaUsatoHomeButton",
                                 "designer|uiInterfaceName": "normal",
-                                "hidden": true,
+                                "hidden": null,
                                 "iconCls": "action",
                                 "itemId": "ricercaUsatoHomeButton",
                                 "text": null
@@ -166,7 +167,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "nuovoContainer"
+                        "designer|displayName": "nuovoHomeButtonsContainer",
+                        "itemId": "nuovoHomeButtonsContainer"
                     },
                     "name": "MyContainer47",
                     "designerId": "11aeda66-c341-44db-9882-e4731e7a869e",
@@ -181,7 +183,7 @@
                             "userConfig": {
                                 "baseCls": "RicercaNuovoHomeButtonCls",
                                 "designer|displayName": "ricercaNuovoHomeButton",
-                                "hidden": true,
+                                "hidden": null,
                                 "iconCls": "action",
                                 "itemId": "ricercaNuovoHomeButton",
                                 "text": null
@@ -219,7 +221,8 @@
                     },
                     "codeClass": null,
                     "userConfig": {
-                        "designer|displayName": "stockContainer"
+                        "designer|displayName": "stockHomeButtonsContainer",
+                        "itemId": "stockHomeButtonsContainer"
                     },
                     "name": "MyContainer48",
                     "designerId": "87db5580-5d4b-4e96-b4e9-505820a83796",
@@ -234,7 +237,7 @@
                             "userConfig": {
                                 "baseCls": "RicercaStockHomeButtonCls",
                                 "designer|displayName": "ricercaStockHomeButton",
-                                "hidden": true,
+                                "hidden": null,
                                 "iconCls": "action",
                                 "itemId": "ricercaStockHomeButton",
                                 "text": null

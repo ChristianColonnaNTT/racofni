@@ -1627,15 +1627,23 @@ Ext.define('Infocar.view.NuovoView', {
                                     },
                                     {
                                         xtype: 'button',
-                                        baseCls: 'ricercaUsatoEsitoVeicoloNuovoButtonCls',
+                                        baseCls: 'homeEsitoVeicoloNuovoButtonCls',
                                         docked: 'right',
-                                        itemId: 'ricercaUsatoEsitoVeicoloNuovoButton',
-                                        text: 'RITIRO USATO'
+                                        itemId: 'homeEsitoVeicoloNuovoButton',
+                                        text: 'HOME'
+                                    },
+                                    {
+                                        xtype: 'button',
+                                        baseCls: 'ricercaNuovoEsitoVeicoloNuovoButtonCls',
+                                        docked: 'right',
+                                        itemId: 'ricercaNuovoEsitoVeicoloNuovoButton',
+                                        text: 'NUOVO'
                                     },
                                     {
                                         xtype: 'button',
                                         baseCls: 'ricercaStockEsitoVeicoloNuovoButtonCls',
                                         docked: 'right',
+                                        hidden: true,
                                         itemId: 'ricercaStockEsitoVeicoloNuovoButton',
                                         text: 'LISTA STOCK'
                                     }

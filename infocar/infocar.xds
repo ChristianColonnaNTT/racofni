@@ -15,7 +15,7 @@
             },
             "viewportOrientation": "portrait"
         },
-        "urlPrefix": "http://localhost:1841",
+        "urlPrefix": "http://localhost:80",
         "exportPath": "",
         "spacesToIndent": 4,
         "sdkPath": "",

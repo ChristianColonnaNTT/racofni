@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar1",
+            "name": "topbar2",
             "designerId": "a185a87e-f8d6-4039-a2fa-549e7e748d96",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -297,8 +297,8 @@
                                                 "text": "AZZERA RICERCA"
                                             },
                                             "name": "MyButton8",
-                                            "designerId": "6dd8e2fc-c629-464d-97d6-f302303aa37f"                                        
-                         	       }
+                                            "designerId": "6dd8e2fc-c629-464d-97d6-f302303aa37f"
+                                        }
                                     ]
                                 },
                                 {
@@ -1045,7 +1045,7 @@
                                             "userConfig": {
                                                 "baseCls": "DettaglioVeicoloUsatoMiniImgContainerPortCls",
                                                 "designer|displayName": "DettaglioVeicoloUsatoMiniImgContainer",
-                                                "height": "90",
+                                                "height": 90,
                                                 "width": 134
                                             },
                                             "name": "MyContainer80",
@@ -5620,11 +5620,28 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "ricercaUsatoEsitoVeicoloNuovoButtonCls",
-                                        "designer|displayName": "RicercaNuovoEsitoVeicoloUsatoButton",
+                                        "baseCls": "homeEsitoVeicoloUsatoButtonCls",
+                                        "designer|displayName": "HomeEsitoVeicoloUsatoButton",
                                         "docked": "right",
-                                        "itemId": "ricercaNuovoEsitoVeicoloUsatoButton",
-                                        "text": "RITIRO USATO"
+                                        "itemId": "homeEsitoVeicoloUsatoButton",
+                                        "text": "HOME"
+                                    },
+                                    "name": "MyButton17",
+                                    "designerId": "6faddca7-8039-432c-a377-ecb370cacce5"
+                                },
+                                {
+                                    "type": "Ext.Button",
+                                    "reference": {
+                                        "name": "items",
+                                        "type": "array"
+                                    },
+                                    "codeClass": null,
+                                    "userConfig": {
+                                        "baseCls": "ricercaUsatoEsitoVeicoloUsatoButtonCls",
+                                        "designer|displayName": "RicercaUsatoEsitoVeicoloUsatoButton",
+                                        "docked": "right",
+                                        "itemId": "ricercaUsatoEsitoVeicoloUsatoButton",
+                                        "text": "NUOVO"
                                     },
                                     "name": "MyButton14",
                                     "designerId": "4afc5d4b-c3f5-4241-9a05-91dbe9b7e60f"
@@ -5640,6 +5657,7 @@
                                         "baseCls": "ricercaStockEsitoVeicoloNuovoButtonCls",
                                         "designer|displayName": "RicercaStockEsitoVeicoloUsatoButton",
                                         "docked": "right",
+                                        "hidden": true,
                                         "itemId": "ricercaStockEsitoVeicoloUsatoButton",
                                         "text": "LISTA STOCK"
                                     },

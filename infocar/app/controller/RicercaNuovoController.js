@@ -84,11 +84,11 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             "button#closeLegendaEquipDettVeicoloNuovoButton": {
                 tap: 'onCloseLegendaEquipDettVeicoloButtonTap'
             },
-            "button#ricercaUsatoEsitoVeicoloNuovoButton": {
-                tap: 'onRicercaUsatoEsitoVeicoloButtonTap'
+            "button#ricercaNuovoEsitoVeicoloNuovoButton": {
+                tap: 'onRicercaNuovoEsitoVeicoloButtonTap'
             },
-            "button#ricercaStockEsitoVeicoloNuovoButton": {
-                tap: 'onRicercaStockEsitoVeicoloButtonTap'
+            "button#homeEsitoVeicoloNuovoButton": {
+                tap: 'onHomeEsitoVeicoloNuovoButtonTap'
             },
             "button#salvaDettaglioVeicoloNuovoButton": {
                 tap: 'onSalvaDettaglioVeicoloButtonTap'
@@ -508,12 +508,12 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         legendaEquipPanel.hide();
     },
 
-    onRicercaUsatoEsitoVeicoloButtonTap: function(button, e, eOpts) {
-        Infocar.app.showRicercaUsato();
+    onRicercaNuovoEsitoVeicoloButtonTap: function(button, e, eOpts) {
+        Infocar.app.showRicercaNuovo();
     },
 
-    onRicercaStockEsitoVeicoloButtonTap: function(button, e, eOpts) {
-        Infocar.app.showRicercaStock();
+    onHomeEsitoVeicoloNuovoButtonTap: function(button, e, eOpts) {
+        Infocar.app.showHome();
     },
 
     onSalvaDettaglioVeicoloButtonTap: function(button, e, eOpts) {

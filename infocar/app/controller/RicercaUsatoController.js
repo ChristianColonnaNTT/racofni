@@ -67,11 +67,11 @@ Ext.define('Infocar.controller.RicercaUsatoController', {
             "button#salvaDettaglioVeicoloUsatoButton": {
                 tap: 'onSalvaDettaglioVeicoloButtonTap'
             },
-            "button#ricercaNuovoEsitoVeicoloUsatoButton": {
-                tap: 'onRicercaNuovoEsitoVeicoloButtonTap'
+            "button#ricercaUsatoEsitoVeicoloUsatoButton": {
+                tap: 'onRicercaUsatoEsitoVeicoloUsatoButtonTap'
             },
-            "button#ricercaStockEsitoVeicoloUsatoButton": {
-                tap: 'onRicercaStockEsitoVeicoloButtonTap'
+            "button#homeEsitoVeicoloUsatoButton": {
+                tap: 'onHomeEsitoVeicoloUsatoButtonTap'
             },
             "button#infoVeicoloUsatoButton": {
                 tap: 'onInfoVeicoloButtonTap'
@@ -560,12 +560,12 @@ Ext.define('Infocar.controller.RicercaUsatoController', {
 
     },
 
-    onRicercaNuovoEsitoVeicoloButtonTap: function(button, e, eOpts) {
-        Infocar.app.showRicercaNuovo();
+    onRicercaUsatoEsitoVeicoloUsatoButtonTap: function(button, e, eOpts) {
+        Infocar.app.showRicercaUsato();
     },
 
-    onRicercaStockEsitoVeicoloButtonTap: function(button, e, eOpts) {
-        Infocar.app.showRicercaStock();
+    onHomeEsitoVeicoloUsatoButtonTap: function(button, e, eOpts) {
+        Infocar.app.showHome();
     },
 
     onInfoVeicoloButtonTap: function(button, e, eOpts) {

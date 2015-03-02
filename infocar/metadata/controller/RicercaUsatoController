@@ -736,15 +736,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#ricercaNuovoEsitoVeicoloUsatoButton",
+                "designer|controlQuery": "button#ricercaUsatoEsitoVeicoloUsatoButton",
                 "designer|targetType": "Ext.Button",
-                "fn": "onRicercaNuovoEsitoVeicoloButtonTap",
+                "fn": "onRicercaUsatoEsitoVeicoloUsatoButtonTap",
                 "implHandler": [
-                    "Infocar.app.showRicercaNuovo();"
+                    "Infocar.app.showRicercaUsato();"
                 ],
                 "name": "tap"
             },
-            "name": "onRicercaNuovoEsitoVeicoloButtonTap",
+            "name": "onRicercaUsatoEsitoVeicoloUsatoButtonTap",
             "designerId": "651659b7-6a0d-486e-b993-59348638e494"
         },
         {
@@ -755,15 +755,15 @@
             },
             "codeClass": null,
             "userConfig": {
-                "designer|controlQuery": "button#ricercaStockEsitoVeicoloUsatoButton",
+                "designer|controlQuery": "button#homeEsitoVeicoloUsatoButton",
                 "designer|targetType": "Ext.Button",
-                "fn": "onRicercaStockEsitoVeicoloButtonTap",
+                "fn": "onHomeEsitoVeicoloUsatoButtonTap",
                 "implHandler": [
-                    "Infocar.app.showRicercaStock();"
+                    "Infocar.app.showHome();"
                 ],
                 "name": "tap"
             },
-            "name": "onRicercaStockEsitoVeicoloButtonTap",
+            "name": "onHomeEsitoVeicoloUsatoButtonTap",
             "designerId": "f70a1342-067d-470f-88d6-2476d8d89d38"
         },
         {

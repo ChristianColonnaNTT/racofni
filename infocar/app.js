@@ -503,18 +503,22 @@ Ext.application({
                         var ricUsatoHomeButton = Ext.ComponentQuery.query('#ricercaUsatoHomeButton')[0];
                         var ricNuovoHomeButton = Ext.ComponentQuery.query('#ricercaNuovoHomeButton')[0];
                         var ricStockHomeButton = Ext.ComponentQuery.query('#ricercaStockHomeButton')[0];
-                        var homeButtonsSpacer1 = Ext.ComponentQuery.query('#homeButtonsSpacer1')[0];
-                        var homeButtonsSpacer2 = Ext.ComponentQuery.query('#homeButtonsSpacer2')[0];
 
-                        var ricNuovoEsitoVeicoloUsatoButton = Ext.ComponentQuery.query('#ricercaNuovoEsitoVeicoloUsatoButton')[0];
-                        var ricStockEsitoVeicoloUsatoButton = Ext.ComponentQuery.query('#ricercaStockEsitoVeicoloUsatoButton')[0];
+                        var usatoHomeButtonsContainer = Ext.ComponentQuery.query('#usatoHomeButtonsContainer')[0];
+                        var nuovoHomeButtonsContainer = Ext.ComponentQuery.query('#nuovoHomeButtonsContainer')[0];
+                        var stockHomeButtonsContainer = Ext.ComponentQuery.query('#stockHomeButtonsContainer')[0];
+                        //var homeButtonsSpacer1 = Ext.ComponentQuery.query('#homeButtonsSpacer1')[0];
+                        //var homeButtonsSpacer2 = Ext.ComponentQuery.query('#homeButtonsSpacer2')[0];
+
+                        var ricUsatoEsitoVeicoloUsatoButton = Ext.ComponentQuery.query('#ricercaUsatoEsitoVeicoloUsatoButton')[0];
+                        var homeEsitoVeicoloUsatoButton = Ext.ComponentQuery.query('#homeEsitoVeicoloUsatoButton')[0];
 
                         var ricUsatoHomeButtonLabel = Ext.ComponentQuery.query('#ricercaUsatoHomeButtonLabel')[0];
                         var ricNuovoHomeButtonLabel = Ext.ComponentQuery.query('#ricercaNuovoHomeButtonLabel')[0];
                         var ricStockHomeButtonLabel = Ext.ComponentQuery.query('#ricercaStockHomeButtonLabel')[0];
 
-                        var ricUsatoEsitoVeicoloNuovoButton = Ext.ComponentQuery.query('#ricercaUsatoEsitoVeicoloNuovoButton')[0];
-                        var ricStockEsitoVeicoloNuovoButton = Ext.ComponentQuery.query('#ricercaStockEsitoVeicoloNuovoButton')[0];
+                        var ricNuovoEsitoVeicoloNuovoButton = Ext.ComponentQuery.query('#ricercaNuovoEsitoVeicoloNuovoButton')[0];
+                        var homeEsitoVeicoloNuovoButton = Ext.ComponentQuery.query('#homeEsitoVeicoloNuovoButton')[0];
 
                         var coloreLiberoDettVeicoloUsatoContainer = Ext.ComponentQuery.query('#coloreLiberoDettVeicoloUsatoContainer')[0];
 
@@ -531,61 +535,67 @@ Ext.application({
                         if (utenteData.get('moduloUsatoFlag') === 'S') {
                             ricUsatoMenuLeftButton.setHidden(false);
                             ricUsatoMenuLeftButton.setText(utenteData.get('moduloUsatoMenuLabel'));
-                            ricUsatoHomeButton.setHidden(false);
+                            //ricUsatoHomeButton.setHidden(false);
+                            usatoHomeButtonsContainer.setHidden(false);
                             var formattedLabel = utenteData.get('moduloUsatoMenuLabel').split(" ");
                            for (var i = 0; i < formattedLabel.length; i++){
                                 if (formattedLabel[i].length > 4)
                                     formattedLabel[i] = formattedLabel[i] + "<br/>";
                             }
                             ricUsatoHomeButtonLabel.setHtml(formattedLabel.join(" "));
-                            ricUsatoEsitoVeicoloNuovoButton.setHidden(false);
-                            ricUsatoEsitoVeicoloNuovoButton.setText(utenteData.get('moduloUsatoMenuLabel'));
+                            ricUsatoEsitoVeicoloUsatoButton.setHidden(false);
+                            //ricUsatoEsitoVeicoloUsatoButton.setText(utenteData.get('moduloUsatoMenuLabel'));
                         } else {
                             ricUsatoMenuLeftButton.setHidden(true);
-                            ricUsatoHomeButton.setHidden(true);
-                            homeButtonsSpacer1.setHidden(true);
-                            ricUsatoEsitoVeicoloNuovoButton.setHidden(true);
+                            //ricUsatoHomeButton.setHidden(true);
+                            usatoHomeButtonsContainer.setHidden(true);
+                           //homeButtonsSpacer1.setHidden(true);
+                            ricUsatoEsitoVeicoloUsatoButton.setHidden(true);
                         }
 
                         if (utenteData.get('moduloNuovoFlag') === 'S') {
                             ricNuovoMenuLeftButton.setHidden(false);
                             ricNuovoMenuLeftButton.setText(utenteData.get('moduloNuovoMenuLabel'));
-                            ricNuovoHomeButton.setHidden(false);
+                            //ricNuovoHomeButton.setHidden(false);
+                            nuovoHomeButtonsContainer.setHidden(false);
                             var formattedLabel = utenteData.get('moduloNuovoMenuLabel').split(" ");
                             for (var i = 0; i < formattedLabel.length; i++){
                                 if (formattedLabel[i].length > 4)
                                     formattedLabel[i] = formattedLabel[i] + "<br/>";
                             }
                             ricNuovoHomeButtonLabel.setHtml(formattedLabel.join(" "));
-                            ricNuovoEsitoVeicoloUsatoButton.setHidden(false);
-                            ricNuovoEsitoVeicoloUsatoButton.setText(utenteData.get('moduloNuovoMenuLabel'));
+                            ricNuovoEsitoVeicoloNuovoButton.setHidden(false);
+                            //ricNuovoEsitoVeicoloNuovoButton.setText(utenteData.get('moduloNuovoMenuLabel'));
                         } else {
                             ricNuovoMenuLeftButton.setHidden(true);
-                            ricNuovoHomeButton.setHidden(true);
-                            homeButtonsSpacer2.setHidden(true);
-                            ricNuovoEsitoVeicoloUsatoButton.setHidden(true);
+                            //ricNuovoHomeButton.setHidden(true);
+                            nuovoHomeButtonsContainer.setHidden(true);
+                            //homeButtonsSpacer2.setHidden(true);
+                            ricNuovoEsitoVeicoloNuovoButton.setHidden(true);
                         }
 
                         if (utenteData.get('moduloStockFlag') === 'S') {
                             ricStockMenuLeftButton.setHidden(false);
                             ricStockMenuLeftButton.setText(utenteData.get('moduloStockMenuLabel'));
-                            ricStockHomeButton.setHidden(false);
+                            //ricStockHomeButton.setHidden(false);
+                            stockHomeButtonsContainer.setHidden(false);
                             ricStockHomeButtonLabel.setText(utenteData.get('moduloStockMenuLabel'));
-                            ricStockEsitoVeicoloUsatoButton.setHidden(false);
+
                             var formattedLabel = utenteData.get('moduloStockMenuLabel').split(" ");
                             for (var i = 0; i < formattedLabel.length; i++){
                                 if (formattedLabel[i].length > 4)
                                     formattedLabel[i] = formattedLabel[i] + "<br/>";
                             }
-                            ricStockEsitoVeicoloUsatoButton.setHtml(formattedLabel.join(" "));
-                            ricStockEsitoVeicoloNuovoButton.setHidden(false);
-                            ricStockEsitoVeicoloNuovoButton.setText(utenteData.get('moduloStockMenuLabel'));
+                            //ricStockEsitoVeicoloUsatoButton.setHtml(formattedLabel.join(" "));
+                            //ricStockEsitoVeicoloNuovoButton.setHidden(false);
+                            //ricStockEsitoVeicoloNuovoButton.setText(utenteData.get('moduloStockMenuLabel'));
                         } else {
                             ricStockMenuLeftButton.setHidden(true);
-                            ricStockHomeButton.setHidden(true);
-                            homeButtonsSpacer2.setHidden(true);
-                            ricStockEsitoVeicoloUsatoButton.setHidden(true);
-                            ricStockEsitoVeicoloNuovoButton.setHidden(true);
+                            //ricStockHomeButton.setHidden(true);
+                            stockHomeButtonsContainer.setHidden(true);
+                            //homeButtonsSpacer2.setHidden(true);
+                            //ricStockEsitoVeicoloUsatoButton.setHidden(true);
+                            //ricStockEsitoVeicoloNuovoButton.setHidden(true);
                         }
 
 

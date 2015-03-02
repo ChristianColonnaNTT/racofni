@@ -58,11 +58,11 @@ Ext.define('Infocar.view.HomeView', {
                 items: [
                     {
                         xtype: 'container',
+                        itemId: 'usatoHomeButtonsContainer',
                         items: [
                             {
                                 xtype: 'button',
                                 baseCls: 'RicercaUsatoHomeButtonCls',
-                                hidden: true,
                                 itemId: 'ricercaUsatoHomeButton',
                                 iconCls: 'action'
                             },
@@ -78,11 +78,11 @@ Ext.define('Infocar.view.HomeView', {
                     },
                     {
                         xtype: 'container',
+                        itemId: 'nuovoHomeButtonsContainer',
                         items: [
                             {
                                 xtype: 'button',
                                 baseCls: 'RicercaNuovoHomeButtonCls',
-                                hidden: true,
                                 itemId: 'ricercaNuovoHomeButton',
                                 iconCls: 'action'
                             },
@@ -98,11 +98,11 @@ Ext.define('Infocar.view.HomeView', {
                     },
                     {
                         xtype: 'container',
+                        itemId: 'stockHomeButtonsContainer',
                         items: [
                             {
                                 xtype: 'button',
                                 baseCls: 'RicercaStockHomeButtonCls',
-                                hidden: true,
                                 itemId: 'ricercaStockHomeButton',
                                 iconCls: 'action'
                             },
