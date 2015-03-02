@@ -1,7 +1,7 @@
 {
     "success": true,
     "message": null,
-    "total": 200,
+    "total": 10,
     "data": [{
             "codice": "Aperspiciatis",
             "descrizione": "eaque",
@@ -10,7 +10,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 1",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "1",
             "abbinamentoFlag": "S",
             "order": 1
         },
@@ -46,7 +46,7 @@
             "clusterImg": "http://www.edidomus.it/images/img1.jpg",
             "gruppoDesc": "Gruppo 2",
             "infoFlag": "N",
-            "stato": "7",
+            "stato": "0",
             "abbinamentoFlag": "N",
             "order": 4
         },

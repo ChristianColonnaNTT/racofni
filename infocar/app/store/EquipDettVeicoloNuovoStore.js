@@ -49,17 +49,6 @@ Ext.define('Infocar.store.EquipDettVeicoloNuovoStore', {
         },
         sorters: {
             property: 'order'
-        },
-        listeners: [
-            {
-                fn: 'onJsonstoreLoad',
-                event: 'load'
-            }
-        ]
-    },
-
-    onJsonstoreLoad: function(store, records, successful, operation, eOpts) {
-        console.log('onload');
+        }
     }
-
 });

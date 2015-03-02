@@ -107,23 +107,6 @@
             },
             "name": "MySorter",
             "designerId": "d35532ef-05f4-4b6c-b8fd-c9cf6e98a810"
-        },
-        {
-            "type": "basiceventbinding",
-            "reference": {
-                "name": "listeners",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "fn": "onJsonstoreLoad",
-                "implHandler": [
-                    "console.log('onload');"
-                ],
-                "name": "load"
-            },
-            "name": "onJsonstoreLoad",
-            "designerId": "339981b7-447f-4aa1-9b9b-c8cb38095e27"
         }
     ]
 }

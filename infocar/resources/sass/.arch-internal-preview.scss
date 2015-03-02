@@ -1532,6 +1532,11 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
 
 .equipDettVeicoloNuovoListCls {
   margin: 0px 5px 0px 5px;
+  background-color: #fff;
+}
+
+.equipDettVeicoloNuovoListCls .x-list-item.x-list-item-tpl {
+  border: 0 !important;
 }
 
 .equipDettVeicoloNuovoListCls .x-list-item.x-list-item-tpl .x-innerhtml {
