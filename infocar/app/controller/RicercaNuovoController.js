@@ -303,13 +303,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
                 this.showTestataDettVeicolo();
 
                 this.loadEquipaggiamenti({
-                    clusterCodice: 'tutti',
-                    fnAfterShowEquip: function () {
-                        var clusterIniziale = this.initClusterButtons();
-
-                        // Visualizzo gli equipaggiamenti del cluster selezionato
-                        this.showEquipaggiamenti(clusterIniziale.clusterCodice);
-                    }
+                    firstLoad: true
                 });
             },
             failure: function(record, operation) {
@@ -757,16 +751,18 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         */
 
         //var aryEquipStore = equipStore.getRange();
-        var aryEquipStore = equipStore.data.all;
+        //var aryEquipStore = equipStore.data.all;
         /*
         for(var idx=0, len=aryEquipStore.length; idx<len; idx++) {
             aryEquipStore[idx].set('order', idx);
         }
         */
 
+        /*
         var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');
         equipClustersStore.removeAll(true);
         equipClustersStore.add(equipStore.getRange());
+        */
 
         /*
         equipStore.filter([
@@ -872,6 +868,8 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
 
         var hashClustersEquip = Ext.create('Ext.util.HashMap');
 
+        var equipaggiamenti = this.getAllEquipaggiamentiDettVeicoloNuovo();
+
         // Colleziono i count di equipaggiamenti per ogni cluster
         for(var i=0; i<buttonsClusters.length; i++) {
 
@@ -884,7 +882,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
                     clusterEquip = { count: 0, evidenziaFlag: false };
                 }
 
-                var equipaggiamenti = equipClustersStore.getRange();
+                //var equipaggiamenti = equipClustersStore.getRange();
                 for(var n=0; n<equipaggiamenti.length; n++) {
                     var equipModel = equipaggiamenti[n];
 
@@ -940,7 +938,8 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         var equipSelAutoStore = Ext.data.StoreManager.lookup('EquipSelAutomaticaDettVeicoloNuovoStore');
         equipSelAutoStore.removeAll();
 
-        var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');
+        //var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');
+        /*
         equipClustersStore.each( function (equipModel, index, length) {
 
             if (equipModel.get('abbinamentoFlag') === 'S') {
@@ -948,10 +947,26 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             }
 
         });
+        */
+
+        var equipaggiamenti = this.getAllEquipaggiamentiDettVeicoloNuovo();
+        var numEquip = equipaggiamenti.length;
+        var equipAbbinatiFlag = false;
+        for(var i=0; i<numEquip; i++) {
+
+            var equipModel = equipaggiamenti[i];
+
+            if (equipModel.get('abbinamentoFlag') === 'S') {
+                equipSelAutoStore.add(equipModel);
+                equipAbbinatiFlag = true;
+            }
+        }
 
         //var riepilogoButton = Ext.ComponentQuery.query('#riepilogoClusterDettVeicoloNuovoButton')[0];
         //popupEquipSelAutoPanel.showBy(riepilogoButton, 'tr-br');
-        popupEquipSelAutoPanel.show();
+        if (equipAbbinatiFlag) {
+            popupEquipSelAutoPanel.show();
+        }
 
     },
 
@@ -1180,13 +1195,18 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
     },
 
     loadEquipaggiamenti: function(options) {
+        var firstLoad = false;
+
         var clusterCodice = null;
         var fnAfterShowEquip = null;
+        var prevLogicaCodice = null;
+
 
         if (options) {
             clusterCodice = options.clusterCodice;
             fnAfterShowEquip = options.fnAfterShowEquip;
             prevLogicaCodice = options.prevLogicaCodice;
+            firstLoad = options.firstLoad;
         }
 
         var veicoloModel = Infocar.app.dettaglioVeicoloNuovoModel;
@@ -1219,6 +1239,15 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
                         Ext.Msg.alert("Attenzione", responseData.message);
                     }
 
+                    var aryEquipaggiamenti = records;
+
+                    if (firstLoad) {
+                        var clusterIniziale = this.initClusterButtons(aryEquipaggiamenti);
+
+                        // Visualizzo gli equipaggiamenti del cluster selezionato
+                        this.showEquipaggiamenti(clusterIniziale.clusterCodice);
+                    }
+                    /*
                     this.showEquipaggiamenti(clusterCodice);
                     //this.showHideEquipClustersCount(1, false);
                     this.showHideEquipClustersCount(0, false);
@@ -1226,6 +1255,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
                     if (fnAfterShowEquip) {
                         fnAfterShowEquip.apply(this);
                     }
+                    */
 
                     var bodyContainer = Ext.ComponentQuery.query('#bodyNuovoContainer')[0];
 
@@ -1357,12 +1387,20 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         var logicaCombobox = Ext.ComponentQuery.query('#logicaDettVeicoloNuovoCombobox')[0];
         var logicaCodice = logicaCombobox.getValue();
 
+        /*
         var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');
         equipClustersStore.each(function(record){
             record.setDirty();
         });
-
+        */
         var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');
+
+        var equipaggiamenti = this.getAllEquipaggiamentiDettVeicoloNuovo(equipStore);
+        var numEquip = equipaggiamenti.length;
+        for(var i=0; i<numEquip; i++) {
+            equipaggiamenti[i].setDirty();
+        }
+
         equipStore.syncWithListener({
             scope: this,
             params: {
@@ -1382,7 +1420,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
 
                 var descEquipSelezionato = responseData.message;
 
-                this.showEquipaggiamenti();
+                //this.showEquipaggiamenti();
 
                 this.loadDettaglioVeicolo();
 
@@ -1464,7 +1502,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         }, this);
     },
 
-    initClusterButtons: function() {
+    initClusterButtons: function(equipaggiamenti) {
         var equipClustersStore = Ext.data.StoreManager.lookup('EquipClustersDettVeicoloNuovoStore');
 
         var buttonsClusters = Ext.ComponentQuery.query('#clustersDettVeicoloNuovoButtons [clusterCodice]');
@@ -1483,7 +1521,7 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             if (buttonClusterCodice !== 'tutti'  &&  buttonClusterCodice !== 'riepilogo') {
                 var count = 0;
 
-                var equipaggiamenti = equipClustersStore.getRange();
+                //var equipaggiamenti = equipClustersStore.getRange();
                 for(var n=0; n<equipaggiamenti.length; n++) {
                     var equipModel = equipaggiamenti[n];
                     var equipClusterCodice = equipModel.get('cluster_codice');
@@ -1776,6 +1814,15 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             },
             scope: this
         });
+
+    },
+
+    getAllEquipaggiamentiDettVeicoloNuovo: function(equipStore) {
+        if (! equipStore) {
+            equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');
+        }
+
+        return equipStore.getData().all;
 
     }
 
