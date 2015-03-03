@@ -578,19 +578,27 @@ Ext.define('Infocar.view.StockView', {
                                                     {
                                                         xtype: 'container',
                                                         cls: 'SchedaInfoVeicoloStockButtonContainerCls',
-                                                        layout: 'hbox',
+                                                        height: 45,
+                                                        layout: {
+                                                            type: 'hbox',
+                                                            align: 'center'
+                                                        },
                                                         items: [
                                                             {
                                                                 xtype: 'button',
                                                                 baseCls: 'SchedaInfoVeicoloStockInfoButtonCls',
                                                                 cls: 'selectedButton',
-                                                                id: 'SchedaInfoVeicoloStockInfoButton',
+                                                                height: 45,
+                                                                itemId: 'SchedaInfoVeicoloStockInfoButton',
+                                                                width: 274,
                                                                 text: 'INFORMAZIONI AGGIUNTIVE'
                                                             },
                                                             {
                                                                 xtype: 'button',
                                                                 baseCls: 'SchedaInfoVeicoloStockStatoButtonCls',
+                                                                height: 45,
                                                                 itemId: 'SchedaInfoVeicoloStockStatoButton',
+                                                                width: 136,
                                                                 text: 'STATO D\'USO'
                                                             }
                                                         ]

@@ -1286,6 +1286,12 @@ Ext.define('Infocar.view.NuovoView', {
                                                                                     '#7c7474',
                                                                                     '#a66111'
                                                                                 ],
+                                                                                innerPadding: {
+                                                                                    top: 30,
+                                                                                    left: 30,
+                                                                                    right: 30,
+                                                                                    bottom: 30
+                                                                                },
                                                                                 store: 'GraficoInfoVeicoloNuovoStore',
                                                                                 axes: [
                                                                                     {

@@ -1513,7 +1513,9 @@
                                                         "cls": [
                                                             "SchedaInfoVeicoloStockButtonContainerCls"
                                                         ],
+                                                        "container|align": "center",
                                                         "designer|displayName": "SchedaInfoVeicoloStockButtonContainer",
+                                                        "height": 45,
                                                         "layout": "hbox"
                                                     },
                                                     "name": "MyContainer4",
@@ -1532,8 +1534,11 @@
                                                                     "selectedButton"
                                                                 ],
                                                                 "designer|displayName": "SchedaInfoVeicoloStockInfoButton",
-                                                                "id": "SchedaInfoVeicoloStockInfoButton",
-                                                                "text": "INFORMAZIONI AGGIUNTIVE"
+                                                                "height": 45,
+                                                                "id": null,
+                                                                "itemId": "SchedaInfoVeicoloStockInfoButton",
+                                                                "text": "INFORMAZIONI AGGIUNTIVE",
+                                                                "width": 274
                                                             },
                                                             "name": "MyButton2",
                                                             "designerId": "09b559d7-99f4-4fc3-905c-f0e45849fd5c"
@@ -1548,8 +1553,10 @@
                                                             "userConfig": {
                                                                 "baseCls": "SchedaInfoVeicoloStockStatoButtonCls",
                                                                 "designer|displayName": "SchedaInfoVeicoloStockStatoButton",
+                                                                "height": 45,
                                                                 "itemId": "SchedaInfoVeicoloStockStatoButton",
-                                                                "text": "STATO D'USO"
+                                                                "text": "STATO D'USO",
+                                                                "width": 136
                                                             },
                                                             "name": "MyButton1",
                                                             "designerId": "4c45f844-d4dd-4c2e-b3ca-07fe570e200f"

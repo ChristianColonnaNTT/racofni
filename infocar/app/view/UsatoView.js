@@ -1990,7 +1990,6 @@ Ext.define('Infocar.view.UsatoView', {
                                             {
                                                 xtype: 'label',
                                                 baseCls: 'totalePrezzoEsitoVeicoloUsatoLabel1Cls',
-                                                cls: 'equipaggiamentiPrezzoEsitoVeicoloUsatoLabel1Cls',
                                                 html: 'TOTALE CONCORDATO:'
                                             },
                                             {
@@ -2025,7 +2024,7 @@ Ext.define('Infocar.view.UsatoView', {
                                         xtype: 'button',
                                         baseCls: 'stampaEsitoVeicoloNuovoButtonCls',
                                         itemId: 'stampaEsitoVeicoloUsatoButton',
-                                        text: 'Stampa'
+                                        text: 'STAMPA'
                                     },
                                     {
                                         xtype: 'button',

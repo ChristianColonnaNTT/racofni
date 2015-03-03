@@ -5630,7 +5630,7 @@
                                         "baseCls": "stampaEsitoVeicoloNuovoButtonCls",
                                         "designer|displayName": "StampaEsitoVeicoloUsatoButton",
                                         "itemId": "stampaEsitoVeicoloUsatoButton",
-                                        "text": "Stampa"
+                                        "text": "STAMPA"
                                     },
                                     "name": "MyButton13",
                                     "designerId": "24348869-d6fd-49d1-9097-b68db05e79ef"

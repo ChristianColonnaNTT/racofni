@@ -2976,18 +2976,31 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 10px;
+  border-top: 1px solid #f2f2f2;
+}
+
+.SchedaInfoVeicoloStockInfoButtonCls {
+  padding-left: 10px;
 }
 
 .SchedaInfoVeicoloStockStatoButtonCls{
-    padding-left: 30px;
+  padding-left: 30px;
 }
 
 .SchedaInfoVeicoloStockInfoButtonCls .x-button-label, .SchedaInfoVeicoloStockStatoButtonCls .x-button-label  {
-    font-weight:normal;
+  font-weight:normal;
+  line-height: 45px;
 }
 
-.selectedButton .x-button-label{
-    font-weight:bold !important;
+.selectedButton {
+  background-image: url(../images/49-ipad-portrait_11.png) !important;
+  background-size: 15px 9px !important;
+  background-repeat: no-repeat !important;
+  background-position: 20px 0px !important;
+}
+
+.selectedButton .x-button-label {
+  font-weight:bold !important;
 }
 
 
