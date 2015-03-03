@@ -1908,8 +1908,8 @@ Ext.define('Infocar.view.UsatoView', {
                                             {
                                                 xtype: 'label',
                                                 baseCls: 'veicoloBasePrezzoEsitoVeicoloNuovoLabel1Cls',
-                                                html: 'Valutazione personalizzata QR:',
-                                                width: '25%'
+                                                cls: 'veicoloBasePrezzoEsitoVeicoloUsatoLabel1Cls',
+                                                html: 'Valutazione personalizzata QR:'
                                             },
                                             {
                                                 xtype: 'label',
@@ -1935,8 +1935,8 @@ Ext.define('Infocar.view.UsatoView', {
                                             {
                                                 xtype: 'label',
                                                 baseCls: 'equipaggiamentiPrezzoEsitoVeicoloNuovoLabel1Cls',
-                                                html: 'Variazione concessionario:',
-                                                width: '25%'
+                                                cls: 'veicoloBasePrezzoEsitoVeicoloUsatoLabel1Cls',
+                                                html: 'Variazione concessionario:'
                                             },
                                             {
                                                 xtype: 'label',
@@ -1962,8 +1962,8 @@ Ext.define('Infocar.view.UsatoView', {
                                             {
                                                 xtype: 'label',
                                                 baseCls: 'equipaggiamentiPrezzoEsitoVeicoloNuovoLabel1Cls',
-                                                html: 'Variazione concordata:',
-                                                width: '25%'
+                                                cls: 'veicoloBasePrezzoEsitoVeicoloUsatoLabel1Cls',
+                                                html: 'Variazione concordata:'
                                             },
                                             {
                                                 xtype: 'label',
@@ -1990,8 +1990,8 @@ Ext.define('Infocar.view.UsatoView', {
                                             {
                                                 xtype: 'label',
                                                 baseCls: 'totalePrezzoEsitoVeicoloUsatoLabel1Cls',
-                                                html: 'TOTALE CONCORDATO:',
-                                                width: '25%'
+                                                cls: 'equipaggiamentiPrezzoEsitoVeicoloUsatoLabel1Cls',
+                                                html: 'TOTALE CONCORDATO:'
                                             },
                                             {
                                                 xtype: 'label',

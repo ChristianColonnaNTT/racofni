@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar3",
+            "name": "topbar1",
             "designerId": "20ecee56-aaba-40f9-a440-800d06d90ca5",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -1503,77 +1503,75 @@
                                                     "designerId": "39cee0c8-f6f4-4afb-a2c2-4f8a78d77e51"
                                                 },
                                                 {
-                                                    "type": "Ext.tab.Panel",
+                                                    "type": "Ext.Container",
                                                     "reference": {
                                                         "name": "items",
                                                         "type": "array"
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "designer|displayName": "SchedaInfoVeicoloStockTabPanel",
-                                                        "height": "auto",
-                                                        "itemId": "schedaInfoVeicoloStockTabPanelCls",
-                                                        "layout|flex": null
+                                                        "cls": [
+                                                            "SchedaInfoVeicoloStockButtonContainerCls"
+                                                        ],
+                                                        "designer|displayName": "SchedaInfoVeicoloStockButtonContainer",
+                                                        "layout": "hbox"
                                                     },
-                                                    "name": "MyTabPanel",
-                                                    "designerId": "e7889fb4-ca5b-4f38-8abc-cab0983d2970",
+                                                    "name": "MyContainer4",
+                                                    "designerId": "668df861-e854-49e3-9510-5c3956d22015",
                                                     "cn": [
                                                         {
-                                                            "type": "Ext.Container",
+                                                            "type": "Ext.Button",
                                                             "reference": {
                                                                 "name": "items",
                                                                 "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
+                                                                "baseCls": "SchedaInfoVeicoloStockInfoButtonCls",
                                                                 "cls": [
-                                                                    "informAggiuntiveSchedaInfoVeicoloStockTabCls"
+                                                                    "selectedButton"
                                                                 ],
-                                                                "designer|displayName": "InformAggiuntiveSchedaInfoVeicoloStockTab",
-                                                                "height": "auto",
-                                                                "layout": "fit",
-                                                                "scrollable": false,
-                                                                "title": "INFORMAZIONI AGGIUNTIVE"
+                                                                "designer|displayName": "SchedaInfoVeicoloStockInfoButton",
+                                                                "id": "SchedaInfoVeicoloStockInfoButton",
+                                                                "text": "INFORMAZIONI AGGIUNTIVE"
                                                             },
-                                                            "name": "MyContainer70",
-                                                            "designerId": "150f7101-1a08-4f51-84ce-59937541cfee",
-                                                            "cn": [
-                                                                {
-                                                                    "type": "Ext.Label",
-                                                                    "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
-                                                                    },
-                                                                    "codeClass": null,
-                                                                    "userConfig": {
-                                                                        "designer|displayName": "InformAggiuntiveSchedaInfoVeicoloStockLabel",
-                                                                        "height": "auto",
-                                                                        "itemId": "informAggiuntiveSchedaInfoVeicoloStockLabel",
-                                                                        "width": null
-                                                                    },
-                                                                    "name": "MyLabel36",
-                                                                    "designerId": "9796c2c8-21c1-48b0-be6f-b94c93288073",
-                                                                    "cn": [
-                                                                        {
-                                                                            "type": "Ext.XTemplate",
-                                                                            "reference": {
-                                                                                "name": "tpl",
-                                                                                "type": "object"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "designer|displayName": "tpl",
-                                                                                "implHandler": [
-                                                                                    "aertar tawrt farwgt arwegt arwg tewr gtea rg ewrag erw<br/><br/><br/><br/><br/>sdfwrgthyj{infoAggiuntiveSchedaVeicolo}"
-                                                                                ]
-                                                                            },
-                                                                            "name": "tpl",
-                                                                            "designerId": "3d870e14-31b5-4a5b-b652-50bcd77396f2"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
+                                                            "name": "MyButton2",
+                                                            "designerId": "09b559d7-99f4-4fc3-905c-f0e45849fd5c"
                                                         },
+                                                        {
+                                                            "type": "Ext.Button",
+                                                            "reference": {
+                                                                "name": "items",
+                                                                "type": "array"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "baseCls": "SchedaInfoVeicoloStockStatoButtonCls",
+                                                                "designer|displayName": "SchedaInfoVeicoloStockStatoButton",
+                                                                "itemId": "SchedaInfoVeicoloStockStatoButton",
+                                                                "text": "STATO D'USO"
+                                                            },
+                                                            "name": "MyButton1",
+                                                            "designerId": "4c45f844-d4dd-4c2e-b3ca-07fe570e200f"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Container",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "designer|displayName": "SchedaInfoVeicoloStockContainer",
+                                                        "height": null,
+                                                        "itemId": "schedaInfoVeicoloStockTabPanelCls",
+                                                        "layout|flex": null
+                                                    },
+                                                    "name": "MyContainer3",
+                                                    "designerId": "e7889fb4-ca5b-4f38-8abc-cab0983d2970",
+                                                    "cn": [
                                                         {
                                                             "type": "Ext.Container",
                                                             "reference": {
@@ -1586,68 +1584,69 @@
                                                                     "statoUsoSchedaInfoVeicoloStockTabCls"
                                                                 ],
                                                                 "designer|displayName": "StatoUsoSchedaInfoVeicoloStockTab",
-                                                                "height": "auto",
-                                                                "layout": "fit",
-                                                                "scrollable": false,
-                                                                "title": "STATO D'USO"
+                                                                "height": null,
+                                                                "hidden": true,
+                                                                "itemId": "statoUsoSchedaInfoVeicoloStockLabel",
+                                                                "scrollable": null
                                                             },
                                                             "name": "MyContainer69",
                                                             "designerId": "b6722428-d95d-4a4e-93e4-513e227eb381",
                                                             "cn": [
                                                                 {
-                                                                    "type": "Ext.Label",
+                                                                    "type": "Ext.XTemplate",
                                                                     "reference": {
-                                                                        "name": "items",
-                                                                        "type": "array"
+                                                                        "name": "tpl",
+                                                                        "type": "object"
                                                                     },
                                                                     "codeClass": null,
                                                                     "userConfig": {
-                                                                        "designer|displayName": "StatoUsoSchedaInfoVeicoloStockLabel",
-                                                                        "height": "auto",
-                                                                        "itemId": "statoUsoSchedaInfoVeicoloStockLabel",
-                                                                        "width": null
+                                                                        "designer|displayName": "tpl",
+                                                                        "implHandler": [
+                                                                            "{statoUsoSchedaVeicolo}"
+                                                                        ]
                                                                     },
-                                                                    "name": "MyLabel33",
-                                                                    "designerId": "e395ae16-41a3-4988-b2bc-317ae4325e94",
-                                                                    "cn": [
-                                                                        {
-                                                                            "type": "Ext.XTemplate",
-                                                                            "reference": {
-                                                                                "name": "tpl",
-                                                                                "type": "object"
-                                                                            },
-                                                                            "codeClass": null,
-                                                                            "userConfig": {
-                                                                                "designer|displayName": "tpl",
-                                                                                "implHandler": [
-                                                                                    "{statoUsoSchedaVeicolo}"
-                                                                                ]
-                                                                            },
-                                                                            "name": "tpl",
-                                                                            "designerId": "bc52bcc0-1471-42e8-97ed-51d7e9295d8b"
-                                                                        }
-                                                                    ]
+                                                                    "name": "tpl",
+                                                                    "designerId": "bc52bcc0-1471-42e8-97ed-51d7e9295d8b"
                                                                 }
                                                             ]
                                                         },
                                                         {
-                                                            "type": "Ext.tab.Bar",
+                                                            "type": "Ext.Container",
                                                             "reference": {
-                                                                "name": "tabBar",
-                                                                "type": "object"
+                                                                "name": "items",
+                                                                "type": "array"
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "baseCls": null,
                                                                 "cls": [
-                                                                    "schedaInfoVeicoloStockTabBarCls"
+                                                                    "informAggiuntiveSchedaInfoVeicoloStockTabCls"
                                                                 ],
-                                                                "designer|uiInterfaceName": "untitled-ui-3",
-                                                                "docked": "top",
-                                                                "ui": "untitled-ui-3"
+                                                                "designer|displayName": "InformAggiuntiveSchedaInfoVeicoloStockTab",
+                                                                "height": null,
+                                                                "hidden": false,
+                                                                "itemId": "informAggiuntiveSchedaInfoVeicoloStockLabel",
+                                                                "scrollable": null
                                                             },
-                                                            "name": "MyTabBar",
-                                                            "designerId": "ff42c543-c216-4c4e-ae59-0e557ce30a0e"
+                                                            "name": "MyContainer70",
+                                                            "designerId": "150f7101-1a08-4f51-84ce-59937541cfee",
+                                                            "cn": [
+                                                                {
+                                                                    "type": "Ext.XTemplate",
+                                                                    "reference": {
+                                                                        "name": "tpl",
+                                                                        "type": "object"
+                                                                    },
+                                                                    "codeClass": null,
+                                                                    "userConfig": {
+                                                                        "designer|displayName": "tpl",
+                                                                        "implHandler": [
+                                                                            "{infoAggiuntiveSchedaVeicolo}"
+                                                                        ]
+                                                                    },
+                                                                    "name": "tpl",
+                                                                    "designerId": "3d870e14-31b5-4a5b-b652-50bcd77396f2"
+                                                                }
+                                                            ]
                                                         }
                                                     ]
                                                 },
@@ -2054,64 +2053,10 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "cls": [
-                                                            "titoloEquipMontatiInfoVeicoloStockLabelCls"
-                                                        ],
-                                                        "designer|displayName": "TitoloEquipMontatiInfoVeicoloStockLabel",
-                                                        "html": "Equipaggiamenti e accessori installati"
-                                                    },
-                                                    "name": "MyLabel2",
-                                                    "designerId": "308bb767-3d36-4839-9447-92981359d00a"
-                                                },
-                                                {
-                                                    "type": "Ext.dataview.DataView",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "cls": [
-                                                            "equipMontatiInfoVeicoloStockDataviewCls"
-                                                        ],
-                                                        "designer|displayName": "EquipMontatiInfoVeicoloStockDataview",
-                                                        "layout|flex": 1,
-                                                        "store": "EquipMontatiInfoVeicoloStockStore"
-                                                    },
-                                                    "name": "MyDataView",
-                                                    "designerId": "b4eb9f4b-74e2-4ff0-8be9-0a1de51050ec",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.XTemplate",
-                                                            "reference": {
-                                                                "name": "itemTpl",
-                                                                "type": "object"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "designer|displayName": "itemTpl",
-                                                                "disableFormats": true,
-                                                                "implHandler": [
-                                                                    "<div class=\"descEquipMontatiInfoVeicoloNuovoDataviewItemDivCls\"> > {descrizione}</div>"
-                                                                ]
-                                                            },
-                                                            "name": "itemTpl",
-                                                            "designerId": "502a017a-b34a-4827-9b4e-b42d76e1cbee"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "Ext.Label",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "cls": [
                                                             "titoloEquipSerieInfoVeicoloStockLabelCls"
                                                         ],
                                                         "designer|displayName": "TitoloEquipSerieInfoVeicoloStockLabel",
-                                                        "html": "Equipaggiamenti Serie"
+                                                        "html": "Equipaggiamenti di serie"
                                                     },
                                                     "name": "MyLabel34",
                                                     "designerId": "f63e70ab-96a3-46c8-8fbe-2c98492b4c68"
@@ -2150,6 +2095,60 @@
                                                             },
                                                             "name": "itemTpl",
                                                             "designerId": "c82dd0bf-08a4-40e1-b0db-f225e2746662"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "titoloEquipMontatiInfoVeicoloStockLabelCls"
+                                                        ],
+                                                        "designer|displayName": "TitoloEquipMontatiInfoVeicoloStockLabel",
+                                                        "html": "Equipaggiamenti montati"
+                                                    },
+                                                    "name": "MyLabel2",
+                                                    "designerId": "308bb767-3d36-4839-9447-92981359d00a"
+                                                },
+                                                {
+                                                    "type": "Ext.dataview.DataView",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "equipMontatiInfoVeicoloStockDataviewCls"
+                                                        ],
+                                                        "designer|displayName": "EquipMontatiInfoVeicoloStockDataview",
+                                                        "layout|flex": 1,
+                                                        "store": "EquipMontatiInfoVeicoloStockStore"
+                                                    },
+                                                    "name": "MyDataView",
+                                                    "designerId": "b4eb9f4b-74e2-4ff0-8be9-0a1de51050ec",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "itemTpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "itemTpl",
+                                                                "disableFormats": true,
+                                                                "implHandler": [
+                                                                    "<div class=\"descEquipMontatiInfoVeicoloNuovoDataviewItemDivCls\"> > {descrizione}</div>"
+                                                                ]
+                                                            },
+                                                            "name": "itemTpl",
+                                                            "designerId": "502a017a-b34a-4827-9b4e-b42d76e1cbee"
                                                         }
                                                     ]
                                                 }

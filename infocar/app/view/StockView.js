@@ -29,9 +29,8 @@ Ext.define('Infocar.view.StockView', {
         'Ext.Button',
         'Ext.Img',
         'Ext.carousel.Carousel',
-        'Ext.tab.Panel',
-        'Ext.tab.Bar',
-        'Ext.dataview.List'
+        'Ext.dataview.List',
+        'Ext.Toolbar'
     ],
 
     config: {
@@ -577,52 +576,48 @@ Ext.define('Infocar.view.StockView', {
                                                         html: 'Scheda veicolo'
                                                     },
                                                     {
-                                                        xtype: 'tabpanel',
-                                                        height: 'auto',
+                                                        xtype: 'container',
+                                                        cls: 'SchedaInfoVeicoloStockButtonContainerCls',
+                                                        layout: 'hbox',
+                                                        items: [
+                                                            {
+                                                                xtype: 'button',
+                                                                baseCls: 'SchedaInfoVeicoloStockInfoButtonCls',
+                                                                cls: 'selectedButton',
+                                                                id: 'SchedaInfoVeicoloStockInfoButton',
+                                                                text: 'INFORMAZIONI AGGIUNTIVE'
+                                                            },
+                                                            {
+                                                                xtype: 'button',
+                                                                baseCls: 'SchedaInfoVeicoloStockStatoButtonCls',
+                                                                itemId: 'SchedaInfoVeicoloStockStatoButton',
+                                                                text: 'STATO D\'USO'
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        xtype: 'container',
                                                         itemId: 'schedaInfoVeicoloStockTabPanelCls',
                                                         items: [
                                                             {
                                                                 xtype: 'container',
-                                                                title: 'INFORMAZIONI AGGIUNTIVE',
-                                                                cls: 'informAggiuntiveSchedaInfoVeicoloStockTabCls',
-                                                                height: 'auto',
-                                                                layout: 'fit',
-                                                                scrollable: false,
-                                                                items: [
-                                                                    {
-                                                                        xtype: 'label',
-                                                                        height: 'auto',
-                                                                        itemId: 'informAggiuntiveSchedaInfoVeicoloStockLabel',
-                                                                        tpl: [
-                                                                            'aertar tawrt farwgt arwegt arwg tewr gtea rg ewrag erw<br/><br/><br/><br/><br/>sdfwrgthyj{infoAggiuntiveSchedaVeicolo}'
-                                                                        ]
-                                                                    }
+                                                                cls: 'statoUsoSchedaInfoVeicoloStockTabCls',
+                                                                hidden: true,
+                                                                itemId: 'statoUsoSchedaInfoVeicoloStockLabel',
+                                                                tpl: [
+                                                                    '{statoUsoSchedaVeicolo}'
                                                                 ]
                                                             },
                                                             {
                                                                 xtype: 'container',
-                                                                title: 'STATO D\'USO',
-                                                                cls: 'statoUsoSchedaInfoVeicoloStockTabCls',
-                                                                height: 'auto',
-                                                                layout: 'fit',
-                                                                scrollable: false,
-                                                                items: [
-                                                                    {
-                                                                        xtype: 'label',
-                                                                        height: 'auto',
-                                                                        itemId: 'statoUsoSchedaInfoVeicoloStockLabel',
-                                                                        tpl: [
-                                                                            '{statoUsoSchedaVeicolo}'
-                                                                        ]
-                                                                    }
+                                                                cls: 'informAggiuntiveSchedaInfoVeicoloStockTabCls',
+                                                                hidden: false,
+                                                                itemId: 'informAggiuntiveSchedaInfoVeicoloStockLabel',
+                                                                tpl: [
+                                                                    '{infoAggiuntiveSchedaVeicolo}'
                                                                 ]
                                                             }
-                                                        ],
-                                                        tabBar: {
-                                                            cls: 'schedaInfoVeicoloStockTabBarCls',
-                                                            docked: 'top',
-                                                            ui: 'untitled-ui-3'
-                                                        }
+                                                        ]
                                                     },
                                                     {
                                                         xtype: 'container',
@@ -786,25 +781,8 @@ Ext.define('Infocar.view.StockView', {
                                                 items: [
                                                     {
                                                         xtype: 'label',
-                                                        cls: 'titoloEquipMontatiInfoVeicoloStockLabelCls',
-                                                        html: 'Equipaggiamenti e accessori installati'
-                                                    },
-                                                    {
-                                                        xtype: 'dataview',
-                                                        flex: 1,
-                                                        cls: 'equipMontatiInfoVeicoloStockDataviewCls',
-                                                        itemTpl: Ext.create('Ext.XTemplate', 
-                                                            '<div class="descEquipMontatiInfoVeicoloNuovoDataviewItemDivCls"> > {descrizione}</div>',
-                                                            {
-                                                                disableFormats: true
-                                                            }
-                                                        ),
-                                                        store: 'EquipMontatiInfoVeicoloStockStore'
-                                                    },
-                                                    {
-                                                        xtype: 'label',
                                                         cls: 'titoloEquipSerieInfoVeicoloStockLabelCls',
-                                                        html: 'Equipaggiamenti Serie'
+                                                        html: 'Equipaggiamenti di serie'
                                                     },
                                                     {
                                                         xtype: 'dataview',
@@ -817,6 +795,23 @@ Ext.define('Infocar.view.StockView', {
                                                             }
                                                         ),
                                                         store: 'EquipSerieInfoVeicoloStockStore'
+                                                    },
+                                                    {
+                                                        xtype: 'label',
+                                                        cls: 'titoloEquipMontatiInfoVeicoloStockLabelCls',
+                                                        html: 'Equipaggiamenti montati'
+                                                    },
+                                                    {
+                                                        xtype: 'dataview',
+                                                        flex: 1,
+                                                        cls: 'equipMontatiInfoVeicoloStockDataviewCls',
+                                                        itemTpl: Ext.create('Ext.XTemplate', 
+                                                            '<div class="descEquipMontatiInfoVeicoloNuovoDataviewItemDivCls"> > {descrizione}</div>',
+                                                            {
+                                                                disableFormats: true
+                                                            }
+                                                        ),
+                                                        store: 'EquipMontatiInfoVeicoloStockStore'
                                                     }
                                                 ]
                                             }

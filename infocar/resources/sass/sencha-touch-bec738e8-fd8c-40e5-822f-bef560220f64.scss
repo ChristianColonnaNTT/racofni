@@ -730,6 +730,7 @@ body.x-tablet {
 
 .TitoloEquipInfoVeicoloUsatoLabelCls, .red{
     color: #e30613;
+    font-size: 1.12em;
 }
 
 .EquipInfoVeicoloUsatoContainerCls{
@@ -738,6 +739,7 @@ body.x-tablet {
 
 .equipaggiamentiListCls{
     padding-top:20px;
+    font-size: 0.75em;
 
 }
 
@@ -792,6 +794,11 @@ body.x-tablet {
   font-weight: bold;
   font-size: 0.9em;
   padding-top: 7px;
+  width: 220px;
+}
+
+.veicoloBasePrezzoEsitoVeicoloUsatoLabel1Cls  {
+     width: 220px;
 }
 
 
@@ -2449,6 +2456,7 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 
 .sintesiSituazioneStockVeicoloNuovoContainerCls {
   background-color: #f8f8f8;
+  padding-bottom: 15px;
 }
 
 .sintesiSituazioneStockVeicoloNuovoLabelCls {
@@ -2469,6 +2477,7 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
   background: #71727d;
   border-top-left-radius: 0.4em;
   border-top-right-radius: 0.4em;
+  border-radius: 10px;
 }
 
 .titoloGraficoInfoVeicoloNuovoLabelCls {
@@ -2958,6 +2967,28 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 }
 
 
+/* Scheda veicolo Stock*/
+
+.SchedaInfoVeicoloStockButtonContainerCls{
+  background-color: #f8f8f8;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+
+.SchedaInfoVeicoloStockStatoButtonCls{
+    padding-left: 30px;
+}
+
+.SchedaInfoVeicoloStockInfoButtonCls .x-button-label, .SchedaInfoVeicoloStockStatoButtonCls .x-button-label  {
+    font-weight:normal;
+}
+
+.selectedButton .x-button-label{
+    font-weight:bold !important;
+}
+
+
 /* Sintesi Dati Tecnici Info Veicolo Stock */
 .sintesiDatiTecniciInfoVeicoloStockContainerCls {
   background-color: #fff;
@@ -3245,9 +3276,31 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 
 
 
+//msg box
+
+.x-msgbox {
+  background: white;
+}
+
+.x-msgbox .x-title .x-innerhtml{
+    color: black;
+}
 
 
+/* ui mixin: infocar-toolbar for of type: sencha-toolbar-ui */
 
+@include sencha-toolbar-ui(
+  $ui-label:"infocar-toolbar",
+    $color: $infocar-border-color,
+    $gradient: $toolbar-gradient
+);
+/* ui mixin: untitled-ui-3 for of type: sencha-toolbar-ui */
+
+@include sencha-toolbar-ui(
+  $ui-label:"untitled-ui-3",
+    $color: #f8f8f8,
+    $gradient: flat
+);
 /* ui mixin: infocar-toolbar for of type: sencha-toolbar-ui */
 
 @include sencha-toolbar-ui(

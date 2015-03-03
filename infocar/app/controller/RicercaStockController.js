@@ -70,6 +70,12 @@ Ext.define('Infocar.controller.RicercaStockController', {
             },
             "button#stampaInfoVeicoloStockButton": {
                 tap: 'onStampaInfoVeicloButtonTap'
+            },
+            "button#SchedaInfoVeicoloStockStatoButton": {
+                tap: 'onSchedaInfoVeicoloStockStatoButtonTap'
+            },
+            "button#SchedaInfoVeicoloStockInfoButton": {
+                tap: 'onSchedaInfoVeicoloSotckInfoButtonTap'
             }
         }
     },
@@ -434,6 +440,36 @@ Ext.define('Infocar.controller.RicercaStockController', {
         var urlStampa = Infocar.app.stampaInfoVeicoloStockUrl;
 
         window.open(urlStampa, "stampa", "width=600,height=600,location=no");
+    },
+
+    onSchedaInfoVeicoloStockStatoButtonTap: function(button, e, eOpts) {
+            //logica per i tab
+            var informAggiuntiveSchedaInfoVeicoloStockLabel = Ext.ComponentQuery.query('#informAggiuntiveSchedaInfoVeicoloStockLabel')[0];;
+            var statoUsoSchedaInfoVeicoloStockLabel = Ext.ComponentQuery.query('#statoUsoSchedaInfoVeicoloStockLabel')[0];
+
+            informAggiuntiveSchedaInfoVeicoloStockLabel.setHidden(true);
+            statoUsoSchedaInfoVeicoloStockLabel.setHidden(false);
+
+            //logica per i pulsanti
+            var SchedaInfoVeicoloStockStatoButton = Ext.ComponentQuery.query('#SchedaInfoVeicoloStockStatoButton')[0];
+            var SchedaInfoVeicoloStockInfoButton = Ext.ComponentQuery.query('#SchedaInfoVeicoloStockInfoButton')[0];
+            SchedaInfoVeicoloStockStatoButton.addCls("selectedButton");
+            SchedaInfoVeicoloStockInfoButton.removeCls("selectedButton");
+
+    },
+
+    onSchedaInfoVeicoloSotckInfoButtonTap: function(button, e, eOpts) {
+            //logica per i tab
+            var informAggiuntiveSchedaInfoVeicoloStockLabel = Ext.ComponentQuery.query('#informAggiuntiveSchedaInfoVeicoloStockLabel')[0];;
+            var statoUsoSchedaInfoVeicoloStockLabel = Ext.ComponentQuery.query('#statoUsoSchedaInfoVeicoloStockLabel')[0];
+            informAggiuntiveSchedaInfoVeicoloStockLabel.setHidden(false);
+            statoUsoSchedaInfoVeicoloStockLabel.setHidden(true);
+
+            //logica per i pulsanti
+            var SchedaInfoVeicoloStockStatoButton = Ext.ComponentQuery.query('#SchedaInfoVeicoloStockStatoButton')[0];
+            var SchedaInfoVeicoloStockInfoButton = Ext.ComponentQuery.query('#SchedaInfoVeicoloStockInfoButton')[0];
+            SchedaInfoVeicoloStockStatoButton.removeCls("selectedButton");
+            SchedaInfoVeicoloStockInfoButton.addCls("selectedButton");
     },
 
     showVeicoloNumRisultati: function(numRisultati) {

@@ -1118,6 +1118,66 @@
             },
             "name": "creaInfoVeicoloCarouselImages",
             "designerId": "7cfbba48-c6b0-4004-90ba-87be60686a94"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#SchedaInfoVeicoloStockStatoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSchedaInfoVeicoloStockStatoButtonTap",
+                "implHandler": [
+                    "    //logica per i tab",
+                    "    var informAggiuntiveSchedaInfoVeicoloStockLabel = Ext.ComponentQuery.query('#informAggiuntiveSchedaInfoVeicoloStockLabel')[0];;",
+                    "    var statoUsoSchedaInfoVeicoloStockLabel = Ext.ComponentQuery.query('#statoUsoSchedaInfoVeicoloStockLabel')[0];",
+                    "",
+                    "    informAggiuntiveSchedaInfoVeicoloStockLabel.setHidden(true);",
+                    "    statoUsoSchedaInfoVeicoloStockLabel.setHidden(false);",
+                    "",
+                    "    //logica per i pulsanti",
+                    "    var SchedaInfoVeicoloStockStatoButton = Ext.ComponentQuery.query('#SchedaInfoVeicoloStockStatoButton')[0];",
+                    "    var SchedaInfoVeicoloStockInfoButton = Ext.ComponentQuery.query('#SchedaInfoVeicoloStockInfoButton')[0];",
+                    "    SchedaInfoVeicoloStockStatoButton.addCls(\"selectedButton\");",
+                    "    SchedaInfoVeicoloStockInfoButton.removeCls(\"selectedButton\");",
+                    ""
+                ],
+                "name": "tap"
+            },
+            "name": "onSchedaInfoVeicoloStockStatoButtonTap",
+            "designerId": "17cf3a5c-eede-4283-b2f7-af7b3e1c1fe1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|controlQuery": "button#SchedaInfoVeicoloStockInfoButton",
+                "designer|targetType": "Ext.Button",
+                "fn": "onSchedaInfoVeicoloSotckInfoButtonTap",
+                "implHandler": [
+                    "    //logica per i tab",
+                    "    var informAggiuntiveSchedaInfoVeicoloStockLabel = Ext.ComponentQuery.query('#informAggiuntiveSchedaInfoVeicoloStockLabel')[0];;",
+                    "    var statoUsoSchedaInfoVeicoloStockLabel = Ext.ComponentQuery.query('#statoUsoSchedaInfoVeicoloStockLabel')[0];",
+                    "    informAggiuntiveSchedaInfoVeicoloStockLabel.setHidden(false);",
+                    "    statoUsoSchedaInfoVeicoloStockLabel.setHidden(true);",
+                    "",
+                    "    //logica per i pulsanti",
+                    "    var SchedaInfoVeicoloStockStatoButton = Ext.ComponentQuery.query('#SchedaInfoVeicoloStockStatoButton')[0];",
+                    "    var SchedaInfoVeicoloStockInfoButton = Ext.ComponentQuery.query('#SchedaInfoVeicoloStockInfoButton')[0];",
+                    "    SchedaInfoVeicoloStockStatoButton.removeCls(\"selectedButton\");",
+                    "    SchedaInfoVeicoloStockInfoButton.addCls(\"selectedButton\");"
+                ],
+                "name": "tap"
+            },
+            "name": "onSchedaInfoVeicoloSotckInfoButtonTap",
+            "designerId": "704c131d-4d68-420b-b881-51e0194751d0"
         }
     ]
 }

@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar1",
+            "name": "topbar",
             "designerId": "a185a87e-f8d6-4039-a2fa-549e7e748d96",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -5252,9 +5252,12 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "baseCls": "veicoloBasePrezzoEsitoVeicoloNuovoLabel1Cls",
+                                                "cls": [
+                                                    "veicoloBasePrezzoEsitoVeicoloUsatoLabel1Cls"
+                                                ],
                                                 "designer|displayName": "ValutazioneQRPrezzoEsitoVeicoloUsatoLabel",
                                                 "html": "Valutazione personalizzata QR:",
-                                                "width": "25%"
+                                                "width": null
                                             },
                                             "name": "MyLabel24",
                                             "designerId": "a3b5cf60-588e-4dbf-8d56-21675265c313"
@@ -5343,9 +5346,12 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "baseCls": "equipaggiamentiPrezzoEsitoVeicoloNuovoLabel1Cls",
+                                                "cls": [
+                                                    "veicoloBasePrezzoEsitoVeicoloUsatoLabel1Cls"
+                                                ],
                                                 "designer|displayName": "VarConcessPrezzoEsitoVeicoloUsatoLabel1",
                                                 "html": "Variazione concessionario:",
-                                                "width": "25%"
+                                                "width": null
                                             },
                                             "name": "MyLabel24",
                                             "designerId": "8427d6fd-09e6-459a-b791-8d0f0bc6cca4"
@@ -5432,9 +5438,12 @@
                                             "codeClass": null,
                                             "userConfig": {
                                                 "baseCls": "equipaggiamentiPrezzoEsitoVeicoloNuovoLabel1Cls",
+                                                "cls": [
+                                                    "veicoloBasePrezzoEsitoVeicoloUsatoLabel1Cls"
+                                                ],
                                                 "designer|displayName": "VarConcorPrezzoEsitoVeicoloUsatoLabel1",
                                                 "html": "Variazione concordata:",
-                                                "width": "25%"
+                                                "width": null
                                             },
                                             "name": "MyLabel26",
                                             "designerId": "31462c6a-db9a-4967-aa9f-16c1e37fd7ec"
@@ -5527,7 +5536,7 @@
                                                 "designer|displayName": "TotaleConcorPrezzoEsitoVeicoloUsatoLabel1",
                                                 "html": "TOTALE CONCORDATO:",
                                                 "itemId": null,
-                                                "width": "25%"
+                                                "width": null
                                             },
                                             "name": "MyLabel28",
                                             "designerId": "276d3ad6-1959-46f9-ad62-4be79932e151"
