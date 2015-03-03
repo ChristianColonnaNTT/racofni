@@ -537,7 +537,6 @@ Ext.define('Infocar.view.UsatoView', {
                                                                         xtype: 'datepickerfield',
                                                                         attivaSyncFlag: 'S',
                                                                         annullaButtonFlag: 'S',
-                                                                        baseCls: 'DataImmatricDettVeicoloUsatoDatepickerFieldCls',
                                                                         itemId: 'dataImmatricDettVeicoloUsatoDatepickerField',
                                                                         width: '75%',
                                                                         label: 'Data immatricolazione',
@@ -1829,7 +1828,7 @@ Ext.define('Infocar.view.UsatoView', {
                                                     {
                                                         xtype: 'label',
                                                         baseCls: 'TitoloEquipInfoVeicoloUsatoLabelCls',
-                                                        html: 'Equipaggiamenti di serie'
+                                                        html: 'Equipaggiamenti Serie'
                                                     },
                                                     {
                                                         xtype: 'dataview',
@@ -1864,7 +1863,7 @@ Ext.define('Infocar.view.UsatoView', {
                                         xtype: 'button',
                                         baseCls: 'indietroInfoVeicoloUsatoButtonCls',
                                         itemId: 'indietroInfoVeicoloUsatoButton',
-                                        text: 'Indietro'
+                                        text: 'INDIETRO'
                                     }
                                 ]
                             }

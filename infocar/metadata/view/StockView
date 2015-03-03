@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar",
+            "name": "topbar3",
             "designerId": "20ecee56-aaba-40f9-a440-800d06d90ca5",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -2054,64 +2054,10 @@
                                                     "codeClass": null,
                                                     "userConfig": {
                                                         "cls": [
-                                                            "titoloEquipSerieInfoVeicoloStockLabelCls"
-                                                        ],
-                                                        "designer|displayName": "TitoloEquipSerieInfoVeicoloStockLabel",
-                                                        "html": "Equipaggiamenti di serie"
-                                                    },
-                                                    "name": "MyLabel34",
-                                                    "designerId": "f63e70ab-96a3-46c8-8fbe-2c98492b4c68"
-                                                },
-                                                {
-                                                    "type": "Ext.dataview.DataView",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "cls": [
-                                                            "equipSerieInfoVeicoloStockDataviewCls"
-                                                        ],
-                                                        "designer|displayName": "EquipSerieInfoVeicoloStockDataview",
-                                                        "layout|flex": 1,
-                                                        "store": "EquipSerieInfoVeicoloStockStore"
-                                                    },
-                                                    "name": "MyDataView4",
-                                                    "designerId": "68b0d012-037a-4d5a-996c-9de40e05b07a",
-                                                    "cn": [
-                                                        {
-                                                            "type": "Ext.XTemplate",
-                                                            "reference": {
-                                                                "name": "itemTpl",
-                                                                "type": "object"
-                                                            },
-                                                            "codeClass": null,
-                                                            "userConfig": {
-                                                                "designer|displayName": "itemTpl",
-                                                                "disableFormats": true,
-                                                                "implHandler": [
-                                                                    "<div class=\"descEquipSerieInfoVeicoloStockDataviewItemDivCls\"> > {descrizione}</div>"
-                                                                ]
-                                                            },
-                                                            "name": "itemTpl",
-                                                            "designerId": "c82dd0bf-08a4-40e1-b0db-f225e2746662"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "type": "Ext.Label",
-                                                    "reference": {
-                                                        "name": "items",
-                                                        "type": "array"
-                                                    },
-                                                    "codeClass": null,
-                                                    "userConfig": {
-                                                        "cls": [
                                                             "titoloEquipMontatiInfoVeicoloStockLabelCls"
                                                         ],
                                                         "designer|displayName": "TitoloEquipMontatiInfoVeicoloStockLabel",
-                                                        "html": "Equipaggiamenti montati"
+                                                        "html": "Equipaggiamenti e accessori installati"
                                                     },
                                                     "name": "MyLabel2",
                                                     "designerId": "308bb767-3d36-4839-9447-92981359d00a"
@@ -2150,6 +2096,60 @@
                                                             },
                                                             "name": "itemTpl",
                                                             "designerId": "502a017a-b34a-4827-9b4e-b42d76e1cbee"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "type": "Ext.Label",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "titoloEquipSerieInfoVeicoloStockLabelCls"
+                                                        ],
+                                                        "designer|displayName": "TitoloEquipSerieInfoVeicoloStockLabel",
+                                                        "html": "Equipaggiamenti Serie"
+                                                    },
+                                                    "name": "MyLabel34",
+                                                    "designerId": "f63e70ab-96a3-46c8-8fbe-2c98492b4c68"
+                                                },
+                                                {
+                                                    "type": "Ext.dataview.DataView",
+                                                    "reference": {
+                                                        "name": "items",
+                                                        "type": "array"
+                                                    },
+                                                    "codeClass": null,
+                                                    "userConfig": {
+                                                        "cls": [
+                                                            "equipSerieInfoVeicoloStockDataviewCls"
+                                                        ],
+                                                        "designer|displayName": "EquipSerieInfoVeicoloStockDataview",
+                                                        "layout|flex": 1,
+                                                        "store": "EquipSerieInfoVeicoloStockStore"
+                                                    },
+                                                    "name": "MyDataView4",
+                                                    "designerId": "68b0d012-037a-4d5a-996c-9de40e05b07a",
+                                                    "cn": [
+                                                        {
+                                                            "type": "Ext.XTemplate",
+                                                            "reference": {
+                                                                "name": "itemTpl",
+                                                                "type": "object"
+                                                            },
+                                                            "codeClass": null,
+                                                            "userConfig": {
+                                                                "designer|displayName": "itemTpl",
+                                                                "disableFormats": true,
+                                                                "implHandler": [
+                                                                    "<div class=\"descEquipSerieInfoVeicoloStockDataviewItemDivCls\"> > {descrizione}</div>"
+                                                                ]
+                                                            },
+                                                            "name": "itemTpl",
+                                                            "designerId": "c82dd0bf-08a4-40e1-b0db-f225e2746662"
                                                         }
                                                     ]
                                                 }

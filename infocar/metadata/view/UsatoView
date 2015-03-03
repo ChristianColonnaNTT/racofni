@@ -1416,7 +1416,7 @@
                                                                     "userConfig": {
                                                                         "annullaButtonFlag": "S",
                                                                         "attivaSyncFlag": "S",
-                                                                        "baseCls": "DataImmatricDettVeicoloUsatoDatepickerFieldCls",
+                                                                        "baseCls": null,
                                                                         "border": null,
                                                                         "dateFormat": "d/m/Y",
                                                                         "designer|displayName": "DataImmatricDettVeicoloUsatoDatepickerField",
@@ -5038,7 +5038,7 @@
                                                     "userConfig": {
                                                         "baseCls": "TitoloEquipInfoVeicoloUsatoLabelCls",
                                                         "designer|displayName": "TitoloEquipInfoVeicoloUsatoLabel",
-                                                        "html": "Equipaggiamenti di serie"
+                                                        "html": "Equipaggiamenti Serie"
                                                     },
                                                     "name": "MyLabel34",
                                                     "designerId": "84b1b7eb-7ba4-435e-bfcb-63e22410ccd7"
@@ -5116,7 +5116,7 @@
                                         "baseCls": "indietroInfoVeicoloUsatoButtonCls",
                                         "designer|displayName": "IndietroInfoVeicoloUsatoButton",
                                         "itemId": "indietroInfoVeicoloUsatoButton",
-                                        "text": "Indietro"
+                                        "text": "INDIETRO"
                                     },
                                     "name": "MyButton12",
                                     "designerId": "49dcea43-289a-43b7-80c1-f8ae09124f85"

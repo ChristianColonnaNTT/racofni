@@ -1,0 +1,65 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "cls": [
+            "equipDettVeicoloNuovoListCls"
+        ],
+        "defaultType": null,
+        "designer|userAlias": "equipdettveicolonuovolist",
+        "designer|userClassName": "EquipDettVeicoloNuovoList",
+        "disableSelection": true,
+        "grouped": true,
+        "itemHeight": 50,
+        "itemId": "equipDettVeicoloNuovoList",
+        "pressedCls": "none",
+        "scrollToTopOnRefresh": false,
+        "store": "EquipDettVeicoloNuovoStore",
+        "striped": true
+    },
+    "name": "MyList1",
+    "designerId": "e493e641-d224-474f-b711-aeea2ff621b1",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "itemTpl",
+                "implHandler": [
+                    "<table class=\"equipDettVeicoloNuovoTableCls\" width=\"100%\">",
+                    "  <tr>",
+                    "    <td class=\"statoEquipDettVeicoloNuovoTdCls\">",
+                    "<tpl if=\"stato=='0' || stato=='6'\">",
+                    "<img src=\"resources/images/35-ipad_infocar_done_35.png\" class=\"statoEquipDettVeicoloNuovoImgCls\" codice=\"{codice}\">",
+                    "<tpl elseif=\"stato=='1' || stato=='5'\">",
+                    "<img src=\"resources/images/35-ipad_infocar_done_44.png\" class=\"statoEquipDettVeicoloNuovoImgCls\" codice=\"{codice}\">",
+                    "<tpl elseif=\"stato=='4'\">",
+                    "<img src=\"resources/images/35-ipad_infocar_done_42.png\" class=\"statoEquipDettVeicoloNuovoImgCls\" codice=\"{codice}\">",
+                    "<tpl elseif=\"stato=='2'\">",
+                    "<img src=\"resources/images/35-ipad_infocar_done_38.png\" class=\"statoEquipDettVeicoloNuovoImgCls\" codice=\"{codice}\">",
+                    "</tpl>",
+                    "    </td>",
+                    "    <td class=\"infoEquipDettVeicoloNuovoTdCls\">",
+                    "      <tpl if=\"infoFlag == 'S'\">",
+                    "        <img src=\"resources/images/info_new.png\" class=\"infoEquipDettVeicoloNuovoImgCls\" codice=\"{codice}\">",
+                    "      </tpl>",
+                    "    </td>",
+                    "    <td class=\"descEquipDettVeicoloNuovoTdCls\"><span class=\"descEquipDettVeicoloNuovoSpanCls\" codice=\"{codice}\">{descrizione}</span></td>",
+                    "    <td class=\"prezzoEquipDettVeicoloNuovoTdCls\">{equipPrezzo}</td>",
+                    "  </tr>",
+                    "</table>"
+                ]
+            },
+            "name": "itemTpl",
+            "designerId": "3a92f950-98f7-4de3-948a-6f58a5eb3fcb"
+        }
+    ]
+}

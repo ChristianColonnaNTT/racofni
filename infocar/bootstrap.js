@@ -843,6 +843,7 @@ Ext.ClassManager.addNameAlternateMappings({
   "Infocar.store.PopupEquipDettVeicoloNuovoStore": [],
   "Infocar.store.ProvenienzaStore": [],
   "Infocar.store.VeicoloStockStore": [],
+  "Infocar.view.EquipDettVeicoloNuovoList": [],
   "Infocar.view.EquipDettVeicoloNuovoListItem": [],
   "Infocar.view.HomeView": [],
   "Infocar.view.MainMenuLeft": [],
@@ -1879,6 +1880,9 @@ Ext.ClassManager.addNameAliasMappings({
   "Infocar.store.PopupEquipDettVeicoloNuovoStore": [],
   "Infocar.store.ProvenienzaStore": [],
   "Infocar.store.VeicoloStockStore": [],
+  "Infocar.view.EquipDettVeicoloNuovoList": [
+    "widget.equipdettveicolonuovolist"
+  ],
   "Infocar.view.EquipDettVeicoloNuovoListItem": [
     "widget.EquipDettVeicoloNuovoListItem"
   ],

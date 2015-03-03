@@ -1730,7 +1730,6 @@
                                                     "equipDettVeicoloNuovoListCls"
                                                 ],
                                                 "defaultType": null,
-                                                "designer|displayName": "EquipDettVeicoloNuovoList",
                                                 "disableSelection": true,
                                                 "grouped": true,
                                                 "itemHeight": 50,
@@ -1742,7 +1741,7 @@
                                                 "striped": true
                                             },
                                             "name": "MyList1",
-                                            "designerId": "a7f89d50-9fc4-4b8a-9c94-88a56ffd1841",
+                                            "designerId": "efc94346-989b-4464-9cb9-8a4d12b09015",
                                             "cn": [
                                                 {
                                                     "type": "Ext.XTemplate",
@@ -1779,7 +1778,7 @@
                                                         ]
                                                     },
                                                     "name": "itemTpl",
-                                                    "designerId": "3a92f950-98f7-4de3-948a-6f58a5eb3fcb"
+                                                    "designerId": "42aa296b-e53d-4ee7-b278-c605c15deb5a"
                                                 }
                                             ]
                                         }
@@ -3532,7 +3531,7 @@
                                                             "titoloEquipInfoVeicoloNuovoLabelCls"
                                                         ],
                                                         "designer|displayName": "TitoloEquipInfoVeicoloNuovoLabel",
-                                                        "html": "Equipaggiamenti di serie"
+                                                        "html": "Equipaggiamenti Serie"
                                                     },
                                                     "name": "MyLabel34",
                                                     "designerId": "04627419-c245-467c-b1d3-8378dac387cf"

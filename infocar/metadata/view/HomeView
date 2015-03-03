@@ -115,6 +115,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|displayName": "usatoHomeButtonsContainer",
+                        "hidden": true,
                         "itemId": "usatoHomeButtonsContainer"
                     },
                     "name": "MyContainer43",
@@ -171,6 +172,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|displayName": "nuovoHomeButtonsContainer",
+                        "hidden": true,
                         "itemId": "nuovoHomeButtonsContainer"
                     },
                     "name": "MyContainer47",
@@ -225,6 +227,7 @@
                     "codeClass": null,
                     "userConfig": {
                         "designer|displayName": "stockHomeButtonsContainer",
+                        "hidden": true,
                         "itemId": "stockHomeButtonsContainer"
                     },
                     "name": "MyContainer48",

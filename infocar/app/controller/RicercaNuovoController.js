@@ -68,9 +68,6 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             "button#statoEquipDettVeicoloNuovoDataItemButton": {
                 tap: 'onStatoEquipDettVeicoloDataItemButtonTap'
             },
-            "button#descEquipDettVeicoloNuovoDataItemButton": {
-                tap: 'onDescEquipDettVeicoloButtonItemTapOLD'
-            },
             "textfield#cercaDettVeicoloNuovoTextbox": {
                 change: 'onCercaDettVeicoloTextboxChange',
                 keyup: 'onCercaDettVeicoloTextboxKeyup'
@@ -463,6 +460,8 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
     onClusterDettVeicoloButtonTap: function(button, e, eOpts) {
         this.resetCercaEquipVeicoloTextbox();
 
+        this.changeImmagineGruppiEquipDettVeicolo(button.clusterCodice);
+
         this.showEquipaggiamenti(button.clusterCodice);
     },
 
@@ -476,21 +475,14 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         this.changeStatoEquipDettVeicolo(equipModel);
     },
 
-    onDescEquipDettVeicoloButtonItemTapOLD: function(button, e, eOpts) {
-        this.resetCercaEquipVeicoloTextbox();
-
-        var listItem = button.up('#equipDettVeicoloNuovoListItem');
-        var equipModel = listItem.getRecord();
-
-        this.changeStatoEquipDettVeicolo(equipModel);
-    },
-
     onCercaDettVeicoloTextboxChange: function(textfield, newValue, oldValue, eOpts) {
-        this.showEquipaggiamenti(false);
+        //this.showEquipaggiamenti(false);
+        this.ritardaChangeCercaDettVeicoloTextbox();
     },
 
     onCercaDettVeicoloTextboxKeyup: function(textfield, e, eOpts) {
-        this.showEquipaggiamenti(false);
+        //this.showEquipaggiamenti(false);
+        this.ritardaChangeCercaDettVeicoloTextbox();
     },
 
     onCloseInformEquipDettVeicoloButtonTap: function(button, e, eOpts) {
@@ -687,19 +679,6 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
             clusterCodice = activeClusterButton.clusterCodice;
         }
 
-
-        var equipListView = Ext.ComponentQuery.query('#equipDettVeicoloNuovoList')[0];
-        //equipListView.setGrouped(false);
-
-        var prevClasseHeaderGruppi = this.classeHeaderGruppi;
-        if (prevClasseHeaderGruppi) {
-            equipListView.removeCls(prevClasseHeaderGruppi);
-        }
-
-        var classeHeaderGruppi = clusterCodice + 'equipDettVeicoloNuovoListCls';
-        equipListView.addCls(classeHeaderGruppi);
-        this.classeHeaderGruppi = classeHeaderGruppi;
-
         var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');
 
         var cercaTextbox = Ext.ComponentQuery.query('#cercaDettVeicoloNuovoTextbox')[0];
@@ -732,27 +711,31 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         ]);
         */
 
-        equipStore.filter([
-            {
-                filterFn: function(equipaggiamento) {
-                    var clustersEquip = equipaggiamento.get("cluster_codice");
-                    var stato = equipaggiamento.get("stato");
+        if (clusterCodice !== 'tutti') {
+            equipStore.filter([
+                {
+                    filterFn: function(equipaggiamento) {
+                        var clustersEquip = equipaggiamento.get("cluster_codice");
+                        var stato = equipaggiamento.get("stato");
 
-                    var filterFlag;
-                    if (clusterCodice === 'tutti') {
-                        filterFlag = true;
-                    } else if (clusterCodice === 'riepilogo') {
-                        // 1=Selezionato,  4=Incluso,  5=Nuova Selezione
-                        filterFlag = (stato === '1' || stato === '4' || stato === '5') ? true : false;
-                    } else {
-                        filterFlag = (clustersEquip.indexOf(clusterCodice) != -1) ? true : false;
+                        var filterFlag;
+                        if (clusterCodice === 'riepilogo') {
+                            // 1=Selezionato,  4=Incluso,  5=Nuova Selezione
+                            filterFlag = (stato === '1' || stato === '4' || stato === '5') ? true : false;
+                        } else {
+                            filterFlag = (clustersEquip.indexOf(clusterCodice) != -1) ? true : false;
+                        }
+
+                        return filterFlag;
                     }
-
-                    return filterFlag;
-                }
-            },
-            {property: 'descrizione', value: filtroCerca, anyMatch: true}
-        ]);
+                },
+                {property: 'descrizione', value: filtroCerca, anyMatch: true}
+            ]);
+        } else {
+            equipStore.filter([
+                {property: 'descrizione', value: filtroCerca, anyMatch: true}
+            ]);
+        }
 
 
         /*
@@ -1202,6 +1185,22 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
         */
 
         var equipStore = Ext.data.StoreManager.lookup('EquipDettVeicoloNuovoStore');
+
+        // TODO DEBUG
+        //equipStore.suspendEvents();
+
+        if (afterLoad === 'PRIMO_LOAD') {
+            // L'applicazione di questo filtro migliora le performance
+            // al primo caricamento degli equipaggiamenti.
+            equipStore.filter([
+                {
+                    filterFn: function(equipaggiamento) {
+                      return false;
+                    }
+                }
+            ]);
+        }
+
         equipStore.load({
             params: {
                 veicolo_codice: veicoloCodice,
@@ -1228,15 +1227,23 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
                     var aryEquipaggiamenti = records;
 
                     if (afterLoad === 'PRIMO_LOAD') {
+                        // TODO DEBUG
                         var clusterIniziale = this.initClusterButtons(aryEquipaggiamenti);
 
                         // Visualizzo gli equipaggiamenti del cluster selezionato
+                        this.changeImmagineGruppiEquipDettVeicolo(clusterIniziale.clusterCodice);
                         this.showEquipaggiamenti(clusterIniziale.clusterCodice);
                         this.showHideEquipClustersCount(0, false);
 
+                        // TODO DEBUG
+                        //equipStore.resumeEvents(false);
+
                     } else if (afterLoad === 'LOGICA_CHANGE') {
-                        this.showEquipaggiamenti();
+                        //this.showEquipaggiamenti();
                         this.showHideEquipClustersCount(0, false);
+
+                        // TODO DEBUG
+                        //equipStore.resumeEvents(false);
                     }
                     /*
                     this.showEquipaggiamenti(clusterCodice);
@@ -1815,6 +1822,30 @@ Ext.define('Infocar.controller.RicercaNuovoController', {
 
         return equipStore.getData().all;
 
+    },
+
+    changeImmagineGruppiEquipDettVeicolo: function(clusterCodice) {
+        var equipListView = Ext.ComponentQuery.query('#equipDettVeicoloNuovoList')[0];
+        //equipListView.setGrouped(false);
+
+        var prevClasseHeaderGruppi = this.classeHeaderGruppi;
+        if (prevClasseHeaderGruppi) {
+            equipListView.removeCls(prevClasseHeaderGruppi);
+        }
+
+        var classeHeaderGruppi = clusterCodice + 'equipDettVeicoloNuovoListCls';
+        equipListView.addCls(classeHeaderGruppi);
+        this.classeHeaderGruppi = classeHeaderGruppi;
+    },
+
+    ritardaChangeCercaDettVeicoloTextbox: function() {
+        if (this.timeoutIdCercaDettVeicoloTextbox) {
+            clearTimeout(this.timeoutIdCercaDettVeicoloTextbox);
+        }
+
+        this.timeoutIdCercaDettVeicoloTextbox = Ext.defer(function () {
+                this.showEquipaggiamenti(false);
+            }, 1000, this);
     }
 
 });

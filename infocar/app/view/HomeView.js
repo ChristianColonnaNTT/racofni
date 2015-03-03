@@ -59,6 +59,7 @@ Ext.define('Infocar.view.HomeView', {
                 items: [
                     {
                         xtype: 'container',
+                        hidden: true,
                         itemId: 'usatoHomeButtonsContainer',
                         items: [
                             {
@@ -79,6 +80,7 @@ Ext.define('Infocar.view.HomeView', {
                     },
                     {
                         xtype: 'container',
+                        hidden: true,
                         itemId: 'nuovoHomeButtonsContainer',
                         items: [
                             {
@@ -99,6 +101,7 @@ Ext.define('Infocar.view.HomeView', {
                     },
                     {
                         xtype: 'container',
+                        hidden: true,
                         itemId: 'stockHomeButtonsContainer',
                         items: [
                             {

@@ -113,7 +113,8 @@
             "NuovoView",
             "StockView",
             "HomeView",
-            "TopBar"
+            "TopBar",
+            "EquipDettVeicoloNuovoList"
         ]
     },
     "name": "Application",

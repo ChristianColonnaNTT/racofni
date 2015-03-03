@@ -1454,7 +1454,7 @@ Ext.define('Infocar.view.NuovoView', {
                                                     {
                                                         xtype: 'label',
                                                         cls: 'titoloEquipInfoVeicoloNuovoLabelCls',
-                                                        html: 'Equipaggiamenti di serie'
+                                                        html: 'Equipaggiamenti Serie'
                                                     },
                                                     {
                                                         xtype: 'dataview',

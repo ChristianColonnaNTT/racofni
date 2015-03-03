@@ -120,7 +120,8 @@ Ext.application({
         'NuovoView',
         'StockView',
         'HomeView',
-        'TopBar'
+        'TopBar',
+        'EquipDettVeicoloNuovoList'
     ],
     controllers: [
         'RicercaUsatoController',

@@ -786,25 +786,8 @@ Ext.define('Infocar.view.StockView', {
                                                 items: [
                                                     {
                                                         xtype: 'label',
-                                                        cls: 'titoloEquipSerieInfoVeicoloStockLabelCls',
-                                                        html: 'Equipaggiamenti di serie'
-                                                    },
-                                                    {
-                                                        xtype: 'dataview',
-                                                        flex: 1,
-                                                        cls: 'equipSerieInfoVeicoloStockDataviewCls',
-                                                        itemTpl: Ext.create('Ext.XTemplate', 
-                                                            '<div class="descEquipSerieInfoVeicoloStockDataviewItemDivCls"> > {descrizione}</div>',
-                                                            {
-                                                                disableFormats: true
-                                                            }
-                                                        ),
-                                                        store: 'EquipSerieInfoVeicoloStockStore'
-                                                    },
-                                                    {
-                                                        xtype: 'label',
                                                         cls: 'titoloEquipMontatiInfoVeicoloStockLabelCls',
-                                                        html: 'Equipaggiamenti montati'
+                                                        html: 'Equipaggiamenti e accessori installati'
                                                     },
                                                     {
                                                         xtype: 'dataview',
@@ -817,6 +800,23 @@ Ext.define('Infocar.view.StockView', {
                                                             }
                                                         ),
                                                         store: 'EquipMontatiInfoVeicoloStockStore'
+                                                    },
+                                                    {
+                                                        xtype: 'label',
+                                                        cls: 'titoloEquipSerieInfoVeicoloStockLabelCls',
+                                                        html: 'Equipaggiamenti Serie'
+                                                    },
+                                                    {
+                                                        xtype: 'dataview',
+                                                        flex: 1,
+                                                        cls: 'equipSerieInfoVeicoloStockDataviewCls',
+                                                        itemTpl: Ext.create('Ext.XTemplate', 
+                                                            '<div class="descEquipSerieInfoVeicoloStockDataviewItemDivCls"> > {descrizione}</div>',
+                                                            {
+                                                                disableFormats: true
+                                                            }
+                                                        ),
+                                                        store: 'EquipSerieInfoVeicoloStockStore'
                                                     }
                                                 ]
                                             }
