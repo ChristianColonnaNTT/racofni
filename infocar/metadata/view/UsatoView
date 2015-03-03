@@ -21,7 +21,7 @@
                 "type": "array"
             },
             "codeClass": null,
-            "name": "topbar2",
+            "name": "topbar1",
             "designerId": "a185a87e-f8d6-4039-a2fa-549e7e748d96",
             "masterInstanceId": "5b0ebab8-2f06-4411-abfe-7bcfc741f5f0"
         },
@@ -851,7 +851,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "InfoVeicoloUsatoButtonCls",
+                                        "baseCls": "infoVeicoloUsatoButtonLandscapeCls",
                                         "designer|displayName": "InfoVeicoloUsatoButton",
                                         "height": 24,
                                         "icon": null,
@@ -1188,10 +1188,10 @@
                                                             },
                                                             "codeClass": null,
                                                             "userConfig": {
-                                                                "baseCls": "infoVeicoloUsatoButtonCls",
+                                                                "baseCls": "infoVeicoloUsatoButtonPortraitCls",
                                                                 "designer|displayName": "InfoVeicoloUsatoButton",
                                                                 "height": 24,
-                                                                "iconCls": "info",
+                                                                "iconCls": null,
                                                                 "itemId": "infoVeicoloUsatoButton",
                                                                 "text": null,
                                                                 "width": 24
@@ -1256,7 +1256,7 @@
                                                 "designer|displayName": "PrezzoDettVeicoloUsatoLabel",
                                                 "docked": null,
                                                 "itemId": "prezzoDettVeicoloUsatoLabel",
-                                                "layout|flex": 37
+                                                "layout|flex": 45
                                             },
                                             "name": "MyLabel8",
                                             "designerId": "e770dcb8-2af8-4130-85fe-ec50e1c01784",
@@ -4055,10 +4055,13 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "TestataInfoVeicoloUsatoContainerLandscapeCls",
-                                        "designer|displayName": "InfoVeicoloUsatoMiniImg",
-                                        "height": 90,
-                                        "width": 134
+                                        "baseCls": null,
+                                        "cls": [
+                                            "infoVeicoloUsatoMiniImgContainerLandscapeCls"
+                                        ],
+                                        "designer|displayName": "InfoVeicoloUsatoMiniImgContainer",
+                                        "height": 50,
+                                        "width": 50
                                     },
                                     "name": "MyContainer97",
                                     "designerId": "b5dad94c-9a55-4780-b9e4-913cf9b63df7",
@@ -4071,10 +4074,7 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "centered": true,
-                                                "cls": [
-                                                    "infoVeicoloUsatoMiniImgCls"
-                                                ],
+                                                "centered": null,
                                                 "designer|displayName": "InfoVeicoloUsatoMiniImg",
                                                 "height": null,
                                                 "imageCls": "infoVeicoloUsatoMiniImgCls",
@@ -4148,7 +4148,11 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
-                                        "baseCls": "TestataInfoVeicoloUsatoContainerPortraitCls",
+                                        "baseCls": null,
+                                        "cls": [
+                                            "testataInfoVeicoloUsatoContainerPortraitCls"
+                                        ],
+                                        "container|align": "center",
                                         "designer|displayName": "TestataInfoVeicoloUsatoContainerPortrait",
                                         "itemId": "testataInfoVeicoloUsatoContainerPortrait",
                                         "layout": "hbox"
@@ -4164,11 +4168,11 @@
                                             },
                                             "codeClass": null,
                                             "userConfig": {
-                                                "baseCls": "InfoVeicoloUsatoMiniImgContainerCls",
-                                                "designer|displayName": "InfoVeicoloUsatoMiniImgContainer",
-                                                "height": 90,
+                                                "baseCls": null,
+                                                "designer|displayName": "InfoVeicoloUsatoMiniImgContainerPortrait",
+                                                "height": 50,
                                                 "layout": null,
-                                                "width": 134
+                                                "width": 50
                                             },
                                             "name": "MyContainer79",
                                             "designerId": "563e6c49-5885-4147-b3db-bde3963479be",
@@ -4181,10 +4185,11 @@
                                                     },
                                                     "codeClass": null,
                                                     "userConfig": {
-                                                        "baseCls": "infoVeicoloUsatoMiniImgCls",
+                                                        "baseCls": null,
                                                         "centered": true,
                                                         "designer|displayName": "InfoVeicoloUsatoMiniImg",
                                                         "height": null,
+                                                        "imageCls": "infoVeicoloUsatoMiniImgCls",
                                                         "itemId": "infoVeicoloUsatoMiniImg",
                                                         "mode": "image",
                                                         "width": null
@@ -4294,7 +4299,7 @@
                                                                 ],
                                                                 "designer|displayName": "InfoVeicoloUsatoImgContainer",
                                                                 "layout": "fit",
-                                                                "width": "50%"
+                                                                "width": 300
                                                             },
                                                             "name": "MyContainer77",
                                                             "designerId": "4ebe7357-c689-4ec7-a597-6077bb59d3d9",
@@ -4309,6 +4314,7 @@
                                                                     "userConfig": {
                                                                         "designer|displayName": "InfoVeicoloUsatoImg",
                                                                         "height": null,
+                                                                        "imageCls": "infoVeicoloUsatoImgCls",
                                                                         "itemId": "infoVeicoloUsatoImg",
                                                                         "mode": "image",
                                                                         "src": null,
@@ -5032,7 +5038,7 @@
                                                     "userConfig": {
                                                         "baseCls": "TitoloEquipInfoVeicoloUsatoLabelCls",
                                                         "designer|displayName": "TitoloEquipInfoVeicoloUsatoLabel",
-                                                        "html": "Tutti gli equipaggiamenti"
+                                                        "html": "Equipaggiamenti di serie"
                                                     },
                                                     "name": "MyLabel34",
                                                     "designerId": "84b1b7eb-7ba4-435e-bfcb-63e22410ccd7"
@@ -5085,9 +5091,16 @@
                             },
                             "codeClass": null,
                             "userConfig": {
+                                "cls": [
+                                    "infoVeicoloUsatoToolbarCls"
+                                ],
+                                "container|align": "start",
                                 "designer|displayName": "InfoVeicoloUsatoToolbar",
+                                "designer|uiInterfaceName": "infocar-toolbar",
                                 "docked": "bottom",
-                                "hidden": false
+                                "height": 60,
+                                "hidden": false,
+                                "ui": "infocar-toolbar"
                             },
                             "name": "MyToolbar2",
                             "designerId": "765ac87b-77ab-40ff-909f-3243db519b26",
@@ -5100,6 +5113,7 @@
                                     },
                                     "codeClass": null,
                                     "userConfig": {
+                                        "baseCls": "indietroInfoVeicoloUsatoButtonCls",
                                         "designer|displayName": "IndietroInfoVeicoloUsatoButton",
                                         "itemId": "indietroInfoVeicoloUsatoButton",
                                         "text": "Indietro"

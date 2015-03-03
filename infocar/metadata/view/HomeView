@@ -52,22 +52,6 @@
             ]
         },
         {
-            "type": "Ext.Label",
-            "reference": {
-                "name": "items",
-                "type": "array"
-            },
-            "codeClass": null,
-            "userConfig": {
-                "designer|displayName": "MessageHomeLabel",
-                "hidden": true,
-                "html": null,
-                "itemId": "messageHomeLabel"
-            },
-            "name": "MyLabel40",
-            "designerId": "fd1f71bc-333c-4020-8b91-4c8359e03c9b"
-        },
-        {
             "type": "Ext.Img",
             "reference": {
                 "name": "items",
@@ -85,6 +69,25 @@
             },
             "name": "MyImg6",
             "designerId": "4caf8635-64d0-4aee-9e41-53ba26a5a04b"
+        },
+        {
+            "type": "Ext.Label",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "cls": [
+                    "messageHomeLabelCls"
+                ],
+                "designer|displayName": "MessageHomeLabel",
+                "hidden": true,
+                "html": null,
+                "itemId": "messageHomeLabel"
+            },
+            "name": "MyLabel40",
+            "designerId": "fd1f71bc-333c-4020-8b91-4c8359e03c9b"
         },
         {
             "type": "Ext.Container",

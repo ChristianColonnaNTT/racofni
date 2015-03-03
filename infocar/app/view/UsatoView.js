@@ -371,7 +371,7 @@ Ext.define('Infocar.view.UsatoView', {
                                     },
                                     {
                                         xtype: 'button',
-                                        baseCls: 'InfoVeicoloUsatoButtonCls',
+                                        baseCls: 'infoVeicoloUsatoButtonLandscapeCls',
                                         height: 24,
                                         itemId: 'infoVeicoloUsatoButton',
                                         width: 24
@@ -468,11 +468,10 @@ Ext.define('Infocar.view.UsatoView', {
                                                             },
                                                             {
                                                                 xtype: 'button',
-                                                                baseCls: 'infoVeicoloUsatoButtonCls',
+                                                                baseCls: 'infoVeicoloUsatoButtonPortraitCls',
                                                                 height: 24,
                                                                 itemId: 'infoVeicoloUsatoButton',
-                                                                width: 24,
-                                                                iconCls: 'info'
+                                                                width: 24
                                                             }
                                                         ]
                                                     },
@@ -492,7 +491,7 @@ Ext.define('Infocar.view.UsatoView', {
                                             },
                                             {
                                                 xtype: 'label',
-                                                flex: 37,
+                                                flex: 45,
                                                 cls: 'prezzoDettVeicoloUsatoLabelCls',
                                                 itemId: 'prezzoDettVeicoloUsatoLabel',
                                                 tpl: Ext.create('Ext.XTemplate', 
@@ -1403,14 +1402,12 @@ Ext.define('Infocar.view.UsatoView', {
                                 items: [
                                     {
                                         xtype: 'container',
-                                        baseCls: 'TestataInfoVeicoloUsatoContainerLandscapeCls',
-                                        height: 90,
-                                        width: 134,
+                                        cls: 'infoVeicoloUsatoMiniImgContainerLandscapeCls',
+                                        height: 50,
+                                        width: 50,
                                         items: [
                                             {
                                                 xtype: 'image',
-                                                centered: true,
-                                                cls: 'infoVeicoloUsatoMiniImgCls',
                                                 itemId: 'infoVeicoloUsatoMiniImg',
                                                 imageCls: 'infoVeicoloUsatoMiniImgCls',
                                                 mode: 'image'
@@ -1434,21 +1431,23 @@ Ext.define('Infocar.view.UsatoView', {
                                 items: [
                                     {
                                         xtype: 'container',
-                                        baseCls: 'TestataInfoVeicoloUsatoContainerPortraitCls',
+                                        cls: 'testataInfoVeicoloUsatoContainerPortraitCls',
                                         itemId: 'testataInfoVeicoloUsatoContainerPortrait',
-                                        layout: 'hbox',
+                                        layout: {
+                                            type: 'hbox',
+                                            align: 'center'
+                                        },
                                         items: [
                                             {
                                                 xtype: 'container',
-                                                baseCls: 'InfoVeicoloUsatoMiniImgContainerCls',
-                                                height: 90,
-                                                width: 134,
+                                                height: 50,
+                                                width: 50,
                                                 items: [
                                                     {
                                                         xtype: 'image',
-                                                        baseCls: 'infoVeicoloUsatoMiniImgCls',
                                                         centered: true,
                                                         itemId: 'infoVeicoloUsatoMiniImg',
+                                                        imageCls: 'infoVeicoloUsatoMiniImgCls',
                                                         mode: 'image'
                                                     }
                                                 ]
@@ -1485,13 +1484,14 @@ Ext.define('Infocar.view.UsatoView', {
                                                             {
                                                                 xtype: 'container',
                                                                 cls: 'InfoVeicoloUsatoImgContainerCls',
-                                                                width: '50%',
+                                                                width: 300,
                                                                 layout: 'fit',
                                                                 items: [
                                                                     {
                                                                         xtype: 'image',
                                                                         itemId: 'infoVeicoloUsatoImg',
                                                                         width: '100%',
+                                                                        imageCls: 'infoVeicoloUsatoImgCls',
                                                                         mode: 'image'
                                                                     }
                                                                 ]
@@ -1829,7 +1829,7 @@ Ext.define('Infocar.view.UsatoView', {
                                                     {
                                                         xtype: 'label',
                                                         baseCls: 'TitoloEquipInfoVeicoloUsatoLabelCls',
-                                                        html: 'Tutti gli equipaggiamenti'
+                                                        html: 'Equipaggiamenti di serie'
                                                     },
                                                     {
                                                         xtype: 'dataview',
@@ -1850,11 +1850,19 @@ Ext.define('Infocar.view.UsatoView', {
                             },
                             {
                                 xtype: 'toolbar',
+                                cls: 'infoVeicoloUsatoToolbarCls',
                                 docked: 'bottom',
+                                height: 60,
                                 hidden: false,
+                                ui: 'infocar-toolbar',
+                                layout: {
+                                    type: 'hbox',
+                                    align: 'start'
+                                },
                                 items: [
                                     {
                                         xtype: 'button',
+                                        baseCls: 'indietroInfoVeicoloUsatoButtonCls',
                                         itemId: 'indietroInfoVeicoloUsatoButton',
                                         text: 'Indietro'
                                     }

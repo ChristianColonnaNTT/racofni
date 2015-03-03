@@ -1063,8 +1063,8 @@ Ext.define('Infocar.view.NuovoView', {
                                         items: [
                                             {
                                                 xtype: 'container',
-                                                height: 47,
-                                                width: 47,
+                                                height: 50,
+                                                width: 50,
                                                 items: [
                                                     {
                                                         xtype: 'image',

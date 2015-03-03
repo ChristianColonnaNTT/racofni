@@ -42,14 +42,15 @@ Ext.define('Infocar.view.HomeView', {
                 ]
             },
             {
-                xtype: 'label',
-                hidden: true,
-                itemId: 'messageHomeLabel'
-            },
-            {
                 xtype: 'image',
                 cls: 'welcomeHomeImgCls',
                 src: 'resources/images/logo_hp.png'
+            },
+            {
+                xtype: 'label',
+                cls: 'messageHomeLabelCls',
+                hidden: true,
+                itemId: 'messageHomeLabel'
             },
             {
                 xtype: 'container',

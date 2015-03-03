@@ -134,7 +134,7 @@ $toolbar-input-color: $infocar-border-color;
 @import 'sencha-touch/default/all';
 
 
-
+ls
 /* Font */
 body.x-desktop {
   font-size: 1em !important;
@@ -170,7 +170,10 @@ body.x-tablet {
   font-size: 0.75em;
 }
 
-
+/* Checkbox di colore nero */
+.x-input-el:checked + .x-field-mask::after {
+  color: #333344;
+}
 
 
 /* Mixin */
@@ -442,6 +445,13 @@ body.x-tablet {
   margin-left: 40px;
 }
 
+.messageHomeLabelCls {
+  color: #fff;
+}
+
+
+/* Menu principale di sinistra */
+
 .MenuLeftButtonCls .x-button-label {
     @include infocar-align(left);
     font-weight: normal !important;
@@ -625,6 +635,11 @@ body.x-tablet {
 
 //Dettaglio allestimento usato
 
+/* Testata landscape info veicolo usato */
+
+.infoVeicoloUsatoMiniImgContainerLandscapeCls {
+  padding: 8px;
+}
 
 .InfoVeicoloUsatoMiniImgContainerCls{
     height: 200px !important;
@@ -640,29 +655,77 @@ body.x-tablet {
 }
 
 .TestataInfoVeicoloUsatoContainerLandscapeCls {
-    background-color: #e5e5e5;
-    width: 295px;
+    /* background-color: #e5e5e5; */
+    background-color: #fff;
+    width: 256px;
+    padding: 20px;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
 }
 
 .InfoVeicoloUsatoMiniImgContainerTmplCls{
-    padding-top:120px;
+    padding-top:20px;
     color: #333344;
-    text-transform: uppercase;
-    padding-left: 10px;
+    /* text-transform: uppercase; */
+    /* padding-left: 10px; */
+}
+
+.infoVeicoloUsatoButtonLandscapeCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/info_new.png),
+    $param-img-size: 24px 24px,
+    $param-margin: 5px 0px 5px 0px
+  );
+}
+
+/* Testata portrait info veicolo usato */
+
+.testataInfoVeicoloUsatoContainerPortraitCls {
+  height: 86px;
+  padding: 5px 0px 5px 0px;
+  margin: 0px 5px 0px 5px;
+  /* border-bottom: 1px solid #db021f; */
+}
+
+.infoVeicoloUsatoMiniImgCls img {
+  max-height: 50px;
+  max-width: 50px;
+  width: auto;
+  height: auto;
+/*
+  padding-left: 10px;
+  padding-top: 10px;
+*/
 }
 
 .InfoVeicoloUsatoMiniImgContainerTmplClsPort{
+/*
   margin-left: 180px;
   padding-top: 20px;
   height: 200px;
+*/
+  padding: 0px 20px 0px 20px !important;
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
   color: #333344;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 .InfoVeicoloUsatoMiniImgContainerTmplPortCls{
    margin-left: 200px;
 
 }
+
+.infoVeicoloUsatoButtonPortraitCls {
+  @include infocar-button-icona(
+    $param-img-url: url(../images/info_new.png),
+    $param-img-size: 24px 24px,
+    $param-margin: 5px 0px 5px 5px
+  );
+}
+
 
 //usato -> dettagli  equipaggiamento
 
@@ -736,6 +799,12 @@ body.x-tablet {
 .InfoVeicoloUsatoImgContainerCls{
     margin-left: 10px;
     margin-top: 10px;
+}
+
+.infoVeicoloUsatoImgCls {
+  width: 313px;
+  max-width: 313px;
+  height: auto;
 }
 
 .EquipInfoVeicoloUsatoButtonCls, .DatiTecniciInfoVeicoloUsatoButtonCls{
@@ -817,6 +886,25 @@ body.x-tablet {
   margin-bottom: -50px;
   margin-left: 10px;
 }
+
+
+/* Toolbar a Pie Pagina Info Veicolo Usato */
+.indietroInfoVeicoloUsatoButtonCls,
+{
+  @include infocar-button-red();
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.indietroInfoVeicoloUsatoButtonCls {
+  margin-left: 10px;
+}
+
+.indietroInfoVeicoloUsatoButtonCls.x-dock-item.x-unsized,
+{
+  @include infocar-box-orient(horizontal);
+}
+
 
 
 /* Risultato ricerca usato/nuovo/stock */
@@ -1124,13 +1212,6 @@ div.descrizione4VeicoloRicStockRisultatoDataViewDivCls {
 .dettaglioVeicoloUsatoImgCls img, {
   max-height: 90px;
   max-width: 134px;
-  width: auto;
-  height: auto;
-  padding-left: 10px;
-  padding-top: 10px;
-}
-
-.infoVeicoloUsatoMiniImgCls img {
   width: auto;
   height: auto;
   padding-left: 10px;
@@ -1532,7 +1613,7 @@ td.prezzoEquipDettVeicoloUsatoDataViewTdCls {
   @include infocar-button-icona(
     $param-img-url: url(../images/info_new.png),
     $param-img-size: 24px 24px,
-    $param-margin: 5px 0px 5px 15px
+    $param-margin: 5px 0px 5px 5px
   );
 }
 
@@ -2268,8 +2349,8 @@ table.testoLegendaEquipDettVeicoloNuovoTableCls td {
 }
 
 .infoVeicoloNuovoMiniImgCls img {
-  max-height: 47px;
-  max-width: 47px;
+  max-height: 50px;
+  max-width: 50px;
   width: auto;
   height: auto;
 }
